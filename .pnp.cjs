@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
             ["@rollup/plugin-typescript", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.0.0"],\
+            ["@yarnpkg/plugin-workspace-tools", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:4.0.0-rc.36"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.36"],\
             ["babel-loader", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:9.1.2"],\
             ["prettier", "npm:2.8.3"],\
@@ -49,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:4.1.2"],\
             ["rollup", "npm:3.10.1"],\
             ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
+            ["turbo", "npm:1.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
@@ -2928,6 +2930,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@yarnpkg/plugin-workspace-tools", [\
+        ["npm:4.0.0-rc.36", {\
+          "packageLocation": "./.yarn/cache/@yarnpkg-plugin-workspace-tools-npm-4.0.0-rc.36-9ae2f3989b-0e56b07a22.zip/node_modules/@yarnpkg/plugin-workspace-tools/",\
+          "packageDependencies": [\
+            ["@yarnpkg/plugin-workspace-tools", "npm:4.0.0-rc.36"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:4.0.0-rc.36", {\
+          "packageLocation": "./.yarn/__virtual__/@yarnpkg-plugin-workspace-tools-virtual-8c25334a8f/0/cache/@yarnpkg-plugin-workspace-tools-npm-4.0.0-rc.36-9ae2f3989b-0e56b07a22.zip/node_modules/@yarnpkg/plugin-workspace-tools/",\
+          "packageDependencies": [\
+            ["@yarnpkg/plugin-workspace-tools", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:4.0.0-rc.36"],\
+            ["@types/yarnpkg__cli", null],\
+            ["@types/yarnpkg__core", null],\
+            ["@types/yarnpkg__plugin-git", null],\
+            ["@yarnpkg/cli", null],\
+            ["@yarnpkg/core", null],\
+            ["@yarnpkg/fslib", "npm:3.0.0-rc.36"],\
+            ["@yarnpkg/plugin-git", null],\
+            ["clipanion", "virtual:3344b7bea6b783a7d6dbb3288c45efdc06fc6a1b7beeedcf0913b0be5c0c79fe8c318635469e59d076782236ac6785d8fd9b249026b17e81399e21869da9a81a#npm:3.2.0-rc.14"],\
+            ["micromatch", "npm:4.0.5"],\
+            ["p-limit", "npm:2.3.0"],\
+            ["tslib", "npm:2.4.1"],\
+            ["typanion", "npm:3.12.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/yarnpkg__cli",\
+            "@types/yarnpkg__core",\
+            "@types/yarnpkg__plugin-git",\
+            "@yarnpkg/cli",\
+            "@yarnpkg/core",\
+            "@yarnpkg/plugin-git"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@yarnpkg/pnp", [\
         ["npm:4.0.0-rc.36", {\
           "packageLocation": "./.yarn/cache/@yarnpkg-pnp-npm-4.0.0-rc.36-59968d9b40-0c6b9470a6.zip/node_modules/@yarnpkg/pnp/",\
@@ -4685,6 +4723,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
             ["@rollup/plugin-typescript", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.0.0"],\
+            ["@yarnpkg/plugin-workspace-tools", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:4.0.0-rc.36"],\
             ["@yarnpkg/pnpify", "npm:4.0.0-rc.36"],\
             ["babel-loader", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:9.1.2"],\
             ["prettier", "npm:2.8.3"],\
@@ -4693,6 +4732,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rimraf", "npm:4.1.2"],\
             ["rollup", "npm:3.10.1"],\
             ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
+            ["turbo", "npm:1.7.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
@@ -5568,6 +5608,75 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/tunnel-npm-0.0.6-b1c0830ea4-c362948df9.zip/node_modules/tunnel/",\
           "packageDependencies": [\
             ["tunnel", "npm:0.0.6"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-npm-1.7.0-e47e1a8ba9/node_modules/turbo/",\
+          "packageDependencies": [\
+            ["turbo", "npm:1.7.0"],\
+            ["turbo-darwin-64", "npm:1.7.0"],\
+            ["turbo-darwin-arm64", "npm:1.7.0"],\
+            ["turbo-linux-64", "npm:1.7.0"],\
+            ["turbo-linux-arm64", "npm:1.7.0"],\
+            ["turbo-windows-64", "npm:1.7.0"],\
+            ["turbo-windows-arm64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-darwin-64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-darwin-64-npm-1.7.0-3117a7b985/node_modules/turbo-darwin-64/",\
+          "packageDependencies": [\
+            ["turbo-darwin-64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-darwin-arm64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-darwin-arm64-npm-1.7.0-b6b6b699f2/node_modules/turbo-darwin-arm64/",\
+          "packageDependencies": [\
+            ["turbo-darwin-arm64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-linux-64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-linux-64-npm-1.7.0-465aab536f/node_modules/turbo-linux-64/",\
+          "packageDependencies": [\
+            ["turbo-linux-64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-linux-arm64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-linux-arm64-npm-1.7.0-092adbcaf0/node_modules/turbo-linux-arm64/",\
+          "packageDependencies": [\
+            ["turbo-linux-arm64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-windows-64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-windows-64-npm-1.7.0-0e152b9917/node_modules/turbo-windows-64/",\
+          "packageDependencies": [\
+            ["turbo-windows-64", "npm:1.7.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["turbo-windows-arm64", [\
+        ["npm:1.7.0", {\
+          "packageLocation": "./.yarn/unplugged/turbo-windows-arm64-npm-1.7.0-97bca28576/node_modules/turbo-windows-arm64/",\
+          "packageDependencies": [\
+            ["turbo-windows-arm64", "npm:1.7.0"]\
           ],\
           "linkType": "HARD"\
         }]\
