@@ -1,0 +1,35 @@
+{
+    "name": "monorepo-with-yarnberry",
+    "private": true,
+    "packageManager": "yarn@3.3.1",
+    "scripts": {
+        "build": "TURBO_BINARY_PATH=$(echo \"console.log(require('child_process').execSync('find .yarn/unplugged/turbo-'+process.platform+'-'+process.arch.replace('x', '')+'-* -name turbo').toString())\" | node) turbo run build",
+        "build:clean": "turbo build:clean",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "workspaces": [
+        "packages/*"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.20.7",
+        "@babel/core": "^7.20.12",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-react": "^7.18.6",
+        "@rollup/plugin-babel": "^6.0.3",
+        "@rollup/plugin-commonjs": "^24.0.1",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@rollup/plugin-typescript": "^11.0.0",
+        "babel-loader": "^9.1.2",
+        "prettier": "^2.8.3",
+        "rimraf": "^4.1.2",
+        "rollup": "^3.10.1",
+        "rollup-plugin-typescript2": "^0.34.1",
+        "typescript": "^4.9.4"
+    },
+    "dependencies": {
+        "@yarnpkg/pnpify": "^4.0.0-rc.36",
+        "react": "18.0.0",
+        "react-dom": "18.0.0"
+    }
+}

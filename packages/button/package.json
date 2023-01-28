@@ -1,0 +1,14 @@
+{
+    "name": "@jinyds/button",
+    "packageManager": "yarn@3.3.1",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "rollup --bundleConfigAsCjs -c ../../rollup.config.js",
+        "build:clean": "rimraf dist/"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.27",
+        "react": "^18.2.0",
+        "typescript": "^4.9.4"
+    }
+}
