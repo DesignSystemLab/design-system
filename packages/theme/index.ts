@@ -1,3 +1,3 @@
-import colors from './colors';
+import {variantPresetColors} from './colors';
 
-export default {colors};
+export default variantPresetColors;
