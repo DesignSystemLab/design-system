@@ -1,3 +1,51 @@
+export type BaseColor = {
+    base?: string;
+    lighten1?: string;
+    lighten2?: string;
+    lighten3?: string;
+    lighten4?: string;
+    lighten5?: string;
+    darken1?: string;
+    darken2?: string;
+    darken3?: string;
+    darken4?: string;
+    accent1?: string;
+    accent2?: string;
+    accent3?: string;
+    accent4?: string;
+};
+
+export type ShadesColor = {
+    black: string;
+    white: string;
+    transparent: string;
+};
+
+export type ColorPallete = 'red' | 'pink' | 'purple' | 'deepPurple' | 'indigo' | 'blue' | 'blue' | 'lightBlue' | 'cyan' | 'teal' | 'green' | 'lightGreen' | 'lime';
+
+type Color = {
+    red: Readonly<BaseColor>;
+    pink: Readonly<BaseColor>;
+    purple: Readonly<BaseColor>;
+    deepPurple: Readonly<BaseColor>;
+    indigo: Readonly<BaseColor>;
+    blue: Readonly<BaseColor>;
+    lightBlue: Readonly<BaseColor>;
+    cyan: Readonly<BaseColor>;
+    teal: Readonly<BaseColor>;
+    green: Readonly<BaseColor>;
+    lightGreen: Readonly<BaseColor>;
+    lime: Readonly<BaseColor>;
+    yellow: Readonly<BaseColor>;
+    amber: Readonly<BaseColor>;
+    orange: Readonly<BaseColor>;
+    deepOrange: Readonly<BaseColor>;
+    brown: Readonly<BaseColor>;
+    blueGrey: Readonly<BaseColor>;
+    grey: Readonly<BaseColor>;
+    shades: Readonly<ShadesColor>;
+};
+
 const red = Object.freeze({
     base: '#f44336',
     lighten5: '#ffebee',
@@ -315,7 +363,7 @@ const shades = Object.freeze({
     transparent: 'transparent'
 });
 
-export const variantPresetColors = Object.freeze({
+export const variantPresetColors: Color = Object.freeze({
     red,
     pink,
     purple,
