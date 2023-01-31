@@ -1,49 +1,79 @@
-export type BaseColor = {
-    base?: string;
-    lighten1?: string;
-    lighten2?: string;
-    lighten3?: string;
-    lighten4?: string;
-    lighten5?: string;
-    darken1?: string;
-    darken2?: string;
-    darken3?: string;
-    darken4?: string;
-    accent1?: string;
-    accent2?: string;
-    accent3?: string;
-    accent4?: string;
-};
+export interface BaseColorScheme {
+    [key: string]: string;
+    base: string;
+    lighten1: string;
+    lighten2: string;
+    lighten3: string;
+    lighten4: string;
+    lighten5: string;
+    darken1: string;
+    darken2: string;
+    darken3: string;
+    darken4: string;
+}
 
-export type ShadesColor = {
+export interface AccentColorScheme extends BaseColorScheme {
+    [key: string]: string;
+    accent1: string;
+    accent2: string;
+    accent3: string;
+    accent4: string;
+}
+
+export type ShadesColorSchme = {
+    [key: string]: string;
     black: string;
     white: string;
     transparent: string;
 };
 
-export type ColorPallete = 'red' | 'pink' | 'purple' | 'deepPurple' | 'indigo' | 'blue' | 'blue' | 'lightBlue' | 'cyan' | 'teal' | 'green' | 'lightGreen' | 'lime';
+export type ColorPallete =
+    | 'red'
+    | 'pink'
+    | 'purple'
+    | 'deepPurple'
+    | 'indigo'
+    | 'blue'
+    | 'blue'
+    | 'lightBlue'
+    | 'cyan'
+    | 'teal'
+    | 'green'
+    | 'lightGreen'
+    | 'lime'
+    | 'yellow'
+    | 'amber'
+    | 'orange'
+    | 'deepOrange'
+    | 'brown'
+    | 'blueGrey'
+    | 'grey'
+    | 'shades';
+
+export type ColorToken = `${ColorPallete}.${keyof AccentColorScheme | keyof ShadesColorSchme}`;
 
 type Color = {
-    red: Readonly<BaseColor>;
-    pink: Readonly<BaseColor>;
-    purple: Readonly<BaseColor>;
-    deepPurple: Readonly<BaseColor>;
-    indigo: Readonly<BaseColor>;
-    blue: Readonly<BaseColor>;
-    lightBlue: Readonly<BaseColor>;
-    cyan: Readonly<BaseColor>;
-    teal: Readonly<BaseColor>;
-    green: Readonly<BaseColor>;
-    lightGreen: Readonly<BaseColor>;
-    lime: Readonly<BaseColor>;
-    yellow: Readonly<BaseColor>;
-    amber: Readonly<BaseColor>;
-    orange: Readonly<BaseColor>;
-    deepOrange: Readonly<BaseColor>;
-    brown: Readonly<BaseColor>;
-    blueGrey: Readonly<BaseColor>;
-    grey: Readonly<BaseColor>;
-    shades: Readonly<ShadesColor>;
+    [key: string]: AccentColorScheme | BaseColorScheme | ShadesColorSchme;
+    red: Readonly<AccentColorScheme>;
+    pink: Readonly<AccentColorScheme>;
+    purple: Readonly<AccentColorScheme>;
+    deepPurple: Readonly<AccentColorScheme>;
+    indigo: Readonly<AccentColorScheme>;
+    blue: Readonly<AccentColorScheme>;
+    lightBlue: Readonly<AccentColorScheme>;
+    cyan: Readonly<AccentColorScheme>;
+    teal: Readonly<AccentColorScheme>;
+    green: Readonly<AccentColorScheme>;
+    lightGreen: Readonly<AccentColorScheme>;
+    lime: Readonly<AccentColorScheme>;
+    yellow: Readonly<AccentColorScheme>;
+    amber: Readonly<AccentColorScheme>;
+    orange: Readonly<AccentColorScheme>;
+    deepOrange: Readonly<AccentColorScheme>;
+    brown: Readonly<BaseColorScheme>;
+    blueGrey: Readonly<BaseColorScheme>;
+    grey: Readonly<BaseColorScheme>;
+    shades: Readonly<ShadesColorSchme>;
 };
 
 const red = Object.freeze({

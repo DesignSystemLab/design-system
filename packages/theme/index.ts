@@ -1,3 +1,3 @@
 import {variantPresetColors} from './colors';
 export default variantPresetColors;
-export type {BaseColor, ShadesColor, ColorPallete} from './colors';
+export type {ColorToken} from './colors';
