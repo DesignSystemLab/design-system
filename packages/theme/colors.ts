@@ -1,5 +1,4 @@
-export interface BaseColorScheme {
-    [key: string]: string;
+interface BaseColorScheme {
     base: string;
     lighten1: string;
     lighten2: string;
@@ -12,22 +11,20 @@ export interface BaseColorScheme {
     darken4: string;
 }
 
-export interface AccentColorScheme extends BaseColorScheme {
-    [key: string]: string;
+interface AccentColorScheme extends BaseColorScheme {
     accent1: string;
     accent2: string;
     accent3: string;
     accent4: string;
 }
 
-export type ShadesColorSchme = {
-    [key: string]: string;
+type ShadesColorSchme = {
     black: string;
     white: string;
     transparent: string;
 };
 
-export type ColorPallete =
+type ColorPallete =
     | 'red'
     | 'pink'
     | 'purple'
@@ -50,10 +47,10 @@ export type ColorPallete =
     | 'grey'
     | 'shades';
 
-export type ColorToken = `${ColorPallete}.${keyof AccentColorScheme | keyof ShadesColorSchme}`;
+export type ColorToken = `${ColorPallete}.${keyof BaseColorScheme}`;
 
-type Color = {
-    [key: string]: AccentColorScheme | BaseColorScheme | ShadesColorSchme;
+export type Color = {
+    [key: string]: any;
     red: Readonly<AccentColorScheme>;
     pink: Readonly<AccentColorScheme>;
     purple: Readonly<AccentColorScheme>;
