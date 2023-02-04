@@ -16,13 +16,14 @@ import { getColorByToken } from '@jdesignlab/theme';
 //     }
 // };
 
-const buttonDefaultColorToken: ColorToken = 'teal-lighten4';
-const whiteish = getColorByToken('red-lighten4');
+const buttonDefaultColorToken: ColorToken = 'green-base';
+const whiteish = getColorByToken('grey-darken4');
 
 const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 const buttonDefaultStyle = {
     backgroundColor: getColorByToken(buttonDefaultColorToken),
+    fontWeight: 'bold',
     border: 'none',
     borderRadius: '4px',
     cursor: 'pointer'
@@ -73,13 +74,22 @@ const buttonSizeStyle = (size: ButtonSize) => {
     };
 };
 
-const Button = ({ children, variant, size, color }: ButtonProps) => {
+const buttonDisabledStyle = (disabled: boolean) => {
+    return disabled ? { cursor: 'not-allowed', '&:hover': { opacity: 1 } } : { cursor: 'pointer' };
+};
+
+const Button = ({ children, variant, size, color, disabled, onClick }: ButtonProps) => {
     const buttonStyle = {
         ...buttonDefaultStyle,
-        ...buttonVariantStyle(variant || 'solid', color || buttonDefaultColorToken),
-        ...buttonSizeStyle(size ?? 'md')
+        ...buttonVariantStyle(variant ?? 'solid', color ?? buttonDefaultColorToken),
+        ...buttonSizeStyle(size ?? 'md'),
+        ...buttonDisabledStyle(disabled ?? false)
     };
-    return <button css={buttonStyle}>{children}</button>;
+    return (
+        <button onClick={onClick} css={buttonStyle}>
+            {children}
+        </button>
+    );
 };
 
 Button.displayName = 'Button';
