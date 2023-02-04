@@ -1,5 +1,7 @@
-import { ColorToken } from '../token/colorTypes';
+import { variantPresetColors } from '@jdesignlab/theme';
+import { HEX, ColorToken } from '../token/colorTypes';
 
-export const getColorToken = (colorToken: ColorToken): string[] => {
-    return colorToken.split('-');
+export const getColorByToken = (colorToken: ColorToken): HEX => {
+    const [prefix, suffix] = colorToken.split('-');
+    return variantPresetColors[prefix][suffix];
 };

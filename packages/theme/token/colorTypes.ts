@@ -1,3 +1,4 @@
+type HEX = `#${string}`;
 interface BaseColorScheme {
     base: string;
     lighten1: string;
@@ -73,4 +74,4 @@ type Color = {
     shades: Readonly<ShadesColorSchme>;
 };
 
-export type { ColorToken, Color };
+export type { HEX, ColorToken, Color };

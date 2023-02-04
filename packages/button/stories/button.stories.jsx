@@ -1,11 +1,11 @@
-import {Button} from '../src';
+import { Button } from '../src';
 
 export default {
     title: 'Components/Button',
     component: Button,
     decorators: [
         Story => (
-            <div style={{display: 'flex', gap: '5px'}}>
+            <div style={{ display: 'flex', gap: '5px' }}>
                 <Story />
             </div>
         )
@@ -15,13 +15,13 @@ export default {
 const argTypes = {
     color: {
         name: 'color',
-        type: {name: 'string', required: false},
+        type: { name: 'string', required: false },
         description: 'button color',
         control: 'text'
     },
     variant: {
         name: 'variant',
-        type: {name: 'string', required: false},
+        type: { name: 'string', required: false },
         description: 'button variant',
         control: {
             type: 'select',
@@ -30,19 +30,19 @@ const argTypes = {
     },
     children: {
         name: 'children',
-        type: {name: 'string', required: false},
+        type: { name: 'string', required: false },
         description: 'button label',
         table: {
-            type: {summary: 'string'},
-            defaultValue: {summary: 'Button'}
+            type: { summary: 'string' },
+            defaultValue: { summary: 'Button' }
         },
         control: 'text'
     },
     size: {
         name: 'size',
-        type: {name: 'string', required: false},
+        type: { name: 'string', required: false },
         description: 'button size',
-        control: {type: 'radio', options: ['sm', 'md', 'lg', 'xl']}
+        control: { type: 'radio', options: ['sm', 'md', 'lg', 'xl'] }
     }
 };
 
