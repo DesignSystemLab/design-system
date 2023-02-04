@@ -25,7 +25,7 @@ type ShadesColorSchme = {
     transparent: string;
 };
 
-type ColorPallete =
+type ExtendedPallete =
     | 'red'
     | 'pink'
     | 'purple'
@@ -42,13 +42,11 @@ type ColorPallete =
     | 'yellow'
     | 'amber'
     | 'orange'
-    | 'deepOrange'
-    | 'brown'
-    | 'blueGrey'
-    | 'grey'
-    | 'shades';
+    | 'deepOrange';
+type CommonPallete = 'brown' | 'blueGrey' | 'grey';
+type ShadesPallete = 'shades';
 
-type ColorToken = `${ColorPallete}-${keyof BaseColorScheme}`;
+type ColorToken = `${ExtendedPallete}-${keyof BaseColorScheme}` | `${CommonPallete}-${keyof ShadesColorSchme}` | `${ShadesPallete}-${keyof AccentColorScheme}`;
 
 type Color = {
     [key: string]: any;
