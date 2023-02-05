@@ -7,7 +7,5 @@ export const getColorByToken = (colorToken: ColorToken): HEX => {
 };
 
 export const hexToRgba = (hex: HEX, opacity: number) => {
-    console.log(`rgba('${parseInt(hex.substring(1, 3), 16)}','${parseInt(hex.substring(3, 5), 16)}','${parseInt(hex.substring(5, 7), 16)}','${opacity}')`);
-
     return `rgba(${parseInt(hex.substring(1, 3), 16)},${parseInt(hex.substring(3, 5), 16)},${parseInt(hex.substring(5, 7), 16)},${opacity})`;
 };
