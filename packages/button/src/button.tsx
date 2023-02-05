@@ -2,7 +2,7 @@
 import { variantPresetColors } from '@jdesignlab/theme';
 import type { ColorToken, Color } from '@jdesignlab/theme';
 import type { ButtonVariant, ButtonSize, ButtonProps } from './buttonTypes';
-import { getColorByToken } from '@jdesignlab/theme';
+import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 
 // utils
 // const getColorByToken = (color: ColorToken) => {
@@ -60,7 +60,8 @@ const buttonVariantStyle = (variant: ButtonVariant, color: ColorToken) => {
         default: // solid
             return {
                 backgroundColor: parsedColor,
-                color: whiteish
+                color: whiteish,
+                '&:hover': { background: `${hexToRgba(parsedColor, 0.7)}` }
             };
     }
 };
