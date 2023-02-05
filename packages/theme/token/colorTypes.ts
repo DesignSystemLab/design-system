@@ -46,7 +46,7 @@ type ExtendedPalette =
 type CommonPalette = 'brown' | 'blueGrey' | 'grey';
 type ShadesPalette = 'shades';
 
-type ColorToken = `${ExtendedPalette}-${keyof BaseColorScheme}` | `${CommonPalette}-${keyof ShadesColorSchme}` | `${ShadesPalette}-${keyof AccentColorScheme}`;
+type ColorToken = `${ExtendedPalette}-${keyof AccentColorScheme}` | `${CommonPalette}-${keyof BaseColorScheme}` | `${ShadesPalette}-${keyof ShadesColorSchme}`;
 
 type Color = {
     [key: string]: any;
