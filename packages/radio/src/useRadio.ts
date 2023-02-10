@@ -4,14 +4,9 @@ import { InputProps, RadioProps } from './radioTypes';
 
 export const useRadio = (radioProps: RadioProps) => {
     const keyOfInputProps: string[] = ['id', 'name', 'value', 'onClick', 'onChange'];
-    const [readonly, setReadonly] = useState<boolean>(false);
-    const [disabled, setDisabled] = useState<boolean>(false);
+    const [readonly, setReadonly] = useState<boolean>(!!radioProps.readonly);
+    const [disabled, setDisabled] = useState<boolean>(!!radioProps.disabled);
     const isUnavailable = readonly || disabled;
-
-    useEffect(() => {
-        setReadonly(!!radioProps.readonly);
-        setDisabled(!!radioProps.disabled);
-    }, []);
 
     const getInputProps = () => {
         let inputProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLInputElement>) => void) } = {
