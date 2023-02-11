@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { RadioProps } from './radioTypes';
 
 export const useRadio = (radioProps: RadioProps) => {
