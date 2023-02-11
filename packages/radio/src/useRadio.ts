@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
-import { InputProps, RadioProps } from './radioTypes';
+import React, { useEffect, useState } from 'react';
+import { RadioProps } from './radioTypes';
 
 export const useRadio = (radioProps: RadioProps) => {
-    const keyOfInputProps: string[] = ['id', 'name', 'value', 'onClick', 'onChange'];
-    const [readonly, setReadonly] = useState<boolean>(!!radioProps.readonly);
-    const [disabled, setDisabled] = useState<boolean>(!!radioProps.disabled);
-    const isUnavailable = readonly || disabled;
+    let { readonly, disabled } = radioProps;
+    const keyOfInputProps: string[] = ['id', 'name', 'value'];
+    const isUnavailable = !!readonly || !!disabled;
 
     const getInputProps = () => {
-        let inputProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLInputElement>) => void) } = {
+        const inputProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLInputElement>) => void) | ((event: React.MouseEvent<HTMLInputElement>) => void) } = {
             onChange: handleChange,
             onClick: handleClick
         };
+
         for (const key in radioProps) {
             if (keyOfInputProps.includes(key)) {
                 inputProps[key] = radioProps[key];
@@ -24,8 +23,7 @@ export const useRadio = (radioProps: RadioProps) => {
 
     const getPropsChild = (children: React.ReactElement | undefined) => {
         let propsChild = '';
-
-        if (!!children) {
+        if (children) {
             React.Children.forEach(children, child => {
                 return typeof child === 'string' ? (propsChild += child) : (propsChild += child?.props?.children);
             });
@@ -36,16 +34,21 @@ export const useRadio = (radioProps: RadioProps) => {
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (isUnavailable) {
             event.preventDefault();
-            return;
+        }
+
+        if (radioProps.onChange) {
+            radioProps.onChange(event);
         }
     };
 
-    const handleClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
         if (isUnavailable) {
             event.preventDefault();
-            return;
+        }
+        if (radioProps.onClick) {
+            radioProps.onClick(event);
         }
     };
 
-    return { getInputProps, getPropsChild, readonly, disabled };
+    return { getInputProps, getPropsChild, disabled };
 };

@@ -8,7 +8,7 @@ const Radio = (radioProps: RadioProps) => {
     const { getInputProps, getPropsChild, disabled } = useRadio(radioProps);
 
     return (
-        <label css={[styleTheme.defultRadioStyle(), styleTheme.disabledRadioStyle(disabled), styleTheme.radioSizeStyle()]}>
+        <label css={[styleTheme.defultRadioStyle(), styleTheme.disabledRadioStyle(disabled ?? false), styleTheme.radioSizeStyle()]}>
             <input type="radio" {...getInputProps()} />
             <span>{getPropsChild(radioProps.children)}</span>
         </label>

@@ -41,13 +41,13 @@ const argTypes = {
         name: 'readonly',
         type: { name: 'boolean', required: false },
         description: 'readonly',
-        control: { type: 'radio', options: ['true', 'false'] }
+        control: { type: 'radio', options: [true, false] }
     },
     disabled: {
         name: 'disabled',
-        type: { name: 'string', required: false },
-        description: 'radio disabled',
-        control: { type: 'radio', options: ['true', 'false'] }
+        type: { name: 'boolean', required: false },
+        description: '',
+        control: { type: 'radio', options: [true, false] }
     }
 };
 
@@ -61,13 +61,15 @@ export const RadioTempalte = () => (
         <Radio name="fruit" size="sm">
             sm-green
         </Radio>
-        <Radio color="green-lighten3" disabled>
+        <Radio color="green-lighten3" disabled onClick={e => alert('click')}>
             md-disabled
         </Radio>
-        <Radio readonly>readonly</Radio>
+        <Radio readonly onClick={e => alert('하이루')}>
+            readonly
+        </Radio>
         <Radio name="fruit" value="asddas" />
         <Radio name="fruit" color="yellow-lighten3" onClick={e => alert(e.target.value)}>
-            바나나
+            Click Me!!
         </Radio>
         <Radio name="fruit" value="asd" color="purple-lighten3">
             포도
