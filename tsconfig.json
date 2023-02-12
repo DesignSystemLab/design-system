@@ -7,7 +7,7 @@
         "allowJs": true, // .js, .jsx 확장자 허용
         "strictFunctionTypes": true, //함수 파라미터 체크 강하게
         "skipLibCheck": true, // d.ts 파일의 타입 검사 생략
-        "esModuleInterop": false, //  es module이 아니어도 import export 쓸 수 있게 함
+        "esModuleInterop": true, //  es module이 아니어도 import export 쓸 수 있게 함
         "allowSyntheticDefaultImports": true, // default export가 없는 모듈의 default import 허용
         "strict": true, // 모든 strict가 붙은 설정 true
         "forceConsistentCasingInFileNames": true, //jsxImportSource 동일한 파일에 대해 일관되지 않은 참조 허용
