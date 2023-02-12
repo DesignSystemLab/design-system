@@ -33,6 +33,7 @@
         "@storybook/react": "^6.5.16",
         "@storybook/testing-library": "^0.0.13",
         "@types/react": "^18.0.27",
+        "@types/react-dom": "^18.0.10",
         "@yarnpkg/plugin-workspace-tools": "^4.0.0-rc.36",
         "babel-loader": "^9.1.2",
         "prettier": "^2.8.3",
