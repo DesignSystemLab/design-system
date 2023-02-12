@@ -1,4 +1,4 @@
-import { variantPresetColors } from '@jdesignlab/theme';
+import { variantPresetColors } from '../token/colors';
 import { HEX, ColorToken } from '../token/colorTypes';
 
 export const getColorByToken = (colorToken: ColorToken): HEX => {
