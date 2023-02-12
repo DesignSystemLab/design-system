@@ -22,6 +22,7 @@
         "typescript": "^4.9.4"
     },
     "dependencies": {
-        "@jdesignlab/theme": "*"
+        "@jdesignlab/theme": "*",
+        "@jdesignlab/utils": "*"
     }
 }
