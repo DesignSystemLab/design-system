@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TextAreaProps } from './textareaTypes';
+import { callTextareaHandler } from '@jdesignlab/utils';
 
 export const UseTextArea = (textareaProps: TextAreaProps) => {
     const keyOfStyleProps: string[] = ['maxWidth', 'maxHeight', 'color', 'resize', 'appearance'];
@@ -34,7 +35,7 @@ export const UseTextArea = (textareaProps: TextAreaProps) => {
         }
 
         if (isSmart) {
-            textProps.onInput = typeof textareaProps.onInput === 'function' ? combinedFuncion(handleResizeHeight, textareaProps.onInput) : handleResizeHeight;
+            textProps.onInput = callTextareaHandler(handleResizeHeight, textareaProps.onInput);
         }
 
         return textProps;

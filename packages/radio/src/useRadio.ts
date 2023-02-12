@@ -1,5 +1,7 @@
 import React from 'react';
 import { RadioProps } from './radioTypes';
+import { callInputHandler } from '@jdesignlab/utils';
+import type { InputElementEvent } from '@jdesignlab/utils';
 
 export const useRadio = (radioProps: RadioProps) => {
     let { readonly, disabled } = radioProps;
@@ -7,9 +9,9 @@ export const useRadio = (radioProps: RadioProps) => {
     const isUnavailable = !!readonly || !!disabled;
 
     const getInputProps = () => {
-        const inputProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLInputElement>) => void) | ((event: React.MouseEvent<HTMLInputElement>) => void) } = {
-            onChange: handleChange,
-            onClick: handleClick
+        const inputProps: { [key: string]: string | ((event: InputElementEvent) => void) } = {
+            onChange: callInputHandler(handleChange, radioProps.onChange),
+            onClick: callInputHandler(handleClick, radioProps.onClick)
         };
 
         for (const key in radioProps) {
@@ -35,18 +37,11 @@ export const useRadio = (radioProps: RadioProps) => {
         if (isUnavailable) {
             event.preventDefault();
         }
-
-        if (radioProps.onChange) {
-            radioProps.onChange(event);
-        }
     };
 
     const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
         if (isUnavailable) {
             event.preventDefault();
-        }
-        if (radioProps.onClick) {
-            radioProps.onClick(event);
         }
     };
 
