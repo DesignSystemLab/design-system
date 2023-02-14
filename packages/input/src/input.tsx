@@ -1,15 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
-import type { ColorToken, Color } from '@jdesignlab/theme';
-import type { InputVariant, InputProps, InputSize, inputControlMixins } from './input-types';
-import { getColorByToken, hexToRgba, uuidv4 } from '@jdesignlab/theme';
-import { ClearableIcon, VisibleIcon } from '@jdesignlab/theme';
-import { ControlClear, ControlVisible } from '@jdesignlab/mixins';
+import type { InputVariant, InputProps, InputRightProps, InputLabelProps, InputSize } from './input-types';
+import { getColorByToken, hexToRgba, ClearableIcon, VisibleIcon, UnvisibleIcon } from '@jdesignlab/theme';
 import { inputWrapperStyle, inputRightStyle, inputLabelStyle, inputVariantStyle, inputSizeStyle } from './input-style';
-import { useRef, useState } from 'react';
+import { useState, useId } from 'react';
 
 const TextInput = (props: InputProps) => {
-    const id = uuidv4();
+    const id = useId();
     const { variant, inputSize, label, placeholder, append, clearable, visible } = props;
     const [type, setType] = useState<string>(props['type']);
     const [value, setValue] = useState<any>(props['defaultValue']);
@@ -17,35 +13,39 @@ const TextInput = (props: InputProps) => {
         ...inputVariantStyle(variant || 'outline', inputSize || 'md', label, placeholder),
         ...inputSizeStyle(inputSize || 'md', append ? true : false)
     };
+    const { children, ...otherProps } = props;
     return (
         <>
             <div className="input_wrapper" css={inputWrapperStyle}>
-                <input
-                    {...props}
-                    type={type}
-                    className="input"
-                    css={inputStyle}
-                    id={id}
-                    // onChange={e => {
-                    //     setValue(e.target.value);
-                    // }}
-                />
-                {value}
-                <label className="label" css={inputLabelStyle} htmlFor={id}>
-                    {props?.label}
-                </label>
-                {append && (
-                    <span className="append" css={inputRightStyle}>
-                        {append}
-                    </span>
-                )}
-                {clearable && <ControlClear value={value} setValue={setValue} />}
-                {visible && props.type === 'password' && <ControlVisible type={type} setType={setType} />}
+                <input {...otherProps} type={type} className="input" css={inputStyle} id={'test'} />
+                {Array.isArray(children) ? children?.map(child => child) : children}
             </div>
         </>
     );
 };
 
-TextInput.displayName = 'Input';
+const Label = (props: InputLabelProps) => {
+    const { children } = props;
+    return (
+        <label className="label" css={inputLabelStyle} htmlFor={'test'}>
+            {children}
+        </label>
+    );
+};
+
+const Right = (props: InputRightProps) => {
+    const { icon, children, setValue } = props;
+    const onClick = () => {
+        alert('clearable 준비중');
+    };
+    return (
+        <span className="append" css={inputRightStyle} onClick={onClick}>
+            {icon ? icon : children}
+        </span>
+    );
+};
+
+TextInput.Label = Label;
+TextInput.Right = Right;
 
 export default TextInput;
