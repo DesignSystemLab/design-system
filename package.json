@@ -3,9 +3,12 @@
     "version": "1.0.0",
     "private": true,
     "packageManager": "yarn@3.3.1",
+    "homepage": "https://github.com/DesignSystemLab/design-system",
     "scripts": {
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "predeploy": "npm run build-storybook",
+        "deploy-storybook": "gh-pages -d storybook-static"
     },
     "workspaces": [
         "packages/*"
@@ -36,6 +39,7 @@
         "@types/react-dom": "^18.0.10",
         "@yarnpkg/plugin-workspace-tools": "^4.0.0-rc.36",
         "babel-loader": "^9.1.2",
+        "gh-pages": "^5.0.0",
         "prettier": "^2.8.3",
         "rimraf": "^4.1.2",
         "rollup": "^3.12.0",
