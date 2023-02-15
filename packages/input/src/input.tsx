@@ -4,7 +4,7 @@ import { getColorByToken, hexToRgba, ClearableIcon, VisibleIcon, UnvisibleIcon }
 import { inputWrapperStyle, inputRightStyle, inputLabelStyle, inputVariantStyle, inputSizeStyle } from './input-style';
 import { useState, useId } from 'react';
 
-const TextInput = (props: InputProps) => {
+export const TextInput = (props: InputProps) => {
     const id = useId();
     const { variant, inputSize, label, placeholder, append, clearable, visible } = props;
     const [type, setType] = useState<string>(props['type']);
@@ -34,7 +34,7 @@ const Label = (props: InputLabelProps) => {
 };
 
 const Right = (props: InputRightProps) => {
-    const { icon, children, setValue } = props;
+    const { icon, children } = props;
     const onClick = () => {
         alert('clearable 준비중');
     };
@@ -47,5 +47,3 @@ const Right = (props: InputRightProps) => {
 
 TextInput.Label = Label;
 TextInput.Right = Right;
-
-export default TextInput;
