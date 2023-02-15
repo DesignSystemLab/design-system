@@ -1,7 +1,6 @@
-import React from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { TextAreaProps } from './textareaTypes';
-import { callTextareaHandler } from '@jdesignlab/utils';
+import { callHandler, EventType } from '@jdesignlab/utils';
 
 export const UseTextArea = (textareaProps: TextAreaProps) => {
     const keyOfStyleProps: string[] = ['maxWidth', 'maxHeight', 'color', 'resize', 'appearance'];
@@ -20,13 +19,8 @@ export const UseTextArea = (textareaProps: TextAreaProps) => {
         }
     }, [textAreaRef]);
 
-    const combinedFuncion = (fnA: React.FormEventHandler<HTMLTextAreaElement>, fnB: React.FormEventHandler<HTMLTextAreaElement>) => {
-        const compose = (f: React.FormEventHandler<HTMLTextAreaElement>, g: any) => (x: unknown) => f(g(x));
-        return compose(fnA, fnB);
-    };
-
     const getTextAreaProps = () => {
-        let textProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLTextAreaElement>) => void) } = {};
+        let textProps: { [key: string]: string | ((event: EventType) => void) } = {};
 
         for (const key in textareaProps) {
             if (!keyOfStyleProps.includes(key)) {
@@ -35,7 +29,7 @@ export const UseTextArea = (textareaProps: TextAreaProps) => {
         }
 
         if (isSmart) {
-            textProps.onInput = callTextareaHandler(handleResizeHeight, textareaProps.onInput);
+            textProps.onInput = callHandler(handleResizeHeight, textareaProps.onInput);
         }
 
         return textProps;

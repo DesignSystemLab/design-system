@@ -1,7 +1,7 @@
 import React from 'react';
 import { RadioProps } from './radioTypes';
-import { callInputHandler } from '@jdesignlab/utils';
-import type { InputElementEvent } from '@jdesignlab/utils';
+import { callHandler } from '@jdesignlab/utils';
+import type { EventType } from '@jdesignlab/utils';
 
 export const useRadio = (radioProps: RadioProps) => {
     let { readonly, disabled } = radioProps;
@@ -9,9 +9,9 @@ export const useRadio = (radioProps: RadioProps) => {
     const isUnavailable = !!readonly || !!disabled;
 
     const getInputProps = () => {
-        const inputProps: { [key: string]: string | ((event: InputElementEvent) => void) } = {
-            onChange: callInputHandler(handleChange, radioProps.onChange),
-            onClick: callInputHandler(handleClick, radioProps.onClick)
+        const inputProps: { [key: string]: string | ((event: EventType) => void) } = {
+            onChange: callHandler(handleChange, radioProps.onChange),
+            onClick: callHandler(handleClick, radioProps.onClick)
         };
 
         for (const key in radioProps) {
