@@ -1,5 +1,5 @@
 import { TextInput } from '../src';
-import { VisibleIcon } from '@jdesignlab/theme';
+import { VisibleIcon, ClearableIcon } from '@jdesignlab/theme';
 
 export default {
     title: 'Components/TextInput',
@@ -55,84 +55,21 @@ export const Basic = Template.bind({});
 Basic.args = {};
 Basic.argTypes = argTypes;
 
-export const WithColors = () => (
-    <>
-        <TextInput type="text" label="id" />
-        <TextInput type="password" label="password" append={<span>show</span>} />
-    </>
-);
-
-export const WithRight = () => (
-    <>
-        {/* <TextInput prepend={<span>left</span>} /> */}
-        <TextInput label="append string" append={<span>right</span>} />
-        <TextInput type="password" label="append icon" append={<VisibleIcon />} />
-        <TextInput type="password" label="append icon" visible />
-        <TextInput
-            label="append icon"
-            clearable
-            onChange={e => {
-                console.log(e.target.value);
-            }}
-        />
-    </>
-);
-
-export const WithVaraints = () => (
-    <>
-        <TextInput variant="outline" inputSize="sm" label="outline" />
-        <TextInput variant="outline" inputSize="md" placeholder="placeholder" />
-        <TextInput variant="outline" inputSize="lg" label="outline" placeholder="placeholder" />
-        <TextInput variant="outline" inputSize="xl" />
-
-        <TextInput variant="filled" inputSize="sm" label="filled" placeholder="placeholder" />
-        <TextInput variant="filled" inputSize="md" label="filled" />
-        <TextInput variant="filled" inputSize="lg" />
-        <TextInput variant="filled" inputSize="xl" label="filled" />
-
-        <TextInput variant="solo" inputSize="sm" label="solo" />
-        <TextInput variant="solo" inputSize="md" placeholder="only_placeholder" />
-        <TextInput variant="solo" inputSize="lg" label="solo" placeholder="placeholder" />
-        <TextInput variant="solo" inputSize="xl" />
-        {/* <TextInput variant="flushed" label="flushed" /> */}
-    </>
-);
-
-export const WithSizes = () => (
-    <>
-        <TextInput inputSize="sm" label="sm" />
-        <TextInput inputSize="md" label="md" />
-        <TextInput inputSize="lg" label="lg" />
-        <TextInput inputSize="xl" label="xl" />
-    </>
-);
-
 export const WithTypes = () => (
     <>
-        <TextInput type="text" label="ID" />
-        <TextInput type="password" label="password" />
-        <TextInput type="text" label="ID" />
-        <TextInput type="password" label="password" />
-        <TextInput type="text" label="only label" />
-        <TextInput placeholder="only placeholder" />
-        <TextInput label="label" placeholder="placeholder" />
-        <TextInput label="defaultValue" defaultValue="defaultValue" clearable />
-        <TextInput variant="filled" value="disabled" disabled />
-        <TextInput variant="outline" value="disabled" disabled />
-        <TextInput variant="solo" value="disabled" disabled />
+        <TextInput placeholder="placeholder">
+            <TextInput.Label>no default value</TextInput.Label>
+        </TextInput>
+        <TextInput defaultValue="clearable">
+            <TextInput.Label>label</TextInput.Label>
+            <TextInput.Right icon={<ClearableIcon />} />
+        </TextInput>
+        <TextInput variant="filled" defaultValue="defaultValue">
+            <TextInput.Label>label</TextInput.Label>
+        </TextInput>
+        <TextInput disabled>
+            <TextInput.Label>label</TextInput.Label>
+            <TextInput.Right>Right</TextInput.Right>
+        </TextInput>
     </>
 );
-
-export const WithAttributes = () => {
-    <form>
-        <TextInput type="text" label="ID" />
-        <TextInput type="password" label="password" />
-        <TextInput type="text" label="only label" />
-        <TextInput placeholder="only placeholder" />
-        <TextInput label="label" placeholder="placeholder" />
-        <TextInput label="defaultValue" defaultValue="defaultValue" />
-        <TextInput variant="filled" value="disabled" disabled />
-        <TextInput variant="outline" value="disabled" disabled />
-        <TextInput variant="solo" value="disabled" disabled />
-    </form>;
-};

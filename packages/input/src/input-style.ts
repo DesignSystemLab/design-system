@@ -2,9 +2,9 @@
 import { css } from '@emotion/react';
 import type { ColorToken, Color } from '@jdesignlab/theme';
 import type { InputVariant, InputProps, InputSize } from './input-types';
-import { getColorByToken, hexToRgba, uuidv4 } from '@jdesignlab/theme';
+import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 
-const inputDefaultColorToken: ColorToken = 'lightBlue-accent1';
+const inputDefaultColorToken = 'lightBlue-accent1';
 const inputSizeSet: InputSize[] = ['sm', 'md', 'lg', 'xl'];
 
 export const inputWrapperStyle = css({
@@ -30,7 +30,7 @@ const insideLabel = {
 };
 const upsideLabel = {
     top: 0,
-    background: 'white',
+    background: 'white', // TODO white?
     fontSize: '14px',
     color: `${getColorByToken('grey-darken2')}`
 };
