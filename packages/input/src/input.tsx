@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import type { InputVariant, InputProps, InputRightProps, InputLabelProps, InputSize } from './input-types';
-import { getColorByToken, hexToRgba, ClearableIcon, VisibleIcon, UnvisibleIcon } from '@jdesignlab/theme';
 import { inputWrapperStyle, inputRightStyle, inputLabelStyle, inputVariantStyle, inputSizeStyle } from './input-style';
 import { useState, useId } from 'react';
 
@@ -34,7 +33,7 @@ const Label = (props: InputLabelProps) => {
 };
 
 const Right = (props: InputRightProps) => {
-    const { icon, children, setValue } = props;
+    const { icon, children } = props;
     const onClick = () => {
         alert('clearable 준비중');
     };
