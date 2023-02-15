@@ -4,16 +4,15 @@ import { containerStyle, itemStyle } from './flex-styles';
 import type { FlexItemProps, FlexContainerProps } from './flex-types';
 import React from 'react';
 
-const FlexItem = ({ child }: React.ReactNode) => {
-    const {
-        type,
-        props: { style, children }
-    } = child;
-
+const FlexItem = ({ child }: FlexItemProps) => {
     return (
-        <child.type {...child.props} css={{ ...itemStyle(child.props), ...style }}>
-            {children}
-        </child.type>
+        <>
+            {child?.type && (
+                <child.type {...child.props} css={{ ...itemStyle(child.props), ...child.props.style }}>
+                    {child.props.children}
+                </child.type>
+            )}
+        </>
     );
 };
 
@@ -22,7 +21,7 @@ const Flex = (props: FlexContainerProps) => {
 
     return (
         <div css={{ ...containerStyle(props), ...style }}>
-            {children?.map((child: React.ReactNode, index: number) => {
+            {children?.map((child: React.ReactElement, index: number) => {
                 return <FlexItem child={child} />;
             })}
         </div>
