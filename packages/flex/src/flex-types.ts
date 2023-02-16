@@ -1,4 +1,3 @@
-import type { SpacingType } from '@jdesignlab/theme';
 import type { CSSObject } from '@emotion/react';
 
 export type Direction = 'row' | 'row-reverse' | 'column' | 'column-reverse';
@@ -8,9 +7,10 @@ export type Align = 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline
 export type Content = 'stretch' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
 export type Self = 'auto' | 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
 
-export interface FlexContainerProps extends CSSProperties {
-    children?: React.ReactNode[];
-    style?: CSSProperties;
+export interface FlexContainerProps extends Omit<CSSObject, Direction> {
+    [propertiesName: string]: any;
+    children?: React.ReactElement[];
+    style?: CSSObject;
     width?: number;
     height?: number;
     direction?: Direction;
@@ -21,10 +21,11 @@ export interface FlexContainerProps extends CSSProperties {
     gap?: number | string;
 }
 
-export interface FlexItemProps extends CSSProperties {
-    children?: React.ReactNode;
-    style?: CSSProperties;
-    flex: number;
-    self: Self;
-    order: number;
+export interface FlexItemProps extends CSSObject {
+    [propertiesName: string]: any;
+    child?: React.ReactElement;
+    style?: CSSObject;
+    flex?: number;
+    self?: Self;
+    order?: number;
 }
