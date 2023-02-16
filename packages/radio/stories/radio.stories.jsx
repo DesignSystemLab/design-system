@@ -2,53 +2,53 @@ import { variantPresetColors } from '@jdesignlab/theme';
 import { Radio } from '../src';
 
 function getVariantPresetColors() {
-    const colors = [];
-    for (const color in variantPresetColors) {
-        const colorProps = variantPresetColors[color];
-        for (const colorProp in colorProps) {
-            colors.push(`${color}-${colorProp}`);
-        }
+  const colors = [];
+  for (const color in variantPresetColors) {
+    const colorProps = variantPresetColors[color];
+    for (const colorProp in colorProps) {
+      colors.push(`${color}-${colorProp}`);
     }
-    return colors;
+  }
+  return colors;
 }
 
 export default {
-    title: 'Components/Radio',
-    component: Radio,
-    decorators: [
-        Story => (
-            <div style={{ display: 'flex', gap: '5px' }}>
-                <Story />
-            </div>
-        )
-    ]
+  title: 'Components/Radio',
+  component: Radio,
+  decorators: [
+    Story => (
+      <div style={{ display: 'flex', gap: '5px' }}>
+        <Story />
+      </div>
+    )
+  ]
 };
 
 const argTypes = {
-    color: {
-        name: 'color',
-        type: { name: 'string', required: false },
-        description: 'textarea color',
-        control: { type: 'select', options: getVariantPresetColors() }
-    },
-    children: {
-        name: 'children',
-        type: { name: 'string', required: false },
-        description: 'default Value',
-        control: 'text'
-    },
-    readonly: {
-        name: 'readonly',
-        type: { name: 'boolean', required: false },
-        description: 'readonly',
-        control: { type: 'radio', options: [true, false] }
-    },
-    disabled: {
-        name: 'disabled',
-        type: { name: 'boolean', required: false },
-        description: '',
-        control: { type: 'radio', options: [true, false] }
-    }
+  color: {
+    name: 'color',
+    type: { name: 'string', required: false },
+    description: 'textarea color',
+    control: { type: 'select', options: getVariantPresetColors() }
+  },
+  children: {
+    name: 'children',
+    type: { name: 'string', required: false },
+    description: 'default Value',
+    control: 'text'
+  },
+  readonly: {
+    name: 'readonly',
+    type: { name: 'boolean', required: false },
+    description: 'readonly',
+    control: { type: 'radio', options: [true, false] }
+  },
+  disabled: {
+    name: 'disabled',
+    type: { name: 'boolean', required: false },
+    description: '',
+    control: { type: 'radio', options: [true, false] }
+  }
 };
 
 const Template = args => <Radio {...args} />;
@@ -57,28 +57,28 @@ export const RadioBasic = Template.bind({});
 RadioBasic.argTypes = argTypes;
 
 export const RadioTempalte = () => (
-    <>
-        <Radio name="fruit" size="sm">
-            sm-green
-        </Radio>
-        <Radio color="green-lighten3" disabled onClick={e => alert('click')}>
-            md-disabled
-        </Radio>
-        <Radio readonly onClick={e => alert('하이루')}>
-            readonly
-        </Radio>
-        <Radio name="fruit" value="asddas" />
-        <Radio name="fruit" color="yellow-lighten3" onClick={e => alert(e.target.value)}>
-            Click Me!!
-        </Radio>
-        <Radio name="fruit" value="asd" color="purple-lighten3">
-            포도
-        </Radio>
-        <Radio name="fruit" color="red-lighten2">
-            딸기
-        </Radio>
-        <Radio name="fruit" size="lg" color="blue-lighten3">
-            Sky Blue
-        </Radio>
-    </>
+  <>
+    <Radio name="fruit" size="sm" onMouseEnter={e => console.log('하ㅓㅇ')}>
+      sm-green
+    </Radio>
+    <Radio color="green-lighten3" disabled onClick={e => alert('click')}>
+      md-disabled
+    </Radio>
+    <Radio readonly onClick={e => alert('하이루')}>
+      readonly
+    </Radio>
+    <Radio name="fruit" value="asddas" />
+    <Radio name="fruit" color="yellow-lighten3" onClick={e => alert(e.target.value)}>
+      Click Me!!
+    </Radio>
+    <Radio name="fruit" value="asd" color="purple-lighten3">
+      포도
+    </Radio>
+    <Radio name="fruit" color="red-lighten2">
+      딸기
+    </Radio>
+    <Radio name="fruit" size="lg" color="blue-lighten3">
+      Sky Blue
+    </Radio>
+  </>
 );

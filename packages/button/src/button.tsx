@@ -22,82 +22,80 @@ const whiteish = getColorByToken('grey-darken4');
 const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 const buttonDefaultStyle = {
-    backgroundColor: getColorByToken(buttonDefaultColorToken),
-    fontWeight: 'bold',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer'
+  backgroundColor: getColorByToken(buttonDefaultColorToken),
+  fontWeight: 'bold',
+  border: 'none',
+  borderRadius: '4px',
+  cursor: 'pointer'
 };
 
 const buttonVariantStyle = (variant: ButtonVariant, color: ColorToken) => {
-    const parsedColor = getColorByToken(color);
-    const switchBackground = {
-        background: 'none',
-        color: parsedColor
-    };
+  const parsedColor = getColorByToken(color);
+  const switchBackground = {
+    background: 'none',
+    color: parsedColor
+  };
 
-    switch (variant) {
-        case 'outline':
-            return {
-                ...switchBackground,
-                border: `solid ${parsedColor} 1px`,
-                '&:hover': { background: parsedColor, color: whiteish }
-            };
-        case 'ghost':
-            return {
-                ...switchBackground,
-                '&:hover': { background: parsedColor, color: whiteish }
-            };
-        case 'link':
-            return {
-                ...switchBackground,
-                '&:hover': { color: parsedColor, textDecoration: 'underline' }
-            };
-        case 'unstyled':
-            return {
-                background: 'none'
-            };
-        default: // solid
-            return {
-                backgroundColor: parsedColor,
-                color: whiteish,
-                '&:hover': { background: `${hexToRgba(parsedColor, 0.7)}` }
-            };
-    }
+  switch (variant) {
+    case 'outline':
+      return {
+        ...switchBackground,
+        border: `solid ${parsedColor} 1px`,
+        '&:hover': { background: parsedColor, color: whiteish }
+      };
+    case 'ghost':
+      return {
+        ...switchBackground,
+        '&:hover': { background: parsedColor, color: whiteish }
+      };
+    case 'link':
+      return {
+        ...switchBackground,
+        '&:hover': { color: parsedColor, textDecoration: 'underline' }
+      };
+    case 'unstyled':
+      return {
+        background: 'none'
+      };
+    default: // solid
+      return {
+        backgroundColor: parsedColor,
+        color: whiteish,
+        '&:hover': { background: `${hexToRgba(parsedColor, 0.7)}` }
+      };
+  }
 };
 
 const buttonSizeStyle = (size: ButtonSize) => {
-    const sizeIndex = buttonSizeSet.indexOf(size);
-    return {
-        height: `${(sizeIndex + 3) * 8}px`,
-        fontSize: (sizeIndex + 6) * 2,
-        padding: `0 ${(sizeIndex + 3) * 4}px`
-    };
+  const sizeIndex = buttonSizeSet.indexOf(size);
+  return {
+    height: `${(sizeIndex + 3) * 8}px`,
+    fontSize: (sizeIndex + 6) * 2,
+    padding: `0 ${(sizeIndex + 3) * 4}px`
+  };
 };
 
 const buttonDisabledStyle = (disabled: boolean) => {
-    return disabled ? { cursor: 'not-allowed', '&:hover': { opacity: 1 } } : { cursor: 'pointer' };
+  return disabled ? { cursor: 'not-allowed', '&:hover': { opacity: 1 } } : { cursor: 'pointer' };
 };
 
-const Button = ({ children, variant, size, color, disabled, onClick }: ButtonProps) => {
-    const buttonStyle = {
-        ...buttonDefaultStyle,
-        ...buttonVariantStyle(variant ?? 'solid', color ?? buttonDefaultColorToken),
-        ...buttonSizeStyle(size ?? 'md'),
-        ...buttonDisabledStyle(disabled ?? false)
-    };
-    return (
-        <button onClick={onClick} css={buttonStyle}>
-            {children}
-        </button>
-    );
+export const Button = ({ children, variant, size, color, disabled, onClick }: ButtonProps) => {
+  const buttonStyle = {
+    ...buttonDefaultStyle,
+    ...buttonVariantStyle(variant ?? 'solid', color ?? buttonDefaultColorToken),
+    ...buttonSizeStyle(size ?? 'md'),
+    ...buttonDisabledStyle(disabled ?? false)
+  };
+  return (
+    <button onClick={onClick} css={buttonStyle}>
+      {children}
+    </button>
+  );
 };
 
 Button.displayName = 'Button';
 Button.defaultProps = {
-    variant: 'solid',
-    size: 'md',
-    children: 'button'
+  variant: 'solid',
+  size: 'md',
+  children: 'button'
 };
-
-export default Button;
