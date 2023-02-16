@@ -8,24 +8,24 @@ export type Content = 'stretch' | 'flex-start' | 'flex-end' | 'space-between' | 
 export type Self = 'auto' | 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
 
 export interface FlexContainerProps extends Omit<CSSObject, Direction> {
-    [propertiesName: string]: any;
-    children?: React.ReactElement[];
-    style?: CSSObject;
-    width?: number;
-    height?: number;
-    direction?: Direction;
-    wrap?: Wrap;
-    justify?: Justify;
-    items?: Align;
-    content?: Content;
-    gap?: number | string;
+  [propertiesName: string]: any;
+  children?: React.ReactElement[];
+  style?: CSSObject;
+  width?: number;
+  height?: number;
+  direction?: Direction;
+  wrap?: Wrap;
+  justify?: Justify;
+  items?: Align;
+  content?: Content;
+  gap?: number | string;
 }
 
 export interface FlexItemProps extends CSSObject {
-    [propertiesName: string]: any;
-    child?: React.ReactElement;
-    style?: CSSObject;
-    flex?: number;
-    self?: Self;
-    order?: number;
+  [propertiesName: string]: any;
+  child?: React.ReactElement;
+  style?: CSSObject;
+  flex?: number;
+  self?: Self;
+  order?: number;
 }
