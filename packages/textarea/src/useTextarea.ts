@@ -4,42 +4,42 @@ import { TextAreaProps } from './textareaTypes';
 import { callTextareaHandler } from '@jdesignlab/utils';
 
 export const UseTextArea = (textareaProps: TextAreaProps) => {
-    const keyOfStyleProps: string[] = ['maxWidth', 'maxHeight', 'color', 'resize', 'appearance'];
-    const textAreaRef = useRef<HTMLTextAreaElement>(null);
-    const [isSmart, setIsSmart] = useState<boolean>(false);
+  const keyOfStyleProps: string[] = ['maxWidth', 'maxHeight', 'color', 'resize', 'appearance'];
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const [isSmart, setIsSmart] = useState<boolean>(false);
 
-    useEffect(() => {
-        setIsSmart(textareaProps.resize === 'smart');
-    });
+  useEffect(() => {
+    setIsSmart(textareaProps.resize === 'smart');
+  });
 
-    const handleResizeHeight = useCallback(() => {
-        const textArea = textAreaRef.current;
-        if (textArea) {
-            textArea.style.height = 'auto';
-            textArea.style.height = `${textArea.scrollHeight}px`;
-        }
-    }, [textAreaRef]);
+  const handleResizeHeight = useCallback(() => {
+    const textArea = textAreaRef.current;
+    if (textArea) {
+      textArea.style.height = 'auto';
+      textArea.style.height = `${textArea.scrollHeight}px`;
+    }
+  }, [textAreaRef]);
 
-    const combinedFuncion = (fnA: React.FormEventHandler<HTMLTextAreaElement>, fnB: React.FormEventHandler<HTMLTextAreaElement>) => {
-        const compose = (f: React.FormEventHandler<HTMLTextAreaElement>, g: any) => (x: unknown) => f(g(x));
-        return compose(fnA, fnB);
-    };
+  const combinedFuncion = (fnA: React.FormEventHandler<HTMLTextAreaElement>, fnB: React.FormEventHandler<HTMLTextAreaElement>) => {
+    const compose = (f: React.FormEventHandler<HTMLTextAreaElement>, g: any) => (x: unknown) => f(g(x));
+    return compose(fnA, fnB);
+  };
 
-    const getTextAreaProps = () => {
-        let textProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLTextAreaElement>) => void) } = {};
+  const getTextAreaProps = () => {
+    let textProps: { [key: string]: string | ((event: React.ChangeEvent<HTMLTextAreaElement>) => void) } = {};
 
-        for (const key in textareaProps) {
-            if (!keyOfStyleProps.includes(key)) {
-                textProps[key] = textareaProps[key];
-            }
-        }
+    for (const key in textareaProps) {
+      if (!keyOfStyleProps.includes(key)) {
+        textProps[key] = textareaProps[key];
+      }
+    }
 
-        if (isSmart) {
-            textProps.onInput = callTextareaHandler(handleResizeHeight, textareaProps.onInput);
-        }
+    if (isSmart) {
+      textProps.onInput = callTextareaHandler(handleResizeHeight, textareaProps.onInput);
+    }
 
-        return textProps;
-    };
+    return textProps;
+  };
 
-    return { getTextAreaProps, textAreaRef };
+  return { getTextAreaProps, textAreaRef };
 };
