@@ -37,7 +37,6 @@ export const useStyle = (stackProps: StackProps) => {
   const styleTheme = {
     defaultStackStyle() {
       return css({
-        as: stackProps.as && 'div',
         padding: '8px',
         display: 'flex'
       });
