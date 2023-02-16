@@ -22,6 +22,7 @@ export const UseTextArea = (textareaProps: TextAreaProps) => {
   const getTextAreaProps = () => {
     let textProps: { [key: string]: string | ((event: EventType) => void) } = {};
 
+
     for (const key in textareaProps) {
       if (!keyOfStyleProps.includes(key)) {
         textProps[key] = textareaProps[key];
