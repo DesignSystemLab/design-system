@@ -36,6 +36,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/radio"\
       },\
       {\
+        "name": "@jdesignlab/stack",\
+        "reference": "workspace:packages/stack"\
+      },\
+      {\
         "name": "@jdesignlab/textarea",\
         "reference": "workspace:packages/textarea"\
       },\
@@ -56,6 +60,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@jdesignlab/flex", ["workspace:packages/flex"]],\
       ["@jdesignlab/input", ["workspace:packages/input"]],\
       ["@jdesignlab/radio", ["workspace:packages/radio"]],\
+      ["@jdesignlab/stack", ["workspace:packages/stack"]],\
       ["@jdesignlab/textarea", ["workspace:packages/textarea"]],\
       ["@jdesignlab/theme", ["workspace:packages/theme"]],\
       ["@jdesignlab/utils", ["workspace:packages/utils"]],\
@@ -4635,6 +4640,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:a0f080f4a5dd47f043f808d9cbcd1ca685572d2dc53aac64391303aa70af53f6059a044e31cfab077ff54fea5e2c643cc570fbc4fc5cd2a1f2d0a63c59cac09d#npm:11.10.5"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
             ["@jdesignlab/utils", "workspace:packages/utils"],\
+            ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
+            ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
+            ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
+            ["@storybook/react", "virtual:8b0b3deca5ae7026f9f1064e4ddbe2874df78b362cc00284053533ae1c6ea7d5276f7bdd2b22d61829831b7fe5b287ed3d402727ca1a6867398d18a8b79f6856#npm:6.5.16"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["monorepo-with-yarnberry", "workspace:."],\
+            ["react", "npm:18.2.0"],\
+            ["rimraf", "npm:4.1.2"],\
+            ["rollup", "npm:3.12.0"],\
+            ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@jdesignlab/stack", [\
+        ["workspace:packages/stack", {\
+          "packageLocation": "./packages/stack/",\
+          "packageDependencies": [\
+            ["@jdesignlab/stack", "workspace:packages/stack"],\
+            ["@babel/cli", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.7"],\
+            ["@babel/core", "npm:7.20.12"],\
+            ["@babel/preset-env", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.2"],\
+            ["@babel/preset-react", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.18.6"],\
+            ["@emotion/babel-plugin", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.5"],\
+            ["@emotion/babel-preset-css-prop", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.0"],\
+            ["@emotion/react", "virtual:a0f080f4a5dd47f043f808d9cbcd1ca685572d2dc53aac64391303aa70af53f6059a044e31cfab077ff54fea5e2c643cc570fbc4fc5cd2a1f2d0a63c59cac09d#npm:11.10.5"],\
+            ["@jdesignlab/theme", "workspace:packages/theme"],\
             ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
             ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
