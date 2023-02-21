@@ -1,6 +1,7 @@
 {
     "name": "@jdesignlab/input",
     "version": "0.0.1",
+    "main": "src/index.ts",
     "packageManager": "yarn@3.3.1",
     "devDependencies": {
         "@babel/cli": "^7.20.7",

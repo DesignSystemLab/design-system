@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { InputVariant, InputProps, InputSize } from './input-types';
+import type { ColorToken } from '@jdesignlab/theme';
 import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 
-const inputDefaultColorToken = 'lightBlue-accent1';
+const inputDefaultColorToken = 'teal-base';
 const inputSizeSet: InputSize[] = ['sm', 'md', 'lg', 'xl'];
 
 export const inputWrapperStyle = css({
@@ -22,15 +23,16 @@ export const inputRightStyle = css({
     transform: 'translateY(-50%)'
 });
 
-const insideLabel = {
-    top: 'calc(50% + 1px)',
-    transform: 'translateY(-50%)',
-    fontSize: '16px'
-};
+// const insideLabel = {
+//   top: 'calc(50% + 1px)',
+//   transform: 'translateY(-50%)',
+//   fontSize: '16px'
+// };
+
 const upsideLabel = {
     top: 0,
-    background: 'white', // TODO white?
-    fontSize: '14px',
+    background: 'white',
+    fontSize: '15px',
     color: `${getColorByToken('grey-darken2')}`
 };
 
@@ -43,7 +45,8 @@ export const inputLabelStyle = css({
     transition: 'all .2s'
 });
 
-export const inputVariantStyle = (variant: InputVariant, size: InputSize, label: string | undefined, placeholder: string | undefined) => {
+export const inputVariantStyle = (variant: InputVariant, size: InputSize, hasLabel: boolean, placeholder: string | undefined, color: ColorToken | undefined) => {
+    if (!color) color = inputDefaultColorToken;
     const sizeIndex = inputSizeSet.indexOf(size);
     const defaultStyle = {
         'box-sizing': 'border-box',
@@ -51,22 +54,23 @@ export const inputVariantStyle = (variant: InputVariant, size: InputSize, label:
         outline: 0,
         borderRadius: '5px',
         width: '100%',
-        // '&:placeholder-shown +.label': insideLabel, // label
-        '&:focus + .label': upsideLabel,
-        '&::placeholder': { color: `${label ? 'transparent' : 'grey-base'}` } // placeholder (label있을땐 투명처리)
+        // '&:placeholder-shown +label': insideLabel, // label
+        '&:focus + label': upsideLabel
+        // '&::placeholder': { color: `${hasLabel ? 'transparent' : 'grey-base'}` } // placeholder (label있을땐 투명처리)
     };
 
     const inlineInputStyle = {
-        paddingTop: `${label ? (sizeIndex + 8) * 1.5 : 0}px`,
-        '& + .label': {
+        paddingTop: `${hasLabel ? (sizeIndex + 9) * 1.5 : 0}px`,
+        '& + label': {
             background: 'none',
-            top: `${(sizeIndex + 8) * 1.5}px`
+            top: `${(sizeIndex + 14) * 1}px`
         },
         '&:focus': {
             '&::placeholder': { color: `${getColorByToken('grey-base')}` },
-            '& + .label': { background: 'none' },
-            borderBottom: `solid ${getColorByToken(inputDefaultColorToken)} 2px`,
-            paddingTop: `${label ? (sizeIndex + 4) * 1 : 0}px`
+            '& + label': { background: 'none' },
+            borderBottom: `solid ${getColorByToken(color)} 2px`,
+            paddingTop: `${hasLabel ? (sizeIndex + 4) * 1 : 0}px`,
+            transition: 'all .2s'
         }
     };
 
@@ -75,6 +79,7 @@ export const inputVariantStyle = (variant: InputVariant, size: InputSize, label:
             return {
                 ...defaultStyle,
                 ...inlineInputStyle,
+                paddingTop: '12px',
                 borderRadius: '5px 5px 0 0',
                 border: 'none',
                 borderBottom: `solid ${getColorByToken('grey-darken3')} 1px`,
@@ -91,10 +96,14 @@ export const inputVariantStyle = (variant: InputVariant, size: InputSize, label:
             // outline
             return {
                 ...defaultStyle,
+                ...inlineInputStyle,
                 border: `solid ${getColorByToken('grey-lighten1')} 1px`,
                 '&:focus': {
                     '&::placeholder': { color: `${getColorByToken('grey-base')}` },
-                    border: `solid ${getColorByToken(inputDefaultColorToken)} 2px`
+                    border: `solid ${getColorByToken(color)} 2px`,
+                    background: 'none',
+                    paddingTop: `${hasLabel ? (sizeIndex + 4) * 1 : 0}px`,
+                    transition: 'all .2s'
                 }
             };
     }
@@ -107,6 +116,6 @@ export const inputSizeStyle = (size: InputSize, hasRight: boolean) => {
     return {
         paddingInlineStart: paddingHorizonal,
         paddingInlineEnd: `${hasRight ? '30px' : paddingHorizonal}`,
-        height: `${(sizeIndex + 5) * 8}px`
+        height: `${(sizeIndex + 8) * 6}px`
     };
 };
