@@ -9,18 +9,34 @@ export default {
 export const BoxTemplate = () => (
     <>
         <Box>
-            <Box width="64px" height="64px" center backgroundColor="yellow-base">
+            <Box width="64px" height="64px" backgroundColor="yellow-base">
                 <span>first</span>
             </Box>
-            <Box width="64px" height="64px" center backgroundColor="blue-base">
+            <Box width="64px" height="64px" backgroundColor="blue-base">
                 <span>second</span>
             </Box>
-            <Box width="64px" height="64px" center backgroundColor="amber-base">
+            <Box width="64px" height="64px" backgroundColor="amber-base">
                 <span>third</span>
             </Box>
-            <Box width="64px" height="64px" center backgroundColor="cyan-base">
+            <Box width="64px" height="64px" backgroundColor="cyan-base">
                 <span>fourth</span>
             </Box>
         </Box>
+
+        <Box as="h3">As Box List</Box>
+        <ul>
+            <Box width="64px" height="64px" as="li" backgroundColor="yellow-base">
+                <span>first</span>
+            </Box>
+            <Box width="64px" height="64px" as="li" backgroundColor="blue-base">
+                <span>second</span>
+            </Box>
+            <Box width="64px" height="64px" as="li" backgroundColor="amber-base">
+                <span>third</span>
+            </Box>
+            <Box width="64px" height="64px" as="li" backgroundColor="cyan-base">
+                <span>fourth</span>
+            </Box>
+        </ul>
     </>
 );

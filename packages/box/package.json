@@ -7,9 +7,9 @@
         "build:clean": "rimraf dist/"
     },
     "dependencies": {
+        "@jdesignlab/button": "*",
         "@jdesignlab/theme": "*",
-        "@jdesignlab/utils": "*",
-        "@jdesignlab/button": "*"
+        "@jdesignlab/utils": "*"
     },
     "devDependencies": {
         "@babel/cli": "^7.20.7",
@@ -23,16 +23,16 @@
         "@rollup/plugin-commonjs": "^24.0.1",
         "@rollup/plugin-node-resolve": "^15.0.1",
         "@storybook/react": "^6.5.16",
+        "@types/react": "^18.0.27",
         "monorepo-with-yarnberry": "1.0.0",
+        "react": "^18.2.0",
         "rimraf": "^4.1.2",
         "rollup": "^3.12.0",
         "rollup-plugin-typescript2": "^0.34.1",
-        "react": "^18.2.0",
-        "@types/react": "^18.0.27",
         "typescript": "^4.9.4"
     },
     "peerDependencies": {
-        "react": "~18",
-        "@types/react": "~18"
+        "@types/react": "~18",
+        "react": "~18"
     }
 }
