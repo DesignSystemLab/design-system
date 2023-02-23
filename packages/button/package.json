@@ -1,6 +1,8 @@
 {
     "name": "@jdesignlab/button",
     "packageManager": "yarn@3.3.1",
+    "main": "/src/index.ts",
+    "version": "0.0.1",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "rollup --bundleConfigAsCjs -c rollup.config.js",
