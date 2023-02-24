@@ -1,13 +1,13 @@
 {
-    "$schema": "https://turborepo.org/schema.json",
-    "pipeline": {
-        "build": {
-            "outputs": ["dist/**"],
-            "dependsOn": ["^build"]
-        },
-        "build:clean": {
-            "cache": false
-        }
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
     },
-    "globalDependencies": ["tsconfig.json"]
+    "build:clean": {
+      "cache": false
+    }
+  },
+  "globalDependencies": ["tsconfig.json"]
 }
