@@ -51,25 +51,51 @@ const argTypes = {
 
 const Template = args => <TextInput {...args} />;
 
-export const Basic = Template.bind({});
-Basic.args = {};
-Basic.argTypes = argTypes;
+export const TextInputBasic = () => (
+    <>
+        <TextInput variant="outlined" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
+            <TextInput.Label>[sm] defaultValue</TextInput.Label>
+            <TextInput.Right>Right</TextInput.Right>
+        </TextInput>
+        <TextInput variant="outlined" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
+            <TextInput.Label>[md] clearable</TextInput.Label>
+            <TextInput.Right />
+        </TextInput>
+        <TextInput variant="outlined" inputSize="lg" color="indigo-accent2" disabled>
+            <TextInput.Label>[lg] disabled</TextInput.Label>
+        </TextInput>
+        <TextInput variant="outlined" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
+            <TextInput.Label>[xl] placeholder</TextInput.Label>
+        </TextInput>
 
-export const WithTypes = () => (
-  <>
-    <TextInput placeholder="placeholder">
-      <TextInput.Label>no default value</TextInput.Label>
-    </TextInput>
-    <TextInput defaultValue="clearable">
-      <TextInput.Label>label</TextInput.Label>
-      <TextInput.Right icon={<ClearableIcon />} />
-    </TextInput>
-    <TextInput variant="filled" defaultValue="defaultValue">
-      <TextInput.Label>label</TextInput.Label>
-    </TextInput>
-    <TextInput disabled>
-      <TextInput.Label>label</TextInput.Label>
-      <TextInput.Right>Right</TextInput.Right>
-    </TextInput>
-  </>
+        <TextInput variant="filled" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
+            <TextInput.Label>[sm] defaultValue</TextInput.Label>
+            <TextInput.Right>Right</TextInput.Right>
+        </TextInput>
+        <TextInput variant="filled" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
+            <TextInput.Label>[md] clearable</TextInput.Label>
+            <TextInput.Right />
+        </TextInput>
+        <TextInput variant="filled" inputSize="lg" color="indigo-accent2" disabled>
+            <TextInput.Label>[lg] disabled</TextInput.Label>
+        </TextInput>
+        <TextInput variant="filled" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
+            <TextInput.Label>[xl] placeholder</TextInput.Label>
+        </TextInput>
+
+        <TextInput variant="solo" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
+            <TextInput.Label>[sm] defaultValue</TextInput.Label>
+            <TextInput.Right>Right</TextInput.Right>
+        </TextInput>
+        <TextInput variant="solo" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
+            <TextInput.Label>[md] clearable</TextInput.Label>
+            <TextInput.Right />
+        </TextInput>
+        <TextInput variant="solo" inputSize="lg" color="indigo-accent2" disabled>
+            <TextInput.Label>[lg] disabled</TextInput.Label>
+        </TextInput>
+        <TextInput variant="solo" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
+            <TextInput.Label>[xl] placeholder</TextInput.Label>
+        </TextInput>
+    </>
 );

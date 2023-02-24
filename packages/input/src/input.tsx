@@ -1,47 +1,114 @@
 /** @jsxImportSource @emotion/react */
-import type { InputVariant, InputProps, InputRightProps, InputLabelProps, InputSize } from './input-types';
+import type { InputProps, InputRightProps, InputLabelProps } from './input-types';
 import { inputWrapperStyle, inputRightStyle, inputLabelStyle, inputVariantStyle, inputSizeStyle } from './input-style';
-import { useState, useId } from 'react';
+import { ClearableIcon } from '@jdesignlab/theme';
+import React, { useState, useId, useContext, useRef } from 'react';
+
+// TODO
+const labelDetector = (el: React.ReactElement) => {
+  const tagName = typeof el.type === 'function' ? el.type.name : el.type;
+  if (tagName === 'Label') {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const InputContext = React.createContext({
+  id: '',
+  setValue: (value: string) => {},
+  clearable: false
+});
 
 export const TextInput = (props: InputProps) => {
   const id = useId();
-  const { variant, inputSize, label, placeholder, append, clearable, visible } = props;
-  const [type, setType] = useState<string>(props['type']);
-  const [value, setValue] = useState<any>(props['defaultValue']);
-  const inputStyle = {
-    ...inputVariantStyle(variant || 'outline', inputSize || 'md', label, placeholder),
-    ...inputSizeStyle(inputSize || 'md', append ? true : false)
-  };
+  const inputRef = useRef(null);
+  const [value, setValue] = useState<string | number | readonly string[] | undefined>(props.value);
   const { children, ...otherProps } = props;
+  const clearable = props.clearable || false;
+
+  let hasLabel = false;
+  let hasRight = false;
+
+  if (Array.isArray(children)) {
+    children.forEach((child: React.ReactElement) => {
+      const tagName = typeof child.type === 'function' ? child.type.name : child.type;
+      if (tagName === 'Label') hasLabel = true;
+      if (tagName === 'Right') hasRight = true;
+
+      // hasLabel = labelDetector(child); // TODO 이건 안되고
+    });
+  } else {
+    if (children) {
+      const tagName = typeof children.type === 'function' ? children.type.name : children.type;
+      if (tagName === 'Label') hasLabel = true;
+      if (tagName === 'Right') hasRight = true;
+
+      // hasLabel = labelDetector(children); // TODO 이건 되고
+    }
+  }
+
+  const inputStyle = {
+    ...inputVariantStyle(props.variant || 'outline', props.inputSize || 'md', hasLabel, props.placeholder, props.color),
+    ...inputSizeStyle(props.inputSize || 'md', hasRight)
+  };
+
+  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  };
+
   return (
-    <>
-      <div className="input_wrapper" css={inputWrapperStyle}>
-        <input {...otherProps} type={type} className="input" css={inputStyle} id={'test'} />
-        {Array.isArray(children) ? children?.map(child => child) : children}
+    <InputContext.Provider value={{ id, setValue, clearable }}>
+      <div css={inputWrapperStyle}>
+        <input {...otherProps} type={props.type} id={id} ref={inputRef} css={inputStyle} value={value} onChange={onChangeInput} />
+        {children && Array.isArray(children) ? children?.map(child => child) : children}
       </div>
-    </>
+    </InputContext.Provider>
   );
 };
 
 const Label = (props: InputLabelProps) => {
+  const { id } = useContext(InputContext);
   const { children } = props;
   return (
-    <label className="label" css={inputLabelStyle} htmlFor={'test'}>
+    <label css={inputLabelStyle} htmlFor={id}>
       {children}
     </label>
   );
 };
 
 const Right = (props: InputRightProps) => {
-  const { icon, children } = props;
-  const onClick = () => {
-    alert('clearable 준비중');
+  const { icon, children, onClick } = props;
+  const { setValue, clearable } = useContext(InputContext);
+
+  const setInitValue = () => {
+    setValue('');
   };
-  return (
-    <span className="append" css={inputRightStyle} onClick={onClick}>
-      {icon ? icon : children}
-    </span>
-  );
+
+  const RightContext = () => {
+    if (clearable) {
+      return (
+        <span css={inputRightStyle} onClick={setInitValue}>
+          <ClearableIcon />
+        </span>
+      );
+    } else if (icon) {
+      return (
+        <span css={inputRightStyle} onClick={onClick && onClick}>
+          {icon}
+        </span>
+      );
+    } else if (children) {
+      return (
+        <span css={inputRightStyle} onClick={onClick && onClick}>
+          {children}
+        </span>
+      );
+    }
+    return <></>;
+  };
+
+  return <RightContext />;
 };
 
 TextInput.Label = Label;
