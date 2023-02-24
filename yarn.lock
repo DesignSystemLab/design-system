@@ -2004,7 +2004,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/input@workspace:packages/input":
+"@jdesignlab/input@*, @jdesignlab/input@workspace:packages/input":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/input@workspace:packages/input"
   dependencies:
@@ -2029,6 +2029,35 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jdesignlab/modal@workspace:packages/modal":
+  version: 0.0.0-use.local
+  resolution: "@jdesignlab/modal@workspace:packages/modal"
+  dependencies:
+    "@babel/cli": ^7.20.7
+    "@babel/core": ^7.20.12
+    "@babel/preset-env": ^7.20.2
+    "@babel/preset-react": ^7.18.6
+    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-preset-css-prop": ^11.10.0
+    "@emotion/react": ^11.10.5
+    "@jdesignlab/button": "*"
+    "@jdesignlab/flex": "*"
+    "@jdesignlab/input": "*"
+    "@jdesignlab/theme": "*"
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^24.0.1
+    "@rollup/plugin-node-resolve": ^15.0.1
+    "@storybook/react": ^6.5.16
+    "@types/react": ^18.0.27
+    monorepo-with-yarnberry: 1.0.0
+    react: ^18.2.0
+    rimraf: ^4.1.2
+    rollup: ^3.12.0
+    rollup-plugin-typescript2: ^0.34.1
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@jdesignlab/popover@workspace:packages/popover":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/popover@workspace:packages/popover"
@@ -2042,6 +2071,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
     "@jdesignlab/flex": "*"
+    "@jdesignlab/react-icons": "*"
     "@jdesignlab/theme": "*"
     "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
@@ -2085,6 +2115,20 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
+"@jdesignlab/react-icons@*, @jdesignlab/react-icons@workspace:packages/icons":
+  version: 0.0.0-use.local
+  resolution: "@jdesignlab/react-icons@workspace:packages/icons"
+  dependencies:
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^24.0.1
+    "@rollup/plugin-node-resolve": ^15.0.1
+    "@types/react": ^18.0.27
+    "@types/react-dom": ^18.0.10
+    react: ^18.2.0
+    typescript: ^4.9.5
   languageName: unknown
   linkType: soft
 
@@ -2149,6 +2193,33 @@ __metadata:
   resolution: "@jdesignlab/theme@workspace:packages/theme"
   dependencies:
     typescript: ^4.9.5
+  languageName: unknown
+  linkType: soft
+
+"@jdesignlab/tooltip@workspace:packages/tooltip":
+  version: 0.0.0-use.local
+  resolution: "@jdesignlab/tooltip@workspace:packages/tooltip"
+  dependencies:
+    "@babel/cli": ^7.20.7
+    "@babel/core": ^7.20.12
+    "@babel/preset-env": ^7.20.2
+    "@babel/preset-react": ^7.18.6
+    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-preset-css-prop": ^11.10.0
+    "@emotion/react": ^11.10.5
+    "@jdesignlab/button": "*"
+    "@jdesignlab/theme": "*"
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^24.0.1
+    "@rollup/plugin-node-resolve": ^15.0.1
+    "@storybook/react": ^6.5.16
+    "@types/react": ^18.0.27
+    monorepo-with-yarnberry: 1.0.0
+    react: ^18.2.0
+    rimraf: ^4.1.2
+    rollup: ^3.12.0
+    rollup-plugin-typescript2: ^0.34.1
+    typescript: ^4.9.4
   languageName: unknown
   linkType: soft
 
