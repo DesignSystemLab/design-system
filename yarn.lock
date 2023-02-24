@@ -2071,7 +2071,6 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
     "@jdesignlab/flex": "*"
-    "@jdesignlab/react-icons": "*"
     "@jdesignlab/theme": "*"
     "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
@@ -2118,7 +2117,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/react-icons@*, @jdesignlab/react-icons@workspace:packages/icons":
+"@jdesignlab/react-icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/react-icons@workspace:packages/icons"
   dependencies:

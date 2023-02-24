@@ -4726,7 +4726,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:a0f080f4a5dd47f043f808d9cbcd1ca685572d2dc53aac64391303aa70af53f6059a044e31cfab077ff54fea5e2c643cc570fbc4fc5cd2a1f2d0a63c59cac09d#npm:11.10.5"],\
             ["@jdesignlab/button", "workspace:packages/button"],\
             ["@jdesignlab/flex", "workspace:packages/flex"],\
-            ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
             ["@jdesignlab/utils", "workspace:packages/utils"],\
             ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
