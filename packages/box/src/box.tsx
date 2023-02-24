@@ -5,14 +5,14 @@ import { getColorByToken } from '@jdesignlab/theme';
 import type { BoxProps } from './boxTypes';
 
 export const Box = (BoxProps: BoxProps) => {
-    const { children, as = 'div', ...styleProps } = BoxProps;
-    const { backgroundColor = 'shades-white', color = 'grey-darken4', center = false } = styleProps;
+  const { children, as = 'div', ...styleProps } = BoxProps;
+  const { backgroundColor = 'shades-white', color = 'grey-darken4', center = false } = styleProps;
 
-    const style = {
-        ...styleProps,
-        backgroundColor: getColorByToken(backgroundColor),
-        color: getColorByToken(color)
-    };
+  const style = {
+    ...styleProps,
+    backgroundColor: getColorByToken(backgroundColor),
+    color: getColorByToken(color)
+  };
 
-    return jsx(as, { css: css(style) }, children);
+  return jsx(as, { css: css(style) }, children);
 };
