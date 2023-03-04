@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { getColorByToken, HEX, hexToRgba } from '@jdesignlab/theme';
+import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 import { useContext } from 'react';
 import type { StyleProps } from '../types';
 import { SelectContext } from './SelectContext';
@@ -7,10 +7,37 @@ import { SelectContext } from './SelectContext';
 export const useOptionStyle = (styleProps: StyleProps) => {
   const color = getColorByToken(styleProps.color);
   const listColor = getColorByToken('shades-black');
+  const disabledColor = getColorByToken('grey-lighten1');
   const { isOpen } = useContext(SelectContext);
 
-  const listBackgroud = () => {
-    return css({ background: `${hexToRgba(color, 0.8)}` });
+  const activeOptionStyle = () => {
+    return css({
+      color: `${listColor}`,
+      padding: '4px 8px',
+      borderRadius: '8px',
+      '&:focus': {
+        backgroundColor: `${hexToRgba(color, 0.8)}`,
+        outline: `${color}`
+      },
+      '&:hover': {
+        cursor: 'pointer'
+      }
+    });
+  };
+
+  const disabledOptionStyle = () => {
+    return css({
+      color: `${disabledColor}`,
+      padding: '4px 8px',
+      borderRadius: '8px',
+      '&:focus': {
+        background: 'none',
+        outline: `${disabledColor}`
+      },
+      '&:hover': {
+        cursor: 'not-allowed'
+      }
+    });
   };
 
   const listStyle = () => {
@@ -22,15 +49,7 @@ export const useOptionStyle = (styleProps: StyleProps) => {
         width: '274px',
         border: `1px solid ${color}`,
         borderRadius: '12px',
-        marginTop: '4px',
-        '& li': {
-          color: `${listColor}`,
-          padding: '4px 8px',
-          borderRadius: '8px',
-          '&:hover': {
-            cursor: 'pointer'
-          }
-        }
+        marginTop: '4px'
       });
     }
     return css(
@@ -51,6 +70,7 @@ export const useOptionStyle = (styleProps: StyleProps) => {
 
   return {
     listStyle: listStyle(),
-    listBackgroud: listBackgroud()
+    disable: disabledOptionStyle(),
+    active: activeOptionStyle()
   };
 };
