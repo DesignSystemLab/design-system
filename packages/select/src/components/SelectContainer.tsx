@@ -1,15 +1,21 @@
 /** @jsxImportSource @emotion/react */
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { SelectContext } from '../hooks/SelectContext';
 import { useOptionStyle } from '../hooks/useOptionStyle';
 
 export const SelectContainer = (props: { children: React.ReactNode; Trigger: React.ReactNode }) => {
   const { Trigger, children } = props;
-  const { selectProps, isOpen } = useContext(SelectContext);
+  const { selectProps, isOpen, setSelectRef } = useContext(SelectContext);
   const { listStyle } = useOptionStyle(selectProps);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setSelectRef(ref);
+  }, []);
 
   return (
     <div
+      ref={ref}
       role="combobox"
       aria-controls="jdesignlab-select-list"
       aria-label={selectProps.placeholder || 'Select List'}

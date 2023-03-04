@@ -1,15 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import { Children, useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { SelectContext } from '../hooks/SelectContext';
+import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
 import { useOptionStyle } from '../hooks/useOptionStyle';
 import { useSelect } from '../hooks/useSelect';
 import type { OptionValue, SelectOptionProps } from '../types';
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const { value, setValue, values, setValues, setIsOpen, onValueChange, selectProps, focusIndex } =
+  const optionRef = useRef<HTMLLIElement>(null);
+  const { value, setValue, setValues, setIsOpen, isOpen, onValueChange, selectProps, selectRef } =
     useContext(SelectContext);
-  const { listBackgroud } = useOptionStyle(selectProps);
-  const { getPropsChild, setFocusIndexByValue } = useSelect();
+  const { active, disable } = useOptionStyle(selectProps);
+  const handleKeydown = useKeyboardNavigation(selectRef);
+  const { getPropsChild } = useSelect();
   const defaultValue = selectProps.defaultValue || null;
   const children = getPropsChild(props.children);
   const optionValue: OptionValue = {
@@ -20,29 +23,72 @@ export const SelectOption = (props: SelectOptionProps) => {
   useEffect(() => {
     setValues(prev => [...prev, optionValue]);
     if (defaultValue === props.value) {
+      optionRef.current?.focus();
       setValue(optionValue);
-      setFocusIndexByValue(defaultValue);
       if (onValueChange) {
         onValueChange(defaultValue);
       }
     }
   }, []);
 
+  useEffect(() => {
+    if (value.key === props.value) {
+      optionRef.current?.focus();
+      return;
+    }
+  }, [isOpen]);
+
   return (
     <li
-      css={values[focusIndex]?.key === props.value && listBackgroud}
+      {...props}
+      css={props.disabled ? disable : active}
+      role="listitem"
+      ref={optionRef}
+      data-disabled={props.disabled}
+      tabIndex={0}
+      onKeyDown={e => {
+        switch (e.key) {
+          case 'Enter':
+            if (onValueChange) {
+              setValue({
+                key: props.value,
+                name: children
+              });
+              onValueChange(props.value);
+            }
+            setIsOpen(false);
+            return;
+          case 'Escape':
+            setIsOpen(false);
+            return;
+          default:
+            handleKeydown(e);
+            return;
+        }
+      }}
+      onFocus={() => {
+        if (optionRef.current) {
+          optionRef.current.dataset.focus = 'focus';
+        }
+      }}
+      onBlur={() => {
+        if (optionRef.current) {
+          optionRef.current.dataset.focus = '';
+        }
+      }}
       onMouseEnter={() => {
-        setFocusIndexByValue(props.value);
+        optionRef.current?.focus();
       }}
       onClick={() => {
-        setFocusIndexByValue(props.value);
-        setValue({
-          key: props.value,
-          name: children
-        });
-        setIsOpen(false);
-        if (props.value !== value.key && onValueChange) {
-          onValueChange(props.value);
+        if (!props.disabled) {
+          setValue({
+            key: props.value,
+            name: children
+          });
+          setIsOpen(false);
+          if (onValueChange) {
+            onValueChange(props.value);
+          }
         }
       }}
     >
