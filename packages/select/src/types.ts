@@ -1,15 +1,9 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { ColorToken } from '@jdesignlab/theme';
 import type { Dispatch, SetStateAction } from 'react';
 
-export type AllowKeyCode = {
-  ArrowBottomKey: 40;
-  ArrowTopKey: 38;
-  EnterKey: 13;
-  EscKey: 27;
-};
-
 export type Placement = 'top' | 'right' | 'bottom' | 'left';
+
 export type StyleProps = {
   color: ColorToken;
   placement: Placement;
@@ -32,9 +26,8 @@ export interface ReturnContext {
   value: OptionValue;
   setValues: Dispatch<SetStateAction<OptionValue[]>>;
   values: OptionValue[];
-  focusIndex: number;
-  setFocusIndex: Dispatch<SetStateAction<number>>;
-  optionCount: number;
+  setSelectRef: Dispatch<SetStateAction<any>>;
+  selectRef: RefObject<HTMLElement> | null;
 }
 
 export interface SelectProps {
@@ -49,5 +42,5 @@ export interface SelectProps {
 export interface SelectOptionProps {
   children: React.ReactElement;
   value: string;
-  name?: string;
+  disabled?: boolean;
 }
