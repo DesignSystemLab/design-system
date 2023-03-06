@@ -1,19 +1,26 @@
-import { createContext, RefObject, useEffect, useRef, useState } from 'react';
+import { createContext, RefObject, useRef, useState } from 'react';
 import type { OptionValue, ReturnContext, StyleProps } from '../types';
 
 const defaultContextValues: ReturnContext = {
   isOpen: false,
   setIsOpen: () => {},
-  value: {
-    key: null,
-    name: null
+  selectedOption: {
+    key: '',
+    name: '',
+    isDisabled: false
   },
-  setValue: () => {},
+  setSelectedOption: () => {},
   onValueChange: () => {},
-  values: [],
-  setValues: () => {},
-  setSelectRef: () => {},
+  options: [],
+  setOptions: () => {},
+  searchValues: [],
+  setSearchValues: () => {},
   selectRef: null,
+  setSelectRef: () => {},
+  isCombobox: false,
+  setIsCombobox: () => {},
+  searchKeyword: '',
+  setSearchKeyword: () => {},
   selectProps: {
     color: 'green-lighten3',
     disabled: false,
@@ -28,23 +35,32 @@ export const SelectContext = createContext<ReturnContext>(defaultContextValues);
 export const SelectProvider = ({ ...props }) => {
   const [selectRef, setSelectRef] = useState<RefObject<HTMLElement>>(useRef(null));
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [value, setValue] = useState<{ key: string | null; name: string | null }>({ key: null, name: null });
+  const [selectedOption, setSelectedOption] = useState<OptionValue>({ key: '', name: '', isDisabled: false });
   const [defaultSelectProps, _] = useState<StyleProps>(defaultContextValues.selectProps);
-  const [values, setValues] = useState<OptionValue[]>([]);
+  const [options, setOptions] = useState<OptionValue[]>([]);
+  const [searchValues, setSearchValues] = useState<OptionValue[]>([]);
+  const [isCombobox, setIsCombobox] = useState<boolean>(false);
+  const [searchKeyword, setSearchKeyword] = useState<string>('');
 
   return (
     <SelectContext.Provider
       value={{
         onValueChange: props.onValueChange,
         selectProps: { ...defaultSelectProps, ...props.selectProps },
-        values,
-        setValues,
+        options,
+        setOptions,
         setIsOpen,
         isOpen,
-        value,
-        setValue,
+        selectedOption,
+        setSelectedOption,
         selectRef,
-        setSelectRef
+        setSelectRef,
+        searchValues,
+        setSearchValues,
+        isCombobox,
+        setIsCombobox,
+        searchKeyword,
+        setSearchKeyword
       }}
     >
       {props.children}

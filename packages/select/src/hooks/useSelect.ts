@@ -11,14 +11,14 @@ export const useSelect = () => {
     return placeholder || null;
   };
 
-  const getPropsChild = (children: React.ReactElement) => {
-    let propsChild = '';
+  const getChildText = (children: React.ReactElement) => {
+    let childText = '';
     if (children) {
       React.Children.forEach(children, child => {
-        return typeof child === 'string' ? (propsChild += child) : (propsChild += child?.props?.children);
+        return typeof child === 'string' ? (childText += child) : (childText += child?.props?.children);
       });
     }
-    return propsChild;
+    return childText;
   };
 
   const filterChildren = (
@@ -33,5 +33,5 @@ export const useSelect = () => {
     });
   };
 
-  return { filterChildren, getPropsChild, getPlaceHolder };
+  return { filterChildren, getChildText, getPlaceHolder };
 };

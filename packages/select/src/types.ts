@@ -13,8 +13,10 @@ export type StyleProps = {
 };
 
 export type OptionValue = {
-  key: string | null;
-  name: string | null;
+  key: string;
+  name: string;
+  isDisabled: boolean;
+  _internal?: boolean;
 };
 
 export interface ReturnContext {
@@ -22,12 +24,18 @@ export interface ReturnContext {
   selectProps: StyleProps;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   isOpen: boolean;
-  setValue: Dispatch<SetStateAction<OptionValue>>;
-  value: OptionValue;
-  setValues: Dispatch<SetStateAction<OptionValue[]>>;
-  values: OptionValue[];
+  setSelectedOption: Dispatch<SetStateAction<OptionValue>>;
+  selectedOption: OptionValue;
+  setOptions: Dispatch<SetStateAction<OptionValue[]>>;
+  options: OptionValue[];
   setSelectRef: Dispatch<SetStateAction<any>>;
   selectRef: RefObject<HTMLElement> | null;
+  setSearchValues: Dispatch<SetStateAction<any>>;
+  searchValues: OptionValue[];
+  setIsCombobox: Dispatch<SetStateAction<boolean>>;
+  searchKeyword: string;
+  setSearchKeyword: Dispatch<SetStateAction<string>>;
+  isCombobox: boolean;
 }
 
 export interface SelectProps {
@@ -43,4 +51,5 @@ export interface SelectOptionProps {
   children: React.ReactElement;
   value: string;
   disabled?: boolean;
+  autofocus?: boolean;
 }

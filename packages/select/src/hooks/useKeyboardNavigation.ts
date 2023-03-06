@@ -1,8 +1,8 @@
-import React, { KeyboardEvent, KeyboardEventHandler, MutableRefObject, RefObject } from 'react';
+import { KeyboardEvent, KeyboardEventHandler, RefObject } from 'react';
 
 export const useKeyboardNavigation = (ref: RefObject<HTMLElement> | null) => {
   const selectItems = ref?.current?.querySelectorAll(
-    '[role="listitem"]:not([data-disabled])'
+    '[role="listitem"]:not([data-disabled="true"])'
   ) as NodeListOf<HTMLLIElement>;
 
   const getFocusIndex = (isNext: boolean) => {
@@ -20,13 +20,22 @@ export const useKeyboardNavigation = (ref: RefObject<HTMLElement> | null) => {
 
   const handleKeydown: KeyboardEventHandler<HTMLElement> = (e: KeyboardEvent) => {
     const { key } = e;
-    switch (key) {
-      case 'ArrowDown':
+    e.stopPropagation();
+
+    if (e.nativeEvent.isComposing) {
+      return;
+    }
+
+    if (selectItems.length) {
+      if (key === 'ArrowDown') {
         selectItems[getFocusIndex(true)].focus();
         return;
-      case 'ArrowUp':
+      }
+
+      if (key === 'ArrowUp') {
         selectItems[getFocusIndex(false)].focus();
         return;
+      }
     }
   };
 

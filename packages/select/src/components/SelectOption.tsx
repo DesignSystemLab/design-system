@@ -8,23 +8,37 @@ import type { OptionValue, SelectOptionProps } from '../types';
 
 export const SelectOption = (props: SelectOptionProps) => {
   const optionRef = useRef<HTMLLIElement>(null);
-  const { value, setValue, setValues, setIsOpen, isOpen, onValueChange, selectProps, selectRef } =
-    useContext(SelectContext);
+  const { children, value, disabled = false, autofocus = true } = props;
+  const {
+    setSearchKeyword,
+    setSelectedOption,
+    selectedOption,
+    setIsOpen,
+    isOpen,
+    selectProps,
+    selectRef,
+    setOptions,
+    onValueChange,
+    isCombobox
+  } = useContext(SelectContext);
+
   const { active, disable } = useOptionStyle(selectProps);
+  const { getChildText } = useSelect();
   const handleKeydown = useKeyboardNavigation(selectRef);
-  const { getPropsChild } = useSelect();
   const defaultValue = selectProps.defaultValue || null;
-  const children = getPropsChild(props.children);
+  const childText = getChildText(children);
+
   const optionValue: OptionValue = {
-    key: props.value,
-    name: children
+    key: value,
+    name: childText,
+    isDisabled: disabled
   };
 
   useEffect(() => {
-    setValues(prev => [...prev, optionValue]);
-    if (defaultValue === props.value) {
+    setOptions(prev => [...prev, optionValue]);
+    if (defaultValue === value && autofocus) {
       optionRef.current?.focus();
-      setValue(optionValue);
+      setSelectedOption(optionValue);
       if (onValueChange) {
         onValueChange(defaultValue);
       }
@@ -32,7 +46,7 @@ export const SelectOption = (props: SelectOptionProps) => {
   }, []);
 
   useEffect(() => {
-    if (value.key === props.value) {
+    if (selectedOption.key === value && autofocus) {
       optionRef.current?.focus();
       return;
     }
@@ -41,7 +55,7 @@ export const SelectOption = (props: SelectOptionProps) => {
   return (
     <li
       {...props}
-      css={props.disabled ? disable : active}
+      css={[props.disabled ? disable : active, isCombobox]}
       role="listitem"
       ref={optionRef}
       data-disabled={props.disabled}
@@ -49,12 +63,16 @@ export const SelectOption = (props: SelectOptionProps) => {
       onKeyDown={e => {
         switch (e.key) {
           case 'Enter':
+            if (isCombobox) {
+              setSearchKeyword(childText);
+            }
             if (onValueChange) {
-              setValue({
-                key: props.value,
-                name: children
+              setSelectedOption({
+                key: value,
+                name: childText,
+                isDisabled: !!props.disabled
               });
-              onValueChange(props.value);
+              onValueChange(value);
             }
             setIsOpen(false);
             return;
@@ -80,19 +98,23 @@ export const SelectOption = (props: SelectOptionProps) => {
         optionRef.current?.focus();
       }}
       onClick={() => {
+        if (isCombobox) {
+          setSearchKeyword(childText);
+        }
         if (!props.disabled) {
-          setValue({
-            key: props.value,
-            name: children
+          setSelectedOption({
+            key: value,
+            name: childText,
+            isDisabled: !!props.disabled
           });
           setIsOpen(false);
           if (onValueChange) {
-            onValueChange(props.value);
+            onValueChange(value);
           }
         }
       }}
     >
-      {children}
+      {childText}
     </li>
   );
 };

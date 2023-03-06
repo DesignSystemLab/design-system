@@ -4,7 +4,6 @@ import type { ColorToken } from '@jdesignlab/theme';
 
 export const useTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => {
   const color = isDisabled ? getColorByToken('grey-base') : getColorByToken(colorToken);
-
   const triggerStyle = {
     disabled() {
       if (isDisabled) {
@@ -53,6 +52,7 @@ export const useTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => 
       }
     })
   };
+
   return {
     triggerStyle: [triggerStyle.default, triggerStyle.disabled()],
     color

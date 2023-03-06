@@ -3,6 +3,7 @@ import { SelectProvider } from '../hooks/SelectContext';
 import { useSelect } from '../hooks/useSelect';
 import { SelectContainer } from './SelectContainer';
 import { SelectTrigger } from './SelectTrigger';
+import { SelectInput } from './SelectInput';
 import { SelectOption } from './SelectOption';
 import type { SelectProps } from '../types';
 
@@ -25,4 +26,5 @@ export const Select = (props: SelectProps) => {
 
 Select.Container = SelectContainer;
 Select.Trigger = SelectTrigger;
+Select.Input = SelectInput;
 Select.Option = SelectOption;

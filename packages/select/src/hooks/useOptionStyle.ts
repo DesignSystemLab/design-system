@@ -4,8 +4,8 @@ import { useContext } from 'react';
 import type { StyleProps } from '../types';
 import { SelectContext } from './SelectContext';
 
-export const useOptionStyle = (styleProps: StyleProps) => {
-  const color = getColorByToken(styleProps.color);
+export const useOptionStyle = (styleProps?: StyleProps) => {
+  const color = getColorByToken(styleProps?.color || 'green-base');
   const listColor = getColorByToken('shades-black');
   const disabledColor = getColorByToken('grey-lighten1');
   const { isOpen } = useContext(SelectContext);
@@ -25,6 +25,20 @@ export const useOptionStyle = (styleProps: StyleProps) => {
     });
   };
 
+  const notfoundStyle = () => {
+    return css({
+      color: `${listColor}`,
+      padding: '4px 8px',
+      borderRadius: '8px',
+      '&:focus': {
+        backgroundColor: `${hexToRgba(color, 0.8)}`,
+        outline: `${color}`
+      },
+      '&:hover': {
+        cursor: 'not-allowed'
+      }
+    });
+  };
   const disabledOptionStyle = () => {
     return css({
       color: `${disabledColor}`,
@@ -71,6 +85,7 @@ export const useOptionStyle = (styleProps: StyleProps) => {
   return {
     listStyle: listStyle(),
     disable: disabledOptionStyle(),
-    active: activeOptionStyle()
+    active: activeOptionStyle(),
+    notfound: notfoundStyle()
   };
 };
