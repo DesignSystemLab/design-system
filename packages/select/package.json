@@ -1,5 +1,5 @@
 {
-  "name": "select",
+  "name": "@jdesignlab/select",
   "packageManager": "yarn@3.3.1",
   "version": "0.0.1",
   "main": "src/index.ts",
