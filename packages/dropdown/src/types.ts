@@ -19,6 +19,11 @@ export interface DropdownMenuProps {
 
 export interface DropdownMenuItemProps {
   children: React.ReactNode;
-  disabled: boolean | undefined;
-  onClick: React.MouseEventHandler<HTMLElement>;
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
+  sub?: boolean;
+}
+
+export interface DropdownSubmenuProps {
+  children: React.ReactNode;
 }

@@ -7,7 +7,7 @@ import type { DropdownMenuProps } from '../types';
 
 export const Menu = (props: DropdownMenuProps) => {
   const { children, ...otherProps } = props;
-  const { open, triggerWidth, triggerHeight, gap, on } = useContext(DropdownContext);
+  const { open, setOpen, mode, triggerWidth, triggerHeight, gap, on } = useContext(DropdownContext);
   const [menuStyle, setMenuStyle] = useState<ReturnType<typeof css>>();
   const menuRef = useRef<HTMLUListElement>(null);
 
@@ -16,6 +16,15 @@ export const Menu = (props: DropdownMenuProps) => {
       css({ ...dropdownLocationStyle(menuRef, triggerWidth, triggerHeight, gap, on) }, { ...dropdownMenuStyle })
     );
   }, [open]);
+
+  const onClickHandle = () => {
+    mode === 'click' && setOpen(!open);
+  };
+
+  const onMouseoverHandle = () => {
+    mode === 'hover' && setOpen(!open);
+  };
+
   return (
     <>
       {open && (
@@ -25,6 +34,8 @@ export const Menu = (props: DropdownMenuProps) => {
           // aria-haspopup="true"  // 서브메뉴 있는 경우
           aria-expanded={open} // 메뉴 확장됐을 경우
           aria-orientation="vertical" // 메뉴 방향
+          onMouseOver={onMouseoverHandle}
+          onMouseLeave={onMouseoverHandle}
           css={menuStyle}
           {...otherProps}
         >

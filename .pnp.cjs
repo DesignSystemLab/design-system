@@ -28,6 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/checkbox"\
       },\
       {\
+        "name": "@jdesignlab/dropdown",\
+        "reference": "workspace:packages/dropdown"\
+      },\
+      {\
         "name": "@jdesignlab/flex",\
         "reference": "workspace:packages/flex"\
       },\
@@ -78,6 +82,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@jdesignlab/box", ["workspace:packages/box"]],\
       ["@jdesignlab/button", ["workspace:packages/button"]],\
       ["@jdesignlab/checkbox", ["workspace:packages/checkbox"]],\
+      ["@jdesignlab/dropdown", ["workspace:packages/dropdown"]],\
       ["@jdesignlab/flex", ["workspace:packages/flex"]],\
       ["@jdesignlab/input", ["workspace:packages/input"]],\
       ["@jdesignlab/modal", ["workspace:packages/modal"]],\
@@ -4623,6 +4628,36 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup", "npm:3.12.0"],\
             ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@jdesignlab/dropdown", [\
+        ["workspace:packages/dropdown", {\
+          "packageLocation": "./packages/dropdown/",\
+          "packageDependencies": [\
+            ["@jdesignlab/dropdown", "workspace:packages/dropdown"],\
+            ["@babel/cli", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.7"],\
+            ["@babel/core", "npm:7.20.12"],\
+            ["@babel/preset-env", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.2"],\
+            ["@babel/preset-react", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.18.6"],\
+            ["@emotion/babel-plugin", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.5"],\
+            ["@emotion/babel-preset-css-prop", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.0"],\
+            ["@emotion/react", "virtual:a0f080f4a5dd47f043f808d9cbcd1ca685572d2dc53aac64391303aa70af53f6059a044e31cfab077ff54fea5e2c643cc570fbc4fc5cd2a1f2d0a63c59cac09d#npm:11.10.5"],\
+            ["@jdesignlab/button", "workspace:packages/button"],\
+            ["@jdesignlab/flex", "workspace:packages/flex"],\
+            ["@jdesignlab/react-icons", "workspace:packages/icons"],\
+            ["@jdesignlab/theme", "workspace:packages/theme"],\
+            ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
+            ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
+            ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
+            ["@storybook/react", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:6.5.16"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["monorepo-with-yarnberry", "workspace:."],\
+            ["react", "npm:18.2.0"],\
+            ["rimraf", "npm:4.1.2"],\
+            ["rollup", "npm:3.12.0"],\
+            ["rollup-plugin-typescript2", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:0.34.1"]\
           ],\
           "linkType": "SOFT"\
         }]\

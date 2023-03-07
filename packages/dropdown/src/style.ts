@@ -42,6 +42,7 @@ export const dropdownMenuStyle = css({
 
 export const dropdownItemStyle = (disabled: boolean) => {
   return css({
+    position: 'relative',
     padding: '5px',
     borderRadius: '4px',
     listStyle: 'none',
@@ -63,19 +64,19 @@ export const dropdownDividerStyle = css({
 
 export const dropdownLocationStyle = (
   labelRef: React.RefObject<HTMLUListElement>,
-  targetW: number,
-  targetH: number,
+  triggerWidth: number,
+  triggerHeight: number,
   gap: number,
   on: string | undefined
 ) => {
-  const labelW = labelRef.current ? labelRef.current.offsetWidth : 0;
-  const labelH = labelRef.current ? labelRef.current.offsetHeight : 0;
-  const centerX = { left: targetW / 2, transform: `translateX(-${labelW / 2}px)` };
-  const centerY = { bottom: targetH / 2, transform: `translateY(${labelH / 2}px)` };
-  const moveTop = { bottom: `${targetH + gap}px` };
-  const moveBottom = { top: `${targetH + gap}px` };
-  const moveRight = { left: `${targetW + gap}px` };
-  const moveLeft = { left: `-${labelW + gap}px` };
+  const labelWidth = labelRef.current ? labelRef.current.offsetWidth : 0;
+  const labelHeight = labelRef.current ? labelRef.current.offsetHeight : 0;
+  const centerX = { left: triggerWidth / 2, transform: `translateX(-${labelWidth / 2}px)` };
+  const centerY = { bottom: triggerHeight / 2, transform: `translateY(${labelHeight / 2}px)` };
+  const moveTop = { bottom: `${triggerHeight + gap}px` };
+  const moveBottom = { top: `${triggerHeight + gap}px` };
+  const moveRight = { left: `${triggerWidth + gap}px` };
+  const moveLeft = { left: `-${labelWidth + gap}px` };
 
   switch (on) {
     case 'top':
@@ -89,4 +90,21 @@ export const dropdownLocationStyle = (
     default: //top
       return css({ ...moveBottom, ...centerX });
   }
+};
+
+export const dropdownSubLocationStyle = (labelRef: React.RefObject<HTMLUListElement>) => {
+  const menu = labelRef.current?.closest<HTMLElement>('[role="menu"]');
+  const rightSub = {
+    left: `${menu?.offsetWidth || 0}px`,
+    transform: 'translate(-6px, -30px)'
+  };
+  return css({
+    ...rightSub,
+    '&.sub_open': {
+      display: 'flex'
+    },
+    '&.sub_close': {
+      display: 'none'
+    }
+  });
 };

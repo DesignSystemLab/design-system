@@ -31,7 +31,7 @@ export const DropdownBasic = () => (
   >
     <Dropdown gap={4} mode="click" on="right">
       <Dropdown.Trigger>
-        <Button color="lime-lighten5" />
+        <Button color="lime-lighten5">click</Button>
       </Dropdown.Trigger>
       <Dropdown.Menu>
         <Dropdown.MenuItem
@@ -39,10 +39,10 @@ export const DropdownBasic = () => (
             alert('clicked');
           }}
         >
-          <Flex justify="space-between" items="center">
-            <div>첫번째입니다</div>
+          <div>첫번째입니다</div>
+          {/* <Flex justify="space-between" items="center">
             <Checkmark width={15} />
-          </Flex>
+          </Flex> */}
         </Dropdown.MenuItem>
         <Dropdown.Divider />
         <Dropdown.MenuItem
@@ -50,83 +50,36 @@ export const DropdownBasic = () => (
             alert('clicked');
           }}
         >
-          <Flex justify="space-between" items="center">
-            <div>두번째</div>
+          <div>두번째</div>
+          {/* <Flex justify="space-between" items="center">
             <Checkmark width={15} />
-          </Flex>
-        </Dropdown.MenuItem>
-        <Dropdown.MenuItem
-          onClick={() => {
-            alert('clicked');
-          }}
-        >
-          <Flex justify="space-between" items="center">
-            <div>세번째입니다</div>
-            <Checkmark width={15} />
-          </Flex>
-        </Dropdown.MenuItem>
-        <Dropdown.MenuItem
-          onClick={() => {
-            alert('clicked');
-          }}
-        >
-          <div>1</div>
+          </Flex> */}
         </Dropdown.MenuItem>
 
-        {/* <Dropdown.MenuItem>
-          <Flex justify="space-between" items='center'>
-            <div>1</div>
+        <Dropdown.MenuItem
+          onClick={() => {
+            alert('clicked');
+          }}
+        >
+          <div>세번째입니다</div>
+          {/* <Flex justify="space-between" items="center">
+            <Checkmark width={15} />
+          </Flex> */}
+        </Dropdown.MenuItem>
+
+        <Dropdown.MenuItem sub>
+          <Flex justify="space-between" items="center">
+            <div>서브메뉴입니다</div>
             <div>
               <ChevronRight height={16} />
             </div>
           </Flex>
-          <Dropdown.Menu>
-            <Dropdown.MenuItem>sub1</Dropdown.MenuItem>
+          <Dropdown.Submenu>
+            <Dropdown.MenuItem>첫번째sub1</Dropdown.MenuItem>
             <Dropdown.MenuItem>sub2</Dropdown.MenuItem>
-          </Dropdown.Menu>
-        </Dropdown.MenuItem> */}
+          </Dropdown.Submenu>
+        </Dropdown.MenuItem>
 
-        <Dropdown.Divider />
-        <Dropdown.MenuItem disabled>이건 disabled</Dropdown.MenuItem>
-      </Dropdown.Menu>
-    </Dropdown>
-
-    <Dropdown mode="hover">
-      <Dropdown.Trigger>
-        <Button color="lime-lighten5" />
-      </Dropdown.Trigger>
-      <Dropdown.Menu>
-        <Dropdown.MenuItem
-          onClick={() => {
-            alert('clicked');
-          }}
-        >
-          <Flex justify="space-between" items="center">
-            <div>첫번째입니다</div>
-            <Checkmark width={15} />
-          </Flex>
-        </Dropdown.MenuItem>
-        <Dropdown.Divider />
-        <Dropdown.MenuItem
-          onClick={() => {
-            alert('clicked');
-          }}
-        >
-          <Flex justify="space-between" items="center">
-            <div>두번째</div>
-            <Checkmark width={15} />
-          </Flex>
-        </Dropdown.MenuItem>
-        <Dropdown.MenuItem
-          onClick={() => {
-            alert('clicked');
-          }}
-        >
-          <Flex justify="space-between" items="center">
-            <div>세번째입니다</div>
-            <Checkmark width={15} />
-          </Flex>
-        </Dropdown.MenuItem>
         <Dropdown.MenuItem
           onClick={() => {
             alert('clicked');
@@ -134,6 +87,19 @@ export const DropdownBasic = () => (
         >
           <div>1</div>
         </Dropdown.MenuItem>
+
+        {/* <Dropdown.MenuItem sub>
+          <Flex justify="space-between" items="center">
+            <div>서브메뉴입니다</div>
+            <div>
+              <ChevronRight height={16} />
+            </div>
+          </Flex>
+          <Dropdown.Submenu>
+            <Dropdown.MenuItem>두번째sub1</Dropdown.MenuItem>
+            <Dropdown.MenuItem>sub2</Dropdown.MenuItem>
+          </Dropdown.Submenu>
+        </Dropdown.MenuItem> */}
 
         <Dropdown.Divider />
         <Dropdown.MenuItem disabled>이건 disabled</Dropdown.MenuItem>
