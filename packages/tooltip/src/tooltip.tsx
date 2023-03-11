@@ -25,7 +25,9 @@ export const Tooltip = (props: TooltipProps) => {
   const providerValue = { targetWidth, targetHeight, setTargetWidth, setTargetHeight, gap, isHovering, setIsHovering };
   return (
     <TooltipContext.Provider value={providerValue}>
-      <div css={tooltipWrapperStyle}>{children && Array.isArray(children) && children?.map(child => React.cloneElement(child))}</div>
+      <div css={tooltipWrapperStyle}>
+        {children && Array.isArray(children) && children?.map(child => React.cloneElement(child))}
+      </div>
     </TooltipContext.Provider>
   );
 };
@@ -37,7 +39,9 @@ const Label = (props: TooltipLabelProps) => {
   const labelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setLabelStyle(css({ ...tooltipLocationStyle(labelRef, targetWidth, targetHeight, gap, on) }, { ...tooltipLabelStyle }));
+    setLabelStyle(
+      css({ ...tooltipLocationStyle(labelRef, targetWidth, targetHeight, gap, on) }, { ...tooltipLabelStyle })
+    );
   }, [targetWidth, targetHeight, isHovering]);
 
   return (

@@ -28,8 +28,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/checkbox"\
       },\
       {\
+<<<<<<< HEAD
+        "name": "@jdesignlab/dropdown",\
+        "reference": "workspace:packages/dropdown"\
+=======
         "name": "@jdesignlab/drawer",\
         "reference": "workspace:packages/drawer"\
+>>>>>>> main
       },\
       {\
         "name": "@jdesignlab/flex",\
@@ -86,7 +91,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@jdesignlab/box", ["workspace:packages/box"]],\
       ["@jdesignlab/button", ["workspace:packages/button"]],\
       ["@jdesignlab/checkbox", ["workspace:packages/checkbox"]],\
+<<<<<<< HEAD
+      ["@jdesignlab/dropdown", ["workspace:packages/dropdown"]],\
+=======
       ["@jdesignlab/drawer", ["workspace:packages/drawer"]],\
+>>>>>>> main
       ["@jdesignlab/flex", ["workspace:packages/flex"]],\
       ["@jdesignlab/input", ["workspace:packages/input"]],\
       ["@jdesignlab/modal", ["workspace:packages/modal"]],\
@@ -4637,11 +4646,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+<<<<<<< HEAD
+      ["@jdesignlab/dropdown", [\
+        ["workspace:packages/dropdown", {\
+          "packageLocation": "./packages/dropdown/",\
+          "packageDependencies": [\
+            ["@jdesignlab/dropdown", "workspace:packages/dropdown"],\
+=======
       ["@jdesignlab/drawer", [\
         ["workspace:packages/drawer", {\
           "packageLocation": "./packages/drawer/",\
           "packageDependencies": [\
             ["@jdesignlab/drawer", "workspace:packages/drawer"],\
+>>>>>>> main
             ["@babel/cli", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.7"],\
             ["@babel/core", "npm:7.20.12"],\
             ["@babel/preset-env", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.2"],\
@@ -4653,18 +4670,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jdesignlab/flex", "workspace:packages/flex"],\
             ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
+<<<<<<< HEAD
+            ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
+            ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
+            ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
+            ["@storybook/react", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:6.5.16"],\
+=======
             ["@jdesignlab/utils", "workspace:packages/utils"],\
             ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
             ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
             ["@storybook/react", "virtual:76cbc6fb37db18db35ec42620d0c49e4fe1668e5fbe3b1ed133b4163b04b62c2b6659f0f254d0b327b01fa7a11d2c5b777eabdf1266be2b8caa3c09c28217e06#npm:6.5.16"],\
+>>>>>>> main
             ["@types/react", "npm:18.0.27"],\
             ["monorepo-with-yarnberry", "workspace:."],\
             ["react", "npm:18.2.0"],\
             ["rimraf", "npm:4.1.2"],\
             ["rollup", "npm:3.12.0"],\
+<<<<<<< HEAD
+            ["rollup-plugin-typescript2", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:0.34.1"]\
+=======
             ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+>>>>>>> main
           ],\
           "linkType": "SOFT"\
         }]\
