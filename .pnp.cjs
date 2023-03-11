@@ -28,8 +28,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/checkbox"\
       },\
       {\
+<<<<<<< HEAD
         "name": "@jdesignlab/dropdown",\
         "reference": "workspace:packages/dropdown"\
+=======
+        "name": "@jdesignlab/drawer",\
+        "reference": "workspace:packages/drawer"\
+>>>>>>> main
       },\
       {\
         "name": "@jdesignlab/flex",\
@@ -54,6 +59,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@jdesignlab/radio",\
         "reference": "workspace:packages/radio"\
+      },\
+      {\
+        "name": "select",\
+        "reference": "workspace:packages/select"\
       },\
       {\
         "name": "@jdesignlab/stack",\
@@ -82,7 +91,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@jdesignlab/box", ["workspace:packages/box"]],\
       ["@jdesignlab/button", ["workspace:packages/button"]],\
       ["@jdesignlab/checkbox", ["workspace:packages/checkbox"]],\
+<<<<<<< HEAD
       ["@jdesignlab/dropdown", ["workspace:packages/dropdown"]],\
+=======
+      ["@jdesignlab/drawer", ["workspace:packages/drawer"]],\
+>>>>>>> main
       ["@jdesignlab/flex", ["workspace:packages/flex"]],\
       ["@jdesignlab/input", ["workspace:packages/input"]],\
       ["@jdesignlab/modal", ["workspace:packages/modal"]],\
@@ -94,7 +107,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@jdesignlab/theme", ["workspace:packages/theme"]],\
       ["@jdesignlab/tooltip", ["workspace:packages/tooltip"]],\
       ["@jdesignlab/utils", ["workspace:packages/utils"]],\
-      ["monorepo-with-yarnberry", ["workspace:."]]\
+      ["monorepo-with-yarnberry", ["workspace:."]],\
+      ["select", ["workspace:packages/select"]]\
     ],\
     "fallbackPool": [\
     ],\
@@ -4632,11 +4646,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+<<<<<<< HEAD
       ["@jdesignlab/dropdown", [\
         ["workspace:packages/dropdown", {\
           "packageLocation": "./packages/dropdown/",\
           "packageDependencies": [\
             ["@jdesignlab/dropdown", "workspace:packages/dropdown"],\
+=======
+      ["@jdesignlab/drawer", [\
+        ["workspace:packages/drawer", {\
+          "packageLocation": "./packages/drawer/",\
+          "packageDependencies": [\
+            ["@jdesignlab/drawer", "workspace:packages/drawer"],\
+>>>>>>> main
             ["@babel/cli", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.7"],\
             ["@babel/core", "npm:7.20.12"],\
             ["@babel/preset-env", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.2"],\
@@ -4648,16 +4670,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jdesignlab/flex", "workspace:packages/flex"],\
             ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
+<<<<<<< HEAD
             ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
             ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
             ["@storybook/react", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:6.5.16"],\
+=======
+            ["@jdesignlab/utils", "workspace:packages/utils"],\
+            ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
+            ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
+            ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
+            ["@storybook/react", "virtual:76cbc6fb37db18db35ec42620d0c49e4fe1668e5fbe3b1ed133b4163b04b62c2b6659f0f254d0b327b01fa7a11d2c5b777eabdf1266be2b8caa3c09c28217e06#npm:6.5.16"],\
+>>>>>>> main
             ["@types/react", "npm:18.0.27"],\
             ["monorepo-with-yarnberry", "workspace:."],\
             ["react", "npm:18.2.0"],\
             ["rimraf", "npm:4.1.2"],\
             ["rollup", "npm:3.12.0"],\
+<<<<<<< HEAD
             ["rollup-plugin-typescript2", "virtual:96e7fbb4d78c3b97287ae604ba8a51665ee9c11a1615ae6f8aa5df07730bf40a4b93ba48048f0fce9d0657a745ec7ea0f248eb99180e81202e982b2d8bdf4468#npm:0.34.1"]\
+=======
+            ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+>>>>>>> main
           ],\
           "linkType": "SOFT"\
         }]\
@@ -19455,6 +19490,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ajv-keywords", "virtual:4b7d8bb1684f7f69bf042a03dae4d118ab00edf0e34f409e5270fb3cce9e5fcf8ce9581b8f5bc8597c1e50c52a23eba5d4eadeede8c58ab0be3187e2389e11d5#npm:5.1.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["select", [\
+        ["workspace:packages/select", {\
+          "packageLocation": "./packages/select/",\
+          "packageDependencies": [\
+            ["select", "workspace:packages/select"],\
+            ["@babel/cli", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.7"],\
+            ["@babel/core", "npm:7.20.12"],\
+            ["@babel/preset-env", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.20.2"],\
+            ["@babel/preset-react", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:7.18.6"],\
+            ["@emotion/babel-plugin", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.5"],\
+            ["@emotion/babel-preset-css-prop", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:11.10.0"],\
+            ["@emotion/react", "virtual:a0f080f4a5dd47f043f808d9cbcd1ca685572d2dc53aac64391303aa70af53f6059a044e31cfab077ff54fea5e2c643cc570fbc4fc5cd2a1f2d0a63c59cac09d#npm:11.10.5"],\
+            ["@jdesignlab/button", "workspace:packages/button"],\
+            ["@jdesignlab/flex", "workspace:packages/flex"],\
+            ["@jdesignlab/react-icons", "workspace:packages/icons"],\
+            ["@jdesignlab/theme", "workspace:packages/theme"],\
+            ["@jdesignlab/utils", "workspace:packages/utils"],\
+            ["@rollup/plugin-babel", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:6.0.3"],\
+            ["@rollup/plugin-commonjs", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:24.0.1"],\
+            ["@rollup/plugin-node-resolve", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:15.0.1"],\
+            ["@storybook/react", "virtual:76cbc6fb37db18db35ec42620d0c49e4fe1668e5fbe3b1ed133b4163b04b62c2b6659f0f254d0b327b01fa7a11d2c5b777eabdf1266be2b8caa3c09c28217e06#npm:6.5.16"],\
+            ["@types/react", "npm:18.0.27"],\
+            ["monorepo-with-yarnberry", "workspace:."],\
+            ["react", "npm:18.2.0"],\
+            ["rimraf", "npm:4.1.2"],\
+            ["rollup", "npm:3.12.0"],\
+            ["rollup-plugin-typescript2", "virtual:1912af1c2c260018a8317dbda920f66f04296d2c661f891e41d923bfb771aa8011ea0553b0cb7d64608de61b6d470aacf87f33b1eca4c2f0e572d6fd487d0681#npm:0.34.1"],\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["semver", [\
