@@ -5,9 +5,10 @@ import { dropdownWrapperStyle, dropdownOverlayStyle } from './style';
 import { useState, useRef } from 'react';
 import { Divider } from './components/DropdownDivider';
 import { Menu } from './components/DropdownMenu';
-import { MenuItem } from './components/DropdownMenuItem';
 import { Trigger } from './components/DropdownTrigger';
-import { Submenu } from './components/DropdownSubmenu';
+import { MenuItem } from './components/DropdownMenuItem';
+import { SubMenu } from './components/DropdownSubMenu';
+import { SubMenuItem } from './components/DropdownSubMenuItem';
 import { DropdownContext } from './context';
 
 export const Dropdown = (props: DropdownProps) => {
@@ -17,7 +18,7 @@ export const Dropdown = (props: DropdownProps) => {
   const { children, ...otherProps } = props;
   const mode = props.mode === undefined ? 'click' : props.mode;
   const on = props.on === undefined ? 'bottom' : props.on;
-  const gap = Number(props.gap) || 0;
+  const gap = Number(props.gap) || 10;
 
   const providerValue = {
     open,
@@ -47,6 +48,7 @@ export const Dropdown = (props: DropdownProps) => {
 
 Dropdown.Trigger = Trigger;
 Dropdown.Menu = Menu;
-Dropdown.Submenu = Submenu;
 Dropdown.MenuItem = MenuItem;
+Dropdown.SubMenu = SubMenu;
+Dropdown.SubMenuItem = SubMenuItem;
 Dropdown.Divider = Divider;

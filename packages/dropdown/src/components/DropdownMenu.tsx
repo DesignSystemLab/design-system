@@ -31,6 +31,7 @@ export const Menu = (props: DropdownMenuProps) => {
         <ul
           ref={menuRef}
           role="menu"
+          className="menu"
           // aria-haspopup="true"  // 서브메뉴 있는 경우
           aria-expanded={open} // 메뉴 확장됐을 경우
           aria-orientation="vertical" // 메뉴 방향
