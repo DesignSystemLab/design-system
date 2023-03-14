@@ -34,12 +34,12 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
         ref={menuItemRef}
         role="menuitem"
         tabIndex={open && !disabled ? 0 : -1}
-        className={`menuitem ${sub ? 'has_sub' : ''} ${disabled ? 'disabled' : ''}`}
+        className={`menu_item ${sub && 'has_sub'} ${disabled ? 'disabled' : ''}`}
         css={{ ...dropdownItemStyle(disabled) }}
         onMouseOver={onMouseOverHandle}
         onMouseLeave={onMouseLeaveHandle}
         onKeyDown={e => {
-          keyDownHandle(e, menuItemRef, onClick);
+          keyDownHandle(e, menuItemRef, setSubOpen);
         }}
       >
         {children}

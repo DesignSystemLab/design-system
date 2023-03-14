@@ -3,9 +3,9 @@ import { css } from '@emotion/react';
 import { dropdownSubLocationStyle, dropdownMenuStyle } from '../style';
 import React, { useState, useEffect, useContext, useRef, createContext, useCallback } from 'react';
 import { DropdownContext, DropdownSubContext } from '../context';
-import type { DropdownSubmenuProps } from '../types';
+import type { DropdownSubMenuProps } from '../types';
 
-export const Submenu = (props: DropdownSubmenuProps) => {
+export const SubMenu = (props: DropdownSubMenuProps) => {
   const { children, ...otherProps } = props;
   const { open } = useContext(DropdownContext);
   const { subOpen, setSubOpen } = useContext(DropdownSubContext);
@@ -20,8 +20,8 @@ export const Submenu = (props: DropdownSubmenuProps) => {
     <>
       {open && (
         <ul
+          role="menu"
           ref={menuRef}
-          tabIndex={subOpen ? 0 : -1}
           aria-expanded={subOpen}
           aria-orientation="vertical"
           css={menuStyle}
