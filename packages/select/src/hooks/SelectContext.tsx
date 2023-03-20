@@ -2,8 +2,8 @@ import { createContext, RefObject, useRef, useState } from 'react';
 import type { OptionValue, ReturnContext, StyleProps } from '../types';
 
 const defaultContextValues: ReturnContext = {
-  isOpen: false,
-  setIsOpen: () => {},
+  open: false,
+  setOpen: () => {},
   selectedOption: {
     key: '',
     name: '',
@@ -17,8 +17,6 @@ const defaultContextValues: ReturnContext = {
   setSearchValues: () => {},
   selectRef: null,
   setSelectRef: () => {},
-  isCombobox: false,
-  setIsCombobox: () => {},
   searchKeyword: '',
   setSearchKeyword: () => {},
   selectProps: {
@@ -34,12 +32,11 @@ export const SelectContext = createContext<ReturnContext>(defaultContextValues);
 
 export const SelectProvider = ({ ...props }) => {
   const [selectRef, setSelectRef] = useState<RefObject<HTMLElement>>(useRef(null));
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<OptionValue>({ key: '', name: '', isDisabled: false });
   const [defaultSelectProps, _] = useState<StyleProps>(defaultContextValues.selectProps);
   const [options, setOptions] = useState<OptionValue[]>([]);
   const [searchValues, setSearchValues] = useState<OptionValue[]>([]);
-  const [isCombobox, setIsCombobox] = useState<boolean>(false);
   const [searchKeyword, setSearchKeyword] = useState<string>('');
 
   return (
@@ -49,16 +46,14 @@ export const SelectProvider = ({ ...props }) => {
         selectProps: { ...defaultSelectProps, ...props.selectProps },
         options,
         setOptions,
-        setIsOpen,
-        isOpen,
+        setOpen,
+        open,
         selectedOption,
         setSelectedOption,
         selectRef,
         setSelectRef,
         searchValues,
         setSearchValues,
-        isCombobox,
-        setIsCombobox,
         searchKeyword,
         setSearchKeyword
       }}

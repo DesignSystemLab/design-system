@@ -1,9 +1,18 @@
-import { ChangeEventHandler, KeyboardEventHandler, useContext, useState } from 'react';
+import { KeyboardEventHandler, useContext } from 'react';
 import { OptionValue } from '../types';
 import { SelectContext } from './SelectContext';
 
 export const useSearchOptions = () => {
-  const { options, setSearchValues, setIsOpen, setSearchKeyword, searchKeyword } = useContext(SelectContext);
+  const {
+    options,
+    searchValues,
+    setSelectedOption,
+    setSearchValues,
+    setOpen,
+    setSearchKeyword,
+    selectRef,
+    onValueChange
+  } = useContext(SelectContext);
 
   const reduceDuplicateOption = (optionArray: OptionValue[]) => {
     return Array.from(new Set(optionArray.map(item => item.key))).map(key => {
@@ -11,23 +20,42 @@ export const useSearchOptions = () => {
     });
   };
 
+  const handleInputEnter: KeyboardEventHandler<HTMLInputElement> = e => {
+    const comboboxItems = selectRef?.current?.querySelectorAll('li') as NodeListOf<HTMLLIElement>;
+    const hoverIndex = Array.from(comboboxItems).findIndex(listElement => {
+      return listElement.dataset.hover;
+    });
+    const targetComboboxOption = searchValues[hoverIndex];
+
+    if (targetComboboxOption && !targetComboboxOption.isDisabled) {
+      setSelectedOption(targetComboboxOption);
+      setSearchKeyword(targetComboboxOption.name);
+
+      if (onValueChange) {
+        onValueChange(targetComboboxOption.key);
+      }
+    }
+
+    e.stopPropagation();
+  };
+
   const handleInput: KeyboardEventHandler<HTMLInputElement> = e => {
     const keyword = e.currentTarget.value;
+    setSearchKeyword(keyword);
     const filteredValues = options.filter(option => {
       return option.name?.toLowerCase().includes(keyword.toLowerCase());
     });
 
-    setSearchKeyword(keyword);
-    e.stopPropagation();
     if (keyword.length) {
       filteredValues.length ? setSearchValues(reduceDuplicateOption(filteredValues)) : setSearchValues([]);
-      setIsOpen(true);
+      setOpen(true);
       return;
     }
 
     setSearchValues(reduceDuplicateOption(options));
-    setIsOpen(false);
+    setOpen(false);
+    e.stopPropagation();
   };
 
-  return { handleInput };
+  return { handleInput, handleInputEnter };
 };

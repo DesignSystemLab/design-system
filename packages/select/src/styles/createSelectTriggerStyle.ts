@@ -2,8 +2,14 @@ import { css } from '@emotion/react';
 import { getColorByToken } from '@jdesignlab/theme';
 import type { ColorToken } from '@jdesignlab/theme';
 
-export const useTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => {
+export const createSelectTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => {
   const color = isDisabled ? getColorByToken('grey-base') : getColorByToken(colorToken);
+  const flexStyle = css({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  });
+
   const triggerStyle = {
     disabled() {
       if (isDisabled) {
@@ -38,9 +44,6 @@ export const useTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => 
       borderRadius: '4px',
       width: 'auto',
       maxWidth: '256px',
-      '&:focus': {
-        outline: `1px solid ${color}`
-      },
       '& span': {
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
@@ -55,6 +58,7 @@ export const useTriggerStyle = (colorToken: ColorToken, isDisabled: boolean) => 
 
   return {
     triggerStyle: [triggerStyle.default, triggerStyle.disabled()],
+    flexStyle,
     color
   };
 };

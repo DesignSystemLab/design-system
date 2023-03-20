@@ -11,11 +11,17 @@ export const useSelect = () => {
     return placeholder || null;
   };
 
-  const getChildText = (children: React.ReactElement) => {
+  const getChildText = (children: React.ReactNode) => {
     let childText = '';
     if (children) {
       React.Children.forEach(children, child => {
-        return typeof child === 'string' ? (childText += child) : (childText += child?.props?.children);
+        if (React.isValidElement(child)) {
+          return typeof child.props.children === 'string'
+            ? (childText += child.props.children)
+            : (childText += getChildText(child.props.children));
+        } else if (typeof child === 'string') {
+          childText += child;
+        }
       });
     }
     return childText;

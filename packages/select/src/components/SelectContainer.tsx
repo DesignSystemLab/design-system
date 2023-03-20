@@ -1,42 +1,51 @@
 /** @jsxImportSource @emotion/react */
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { SelectContext } from '../hooks/SelectContext';
-import { useOptionStyle } from '../hooks/useOptionStyle';
-import { SelectNotfound } from './SelectNotfound';
-import { SelectOption } from './SelectOption';
+import { createSelectStyle } from '../styles/createSelectStyle';
+import { ComboboxOption } from './ComboboxOption';
+import { SelectNotfound } from './SearchNotfound';
 
-export const SelectContainer = (props: { children: React.ReactNode; Trigger: React.ReactNode }) => {
-  const { Trigger, children } = props;
-  const { selectProps, isOpen, setSelectRef, searchValues, isCombobox, searchKeyword } = useContext(SelectContext);
-  const { listStyle } = useOptionStyle(selectProps);
-  const ref = useRef(null);
+interface ContainerProps {
+  Trigger: React.ReactNode;
+  Options: React.ReactNode;
+}
 
+export const SelectContainer = (props: ContainerProps) => {
+  const { selectProps, open, setSelectRef, searchValues, searchKeyword } = useContext(SelectContext);
+  const { Trigger, Options } = props;
+  const { listStyle } = createSelectStyle(selectProps);
+  const [input, setInput] = useState<HTMLInputElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const ulRef = useRef<HTMLUListElement>(null);
   useEffect(() => {
-    setSelectRef(ref);
-  }, [ref]);
+    if (containerRef.current) {
+      setSelectRef(containerRef);
+      setInput(containerRef.current.querySelector('input'));
+    }
+  }, [containerRef, searchKeyword]);
 
   return (
     <div
-      ref={ref}
+      ref={containerRef}
       role="combobox"
       aria-controls="jdesignlab-select-list"
       aria-label={selectProps.placeholder || 'Select List'}
-      aria-expanded={isOpen}
+      aria-expanded={open}
       aria-selected={true}
       aria-haspopup={true}
     >
       {Trigger}
-      <ul css={listStyle} id="jdesignlab-select-list">
-        {isCombobox && !searchValues.length ? (
+      <ul css={listStyle} id="jdesignlab-select-list" ref={ulRef}>
+        {input && !searchValues.length ? (
           <SelectNotfound />
-        ) : isCombobox ? (
+        ) : input ? (
           searchValues.map(option => (
-            <SelectOption key={option.key} value={option.key || ''} disabled={option.isDisabled} autofocus={false}>
-              <span>{option.name}</span>
-            </SelectOption>
+            <ComboboxOption key={option.key} value={option.key || ''} disabled={option.isDisabled}>
+              {option.name}
+            </ComboboxOption>
           ))
         ) : (
-          children
+          Options
         )}
       </ul>
     </div>

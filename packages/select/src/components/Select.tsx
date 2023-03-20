@@ -12,6 +12,7 @@ export const Select = (props: SelectProps) => {
   const { filterChildren, getPlaceHolder } = useSelect();
   const SelectTrigger = filterChildren(children, Select.Trigger, true);
   const RestChildren = filterChildren(children, Select.Trigger, false);
+
   const selectProps = {
     ...propsWithoutChildren,
     placeholder: getPlaceHolder(SelectTrigger)
@@ -19,7 +20,7 @@ export const Select = (props: SelectProps) => {
 
   return (
     <SelectProvider selectProps={selectProps} onValueChange={props.onValueChange} options={RestChildren}>
-      <Select.Container Trigger={SelectTrigger}>{RestChildren}</Select.Container>
+      <Select.Container Trigger={SelectTrigger} Options={RestChildren} />
     </SelectProvider>
   );
 };
