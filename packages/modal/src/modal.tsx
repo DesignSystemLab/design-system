@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { modalWrapperStyle, modalOverlayStyle, modalHeaderStyle, modalBodyStyle, modalFooterStyle } from './modal-style';
 import type { ModalProps, ModalHeaderProps, ModalBodyProps, ModalFooterProps } from './modal-types';
-import { ClearableIcon } from '@jdesignlab/theme';
+import { Close } from '@jdesignlab/react-icons';
 import React, { useContext, useState, useEffect } from 'react';
 
 const ModalContext = React.createContext({
@@ -59,7 +59,7 @@ const Header = (props: ModalHeaderProps) => {
             setOpen(false);
           }}
         >
-          <ClearableIcon />
+          <Close width="12" height="12" />
         </span>
       )}
     </div>

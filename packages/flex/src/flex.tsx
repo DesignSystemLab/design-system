@@ -22,7 +22,7 @@ const Flex = (props: FlexContainerProps) => {
   return (
     <div css={{ ...containerStyle(props), ...style }}>
       {children?.map((child: React.ReactElement, index: number) => {
-        return <FlexItem child={child} />;
+        return <FlexItem child={child} key={index} />;
       })}
     </div>
   );
