@@ -17,6 +17,7 @@ export const SelectContainer = (props: ContainerProps) => {
   const [input, setInput] = useState<HTMLInputElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const ulRef = useRef<HTMLUListElement>(null);
+
   useEffect(() => {
     if (containerRef.current) {
       setSelectRef(containerRef);
@@ -27,12 +28,12 @@ export const SelectContainer = (props: ContainerProps) => {
   return (
     <div
       ref={containerRef}
-      role="combobox"
+      role={input ? 'combobox' : 'listbox'}
       aria-controls="jdesignlab-select-list"
       aria-label={selectProps.placeholder || 'Select List'}
       aria-expanded={open}
-      aria-selected={true}
       aria-haspopup={true}
+      aria-disabled={selectProps.disabled}
     >
       {Trigger}
       <ul css={listStyle} id="jdesignlab-select-list" ref={ulRef}>

@@ -17,6 +17,7 @@ export const SelectTrigger = (props: { placeholder: string; children?: React.Rea
   return (
     <div
       css={triggerStyle}
+      role="button"
       onClick={e => {
         if (selectInput.length || selectProps.disabled) {
           e.preventDefault();
@@ -34,7 +35,9 @@ export const SelectTrigger = (props: { placeholder: string; children?: React.Rea
       }}
     >
       <div css={flexStyle}>
-        <div>{selectInput.length ? selectInput : <span>{selectedOption.name || props.placeholder}</span>}</div>
+        <div>
+          {selectInput.length ? selectInput : <span role="label">{selectedOption.name || props.placeholder}</span>}
+        </div>
         <span>
           <ChevronBottom
             width="12px"

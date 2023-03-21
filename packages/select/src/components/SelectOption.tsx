@@ -45,9 +45,10 @@ export const SelectOption = (props: SelectOptionProps) => {
     <li
       {...props}
       css={[disabled ? disable : active]}
-      role="listitem"
+      role="option"
       ref={optionRef}
       aria-selected={selectedOptionItem}
+      aria-disabled={disabled}
       data-disabled={disabled}
       tabIndex={0}
       onKeyDown={e => {
@@ -84,7 +85,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       onMouseEnter={() => {
         optionRef.current?.focus();
       }}
-      onClick={() => {
+      onClick={e => {
         if (!props.disabled) {
           setSelectedOption({
             key: value,
@@ -95,6 +96,7 @@ export const SelectOption = (props: SelectOptionProps) => {
           if (onValueChange) {
             onValueChange(value);
           }
+          return;
         }
       }}
     >

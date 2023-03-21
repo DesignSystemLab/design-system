@@ -38,10 +38,11 @@ export const ComboboxOption = (props: ComoboboxOptionProps) => {
   return (
     <li
       ref={optionRef}
-      role="combobox"
+      role="option"
       css={[disabled ? disabledItemStyle : activeItemStyle]}
       aria-selected={selectedComboboxItem}
       data-disabled={disabled}
+      aria-disabled={disabled}
       onMouseEnter={() => {
         if (optionRef.current) {
           optionRef.current.dataset.hover = 'hover';

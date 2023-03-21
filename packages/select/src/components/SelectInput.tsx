@@ -21,6 +21,8 @@ export const SelectInput = () => {
 
   return (
     <input
+      disabled={selectProps.disabled}
+      role="searchbox"
       ref={comboboxInputRef}
       css={comboboxStyle}
       type="text"
