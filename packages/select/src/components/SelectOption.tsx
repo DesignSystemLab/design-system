@@ -2,41 +2,30 @@
 import { useContext, useEffect, useRef } from 'react';
 import { SelectContext } from '../hooks/SelectContext';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
-import { useOptionStyle } from '../hooks/useOptionStyle';
+import { createSelectStyle } from '../styles/createSelectStyle';
 import { useSelect } from '../hooks/useSelect';
 import type { OptionValue, SelectOptionProps } from '../types';
 
 export const SelectOption = (props: SelectOptionProps) => {
-  const optionRef = useRef<HTMLLIElement>(null);
-  const { children, value, disabled = false, autofocus = true } = props;
-  const {
-    setSearchKeyword,
-    setSelectedOption,
-    selectedOption,
-    setIsOpen,
-    isOpen,
-    selectProps,
-    selectRef,
-    setOptions,
-    onValueChange,
-    isCombobox
-  } = useContext(SelectContext);
-
-  const { active, disable } = useOptionStyle(selectProps);
+  const { setSelectedOption, selectedOption, setOpen, open, selectProps, setOptions, onValueChange } =
+    useContext(SelectContext);
+  const { children, value, disabled = false } = props;
+  const { active, disable } = createSelectStyle(selectProps);
   const { getChildText } = useSelect();
-  const handleKeydown = useKeyboardNavigation(selectRef);
+  const { handleKeydown } = useKeyboardNavigation();
   const defaultValue = selectProps.defaultValue || null;
   const childText = getChildText(children);
-
+  const optionRef = useRef<HTMLLIElement>(null);
   const optionValue: OptionValue = {
     key: value,
     name: childText,
     isDisabled: disabled
   };
+  const selectedOptionItem = defaultValue === value;
 
   useEffect(() => {
     setOptions(prev => [...prev, optionValue]);
-    if (defaultValue === value && autofocus) {
+    if (selectedOptionItem) {
       optionRef.current?.focus();
       setSelectedOption(optionValue);
       if (onValueChange) {
@@ -46,38 +35,37 @@ export const SelectOption = (props: SelectOptionProps) => {
   }, []);
 
   useEffect(() => {
-    if (selectedOption.key === value && autofocus) {
+    if (selectedOption.key === value) {
       optionRef.current?.focus();
       return;
     }
-  }, [isOpen]);
+  }, [open]);
 
   return (
     <li
       {...props}
-      css={[props.disabled ? disable : active, isCombobox]}
-      role="listitem"
+      css={[disabled ? disable : active]}
+      role="option"
       ref={optionRef}
-      data-disabled={props.disabled}
+      aria-selected={selectedOptionItem}
+      aria-disabled={disabled}
+      data-disabled={disabled}
       tabIndex={0}
       onKeyDown={e => {
         switch (e.key) {
           case 'Enter':
-            if (isCombobox) {
-              setSearchKeyword(childText);
-            }
             if (onValueChange) {
               setSelectedOption({
                 key: value,
                 name: childText,
-                isDisabled: !!props.disabled
+                isDisabled: !!disabled
               });
               onValueChange(value);
             }
-            setIsOpen(false);
+            setOpen(false);
             return;
           case 'Escape':
-            setIsOpen(false);
+            setOpen(false);
             return;
           default:
             handleKeydown(e);
@@ -97,24 +85,22 @@ export const SelectOption = (props: SelectOptionProps) => {
       onMouseEnter={() => {
         optionRef.current?.focus();
       }}
-      onClick={() => {
-        if (isCombobox) {
-          setSearchKeyword(childText);
-        }
+      onClick={e => {
         if (!props.disabled) {
           setSelectedOption({
             key: value,
             name: childText,
             isDisabled: !!props.disabled
           });
-          setIsOpen(false);
+          setOpen(false);
           if (onValueChange) {
             onValueChange(value);
           }
+          return;
         }
       }}
     >
-      {childText}
+      <span>{childText}</span>
     </li>
   );
 };

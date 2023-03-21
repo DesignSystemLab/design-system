@@ -16,14 +16,13 @@ export type OptionValue = {
   key: string;
   name: string;
   isDisabled: boolean;
-  _internal?: boolean;
 };
 
 export interface ReturnContext {
   onValueChange?: (value: string | null) => void;
   selectProps: StyleProps;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-  isOpen: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  open: boolean;
   setSelectedOption: Dispatch<SetStateAction<OptionValue>>;
   selectedOption: OptionValue;
   setOptions: Dispatch<SetStateAction<OptionValue[]>>;
@@ -32,10 +31,8 @@ export interface ReturnContext {
   selectRef: RefObject<HTMLElement> | null;
   setSearchValues: Dispatch<SetStateAction<any>>;
   searchValues: OptionValue[];
-  setIsCombobox: Dispatch<SetStateAction<boolean>>;
   searchKeyword: string;
   setSearchKeyword: Dispatch<SetStateAction<string>>;
-  isCombobox: boolean;
 }
 
 export interface SelectProps {
@@ -48,8 +45,13 @@ export interface SelectProps {
 }
 
 export interface SelectOptionProps {
-  children: React.ReactElement;
+  children: React.ReactNode;
   value: string;
   disabled?: boolean;
-  autofocus?: boolean;
+}
+
+export interface ComoboboxOptionProps {
+  children: React.ReactNode;
+  value: string;
+  disabled?: boolean;
 }

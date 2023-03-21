@@ -2,13 +2,13 @@ import { css } from '@emotion/react';
 import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 import { useContext } from 'react';
 import type { StyleProps } from '../types';
-import { SelectContext } from './SelectContext';
+import { SelectContext } from '../hooks/SelectContext';
 
-export const useOptionStyle = (styleProps?: StyleProps) => {
+export const createSelectStyle = (styleProps?: StyleProps) => {
   const color = getColorByToken(styleProps?.color || 'green-base');
   const listColor = getColorByToken('shades-black');
   const disabledColor = getColorByToken('grey-lighten1');
-  const { isOpen } = useContext(SelectContext);
+  const { open } = useContext(SelectContext);
 
   const activeOptionStyle = () => {
     return css({
@@ -55,8 +55,9 @@ export const useOptionStyle = (styleProps?: StyleProps) => {
   };
 
   const listStyle = () => {
-    if (isOpen) {
+    if (open) {
       return css({
+        display: 'block',
         listStyle: 'none',
         padding: '0',
         margin: '0',
@@ -68,6 +69,7 @@ export const useOptionStyle = (styleProps?: StyleProps) => {
     }
     return css(
       {
+        display: 'none',
         position: 'absolute',
         width: '1px',
         height: '1px',

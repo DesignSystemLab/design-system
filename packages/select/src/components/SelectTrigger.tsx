@@ -1,51 +1,53 @@
 /** @jsxImportSource @emotion/react */
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { ChevronBottom } from '@jdesignlab/react-icons';
-import { Flex } from '@jdesignlab/flex';
+import { useSelect } from '../hooks/useSelect';
 import { SelectContext } from '../hooks/SelectContext';
-import { useTriggerStyle } from '../hooks/useTriggerStyle';
+import { createSelectTriggerStyle } from '../styles/createSelectTriggerStyle';
 import { useKeyboardNavigation } from '../hooks/useKeyboardNavigation';
+import { SelectInput } from './SelectInput';
 
-export const SelectTrigger = (props: { placeholder: string | null; children: React.ReactNode }) => {
-  const { children } = props;
-  const { selectProps, setIsOpen, selectedOption, selectRef, setIsCombobox } = useContext(SelectContext);
-  const { triggerStyle, color } = useTriggerStyle(selectProps.color, selectProps.disabled);
-  const handleKeydown = useKeyboardNavigation(selectRef);
-
-  useEffect(() => {
-    if (children) {
-      setIsCombobox(true);
-    }
-  }, [children]);
+export const SelectTrigger = (props: { placeholder: string; children?: React.ReactNode }) => {
+  const { selectProps, setOpen, selectedOption } = useContext(SelectContext);
+  const { triggerStyle, color, flexStyle } = createSelectTriggerStyle(selectProps.color, selectProps.disabled);
+  const { filterChildren } = useSelect();
+  const { handleKeydown } = useKeyboardNavigation();
+  const selectInput = filterChildren(props.children, SelectInput, true);
 
   return (
     <div
-      tabIndex={0}
       css={triggerStyle}
+      role="button"
       onClick={e => {
-        if (children || selectProps.disabled) {
+        if (selectInput.length || selectProps.disabled) {
           e.preventDefault();
           return;
         }
-        setIsOpen(prev => !prev);
-        return;
+        setOpen(prev => !prev);
       }}
       onKeyDown={e => {
         e.stopPropagation();
         if (e.key === 'Escape') {
-          setIsOpen(false);
+          setOpen(false);
           return;
         }
         handleKeydown(e);
-        return;
       }}
     >
-      <Flex justify="space-between" items="center">
-        <div>{children ? children : <span>{selectedOption.name || props.placeholder}</span>}</div>
+      <div css={flexStyle}>
+        <div>
+          {selectInput.length ? selectInput : <span role="label">{selectedOption.name || props.placeholder}</span>}
+        </div>
         <span>
-          <ChevronBottom width="12px" color={color} />
+          <ChevronBottom
+            width="12px"
+            color={color}
+            onClick={e => {
+              setOpen(prev => !prev);
+            }}
+          />
         </span>
-      </Flex>
+      </div>
     </div>
   );
 };
