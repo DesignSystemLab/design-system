@@ -5,14 +5,14 @@ import { useContext, useRef, useState } from 'react';
 import { DropdownContext, DropdownSubContext } from '../context';
 import { dropdownItemStyle } from '../style';
 import type { DropdownMenuItemProps } from '../types';
-import useDropdownKeyDownHandle from '../hooks/useKeyDownHandle';
+import useArrowKeyDown from '../hooks/useArrowKeyDown';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
   const { open } = useContext(DropdownContext);
   const { children, onClick, sub, ...otherProps } = props;
   const disabled = props.disabled === undefined ? false : props.disabled;
-  const keyDownHandle = useDropdownKeyDownHandle();
+  const keyDownHandle = useArrowKeyDown();
   const [subOpen, setSubOpen] = useState<boolean>(false);
 
   const onMouseOverHandle = () => {
@@ -34,7 +34,8 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
         ref={menuItemRef}
         role="menuitem"
         tabIndex={open && !disabled ? 0 : -1}
-        className={`menu_item ${sub && 'has_sub'} ${disabled ? 'disabled' : ''}`}
+        className="menu_item"
+        aria-disabled={disabled ? true : false}
         css={{ ...dropdownItemStyle(disabled) }}
         onMouseOver={onMouseOverHandle}
         onMouseLeave={onMouseLeaveHandle}
@@ -47,3 +48,5 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
     </DropdownSubContext.Provider>
   );
 };
+
+MenuItem.displayName = 'Dropdown.MenuItem';

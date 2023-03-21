@@ -36,7 +36,13 @@ export const dropdownMenuStyle = css({
   border: 'solid lightgray 1px',
   borderRadius: '6px',
   padding: '5px',
-  boxShadow: '10.5px 10.5px 15px -4.5px rgba(100,100,100,0.2)'
+  boxShadow: '10.5px 10.5px 15px -4.5px rgba(100,100,100,0.2)',
+  '&.menu_open': {
+    display: 'flex'
+  },
+  '&.menu_close': {
+    display: 'none'
+  }
   // animation: `${shadowDrop} 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`
 });
 
@@ -67,7 +73,7 @@ export const dropdownLocationStyle = (
   triggerWidth: number,
   triggerHeight: number,
   gap: number,
-  on: string | undefined
+  placement: string | undefined
 ) => {
   const labelWidth = labelRef.current ? labelRef.current.offsetWidth : 0;
   const labelHeight = labelRef.current ? labelRef.current.offsetHeight : 0;
@@ -78,7 +84,7 @@ export const dropdownLocationStyle = (
   const moveRight = { left: `${triggerWidth + gap}px` };
   const moveLeft = { left: `-${labelWidth + gap}px` };
 
-  switch (on) {
+  switch (placement) {
     case 'top':
       return css({ ...moveTop, ...centerX });
     case 'right':
@@ -96,7 +102,7 @@ export const dropdownSubLocationStyle = (labelRef: React.RefObject<HTMLUListElem
   const menu = labelRef.current?.closest<HTMLElement>('[role="menu"]');
   const rightSub = {
     left: `${menu?.offsetWidth || 0}px`,
-    transform: 'translate(-6px, -30px)'
+    transform: 'translate(15px, -30px)'
   };
   return css({
     ...rightSub,

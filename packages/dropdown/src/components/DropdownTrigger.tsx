@@ -1,10 +1,12 @@
 import { useEffect, useContext, useRef } from 'react';
 import { DropdownContext } from '../context';
 import type { DropdownTriggerProps } from '../types';
+import useOpenKeyDown from '../hooks/useOpenKeyDown';
 
 export const Trigger = (props: DropdownTriggerProps) => {
   const { children, ...otherProps } = props;
-  const { open, setOpen, mode, setTriggerWidth, setTriggerHeight } = useContext(DropdownContext);
+  const { open, setOpen, setTriggerWidth, setTriggerHeight } = useContext(DropdownContext);
+  const keyDownHandle = useOpenKeyDown();
   const triggerRef = useRef(null);
 
   useEffect(() => {
@@ -16,23 +18,21 @@ export const Trigger = (props: DropdownTriggerProps) => {
   }, [triggerRef]);
 
   const onClickHandle = () => {
-    mode === 'click' && setOpen(!open);
-  };
-
-  const onMouseHoverHandle = () => {
-    mode === 'hover' && setOpen(!open);
+    setOpen(!open);
   };
 
   return (
     <div
       ref={triggerRef}
       onClick={onClickHandle}
-      onMouseOver={onMouseHoverHandle}
-      onMouseLeave={onMouseHoverHandle}
-      // onKeyDown={onKeyDown}
+      onKeyDown={e => {
+        keyDownHandle(e, triggerRef, open, setOpen);
+      }}
       {...otherProps}
     >
       {children}
     </div>
   );
 };
+
+Trigger.displayName = 'Dropdown.Trigger';

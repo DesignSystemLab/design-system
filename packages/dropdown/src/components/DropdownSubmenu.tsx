@@ -8,7 +8,7 @@ import type { DropdownSubMenuProps } from '../types';
 export const SubMenu = (props: DropdownSubMenuProps) => {
   const { children, ...otherProps } = props;
   const { open } = useContext(DropdownContext);
-  const { subOpen, setSubOpen } = useContext(DropdownSubContext);
+  const { subOpen } = useContext(DropdownSubContext);
   const [menuStyle, setMenuStyle] = useState<ReturnType<typeof css>>();
   const menuRef = useRef<HTMLUListElement>(null);
 
@@ -17,20 +17,18 @@ export const SubMenu = (props: DropdownSubMenuProps) => {
   }, [open]);
 
   return (
-    <>
-      {open && (
-        <ul
-          role="menu"
-          ref={menuRef}
-          aria-expanded={subOpen}
-          aria-orientation="vertical"
-          css={menuStyle}
-          className={`subitem ${subOpen ? 'sub_open' : 'sub_close'}`}
-          {...otherProps}
-        >
-          {children}
-        </ul>
-      )}
-    </>
+    <ul
+      role="menu"
+      ref={menuRef}
+      aria-expanded={subOpen}
+      aria-orientation="vertical"
+      css={menuStyle}
+      className={`${subOpen ? 'sub_open' : 'sub_close'}`}
+      {...otherProps}
+    >
+      {children}
+    </ul>
   );
 };
+
+SubMenu.displayName = 'Dropdown.SubMenu';
