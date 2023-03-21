@@ -7,9 +7,9 @@ export const ArrowBottom = (props: React.SVGProps<SVGSVGElement>) => {
       height="24"
       fill="none"
       stroke="currentColor"
-      stroke-linecap="butt"
-      stroke-linejoin="round"
-      stroke-width="2"
+      strokeLinecap="butt"
+      strokeLinejoin="round"
+      strokeWidth="2"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
+import {Close} from '@jdesignlab/react-icons'
 import { useContext } from 'react';
-import { ClearableIcon } from '@jdesignlab/theme';
 import { Flex } from '@jdesignlab/flex';
 import { Button } from '@jdesignlab/button';
 import { PopoverProps } from '../popoverTypes';
@@ -18,7 +18,7 @@ export const PopoverHeader = (props: PopoverProps) => {
             context?.setIsOpen(false);
           }}
         >
-          <ClearableIcon />
+          <Close width="12" height="12" strokeWidth="4" />
         </Button>
       </Flex>
     </header>

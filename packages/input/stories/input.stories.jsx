@@ -1,5 +1,4 @@
 import { TextInput } from '../src';
-import { VisibleIcon, ClearableIcon } from '@jdesignlab/theme';
 
 export default {
   title: 'Components/TextInput',

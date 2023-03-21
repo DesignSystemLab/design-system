@@ -1,6 +1,8 @@
 {
   "name": "@jdesignlab/modal",
   "packageManager": "yarn@3.3.1",
+  "version": "0.0.1",
+  "main": "src/index.ts",
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
@@ -14,7 +16,6 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/react": "^6.5.16",
     "@types/react": "^18.0.27",
-    "monorepo-with-yarnberry": "1.0.0",
     "react": "^18.2.0",
     "rimraf": "^4.1.2",
     "rollup": "^3.12.0",
@@ -25,6 +26,7 @@
     "@jdesignlab/button": "*",
     "@jdesignlab/flex": "*",
     "@jdesignlab/input": "*",
+    "@jdesignlab/react-icons": "*",
     "@jdesignlab/theme": "*"
   }
 }

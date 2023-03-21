@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import type { InputProps, InputRightProps, InputLabelProps } from './input-types';
 import { inputWrapperStyle, inputRightStyle, inputLabelStyle, inputVariantStyle, inputSizeStyle } from './input-style';
-import { ClearableIcon } from '@jdesignlab/theme';
+import { Close } from '@jdesignlab/react-icons'
 import React, { useState, useId, useContext, useRef } from 'react';
 
 // TODO
@@ -89,7 +89,7 @@ const Right = (props: InputRightProps) => {
     if (clearable) {
       return (
         <span css={inputRightStyle} onClick={setInitValue}>
-          <ClearableIcon />
+          <Close width="12" height="12" />
         </span>
       );
     } else if (icon) {
