@@ -57,6 +57,7 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
   const listStyle = () => {
     if (open) {
       return css({
+        display: 'block',
         listStyle: 'none',
         padding: '0',
         margin: '0',
@@ -68,6 +69,7 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
     }
     return css(
       {
+        display: 'none',
         position: 'absolute',
         width: '1px',
         height: '1px',
