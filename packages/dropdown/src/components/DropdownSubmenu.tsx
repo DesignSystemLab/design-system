@@ -3,12 +3,12 @@ import { css } from '@emotion/react';
 import { dropdownSubLocationStyle, dropdownMenuStyle } from '../style';
 import React, { useState, useEffect, useContext, useRef, createContext, useCallback } from 'react';
 import { DropdownContext, DropdownSubContext } from '../context';
-import type { DropdownSubmenuProps } from '../types';
+import type { DropdownSubMenuProps } from '../types';
 
-export const Submenu = (props: DropdownSubmenuProps) => {
+export const SubMenu = (props: DropdownSubMenuProps) => {
   const { children, ...otherProps } = props;
   const { open } = useContext(DropdownContext);
-  const { subOpen, setSubOpen } = useContext(DropdownSubContext);
+  const { subOpen } = useContext(DropdownSubContext);
   const [menuStyle, setMenuStyle] = useState<ReturnType<typeof css>>();
   const menuRef = useRef<HTMLUListElement>(null);
 
@@ -17,20 +17,18 @@ export const Submenu = (props: DropdownSubmenuProps) => {
   }, [open]);
 
   return (
-    <>
-      {open && (
-        <ul
-          ref={menuRef}
-          tabIndex={subOpen ? 0 : -1}
-          aria-expanded={subOpen}
-          aria-orientation="vertical"
-          css={menuStyle}
-          className={`subitem ${subOpen ? 'sub_open' : 'sub_close'}`}
-          {...otherProps}
-        >
-          {children}
-        </ul>
-      )}
-    </>
+    <ul
+      role="menu"
+      ref={menuRef}
+      aria-expanded={subOpen}
+      aria-orientation="vertical"
+      css={menuStyle}
+      className={`${subOpen ? 'sub_open' : 'sub_close'}`}
+      {...otherProps}
+    >
+      {children}
+    </ul>
   );
 };
+
+SubMenu.displayName = 'Dropdown.SubMenu';
