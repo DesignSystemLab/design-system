@@ -7,6 +7,8 @@ module.exports = {
   // testPathIgnorePatterns: ['<rootDir>/packages/select/node_modules'],
   // transformIgnorePatterns: ['node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)'],
   transform: {
-    '^.+\\.[jt]sx?$': 'ts-jest'
+    '^.+\\.[jt]sx?$': 'ts-jest',
+    '^.+\\.(css|scss|sass|less)$': 'jest-preview/transforms/css',
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': 'jest-preview/transforms/file'
   }
 };
