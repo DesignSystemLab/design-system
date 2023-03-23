@@ -1,4 +1,5 @@
-import { render, screen, fireEvent, getByText } from '@testing-library/react';
+import React from 'react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Select } from '../src';
 
 const handleValueChage = jest.fn();
