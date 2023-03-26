@@ -1,10 +1,11 @@
 import React from 'react';
+import { debug } from 'jest-preview';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Select } from '../src';
 
 const handleValueChage = jest.fn();
 describe('Select', () => {
-  it('Select 컴포넌트 렌더링.', () => {
+  it('Select 컴포넌트를 렌더링한다.', () => {
     render(
       <Select>
         <Select.Trigger placeholder="skills" />
@@ -20,13 +21,12 @@ describe('Select', () => {
     const select = screen.getByRole('listbox');
     const selectLabel = screen.getByRole('label');
     const options = screen.getAllByRole('option');
-
     expect(select).toBeDefined();
     expect(selectLabel.textContent).toBe('skills');
     expect(options).toHaveLength(5);
   });
 
-  it('disabled 속성을 갖는 Select 컴포넌트.', () => {
+  it('disabled 속성을 갖는 Select는 SelectOption을 노출하지 않는다.', () => {
     const selectRender = render(
       <Select disabled>
         <Select.Trigger placeholder="programming-languages" />
@@ -49,7 +49,7 @@ describe('Select', () => {
     throw new Error('#jdesignlab-select-list 요소가 존재하지 않습니다.');
   });
 
-  it('disabled item을 갖는 Select 컴포넌트.', () => {
+  it('disabled item을 갖는 SelectOption은 click 이벤트가 발생하지 않는다.', () => {
     render(
       <Select onValueChange={handleValueChage}>
         <Select.Trigger placeholder="programming-languages" />
@@ -75,7 +75,25 @@ describe('Select', () => {
     expect(handleValueChage).not.toHaveBeenCalled();
   });
 
-  it('Combobox 컴포넌트 렌더링.', () => {
+  it('Combobox 컴포넌트를 렌더링한다.', () => {
+    render(
+      <Select>
+        <Select.Trigger placeholder="skills">
+          <Select.Input />
+        </Select.Trigger>
+        <Select.Option value="javascript">JavaScript</Select.Option>
+        <Select.Option value="typescript">TypeScript</Select.Option>
+        <Select.Option value="html5">HTML</Select.Option>
+        <Select.Option value="react">React</Select.Option>
+        <Select.Option value="java">Java</Select.Option>
+      </Select>
+    );
+    const combobox = screen.getByRole('combobox');
+    expect(combobox).toBeDefined();
+    debug();
+  });
+
+  it('검색어와 일치하는 ComboboxOption 컴포넌트를 렌더링한다.', () => {
     render(
       <Select>
         <Select.Trigger placeholder="skills">
@@ -97,7 +115,7 @@ describe('Select', () => {
     expect(options).toHaveLength(1);
   });
 
-  it('복수의 검색 결과를 갖는 Combobox.', () => {
+  it('검색어와 일치하는 복수의 ComboboxOption 컴포넌트를 렌더링한다.', () => {
     render(
       <Select>
         <Select.Trigger placeholder="strawberryMenu">
@@ -120,7 +138,7 @@ describe('Select', () => {
     expect(options).toHaveLength(6);
   });
 
-  it('일치하지 않으면 "검색 결과가 없습니다." 메시지를 출력한다.', () => {
+  it('ComboboxOption 값이 검색어와 일치하지 않을 경우 "검색 결과가 없습니다." 메시지를 출력한다.', () => {
     const { getByText } = render(
       <Select>
         <Select.Trigger placeholder="strawberryMenu">
@@ -142,7 +160,7 @@ describe('Select', () => {
     expect(notFoundMessage).toBeDefined();
   });
 
-  it('disabled item을 갖는 Combobox 컴포넌트.', () => {
+  it('disabled item을 갖는 ComboboxOption 컴포넌트는 클릭 이벤트가 발생하지 않는다.', () => {
     render(
       <Select onValueChange={handleValueChage}>
         <Select.Trigger placeholder="strawberryMenu">
