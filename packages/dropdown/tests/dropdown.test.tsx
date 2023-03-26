@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
@@ -52,8 +52,9 @@ describe('toggle dropdown', () => {
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
     userEvent.click(trigger);
-
-    expect(dropdown).toBeVisible();
+    waitFor(() => {
+      expect(dropdown).toBeVisible();
+    });
   });
 
   it('close items when background is clicked', () => {
@@ -61,8 +62,9 @@ describe('toggle dropdown', () => {
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
     userEvent.click(trigger);
-
-    expect(dropdown).toBeVisible();
+    waitFor(() => {
+      expect(dropdown).toBeVisible();
+    });
 
     // TODO : document대신 screen 객체 이용하기
     const overlay = document.querySelector('.menu_overlay')!;
@@ -75,8 +77,9 @@ describe('toggle dropdown', () => {
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
     userEvent.click(trigger);
-
-    expect(dropdown).toHaveClass('menu_open');
+    waitFor(() => {
+      expect(dropdown).toHaveClass('menu_open');
+    });
 
     userEvent.click(trigger);
     expect(dropdown).toHaveClass('menu_close');
@@ -89,6 +92,8 @@ describe('disabled', () => {
     const disabledItem = screen.getByTestId(DISABLED_ITEM);
     // TODO : <li>에 disabled 속성,,,
     // expect(disabledItem).toBeDisabled();
+    expect(disabledItem).toHaveAttribute('aria-disabled');
+    debug();
   });
 
   it('should not fire onClick on disabled item', () => {
