@@ -64,6 +64,13 @@ export const WithColors = () => (
     </Button>
     <Button color="red-lighten3">red-lighten3</Button>
     <Button color="pink-accent2">pink-accent2</Button>
+    <Button color="primary-500">primary</Button>
+    <Button color="secondary-500">secondary</Button>
+    <Button color="success">success</Button>
+    <Button color="info">info</Button>
+    <Button color="warning">warning</Button>
+    <Button color="disabled">disabled</Button>
+    <Button color="error">error</Button>
     <Button>no color</Button>
   </>
 );

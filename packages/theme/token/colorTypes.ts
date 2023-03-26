@@ -1,29 +1,46 @@
 type HEX = `#${string}`;
+
+interface UniqueColorScheme {
+  100: HEX;
+  200: HEX;
+  300: HEX;
+  400: HEX;
+  500: HEX;
+  600: HEX;
+  700: HEX;
+  800: HEX;
+  900: HEX;
+}
+
 interface BaseColorScheme {
-  base: string;
-  lighten1: string;
-  lighten2: string;
-  lighten3: string;
-  lighten4: string;
-  lighten5: string;
-  darken1: string;
-  darken2: string;
-  darken3: string;
-  darken4: string;
+  base: HEX;
+  lighten1: HEX;
+  lighten2: HEX;
+  lighten3: HEX;
+  lighten4: HEX;
+  lighten5: HEX;
+  darken1: HEX;
+  darken2: HEX;
+  darken3: HEX;
+  darken4: HEX;
 }
 
 interface AccentColorScheme extends BaseColorScheme {
-  accent1: string;
-  accent2: string;
-  accent3: string;
-  accent4: string;
+  accent1: HEX;
+  accent2: HEX;
+  accent3: HEX;
+  accent4: HEX;
 }
 
 type ShadesColorSchme = {
-  black: string;
-  white: string;
-  transparent: string;
+  black: HEX;
+  white: HEX;
+  transparent: 'transparent';
 };
+
+type UniquePallete = 'primary' | 'secondary';
+
+type StatusPallete = 'success' | 'info' | 'warning' | 'error' | 'disabled';
 
 type ExtendedPalette =
   | 'red'
@@ -47,12 +64,16 @@ type CommonPalette = 'brown' | 'blueGrey' | 'grey';
 type ShadesPalette = 'shades';
 
 type ColorToken =
+  | `${StatusPallete}`
+  | `${UniquePallete}-${keyof UniqueColorScheme}`
   | `${ExtendedPalette}-${keyof AccentColorScheme}`
   | `${CommonPalette}-${keyof BaseColorScheme}`
   | `${ShadesPalette}-${keyof ShadesColorSchme}`;
 
 type Color = {
   [key: string]: any;
+  primary: Readonly<UniqueColorScheme>;
+  secondary: Readonly<UniqueColorScheme>;
   red: Readonly<AccentColorScheme>;
   pink: Readonly<AccentColorScheme>;
   purple: Readonly<AccentColorScheme>;
@@ -73,6 +94,10 @@ type Color = {
   blueGrey: Readonly<BaseColorScheme>;
   grey: Readonly<BaseColorScheme>;
   shades: Readonly<ShadesColorSchme>;
+  success: HEX;
+  info: HEX;
+  warning: HEX;
+  error: HEX;
 };
 
 export type { HEX, ColorToken, Color };
