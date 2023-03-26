@@ -1,8 +1,10 @@
 import React from 'react';
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
-// import '@testing-library/jest-dom';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 import { Dropdown } from '../src';
+import { debug } from 'jest-preview';
 
 expect.extend(toHaveNoViolations);
 
@@ -17,6 +19,27 @@ const DISABLED_ITEM = 'disabled-menu-item';
 
 const onClick = jest.fn();
 
+function renderDropdown(lazy?: any) {
+  return render(
+    <Dropdown data-testid={DROPDOWN_WRAPPER} gap={4} placement="bottom" lazy={lazy}>
+      <Dropdown.Trigger data-testid={DROPDOWN_TRIGGER}>
+        <button>click</button>
+      </Dropdown.Trigger>
+      <Dropdown.Menu data-testid={DROPDOWN_MENU}>
+        <Dropdown.MenuItem data-testid={DISABLED_ITEM} disabled onClick={onClick}>
+          1
+        </Dropdown.MenuItem>
+        <Dropdown.MenuItem data-testid={DROPDOWN_ITEM_HAS_SUB}>
+          서브메뉴
+          <Dropdown.SubMenu data-testid={DROPDOWN_SUB}>
+            <Dropdown.SubMenuItem data-testid={DROPDOWN_SUB_ITEM}>첫번째sub1</Dropdown.SubMenuItem>
+          </Dropdown.SubMenu>
+        </Dropdown.MenuItem>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+
 describe('toggle dropdown', () => {
   it('should not show items before Trigger is clicked', () => {
     renderDropdown();
@@ -28,7 +51,8 @@ describe('toggle dropdown', () => {
     renderDropdown();
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
-    fireEvent.click(trigger);
+    userEvent.click(trigger);
+
     expect(dropdown).toBeVisible();
   });
 
@@ -36,12 +60,13 @@ describe('toggle dropdown', () => {
     renderDropdown();
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
-    fireEvent.click(trigger);
+    userEvent.click(trigger);
+
     expect(dropdown).toBeVisible();
 
     // TODO : document대신 screen 객체 이용하기
     const overlay = document.querySelector('.menu_overlay')!;
-    fireEvent.click(overlay);
+    userEvent.click(overlay);
     expect(dropdown).not.toBeVisible();
   });
 
@@ -49,10 +74,11 @@ describe('toggle dropdown', () => {
     renderDropdown();
     const trigger = screen.getByTestId(DROPDOWN_TRIGGER);
     const dropdown = screen.getByTestId(DROPDOWN_MENU);
-    fireEvent.click(trigger);
+    userEvent.click(trigger);
+
     expect(dropdown).toHaveClass('menu_open');
 
-    fireEvent.click(trigger);
+    userEvent.click(trigger);
     expect(dropdown).toHaveClass('menu_close');
   });
 });
@@ -68,14 +94,14 @@ describe('disabled', () => {
   it('should not fire onClick on disabled item', () => {
     renderDropdown();
     const disabledItem = screen.getByTestId(DISABLED_ITEM);
-    fireEvent.click(disabledItem);
+    userEvent.click(disabledItem);
     expect(onClick).not.toHaveBeenCalled();
   });
 
   it('should not allow focusing disabled items', async () => {
     renderDropdown();
     const disabledItem = screen.getByTestId(DISABLED_ITEM);
-    fireEvent.click(disabledItem);
+    userEvent.click(disabledItem);
     expect(disabledItem).not.toHaveFocus();
   });
 
@@ -155,27 +181,6 @@ describe('Dropdown.SubMenuItem', () => {
     className: 'sub_item'
   });
 });
-
-function renderDropdown(lazy?: any) {
-  return render(
-    <Dropdown data-testid={DROPDOWN_WRAPPER} gap={4} placement="bottom" lazy={lazy}>
-      <Dropdown.Trigger data-testid={DROPDOWN_TRIGGER}>
-        <button>click</button>
-      </Dropdown.Trigger>
-      <Dropdown.Menu data-testid={DROPDOWN_MENU}>
-        <Dropdown.MenuItem data-testid={DISABLED_ITEM} disabled onClick={onClick}>
-          1
-        </Dropdown.MenuItem>
-        <Dropdown.MenuItem data-testid={DROPDOWN_ITEM_HAS_SUB}>
-          서브메뉴
-          <Dropdown.SubMenu data-testid={DROPDOWN_SUB}>
-            <Dropdown.SubMenuItem data-testid={DROPDOWN_SUB_ITEM}>첫번째sub1</Dropdown.SubMenuItem>
-          </Dropdown.SubMenu>
-        </Dropdown.MenuItem>
-      </Dropdown.Menu>
-    </Dropdown>
-  );
-}
 
 function behavesAsComponent({ Component, toRender }: any) {
   it('sets a valid displayName', () => {
