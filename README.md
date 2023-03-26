@@ -1,4 +1,4 @@
-# monorepo-with-yarnberry
+# J DesignSystem
 
 ### 💄 Storybook
 
