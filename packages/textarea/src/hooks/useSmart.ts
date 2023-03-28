@@ -8,7 +8,6 @@ export const useSmart = (onChange: FormEventHandler<HTMLTextAreaElement> | undef
   const handleResizeHeight = useCallback(() => {
     const textArea = textareaRef.current;
     if (textArea) {
-      textArea.style.height = 'auto';
       textArea.style.height = `${textArea.scrollHeight}px`;
     }
   }, [textareaRef]);

@@ -18,6 +18,16 @@ export const useTextarea = () => {
     return childText;
   };
 
+  const getLabelId = (children: React.ReactNode) => {
+    let labelId = '';
+    Children.forEach(children, child => {
+      if (isValidElement(child) && child.props.id) {
+        labelId = child.props.id;
+      }
+    });
+    return labelId || null;
+  };
+
   const filterChildren = (
     children: React.ReactNode | React.ReactNode[],
     compoenent: (props: any) => EmotionJSX.Element,
@@ -30,5 +40,5 @@ export const useTextarea = () => {
     });
   };
 
-  return { filterChildren, getChildText };
+  return { filterChildren, getChildText, getLabelId };
 };
