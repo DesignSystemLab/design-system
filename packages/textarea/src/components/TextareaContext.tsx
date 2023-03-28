@@ -16,6 +16,7 @@ export const TextareaProvider = ({ ...props }) => {
   const textareaId = textareaProps.id ? `${textareaProps.id}` : `${TEXTAREA_ID_PREFIX}-${useId()}`;
   const {
     width = defaultStyleProps.width,
+    height = defaultStyleProps.height,
     label = defaultStyleProps.label,
     resize = defaultStyleProps.resize,
     color = defaultStyleProps.color,
@@ -31,7 +32,7 @@ export const TextareaProvider = ({ ...props }) => {
       value={{
         textareaId,
         textareaProps: restProps,
-        styleProps: { width, label, resize, color, appearance, maxWidth, maxHeight, maxLength }
+        styleProps: { width, height, label, resize, color, appearance, maxWidth, maxHeight, maxLength }
       }}
     >
       {children}
