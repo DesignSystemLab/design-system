@@ -12,6 +12,7 @@ export const createTextareaStyle = (styleProps: Required<StyleProps>, placholder
       fontSize: '16px',
       padding: '8px 16px',
       width: `${styleProps.width}px`,
+      height: `${styleProps.height}px`,
       border: `1px solid ${color}`,
       borderRadius: '12px',
       outlineColor: `2px solid ${color}`,
