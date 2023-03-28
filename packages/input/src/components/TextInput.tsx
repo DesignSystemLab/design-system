@@ -29,8 +29,7 @@ export const TextInput = (props: InputProps) => {
   const inputRef = useRef(null);
   const [value, setValue] = useState<string | number | readonly string[] | undefined>(props.value);
   const [statusError, setStatusError] = useState<boolean>(false);
-  const { children, size, ...otherProps } = props;
-  const clearable = props.clearable ? true : false;
+  const { children, size, clearable = props.clearable ? true : false, ...otherProps } = props;
   const hasIcon = props.icon ? true : false;
   const hasLabel = hasComponent(children as React.ReactElement[], 'Label');
   const hasMessage = hasComponent(children as React.ReactElement[], 'Message');
