@@ -7,6 +7,7 @@ const DEFAULT_STYLE: Required<StyleProps> = {
   color: 'teal-base',
   appearance: 'standard',
   width: 480,
+  height: 64,
   maxWidth: 640,
   maxHeight: 480,
   maxLength: null
