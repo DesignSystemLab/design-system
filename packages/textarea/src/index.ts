@@ -1,3 +1,1 @@
-import TextArea from './textarea';
-
-export { TextArea };
+export * from './components/Textarea';
