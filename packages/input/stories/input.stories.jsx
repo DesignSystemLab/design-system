@@ -1,11 +1,12 @@
 import { TextInput } from '../src';
+import { Telephone, Mobile } from '@jdesignlab/react-icons';
 
 export default {
   title: 'Components/TextInput',
   component: TextInput,
   decorators: [
     Story => (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
         <Story />
       </div>
     )
@@ -31,70 +32,58 @@ const argTypes = {
     description: 'input placeholder',
     control: 'text'
   },
-  variant: {
-    name: 'variant',
-    type: { name: 'string', required: false },
-    description: 'input variant',
-    control: {
-      type: 'select',
-      options: ['outline', 'filled', 'solo']
-    }
-  },
-  inputSize: {
-    name: 'inputSize',
+  size: {
+    name: 'size',
     type: { name: 'string', required: false },
     description: 'input size',
-    control: { type: 'radio', options: ['sm', 'md', 'lg', 'xl'] }
+    control: { type: 'radio', options: ['sm', 'md', 'lg'] }
   }
 };
 
 const Template = args => <TextInput {...args} />;
+export const Basic = Template.bind({});
+Basic.args = {
+  size: 'md'
+};
+Basic.argTypes = argTypes;
 
-export const TextInputBasic = () => (
-    <>
-        <TextInput variant="outlined" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
-            <TextInput.Label>[sm] defaultValue</TextInput.Label>
-            <TextInput.Right>Right</TextInput.Right>
-        </TextInput>
-        <TextInput variant="outlined" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
-            <TextInput.Label>[md] clearable</TextInput.Label>
-            <TextInput.Right />
-        </TextInput>
-        <TextInput variant="outlined" inputSize="lg" color="indigo-accent2" disabled>
-            <TextInput.Label>[lg] disabled</TextInput.Label>
-        </TextInput>
-        <TextInput variant="outlined" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
-            <TextInput.Label>[xl] placeholder</TextInput.Label>
-        </TextInput>
-
-        <TextInput variant="filled" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
-            <TextInput.Label>[sm] defaultValue</TextInput.Label>
-            <TextInput.Right>Right</TextInput.Right>
-        </TextInput>
-        <TextInput variant="filled" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
-            <TextInput.Label>[md] clearable</TextInput.Label>
-            <TextInput.Right />
-        </TextInput>
-        <TextInput variant="filled" inputSize="lg" color="indigo-accent2" disabled>
-            <TextInput.Label>[lg] disabled</TextInput.Label>
-        </TextInput>
-        <TextInput variant="filled" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
-            <TextInput.Label>[xl] placeholder</TextInput.Label>
-        </TextInput>
-
-        <TextInput variant="solo" color="amber-accent1" inputSize="sm" defaultValue="나는 defaultValue">
-            <TextInput.Label>[sm] defaultValue</TextInput.Label>
-            <TextInput.Right>Right</TextInput.Right>
-        </TextInput>
-        <TextInput variant="solo" inputSize="md" color="cyan-base" clearable defaultValue="나는 clearable">
-            <TextInput.Label>[md] clearable</TextInput.Label>
-            <TextInput.Right />
-        </TextInput>
-        <TextInput variant="solo" inputSize="lg" color="indigo-accent2" disabled>
-            <TextInput.Label>[lg] disabled</TextInput.Label>
-        </TextInput>
-        <TextInput variant="solo" inputSize="xl" color="brown-lighten3" placeholder="나는 placeholder">
-            <TextInput.Label>[xl] placeholder</TextInput.Label>
-        </TextInput>
-    </>
+export const Examples = () => (
+  <>
+    <TextInput width={300} size="sm" maxLength={5} icon={<Mobile />}>
+      <TextInput.Label>sm 라벨</TextInput.Label>
+      <TextInput.Message consistent>consistentmessageconsistentmessage</TextInput.Message>
+    </TextInput>
+    <TextInput size="md">
+      <TextInput.Label>md clearable이 아니야</TextInput.Label>
+      <TextInput.Message>messagemessage</TextInput.Message>
+    </TextInput>
+    <TextInput size="lg" disabled>
+      <TextInput.Label>disabled</TextInput.Label>
+    </TextInput>
+    <TextInput size="lg" placeholder="나는 placeholder">
+      <TextInput.Label>라벨이자나</TextInput.Label>
+    </TextInput>
+    <TextInput size="sm" defaultValue="나는 defaultValue">
+      <TextInput.Label>defaultValue</TextInput.Label>
+    </TextInput>
+    <TextInput size="md" clearable defaultValue="나는 clearable">
+      <TextInput.Label>clearable</TextInput.Label>
+    </TextInput>
+    <TextInput size="lg" disabled>
+      <TextInput.Label>disabled</TextInput.Label>
+    </TextInput>
+    <TextInput placeholder="나는 placeholder">
+      <TextInput.Label>라벨이자나</TextInput.Label>
+    </TextInput>
+    <TextInput size="sm" defaultValue="나는 defaultValue">
+      <TextInput.Label>defaultValue</TextInput.Label>
+    </TextInput>
+    <TextInput size="md" clearable defaultValue="나는 clearable">
+      <TextInput.Label>clearable</TextInput.Label>
+    </TextInput>
+    <TextInput size="lg" disabled>
+      <TextInput.Label>disabled</TextInput.Label>
+    </TextInput>
+    <TextInput placeholder="나는 placeholder"></TextInput>
+  </>
 );
