@@ -1,4 +1,4 @@
-import TextArea from '../src/textarea';
+import { Textarea } from '../src';
 import { variantPresetColors } from '@jdesignlab/theme';
 
 function getVariantPresetColors() {
@@ -13,8 +13,8 @@ function getVariantPresetColors() {
 }
 
 export default {
-  title: 'Components/TextArea',
-  component: TextArea,
+  title: 'Components/Textarea',
+  component: Textarea,
   decorators: [
     Story => (
       <div style={{ display: 'flex', gap: '5px', flexDirection: 'column' }}>
@@ -67,16 +67,26 @@ const argTypes = {
   }
 };
 
-const Template = args => <TextArea {...args} />;
+const Template = args => <Textarea {...args} />;
 
 export const TextAreaBasic = Template.bind({});
 TextAreaBasic.argTypes = argTypes;
 
 export const Example = () => (
   <>
-    <TextArea width={200} defaultValue="hello!" appearance="none" onChange={e => console.log(e.target.value)} resize="smart" />
-    <TextArea maxWidth={640} defaultValue={'안녕하세요.'} resize="horizontal" />
-    <TextArea maxWidth={640} defaultValue={'Red Style!'} color="red-darken4" resize="none" />
-    <TextArea maxWidth={640} onClick={e => alert(e.target.value)} defaultValue={'Click to Alert Message!'} color="green-base" resize="none" />
+    <Textarea />
+    <Textarea resize="smart" placeholder="내용을 입력해주세요." />
+    <Textarea maxWidth={640} defaultValue={'안녕하세요.'} resize="horizontal" />
+    <Textarea maxWidth={640} defaultValue={'Red Style!'} color="red-darken4" resize="none" />
+    <Textarea
+      maxWidth={640}
+      onClick={e => alert(e.target.value)}
+      defaultValue={'Click to Alert Message!'}
+      color="green-base"
+      resize="none"
+    />
+    <Textarea resize="vertical">
+      <Textarea.Label id="asd">Article</Textarea.Label>
+    </Textarea>
   </>
 );

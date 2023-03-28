@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./src", "src/hooks"],
+  "include": ["./src"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "types": ["@emotion/react/types/css-prop", "@types/jest", "@testing-library/jest-dom"],
