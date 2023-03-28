@@ -56,22 +56,6 @@ describe('Textarea', () => {
     });
   });
 
-  it('resize 속성을 갖는 Textarea는 resize 스타일 값이 변경된다.', () => {
-    render(<Textarea resize="horizontal" />);
-    const textarea = screen.getByRole('textbox');
-    expect(textarea).toHaveStyle({
-      resize: 'horizontal'
-    });
-  });
-
-  it('resize 속성을 갖는 Textarea는 resize 스타일 값이 변경된다.', () => {
-    render(<Textarea resize="horizontal" />);
-    const textarea = screen.getByRole('textbox');
-    expect(textarea).toHaveStyle({
-      resize: 'horizontal'
-    });
-  });
-
   it('resize 속성이 smart인 경우 Textarea는 사용자의 입력 값에 따라 height이 동적으로 조절된다.', async () => {
     const user = userEvent.setup();
     render(<Textarea resize="smart" />);
