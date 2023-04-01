@@ -1,0 +1,17 @@
+on:
+  push: 
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Use Node.js 16.x
+      uses: actions/setup-node
+      with:
+        node-version: '16.x'
+        token: ${{ secrets.WORKFLOW_TOKEN }}
+    - name: Install dependencies
+      run: yarn ci
+    - name: Run tests
+      run: yarn test
