@@ -3,7 +3,7 @@
   "include": ["./src"],
   "compilerOptions": {
     "jsx": "react-jsx",
-    "types": ["@emotion/react/types/css-prop", "@types/jest", "@testing-library/jest-dom"],
+    "types": ["@emotion/react/types/css-prop"],
     "jsxImportSource": "@emotion/react"
   }
 }
