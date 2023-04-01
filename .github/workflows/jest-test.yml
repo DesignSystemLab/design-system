@@ -8,33 +8,30 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
         with:
-          path: main
-      - name: Set Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install # will run `yarn install` command
+          node-version: '16.x'
+      - run: yarn
+      - run: yarn test
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }} # if needed
-      - name: Test the app
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test # will run `yarn test` command
-      # - uses: actions/checkout@v3
-      # - name: Checkout source code
-      #   uses: actions/checkout@main
-      # - name: yarn clean cache
-      #   run: yarn clean cache
-      # - name: yarn run install
-      #   run: yarn install
-      # - name: run test code
-      #   run: npm test
-      # uses: actions/github-script@0.2.0
-      # with:
-      #   github_token: ${{ secrets.GIT_TEST_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+      # - name: Checkout
+      #   uses: actions/checkout@v3
+      #   with:
+      #     path: main
+      # - name: Set Node.js 16.x
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 16.x
+      # - name: Run install
+      #   uses: borales/actions-yarn@v4
+      #   with:
+      #     cmd: install # will run `yarn install` command
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }} # if needed
+      # - name: Test the app
+      #   uses: borales/actions-yarn@v4
+      #   with:
+      #     cmd: test # will run `yarn test` command
