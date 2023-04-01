@@ -22,10 +22,6 @@ jobs:
           cmd: install # will run `yarn install` command
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }} # if needed
-      - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build:prod # will run `yarn build:prod` command
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
