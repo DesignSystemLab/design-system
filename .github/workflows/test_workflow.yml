@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          path: main
       - name: Check if package.json exists
         run: |
           ls -l
