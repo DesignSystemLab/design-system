@@ -12,6 +12,6 @@ jobs:
         node-version: '16.x'
         token: ${{ secrets.WORKFLOW_TOKEN }}
     - name: Install dependencies
-      run: yarn ci
+      run: yarn install
     - name: Run tests
       run: yarn test
