@@ -2,12 +2,14 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+env:
+  YARN_ENABLE_IMMUTABLE_INSTALLS: false
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
         with:
           path: main
       - name: Check if package.json exists
