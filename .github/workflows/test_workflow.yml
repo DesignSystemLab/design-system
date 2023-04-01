@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          path: main
+        uses: actions/checkout@v2
+      - name: Check if package.json exists
+        run: |
+          ls -l
+          ls -l | grep "package.json"
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
