@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout source code
-      uses: actions/checkout@master
+      uses: actions/checkout@v2
     - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with:
         node-version: '16.x'
         token: ${{ secrets.WORKFLOW_TOKEN }}
     - name: Install dependencies
-      run: yarn install
+      run: yarn install --frozen-lockfile
     - name: Run tests
       run: yarn test
