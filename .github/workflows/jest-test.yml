@@ -5,7 +5,7 @@ on:
     branches:
       - main
 jobs:
-  Run Jest:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
