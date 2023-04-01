@@ -6,6 +6,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout source code
+      uses: actions/checkout@master
     - name: Use Node.js 16.x
       uses: actions/setup-node@v2
       with:
