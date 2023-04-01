@@ -1,0 +1,44 @@
+name: Jest Test
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  Run Jest:
+    runs-on: ubuntu-latest
+      strategy:
+    matrix:
+      node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.WORKFLOW_TOKEN }} # if needed
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build:prod # will run `yarn build:prod` command
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test # will run `yarn test` command
+      # - uses: actions/checkout@v3
+      # - name: Checkout source code
+      #   uses: actions/checkout@main
+      # - name: yarn clean cache
+      #   run: yarn clean cache
+      # - name: yarn run install
+      #   run: yarn install
+      # - name: run test code
+      #   run: npm test
+      # uses: actions/github-script@0.2.0
+      # with:
+      #   github_token: ${{ secrets.GIT_TEST_TOKEN }}
