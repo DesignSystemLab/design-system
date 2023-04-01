@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Use Node.js 16.x
-      uses: actions/setup-node
+      uses: actions/setup-node@v2
       with:
         node-version: '16.x'
         token: ${{ secrets.WORKFLOW_TOKEN }}
