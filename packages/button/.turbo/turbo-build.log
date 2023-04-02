@@ -1,4 +1,0 @@
-[36m
-[1msrc/index.ts[22m → [1mdist/cjs, dist/esm[22m...[39m
-babelHelpers: 'bundled' option was used by default. It is recommended to configure this option explicitly, read more here: https://github.com/rollup/plugins/tree/master/packages/babel#babelhelpers
-[32mcreated [1mdist/cjs, dist/esm[22m in [1m1.4s[22m[39m
