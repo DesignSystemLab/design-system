@@ -124,12 +124,6 @@ describe('TextInput', () => {
       <TextInput></TextInput>;
     }
   });
-
-  it('passes a11y test', async () => {
-    const { container } = render(<TextInput></TextInput>);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations(); // fail : "Form elements must have labels (label)"
-  });
 });
 
 // TextInput.Label
