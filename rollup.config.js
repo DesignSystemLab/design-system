@@ -22,7 +22,7 @@ export default {
   plugins: [
     resolve({ extensions }),
     commonjs(),
-    babel({ babelHelpers: 'runtime' }),
+    babel({ babelHelpers: 'runtime', exclude: '**/node_modules/**' }),
     typescript({
       tsconfig: 'tsconfig.json'
     })
