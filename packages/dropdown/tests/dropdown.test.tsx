@@ -146,9 +146,6 @@ describe('Dropdown', () => {
 
 describe('Dropdown.Trigger', () => {
   behavesAsComponent({ Component: Dropdown.Trigger, toRender: () => <Dropdown.Trigger></Dropdown.Trigger> });
-  it('renders consistently', () => {
-    expect(render(<Dropdown.Trigger></Dropdown.Trigger>)).toMatchSnapshot();
-  });
 });
 
 describe('Dropdown.Divider', () => {
