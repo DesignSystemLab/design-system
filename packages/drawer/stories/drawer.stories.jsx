@@ -25,7 +25,7 @@ const Template = args => {
       </Button>
       <Drawer
         {...args}
-        isOpen={open}
+        open={open}
         onClose={() => {
           console.log('Drawer 닫힘.');
           setDrawerOpen(false);

@@ -2,9 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 export type Placement = 'top' | 'right' | 'bottom' | 'left';
 
 export interface ReturnContext {
-  init: boolean;
-  isOpen: boolean | null;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
   drawerProps: Omit<DrawerProps, 'children'>;
 }
 
@@ -15,7 +14,7 @@ export interface DrawerCallback {
 
 export interface DrawerProps extends DrawerCallback {
   children?: React.ReactNode;
-  isOpen: boolean;
+  open: boolean;
   placement: Placement;
 }
 
