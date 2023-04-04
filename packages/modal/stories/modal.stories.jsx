@@ -26,8 +26,19 @@ export const ModalBasic = () => {
         >
           <Button>버튼</Button>
         </Modal.Trigger>
-        <Modal.Header>헤더</Modal.Header>
-        <Modal.Body>바디</Modal.Body>
+        <Modal.Header>
+          <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
+        </Modal.Header>
+        <Modal.Body>
+          <Flex direction="column" gap={10}>
+            <TextInput size="md" placeholder="hiihihi">
+              <TextInput.Label>label</TextInput.Label>
+            </TextInput>
+            <TextInput size="md" placeholder="hiihihi">
+              <TextInput.Label>label</TextInput.Label>
+            </TextInput>
+          </Flex>
+        </Modal.Body>
         <Modal.Footer>
           <Modal.Trigger
             close
