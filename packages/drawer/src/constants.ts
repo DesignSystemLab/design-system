@@ -10,5 +10,6 @@ const DEFAULT_OPTIONS: Required<DrwaerOption> = {
 
 const DRAWER_OVERRAY_BACKGROUND: ColorToken = 'shades-black';
 const DRAWER_BACKROUND: ColorToken = 'shades-white';
+const DRAWER_ID_PREFIX: string = 'jds-drawer';
 
-export { DEFAULT_OPTIONS, DRAWER_OVERRAY_BACKGROUND, DRAWER_BACKROUND };
+export { DEFAULT_OPTIONS, DRAWER_OVERRAY_BACKGROUND, DRAWER_BACKROUND, DRAWER_ID_PREFIX };

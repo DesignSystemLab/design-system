@@ -10,6 +10,8 @@ export const DrawerCloseIcon = () => {
   return (
     <div css={iconStyle(drawerProps.placement)}>
       <Button
+        role="button"
+        aria-label="Close Button"
         variant="unstyled"
         onClick={() => {
           setOpen(false);

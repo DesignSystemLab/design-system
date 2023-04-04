@@ -20,4 +20,5 @@ export interface DrawerProps extends DrawerCallback {
 
 export type DrawerChildrenProps = {
   children?: React.ReactNode;
+  id?: string;
 };
