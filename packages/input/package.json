@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@jdesignlab/react-icons": "*",
+    "@jdesignlab/react-utils": "*",
     "@jdesignlab/theme": "*"
   }
 }

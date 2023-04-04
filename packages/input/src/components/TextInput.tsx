@@ -2,27 +2,11 @@
 import type { InputProps } from '../types';
 import { inputWrapperStyle, inputRightStyle, inputStyle, inputPrependStyle } from '../styles';
 import { Close, Eye } from '@jdesignlab/react-icons';
+import { hasComponent } from '@jdesignlab/react-utils';
 import { InputContext } from '../context';
 import React, { useState, useId, useRef } from 'react';
 import { Label } from './InputLabel';
 import { Message } from './InputMessage';
-
-// TODO move to 'react-utils' package
-const hasComponent = (children: React.ReactElement | React.ReactElement[], componentName: string) => {
-  let having = false;
-  if (children) {
-    if (Array.isArray(children)) {
-      children.forEach((child: React.ReactElement) => {
-        const tagName = typeof child.type === 'function' ? child.type.name : child.type;
-        if (tagName === componentName) having = true;
-      });
-    } else {
-      const tagName = typeof children.type === 'function' ? children.type.name : children.type;
-      if (tagName === componentName) having = true;
-    }
-  }
-  return having;
-};
 
 export const TextInput = (props: InputProps) => {
   const id = useId();
