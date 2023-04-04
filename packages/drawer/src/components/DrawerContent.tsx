@@ -8,6 +8,7 @@ import { DrawerCloseIcon } from './DrawerCloseIcon';
 import directionStyle from '../styles/createDirectionStyle';
 import overlayStyle from '../styles/createOverlayStyle';
 import { flex } from '../styles/createFlexStyle';
+import { DRAWER_OVERRAY_BACKGROUND, DRAWER_BACKROUND } from '../constants';
 import type { DrawerChildrenProps } from '../types';
 
 export const DrawerContent = (props: DrawerChildrenProps) => {
@@ -22,8 +23,8 @@ export const DrawerContent = (props: DrawerChildrenProps) => {
   }, [drawerProps.open]);
 
   return isOpen ? (
-    <div css={overlayStyle()} onClick={event => closeDrawer(event, setOpen)}>
-      <div css={directionStyle(placement)} onClick={stopEventHandler}>
+    <div css={overlayStyle(DRAWER_OVERRAY_BACKGROUND)} onClick={event => closeDrawer(event, setOpen)}>
+      <div css={directionStyle(placement, DRAWER_BACKROUND)} onClick={stopEventHandler}>
         <DrawerCloseIcon />
         <div css={flex()}>{props.children}</div>
       </div>

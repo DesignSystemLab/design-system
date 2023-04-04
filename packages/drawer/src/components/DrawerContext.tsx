@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
+import { DEFAULT_OPTIONS } from '../constants';
 import type { ReturnContext } from '../types';
 
 const defaultContextValues: ReturnContext = {
@@ -7,14 +8,17 @@ const defaultContextValues: ReturnContext = {
   drawerProps: {
     onClose: () => {},
     onOpen: () => {},
-    placement: 'left',
-    open: false
+    placement: DEFAULT_OPTIONS.placement,
+    open: DEFAULT_OPTIONS.open
   }
 };
 
 export const DrawerContext = createContext<ReturnContext>(defaultContextValues);
 
 export const DrawerProvider = ({ ...props }) => {
+  const { drawerProps } = props;
+  const defaultDrawerProps = defaultContextValues.drawerProps;
+  const { open = defaultDrawerProps.open, placement = defaultDrawerProps.placement } = drawerProps;
   const [isOpen, setOpen] = useState<boolean>(props.drawerProps.open);
 
   return (
@@ -22,7 +26,7 @@ export const DrawerProvider = ({ ...props }) => {
       value={{
         isOpen,
         setOpen,
-        drawerProps: { ...defaultContextValues.drawerProps, ...props.drawerProps }
+        drawerProps: { open, placement, ...drawerProps }
       }}
     >
       {props.children}
