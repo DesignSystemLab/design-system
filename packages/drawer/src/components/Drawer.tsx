@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-
 import { DrawerProvider } from './DrawerContext';
 import { DrawerContent } from './DrawerContent';
 import { DrawerHeader } from './DrawerHeader';
@@ -8,16 +7,11 @@ import { DrawerFooter } from './DrawerFooter';
 import type { DrawerProps } from '../types';
 
 export const Drawer = (props: DrawerProps) => {
-  const { children, ...otherProps } = props;
-
-  return (
-    <DrawerProvider drawerProps={otherProps}>
-      <DrawerContent>{props.children}</DrawerContent>
-    </DrawerProvider>
-  );
+  const { children, ...propsWithoutChildren } = props;
+  return <DrawerProvider drawerProps={propsWithoutChildren}>{props.children}</DrawerProvider>;
 };
 
-Drawer.DrawerContent = DrawerContent;
-Drawer.DrawerHeader = DrawerHeader;
-Drawer.DrawerBody = DrawerBody;
-Drawer.DrawerFooter = DrawerFooter;
+Drawer.Content = DrawerContent;
+Drawer.Header = DrawerHeader;
+Drawer.Body = DrawerBody;
+Drawer.Footer = DrawerFooter;

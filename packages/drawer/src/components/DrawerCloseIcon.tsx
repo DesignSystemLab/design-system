@@ -1,19 +1,20 @@
 /** @jsxImportSource @emotion/react */
+import { useContext } from 'react';
+import { DrawerContext } from './DrawerContext';
+import iconStyle from '../styles/createIconStyle';
 import { Button } from '@jdesignlab/button';
 import { Close } from '@jdesignlab/react-icons';
-import { useContext } from 'react';
-import { useDrawerStyle } from '../hooks/useDrawerStyle';
-import { DrawerContext } from './DrawerContext';
 
 export const DrawerCloseIcon = () => {
-  const { drawerProps, setIsOpen } = useContext(DrawerContext);
-  const { drawerIconStyle } = useDrawerStyle();
+  const { drawerProps, setOpen } = useContext(DrawerContext);
   return (
-    <div css={drawerIconStyle(drawerProps.placement)}>
+    <div css={iconStyle(drawerProps.placement)}>
       <Button
+        role="button"
+        aria-label="Close Button"
         variant="unstyled"
-        onClick={e => {
-          setIsOpen(false);
+        onClick={() => {
+          setOpen(false);
         }}
       >
         <Close width={'12px'} />

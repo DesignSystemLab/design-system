@@ -1,38 +1,32 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
+import { DEFAULT_OPTIONS } from '../constants';
 import type { ReturnContext } from '../types';
 
 const defaultContextValues: ReturnContext = {
-  init: false,
   isOpen: false,
-  setIsOpen: () => {},
+  setOpen: () => {},
   drawerProps: {
     onClose: () => {},
     onOpen: () => {},
-    placement: 'left',
-    isOpen: false
+    placement: DEFAULT_OPTIONS.placement,
+    open: DEFAULT_OPTIONS.open
   }
 };
 
 export const DrawerContext = createContext<ReturnContext>(defaultContextValues);
 
 export const DrawerProvider = ({ ...props }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(props.drawerProps.isOpen);
-  const [init, setInit] = useState<boolean>(defaultContextValues.init);
-
-  useEffect(() => {
-    setInit(true);
-    if (props.drawerProps.onOpen && isOpen && props.drawerProps.isOpen) {
-      props.drawerProps.onOpen();
-    }
-  }, [props]);
+  const { drawerProps } = props;
+  const defaultDrawerProps = defaultContextValues.drawerProps;
+  const { open = defaultDrawerProps.open, placement = defaultDrawerProps.placement } = drawerProps;
+  const [isOpen, setOpen] = useState<boolean>(props.drawerProps.open);
 
   return (
     <DrawerContext.Provider
       value={{
-        init,
         isOpen,
-        setIsOpen,
-        drawerProps: { ...defaultContextValues.drawerProps, ...props.drawerProps }
+        setOpen,
+        drawerProps: { open, placement, ...drawerProps }
       }}
     >
       {props.children}

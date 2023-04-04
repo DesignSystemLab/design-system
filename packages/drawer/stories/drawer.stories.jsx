@@ -25,7 +25,7 @@ const Template = args => {
       </Button>
       <Drawer
         {...args}
-        isOpen={open}
+        open={open}
         onClose={() => {
           console.log('Drawer 닫힘.');
           setDrawerOpen(false);
@@ -35,19 +35,17 @@ const Template = args => {
           setDrawerOpen(true);
         }}
       >
-        <Drawer.DrawerContent>
-          <Drawer.DrawerHeader>
-            <h3>Header</h3>
-          </Drawer.DrawerHeader>
-          <Drawer.DrawerBody>
+        <Drawer.Content>
+          <Drawer.Header>Header</Drawer.Header>
+          <Drawer.Body>
             <h3>Body</h3>
             <Flex>
               <p>본문내용</p>
               <p>본문내용</p>
               <p>본문내용</p>
             </Flex>
-          </Drawer.DrawerBody>
-          <Drawer.DrawerFooter>
+          </Drawer.Body>
+          <Drawer.Footer>
             <Flex justify="space-around" items="center">
               <div>
                 <Button
@@ -63,8 +61,8 @@ const Template = args => {
                 <Button color="blue-base">저장</Button>
               </div>
             </Flex>
-          </Drawer.DrawerFooter>
-        </Drawer.DrawerContent>
+          </Drawer.Footer>
+        </Drawer.Content>
       </Drawer>
     </>
   );

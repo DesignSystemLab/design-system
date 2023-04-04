@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import { useDrawerStyle } from '../hooks/useDrawerStyle';
+import { flexGrow } from '../styles/createFlexStyle';
 import type { DrawerChildrenProps } from '../types';
 
 export const DrawerHeader = (props: DrawerChildrenProps) => {
-  const { drawerFlexGrow } = useDrawerStyle();
-  return <div css={drawerFlexGrow(1)}>{props.children}</div>;
+  return (
+    <header aria-label="drawer header" css={flexGrow(1)}>
+      {props.children}
+    </header>
+  );
 };
