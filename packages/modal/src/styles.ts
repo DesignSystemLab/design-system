@@ -26,7 +26,19 @@ export const modalWrapperStyle = (width: number | undefined) => {
     border: 'solid gray 1px',
     width: customWidth,
     boxShadow: '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%)',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    '&.modal_open': {
+      display: 'flex'
+    },
+    '&.modal_open ~ .modal_overlay': {
+      display: 'block'
+    },
+    '&.modal_close': {
+      display: 'none'
+    },
+    '&.modal_close ~ .modal_overlay': {
+      display: 'none'
+    }
   });
 };
 
