@@ -8,15 +8,10 @@ import type { DrawerProps } from '../types';
 
 export const Drawer = (props: DrawerProps) => {
   const { children, ...propsWithoutChildren } = props;
-
-  return (
-    <DrawerProvider drawerProps={propsWithoutChildren}>
-      <DrawerContent>{props.children}</DrawerContent>
-    </DrawerProvider>
-  );
+  return <DrawerProvider drawerProps={propsWithoutChildren}>{props.children}</DrawerProvider>;
 };
 
-Drawer.DrawerContent = DrawerContent;
-Drawer.DrawerHeader = DrawerHeader;
-Drawer.DrawerBody = DrawerBody;
-Drawer.DrawerFooter = DrawerFooter;
+Drawer.Content = DrawerContent;
+Drawer.Header = DrawerHeader;
+Drawer.Body = DrawerBody;
+Drawer.Footer = DrawerFooter;
