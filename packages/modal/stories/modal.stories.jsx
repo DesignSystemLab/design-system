@@ -15,54 +15,30 @@ const argTypes = {};
 const Template = args => <Modal {...args} />;
 
 export const ModalBasic = () => {
-  const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <Button
-        onClick={() => {
-          setOpenModal(true);
-        }}
-      >
-        버튼
-      </Button>
-      <Modal open={openModal} hasCloseIcon={true}>
-        <Modal.Header>
-          <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
-        </Modal.Header>
-        <Modal.Body>
-          <Flex direction="column" gap={10}>
-            <TextInput inputSize="md" variant="outline" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-              <TextInput.Right>Right</TextInput.Right>
-            </TextInput>
-            <TextInput inputSize="md" variant="outline" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-              <TextInput.Right>Right</TextInput.Right>
-            </TextInput>
-          </Flex>
-        </Modal.Body>
+      <Modal hasCloseIcon>
+        <Modal.Trigger
+          open
+          onOpen={() => {
+            alert('onOpen!');
+          }}
+        >
+          <Button>버튼</Button>
+        </Modal.Trigger>
+        <Modal.Header>헤더</Modal.Header>
+        <Modal.Body>바디</Modal.Body>
         <Modal.Footer>
-          <Flex justify="space-between">
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => {
-                setOpenModal(false);
-              }}
-            >
-              닫기
-            </Button>
-            <Button
-              size="lg"
-              variant="solid"
-              onClick={() => {
-                alert('OK@!!@#');
-                setOpenModal(false);
-              }}
-            >
+          <Modal.Trigger
+            close
+            onClose={() => {
+              alert('onClose!');
+            }}
+          >
+            <Button size="lg" variant="solid">
               확인
             </Button>
-          </Flex>
+          </Modal.Trigger>
         </Modal.Footer>
       </Modal>
     </>
