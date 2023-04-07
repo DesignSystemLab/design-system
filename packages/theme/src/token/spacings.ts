@@ -1,4 +1,4 @@
-import { SpacingType } from './spacingTypes';
+import { SpacingType } from '../types/spacings';
 
 const BASE_SPACING: number = 4;
 const SAPCING_LENGTH: number = 16;

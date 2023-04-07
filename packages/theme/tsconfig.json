@@ -4,5 +4,5 @@
     "declaration": true,
     "outDir": "./dist"
   },
-  "include": ["token", "utils"]
+  "include": ["src/token", "utils"]
 }

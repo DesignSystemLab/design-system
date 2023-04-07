@@ -1,5 +1,5 @@
 import { variantPresetColors } from '../token/colors';
-import { HEX, ColorToken } from '../token/colorTypes';
+import type { HEX, ColorToken } from '../types/color';
 
 export const getColorByToken = (colorToken: ColorToken): HEX => {
   const [prefix, suffix] = colorToken.split('-');
