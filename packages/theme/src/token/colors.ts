@@ -1,4 +1,4 @@
-import { Color } from './colorTypes';
+import { Color } from '../types/color';
 
 const primary = Object.freeze({
   100: '#FFFBEE',
