@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { hexToRgba, getColorByToken } from '@jdesignlab/theme';
-import type { CardProps, Direction, FlexMap, FlexToken, Size, Variant } from './cardTypes';
+import type { CardProps, Direction, FlexMap, FlexToken, Size, Variant } from './types';
 
 type StyleProps = Omit<CardProps, 'children' | 'as'>;
 export const useStyle = (styleProps: StyleProps) => {

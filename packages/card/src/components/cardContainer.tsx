@@ -2,7 +2,7 @@
 
 import { jsx } from '@emotion/react';
 import { useContext } from 'react';
-import { CardContext } from '../cardContext';
+import { CardContext } from './cardContext';
 
 export const CardContainer = (props: { children: React.ReactNode; as?: React.ElementType }) => {
   const { children, as } = props;

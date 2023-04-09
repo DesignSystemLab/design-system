@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import { CardProvider } from '../cardContext';
-import { CardProps } from '../cardTypes';
+import { CardProvider } from './cardContext';
 import { CardHeader } from './cardHeader';
 import { CardBody } from './cardBody';
 import { cardFooter } from './cardFooter';
 import { CardContainer } from './cardContainer';
+import type { CardProps } from '../types';
 
 export const Card = (props: CardProps) => {
   const { children, ...rest } = props;

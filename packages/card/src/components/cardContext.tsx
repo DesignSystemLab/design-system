@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
-import { useStyle } from './useStyle';
-import { CardProps, StyleProps } from './cardTypes';
+import { useStyle } from '../useStyle';
+import type { StyleProps } from '../types';
 
 interface ReturnContext {
   style: StyleProps;

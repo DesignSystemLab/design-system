@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { useContext } from 'react';
-import { CardContext } from '../cardContext';
+import { CardContext } from './cardContext';
 
 export const cardFooter = (props: { children: React.ReactNode }) => {
   const context = useContext(CardContext);

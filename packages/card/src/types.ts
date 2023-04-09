@@ -11,7 +11,7 @@ export type AsElement = React.ElementType;
 
 export interface CardProps {
   as?: AsElement;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   variant?: Variant;
   color?: ColorToken;
   align?: FlexToken;
