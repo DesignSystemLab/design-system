@@ -1,5 +1,4 @@
 import { getColorByToken } from '@jdesignlab/theme';
-import { createContext } from 'react';
 
 export const preset = {
   defaultTheme: 'light',
@@ -50,5 +49,3 @@ export const preset = {
     }
   }
 };
-
-export const ThemeContext = createContext(preset);
