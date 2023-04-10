@@ -6,7 +6,7 @@ export const preset: Preset = {
   light: {
     color: {
       background: '#ffffff',
-      fontColor: '#000000',
+      fontColor: '#444444',
       primary: getColorByToken('secondary-500'),
       secondary: getColorByToken('primary-500'),
       success: getColorByToken('success'),
@@ -16,7 +16,7 @@ export const preset: Preset = {
       disabled: getColorByToken('disabled')
     },
     effect: {
-      disabledOpacity: 0.38,
+      disabledOpacity: '77',
       hoverGhostOpacity: '26', // 0.15
       hoverSolidOpacity: 'e5', // 0.9
       focusOpacity: 0.12,
@@ -39,7 +39,7 @@ export const preset: Preset = {
       disabled: getColorByToken('disabled')
     },
     effect: {
-      disabledOpacity: 0.38,
+      disabledOpacity: '77',
       hoverGhostOpacity: '26', // 0.15
       hoverSolidOpacity: 'e5', // 0.9
       focusOpacity: 0.12,

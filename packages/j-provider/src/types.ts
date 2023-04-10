@@ -14,7 +14,7 @@ export interface Preset {
       disabled: HEX;
     };
     effect: {
-      disabledOpacity: number;
+      disabledOpacity: string;
       hoverGhostOpacity: string;
       hoverSolidOpacity: string;
       focusOpacity: number;
@@ -37,7 +37,7 @@ export interface Preset {
       disabled: HEX;
     };
     effect: {
-      disabledOpacity: number;
+      disabledOpacity: string;
       hoverGhostOpacity: string;
       hoverSolidOpacity: string;
       focusOpacity: number;
