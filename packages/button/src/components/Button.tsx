@@ -5,11 +5,13 @@ import React, { useContext } from 'react';
 import type { Ripple } from '@jdesignlab/react-utils';
 import { buttonDefaultStyle, buttonVariantStyle, buttonSizeStyle } from '../styles';
 import { css } from '@emotion/react';
+import { useRipple } from '@jdesignlab/react-utils';
 import { ThemeContext } from '@jdesignlab/j-provider';
 
 export const Button = (props: ButtonProps) => {
   const themePreset = useContext(ThemeContext);
   const { children, onClick, disabled, ...otherProps } = props;
+  const { ripples, createRipple, rippleStyle, rippleNodes } = useRipple();
 
   const buttonStyle = css(buttonDefaultStyle, {
     ...buttonSizeStyle(props.size || 'md', props.full ?? false),
@@ -19,7 +21,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       css={buttonStyle}
-      onClick={onClick}
+      onClick={callHandler(createRipple, disabled ? () => {} : onClick)}
       type={props.type || 'button'}
       tabIndex={!disabled ? 0 : -1}
       role="button"
@@ -29,6 +31,21 @@ export const Button = (props: ButtonProps) => {
     >
       {props.icon}
       {children}
+      {disabled ||
+        ripples.map((ripple: Ripple, index: number) => (
+          <span
+            key={index}
+            css={[
+              rippleStyle,
+              {
+                left: ripple.x,
+                top: ripple.y,
+                width: ripple.size,
+                height: ripple.size
+              }
+            ]}
+          ></span>
+        ))}
     </button>
   );
 };
