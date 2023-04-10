@@ -11,7 +11,7 @@ import { ThemeContext } from '@jdesignlab/j-provider';
 export const Button = (props: ButtonProps) => {
   const themePreset = useContext(ThemeContext);
   const { children, onClick, disabled, ...otherProps } = props;
-  const { ripples, createRipple, rippleStyle, rippleNodes } = useRipple();
+  const { createRipple, rippleNodes } = useRipple();
 
   const buttonStyle = css(buttonDefaultStyle, {
     ...buttonSizeStyle(props.size || 'md', props.full ?? false),
@@ -31,21 +31,7 @@ export const Button = (props: ButtonProps) => {
     >
       {props.icon}
       {children}
-      {disabled ||
-        ripples.map((ripple: Ripple, index: number) => (
-          <span
-            key={index}
-            css={[
-              rippleStyle,
-              {
-                left: ripple.x,
-                top: ripple.y,
-                width: ripple.size,
-                height: ripple.size
-              }
-            ]}
-          ></span>
-        ))}
+      {disabled || rippleNodes}
     </button>
   );
 };

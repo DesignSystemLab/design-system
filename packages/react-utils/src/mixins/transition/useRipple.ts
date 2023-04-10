@@ -1,5 +1,5 @@
 import { useState, createElement } from 'react';
-import { css, keyframes } from '@emotion/react';
+import { css, jsx, keyframes } from '@emotion/react';
 import type { Ripple } from './types';
 import { MouseEvent } from 'react';
 
@@ -39,9 +39,8 @@ export const useRipple = () => {
   };
 
   const rippleNodes = ripples.map((ripple: Ripple, index: number) =>
-    createElement('span', {
+    jsx('span', {
       key: index,
-      className: 'ripple',
       css: [
         rippleStyle,
         {
@@ -54,5 +53,5 @@ export const useRipple = () => {
     })
   );
 
-  return { ripples, createRipple, rippleStyle, rippleNodes };
+  return { ripples, createRipple, rippleNodes };
 };
