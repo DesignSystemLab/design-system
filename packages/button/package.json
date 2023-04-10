@@ -44,9 +44,7 @@
     "@jdesignlab/react-icons": "*",
     "@jdesignlab/react-utils": "*",
     "@jdesignlab/theme": "*",
-    "@jdesignlab/utils": "*"
-  },
-  "peerDependencies": {
+    "@jdesignlab/utils": "*",
     "@jdesignlab/j-provider": "*"
   }
 }
