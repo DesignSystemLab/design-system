@@ -39,13 +39,13 @@ export const buttonVariantStyle = (themePreset: any, variant: ButtonVariant, dis
     parsedColor += themePreset.effect.disabledOpacity;
     disabledStyle = {
       cursor: 'not-allowed',
-      color: disabled ? themePreset.color.disabled : parsedColor,
+      color: themePreset.color.disabled,
       '&:active': {
         transform: 'translateY(0)'
       }
     };
   } else {
-    disabledStyle = { cursor: 'pointer' };
+    disabledStyle = { cursor: 'pointer', color: parsedColor };
   }
 
   const hasShadow = {
