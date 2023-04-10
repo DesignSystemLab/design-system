@@ -1,6 +1,7 @@
 import { getColorByToken } from '@jdesignlab/theme';
+import type { Preset } from './types';
 
-export const preset = {
+export const preset: Preset = {
   theme: 'light',
   light: {
     color: {
