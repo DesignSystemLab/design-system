@@ -1,5 +1,6 @@
 import { Button } from '../src';
 import { Settings, Volume } from '@jdesignlab/react-icons';
+import { ThemeContext, themePreset } from '@jdesignlab/j-provider';
 
 export default {
   title: 'Components/Button',
@@ -87,34 +88,36 @@ export const WithColors = () => (
 );
 
 export const WithVariants = () => (
-  <div>
-    <Button variant="solid" onClick={onClick}>
-      solid
-    </Button>
-    <Button variant="outline" onClick={onClick}>
-      outline
-    </Button>
-    <Button variant="ghost">ghost</Button>
-    <Button variant="link">link</Button>
-    <Button variant="unstyled">unstyled</Button>
-    <br />
-    <br />
-    <Button variant="solid" onClick={onClick} disabled>
-      solid
-    </Button>
-    <Button variant="outline" onClick={onClick} disabled>
-      outline
-    </Button>
-    <Button variant="ghost" disabled>
-      ghost
-    </Button>
-    <Button variant="link" disabled>
-      link
-    </Button>
-    <Button variant="unstyled" disabled>
-      unstyled
-    </Button>
-  </div>
+  <ThemeContext.Provider value={themePreset}>
+    <div>
+      <Button variant="solid" onClick={onClick}>
+        solid
+      </Button>
+      <Button variant="outline" onClick={onClick}>
+        outline
+      </Button>
+      <Button variant="ghost">ghost</Button>
+      <Button variant="link">link</Button>
+      <Button variant="unstyled">unstyled</Button>
+      <br />
+      <br />
+      <Button variant="solid" onClick={onClick} disabled>
+        solid
+      </Button>
+      <Button variant="outline" onClick={onClick} disabled>
+        outline
+      </Button>
+      <Button variant="ghost" disabled>
+        ghost
+      </Button>
+      <Button variant="link" disabled>
+        link
+      </Button>
+      <Button variant="unstyled" disabled>
+        unstyled
+      </Button>
+    </div>
+  </ThemeContext.Provider>
 );
 
 export const WithSizes = () => (
