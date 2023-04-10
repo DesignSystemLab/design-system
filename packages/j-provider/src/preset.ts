@@ -1,7 +1,7 @@
 import { getColorByToken } from '@jdesignlab/theme';
 
 export const preset = {
-  defaultTheme: 'light',
+  theme: 'light',
   light: {
     color: {
       background: '#ffffff',
@@ -16,8 +16,8 @@ export const preset = {
     },
     effect: {
       disabledOpacity: 0.38,
-      idleOpacity: 0.1,
-      hoverOpacity: 0.04,
+      hoverGhostOpacity: '26', // 0.15
+      hoverSolidOpacity: 'e5', // 0.9
       focusOpacity: 0.12,
       selectedOpacity: 0.08,
       activatedOpacity: 0.12,
@@ -28,7 +28,7 @@ export const preset = {
   dark: {
     color: {
       background: '#333333',
-      fontColor: getColorByToken('grey-lighten3'),
+      fontColor: getColorByToken('grey-lighten5'),
       primary: '#4695E5',
       secondary: '#F5A402',
       success: getColorByToken('success'),
@@ -39,8 +39,8 @@ export const preset = {
     },
     effect: {
       disabledOpacity: 0.38,
-      idleOpacity: 0.1,
-      hoverOpacity: 0.04,
+      hoverGhostOpacity: '26', // 0.15
+      hoverSolidOpacity: 'e5', // 0.9
       focusOpacity: 0.12,
       selectedOpacity: 0.08,
       activatedOpacity: 0.12,
