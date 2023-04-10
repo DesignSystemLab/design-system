@@ -1,4 +1,5 @@
 import { Button } from '../src';
+import { Settings, Volume } from '@jdesignlab/react-icons';
 
 export default {
   title: 'Components/Button',
@@ -51,21 +52,31 @@ const Template = args => <Button {...args} />;
 export const Basic = Template.bind({});
 Basic.args = {
   children: 'button',
-  size: 'md'
+  size: 'xl'
 };
 Basic.argTypes = argTypes;
 
+const onClick = () => {
+  console.log('clicked!');
+};
+
 export const WithColors = () => (
   <>
-    <Button color="blue-base">blue</Button>
-    <Button color="lightGreen-base">lightGreen</Button>
-    <Button color="blue-darken1" size="xl">
+    <Button variant="ghost" color="blue-base">
+      blue
+    </Button>
+    <Button variant="ghost" color="lightGreen-base">
+      lightGreen
+    </Button>
+    <Button variant="outline" color="blue-darken1" size="xl">
       blue-darken1
     </Button>
     <Button color="red-lighten3">red-lighten3</Button>
     <Button color="pink-accent2">pink-accent2</Button>
     <Button color="primary-500">primary</Button>
-    <Button color="secondary-500">secondary</Button>
+    <Button variant="outline" color="secondary-500">
+      secondary
+    </Button>
     <Button color="success">success</Button>
     <Button color="info">info</Button>
     <Button color="warning">warning</Button>
@@ -76,13 +87,34 @@ export const WithColors = () => (
 );
 
 export const WithVariants = () => (
-  <>
-    <Button variant="solid"></Button>
-    <Button variant="outline">outline</Button>
+  <div>
+    <Button variant="solid" onClick={onClick}>
+      solid
+    </Button>
+    <Button variant="outline" onClick={onClick}>
+      outline
+    </Button>
     <Button variant="ghost">ghost</Button>
     <Button variant="link">link</Button>
     <Button variant="unstyled">unstyled</Button>
-  </>
+    <br />
+    <br />
+    <Button variant="solid" onClick={onClick} disabled>
+      solid
+    </Button>
+    <Button variant="outline" onClick={onClick} disabled>
+      outline
+    </Button>
+    <Button variant="ghost" disabled>
+      ghost
+    </Button>
+    <Button variant="link" disabled>
+      link
+    </Button>
+    <Button variant="unstyled" disabled>
+      unstyled
+    </Button>
+  </div>
 );
 
 export const WithSizes = () => (
