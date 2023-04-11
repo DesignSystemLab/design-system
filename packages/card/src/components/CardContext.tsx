@@ -10,8 +10,9 @@ const defaultContextValues: ReturnContext = {
 export const CardContext = createContext<ReturnContext>(defaultContextValues);
 
 export const CardProvider = ({ ...props }) => {
-  const { children, cardProps } = props;
+  const { cardProps } = props;
   const defaultStyleProps = defaultContextValues.styleProps;
+
   const {
     align = defaultStyleProps.align,
     color = defaultStyleProps.color,
@@ -22,6 +23,7 @@ export const CardProvider = ({ ...props }) => {
     variant = defaultStyleProps.variant,
     ...restProps
   } = cardProps;
+
   return (
     <CardContext.Provider
       value={{
@@ -29,7 +31,7 @@ export const CardProvider = ({ ...props }) => {
         cardProps: restProps
       }}
     >
-      {children}
+      {props.children}
     </CardContext.Provider>
   );
 };

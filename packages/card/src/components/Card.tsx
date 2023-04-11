@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { CardProvider } from './CardContext';
+import { CardContainer } from './CardContainer';
 import { CardHeader } from './CardHeader';
 import { CardBody } from './CardBody';
 import { CardFooter } from './CardFooter';
-import { CardContainer } from './CardContainer';
 import { CardDivider } from './CardDivider';
 import { REQUIRED_CARD_PROPS } from '../constants';
 import omitProps from '../utils/omitProps';
@@ -15,12 +15,11 @@ export const Card = (props: CardProps) => {
 
   return (
     <CardProvider cardProps={propsWithoutChildren}>
-      <Card.Container {...domAttributes}>{props.children}</Card.Container>
+      <CardContainer {...domAttributes}>{props.children}</CardContainer>
     </CardProvider>
   );
 };
 
-Card.Container = CardContainer;
 Card.Header = CardHeader;
 Card.Body = CardBody;
 Card.Footer = CardFooter;

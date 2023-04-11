@@ -13,6 +13,7 @@ export const CardContainer = (props: Omit<CardProps, CardStyle>) => {
   const { size, variant, color, justify, align, direction } = useContext(CardContext).styleProps;
   const cardBaseStyle = createCardStyle(size, variant, color, DEFAULT_BORDER_COLOR);
   const flexStyle = createFlexStyle(justify, align, direction);
+
   return jsx(
     as,
     {

@@ -1,6 +1,6 @@
-import type { SerializedStyles, CSSObject } from '@emotion/react';
-import type { ColorToken } from '@jdesignlab/theme';
 import { AriaAttributes, HTMLAttributes, CSSProperties } from 'react';
+import type { CSSObject } from '@emotion/react';
+import type { ColorToken } from '@jdesignlab/theme';
 
 export interface ReturnContext {
   cardProps: CardProps;

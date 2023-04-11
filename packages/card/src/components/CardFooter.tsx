@@ -8,8 +8,8 @@ import createContentStyle from '../styles/createContentStytle';
 import type { CardFooterProps } from '../types';
 
 export const CardFooter = (props: CardFooterProps) => {
-  const { children, as = 'footer', className = '', ...restProps } = props;
   const { divider, direction } = useContext(CardContext).styleProps;
+  const { children, as = 'footer', className = '', ...restProps } = props;
   return jsx(
     as,
     {
