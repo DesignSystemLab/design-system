@@ -1,4 +1,3 @@
-import { CSSObject } from '@emotion/react';
 import type { ColorToken } from '@jdesignlab/theme';
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -7,16 +6,17 @@ export type TabSize = 'sm' | 'md' | 'lg';
 
 export interface TabsProps {
   children: React.ReactNode;
-  defaultValue: string;
+  defaultValue?: string;
   variant?: TabVariant;
   onChange?: () => {};
   size?: TabSize;
-  color: ColorToken;
+  color?: ColorToken;
+  lazy?: boolean;
+  full?: boolean;
 }
 
 export interface TabsListProps {
   children: React.ReactNode;
-  full?: boolean;
 }
 
 export interface TabsTriggerProps {
@@ -31,7 +31,7 @@ export interface TabsContentProps {
 }
 
 export interface TabChangeHandleProps {
-  selectedTab: string;
+  selectedTab: string | undefined;
   hasTouched: boolean;
   setHasTouched: Dispatch<SetStateAction<boolean>>;
   onChange?: () => {};

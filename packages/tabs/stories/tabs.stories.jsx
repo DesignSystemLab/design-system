@@ -19,9 +19,8 @@ const onChange = () => {
 };
 export const TabsBasic = () => (
   <>
-    <Tabs defaultValue="tab1" variant="enclosed" size="sm" onChange={onChange}>
+    <Tabs variant="enclosed" size="sm" onChange={onChange} defaultValue="tab3">
       <Tabs.List>
-        {/* <Tabs.List full> */}
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
         <Tabs.Trigger value="tab2" disabled>
           tab2
@@ -37,9 +36,8 @@ export const TabsBasic = () => (
       <Tabs.Content value="tab3">content3</Tabs.Content>
     </Tabs>
     <br />
-    <Tabs defaultValue="tab1" variant="enclosed" size="md" onChange={onChange}>
-      {/* <Tabs.List> */}
-      <Tabs.List full>
+    <Tabs variant="enclosed" size="md" onChange={onChange}>
+      <Tabs.List>
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
         <Tabs.Trigger value="tab2" disabled>
           tab2
@@ -55,9 +53,8 @@ export const TabsBasic = () => (
       <Tabs.Content value="tab3">content3</Tabs.Content>
     </Tabs>
     <br />
-    <Tabs defaultValue="tab1" variant="enclosed" size="lg" onChange={onChange}>
+    <Tabs variant="enclosed" size="lg" onChange={onChange}>
       <Tabs.List>
-        {/* <Tabs.List full> */}
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
         <Tabs.Trigger value="tab2" disabled>
           tab2
@@ -74,9 +71,8 @@ export const TabsBasic = () => (
     </Tabs>
     <br />
 
-    <Tabs defaultValue="tab1" size="sm" variant="underline" onChange={onChange}>
+    <Tabs size="sm" variant="underline" onChange={onChange}>
       <Tabs.List>
-        {/* <Tabs.List full> */}
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
         <Tabs.Trigger value="tab2" disabled>
           tab2
@@ -93,13 +89,10 @@ export const TabsBasic = () => (
     </Tabs>
     <br />
 
-    <Tabs defaultValue="tab1" variant="underline" onChange={onChange}>
+    <Tabs variant="underline" onChange={onChange} full>
       <Tabs.List>
-        {/* <Tabs.List full> */}
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
-        <Tabs.Trigger value="tab2" disabled>
-          tab2
-        </Tabs.Trigger>
+        <Tabs.Trigger value="tab2">tab2</Tabs.Trigger>
         <Tabs.Trigger value="tab3">tab3</Tabs.Trigger>
       </Tabs.List>
       <Tabs.Content value="tab1">
@@ -112,9 +105,8 @@ export const TabsBasic = () => (
     </Tabs>
     <br />
 
-    <Tabs defaultValue="tab1" size="lg" variant="underline" onChange={onChange}>
-      {/* <Tabs.List> */}
-      <Tabs.List full>
+    <Tabs size="lg" variant="underline" onChange={onChange}>
+      <Tabs.List>
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
         <Tabs.Trigger value="tab2" disabled>
           tab2
