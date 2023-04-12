@@ -4,9 +4,11 @@ export type ButtonVariant = 'solid' | 'ghost' | 'outline' | 'link' | 'unstyled';
 export type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
   disabled?: boolean;
   color?: ColorToken;
+  full?: boolean;
+  icon?: JSX.Element;
 }
