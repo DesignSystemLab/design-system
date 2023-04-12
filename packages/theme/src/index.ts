@@ -8,3 +8,4 @@ export * from './token/spacings';
 /**utils */
 export * from './utils/getColorbyToken';
 export * from './utils/createClassVariant';
+export * from './utils/setTextColorByBackground';
