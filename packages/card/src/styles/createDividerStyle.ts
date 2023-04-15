@@ -8,9 +8,9 @@ const createDividerStyle = (direction: Direction) => {
 
   if (direction === 'vertical') {
     return css({
-      height: 0,
       width: '100%',
-      margin: '4px 0',
+      height: 0,
+      margin: '8px 0',
       borderTop: `${getColorByToken(dividerColor)} solid 1px`
     });
   }
