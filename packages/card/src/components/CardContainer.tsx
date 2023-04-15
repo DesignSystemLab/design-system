@@ -9,7 +9,7 @@ import createFlexStyle from '../styles/createFlexStyle';
 import { CardProps, CardStyle } from '../types';
 
 export const CardContainer = (props: Omit<CardProps, CardStyle>) => {
-  const { children, as = 'div', role = 'article', className, ...restProps } = props;
+  const { children, as = 'div', role = 'article', className = '', ...restProps } = props;
   const { size, variant, color, justify, align, direction } = useContext(CardContext).styleProps;
   const cardBaseStyle = createCardStyle(size, variant, color, DEFAULT_BORDER_COLOR);
   const flexStyle = createFlexStyle(justify, align, direction);
@@ -18,7 +18,7 @@ export const CardContainer = (props: Omit<CardProps, CardStyle>) => {
     {
       css: [...cardBaseStyle, flexStyle],
       role,
-      className: `${className} ${createClassVariant('card', 'article')}`,
+      className: `${createClassVariant('card', 'article')} ${className}`,
       ...restProps
     },
     children
