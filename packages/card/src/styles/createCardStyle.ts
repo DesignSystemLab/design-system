@@ -10,11 +10,12 @@ const createCardStyle = (size: Size, variant: Variant, backgroundColor: ColorTok
     switch (variant) {
       case 'filled':
         return css({
+          boxSizing: 'border-box',
           boxShadow: 'none',
           backgroundColor: `${getColorByToken(backgroundColor)}`
         });
       case 'outlined':
-        return css({ border: `1px solid ${hexBorderColor}` });
+        return css({ boxSizing: 'border-box', border: `1px solid ${hexBorderColor}` });
       default:
         return css({
           boxSizing: 'border-box',
