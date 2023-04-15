@@ -1960,15 +1960,33 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
+    "@jdesignlab/j-provider": "*"
+    "@jdesignlab/react-icons": "*"
+    "@jdesignlab/react-utils": "*"
     "@jdesignlab/theme": "*"
+    "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
+    "@testing-library/dom": ^9.2.0
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.4.3
+    "@types/jest": ^29.4.0
+    "@types/jest-axe": ^3.5.5
     "@types/react": ^18.0.27
+    "@types/testing-library__jest-dom": ^5.14.5
+    jest: ^29.5.0
+    jest-axe: ^7.0.0
+    jest-config: ^29.5.0
+    jest-environment-jsdom: ^29.5.0
+    jest-preview: latest
     react: ^18.2.0
+    react-dom: ^18.2.0
     rimraf: ^4.1.2
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
+    ts-jest: ^29.0.5
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
@@ -2179,6 +2197,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@jdesignlab/j-provider@*, @jdesignlab/j-provider@workspace:packages/j-provider":
+  version: 0.0.0-use.local
+  resolution: "@jdesignlab/j-provider@workspace:packages/j-provider"
+  dependencies:
+    "@jdesignlab/react-utils": "*"
+    "@jdesignlab/theme": "*"
+    "@rollup/plugin-babel": ^6.0.3
+    "@rollup/plugin-commonjs": ^24.0.1
+    "@rollup/plugin-node-resolve": ^15.0.1
+    "@types/react": ^18.0.27
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    rimraf: ^4.1.2
+    rollup: ^3.12.0
+    rollup-plugin-typescript2: ^0.34.1
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@jdesignlab/modal@workspace:packages/modal":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/modal@workspace:packages/modal"
@@ -2300,6 +2337,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jdesignlab/react-utils@workspace:packages/react-utils"
   dependencies:
+    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-preset-css-prop": ^11.10.0
+    "@emotion/react": ^11.10.5
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2370,16 +2410,29 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
+    "@jdesignlab/react-utils": "*"
     "@jdesignlab/theme": "*"
+    "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
     "@storybook/react": ^6.5.16
+    "@testing-library/dom": ^9.0.1
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.4.3
+    "@types/jest": ^29.4.0
     "@types/react": ^18.0.27
+    "@types/testing-library__jest-dom": ^5.14.5
+    jest: ^29.5.0
+    jest-config: ^29.5.0
+    jest-preview: ^0.3.1
     react: ^18.2.0
+    react-dom: ^18.2.0
     rimraf: ^4.1.2
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
+    ts-jest: ^29.0.5
     typescript: ^4.9.4
   peerDependencies:
     "@types/react": ~18
@@ -2398,17 +2451,32 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
+    "@jdesignlab/react-utils": "*"
     "@jdesignlab/theme": "*"
     "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
     "@storybook/react": ^6.5.16
+    "@testing-library/dom": ^9.2.0
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.4.3
+    "@types/jest": ^29.4.0
+    "@types/jest-axe": ^3.5.5
     "@types/react": ^18.0.27
+    "@types/testing-library__jest-dom": ^5.14.5
+    jest: ^29.5.0
+    jest-axe: ^7.0.0
+    jest-config: ^29.5.0
+    jest-environment-jsdom: ^29.5.0
+    jest-preview: latest
     react: ^18.2.0
+    react-dom: ^18.2.0
     rimraf: ^4.1.2
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
+    ts-jest: ^29.0.5
     typescript: ^4.9.4
   languageName: unknown
   linkType: soft
@@ -2457,6 +2525,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jdesignlab/theme@workspace:packages/theme"
   dependencies:
+    "@jdesignlab/j-provider": "*"
     ts-node: ^10.9.1
     typescript: ^4.9.5
   languageName: unknown
