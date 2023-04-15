@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import type { PopoverProps } from './popoverTypes';
 import { usePopover } from './usePopover';
-import { PopoverProvider } from './components/popoverContext';
-import { PopoverHeader } from './components/popoverHeader';
-import { PopoverTrigger } from './components/popoverTrigger';
-import { PopoverBody } from './components/popoverBody';
-import { popoverFooter } from './components/popoverFooter';
-import { PopoverContainer } from './components/popoverContainter';
+import { PopoverProvider } from './components/PopoverContext';
+import { PopoverHeader } from './components/PopoverHeader';
+import { PopoverTrigger } from './components/PopoverTrigger';
+import { PopoverBody } from './components/PopoverBody';
+import { popoverFooter } from './components/PopoverFooter';
+import { PopoverContainer } from './components/PopoverContainter';
 
 export const Popover = (props: PopoverProps) => {
   const { getChildren } = usePopover();
