@@ -14,7 +14,7 @@ export const CardBody = (props: CardBodyProps) => {
     as,
     {
       css: createContentStyle(direction, DEFAULT_BORDER_COLOR),
-      className: `${className} ${createClassVariant('card', 'content')}`,
+      className: `${createClassVariant('card', 'content')} ${className}`,
       ...restProps
     },
     children
