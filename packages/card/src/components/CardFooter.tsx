@@ -8,12 +8,12 @@ import createContentStyle from '../styles/createContentStytle';
 import type { CardFooterProps } from '../types';
 
 export const CardFooter = (props: CardFooterProps) => {
-  const { divider, direction } = useContext(CardContext).styleProps;
+  const { direction } = useContext(CardContext).styleProps;
   const { children, as = 'footer', className = '', ...restProps } = props;
   return jsx(
     as,
     {
-      css: createContentStyle(divider, direction, DEFAULT_BORDER_COLOR),
+      css: createContentStyle(direction, DEFAULT_BORDER_COLOR),
       className: `${className} ${createClassVariant('card', 'footer')}`,
       ...restProps
     },
