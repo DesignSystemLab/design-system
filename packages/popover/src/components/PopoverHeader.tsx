@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import {Close} from '@jdesignlab/react-icons'
-import { useContext } from 'react';
 import { Flex } from '@jdesignlab/flex';
 import { Button } from '@jdesignlab/button';
-import { PopoverProps } from '../popoverTypes';
-import { PopoverContext } from './popoverContext';
+import { PopoverContext } from './PopoverContext';
+import { Close } from '@jdesignlab/react-icons';
+import { useContext } from 'react';
+import type { PopoverProps } from '../types';
 
 export const PopoverHeader = (props: PopoverProps) => {
   const context = useContext(PopoverContext);

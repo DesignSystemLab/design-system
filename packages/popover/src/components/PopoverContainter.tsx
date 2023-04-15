@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useContext } from 'react';
-import { PopoverContext } from './popoverContext';
+import { PopoverContext } from './PopoverContext';
 
 export const PopoverContainer = (props: { children: React.ReactNode; Trigger: React.ReactNode }) => {
   const { Trigger, children } = props;

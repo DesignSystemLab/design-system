@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
-import type { PopoverProps, PopoverTrigger, StyleProps } from '../popoverTypes';
+import type { PopoverProps, PopoverTrigger, StyleProps } from '../types';
 import { useStyle } from '../useStyle';
 
 interface ReturnContext {

@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./src", "./src/assets/icon-close.svg"],
+  "include": ["./src"],
   "compilerOptions": {
     "types": ["@emotion/react/types/css-prop"],
     "jsx": "react-jsx",
