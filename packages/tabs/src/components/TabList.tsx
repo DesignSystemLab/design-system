@@ -1,20 +1,32 @@
 /** @jsxImportSource @emotion/react */
-import { useContext } from 'react';
-import { useTabsListStyles } from '../hooks/useTabsStyles';
+import { useContext, useEffect } from 'react';
+import { getChildrenValidValues } from '@jdesignlab/react-utils';
+import { tabListStyle } from '../styles';
 import type { TabsListProps } from '../types';
 import TabsContext from '../context';
 
 const List = (props: TabsListProps) => {
   const { children, ...otherProps } = props;
-  const { variant, size } = useContext(TabsContext);
+  const { defaultValue, setSelectedTab, variant, size, full } = useContext(TabsContext);
+  const style = { ...tabListStyle(full, variant, size) };
 
-  const full = props?.full === true ? true : false;
-  const style = { ...useTabsListStyles(full, variant, size) };
+  useEffect(() => {
+    if (!defaultValue) {
+      const validValues = getChildrenValidValues(children as React.ReactElement | React.ReactElement[], 'Trigger');
+      const obj: { [key: number]: string } = {};
+      validValues.forEach((value, index) => {
+        obj[index] = value;
+      });
+      setSelectedTab(obj[0]);
+    }
+  }, []);
+
   return (
-    <div css={style} {...otherProps}>
+    <div css={style} role="tablist" {...otherProps}>
       {children}
     </div>
   );
 };
 
+List.displayName = 'Tab.List';
 export default List;

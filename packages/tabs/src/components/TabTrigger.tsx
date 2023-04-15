@@ -1,12 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { useContext } from 'react';
-import { useTabsTriggerStyles } from '../hooks/useTabsStyles';
+import { useContext, useRef } from 'react';
+import { tabTriggerStyle } from '../styles';
+import { useSelectKeyDown } from '../hooks/useSelectKeyDown';
 import type { TabsTriggerProps } from '../types';
 import TabsContext from '../context';
+import type { Dispatch, SetStateAction } from 'react';
 
 const Trigger = (props: TabsTriggerProps) => {
-  const { children, value, ...otherProps } = props;
-  let { disabled } = props;
+  const triggerRef = useRef(null);
+  const { children, value, disabled, ...otherProps } = props;
   const { selectedTab, setSelectedTab, variant, size } = useContext(TabsContext);
 
   const onClickTab = () => {
@@ -16,12 +18,25 @@ const Trigger = (props: TabsTriggerProps) => {
   };
 
   const isActivated = selectedTab === value ? true : false;
-  const style = { ...useTabsTriggerStyles(isActivated, variant, size, disabled) };
+  const style = { ...tabTriggerStyle(isActivated, variant, size, disabled) };
 
   return (
-    <div className="tab" css={style} onClick={onClickTab} {...otherProps}>
+    <div
+      ref={triggerRef}
+      onKeyDown={e => {
+        useSelectKeyDown(e, value, setSelectedTab as Dispatch<SetStateAction<string>>);
+      }}
+      className="tab"
+      tabIndex={!disabled ? 0 : -1}
+      role="tab"
+      aria-disabled={!!disabled}
+      css={style}
+      onClick={onClickTab}
+      {...otherProps}
+    >
       {children}
     </div>
   );
 };
+Trigger.displayName = 'Tab.Trigger';
 export default Trigger;
