@@ -54,7 +54,6 @@ export const Basic = () => {
         variant="filled"
         direction="horizontal"
         justify="start"
-        divider
         role={'list'}
         className="ASed"
       >
@@ -69,7 +68,7 @@ export const Basic = () => {
           <p>Footer</p>
         </Card.Footer>
       </Card>
-      <Card as="li" align="center" direction="vertical" justify="start" divider>
+      <Card as="li" align="center" direction="vertical" justify="start">
         <Card.Header>
           <h1>Title</h1>
         </Card.Header>

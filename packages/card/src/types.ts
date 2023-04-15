@@ -7,7 +7,7 @@ export interface ReturnContext {
   styleProps: StyleProps;
 }
 
-export type CardStyle = 'variant' | 'color' | 'align' | 'justify' | 'direction' | 'size' | 'divider';
+export type CardStyle = 'variant' | 'color' | 'align' | 'justify' | 'direction' | 'size';
 
 export type StyleProps = Required<Pick<CardProps, CardStyle>>;
 
@@ -28,7 +28,6 @@ export interface CardProps extends AriaAttributes, HTMLAttributes<HTMLElement> {
   justify?: FlexToken;
   direction?: Direction;
   size?: Size;
-  divider?: boolean;
   style?: ExternalStyle;
 }
 

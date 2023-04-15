@@ -17,7 +17,6 @@ export const CardProvider = ({ ...props }) => {
     align = defaultStyleProps.align,
     color = defaultStyleProps.color,
     direction = defaultStyleProps.direction,
-    divider = defaultStyleProps.divider,
     justify = defaultStyleProps.justify,
     size = defaultStyleProps.size,
     variant = defaultStyleProps.variant,
@@ -27,7 +26,7 @@ export const CardProvider = ({ ...props }) => {
   return (
     <CardContext.Provider
       value={{
-        styleProps: { align, color, direction, divider, justify, size, variant },
+        styleProps: { align, color, direction, justify, size, variant },
         cardProps: restProps
       }}
     >

@@ -1,15 +1,7 @@
 import type { ColorToken } from '@jdesignlab/theme';
 import type { StyleProps } from './types';
 
-const REQUIRED_CARD_PROPS: (keyof StyleProps)[] = [
-  'align',
-  'color',
-  'direction',
-  'divider',
-  'justify',
-  'size',
-  'variant'
-];
+const REQUIRED_CARD_PROPS: (keyof StyleProps)[] = ['align', 'color', 'direction', 'justify', 'size', 'variant'];
 
 const DEFAULT_CARD_STYLE: Required<StyleProps> = {
   color: 'lightBlue-lighten5',
@@ -17,8 +9,7 @@ const DEFAULT_CARD_STYLE: Required<StyleProps> = {
   justify: 'start',
   direction: 'vertical',
   size: 'md',
-  variant: 'elevated',
-  divider: false
+  variant: 'elevated'
 };
 
 const DEFAULT_BORDER_COLOR: ColorToken = 'grey-base';
