@@ -1,11 +1,11 @@
 import type { RefObject } from 'react';
 
-const calculateSize = (triggerRef: RefObject<HTMLElement> | null) => {
+const calculateSize = (ref: RefObject<HTMLElement> | null) => {
   let height = 0;
   let width = 0;
-  if (triggerRef?.current) {
-    width = parseFloat(getComputedStyle(triggerRef.current).width);
-    height = parseFloat(getComputedStyle(triggerRef.current).height);
+  if (ref?.current) {
+    width = parseFloat(getComputedStyle(ref.current).width);
+    height = parseFloat(getComputedStyle(ref.current).height);
   }
 
   return {
