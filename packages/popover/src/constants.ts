@@ -6,7 +6,7 @@ type PopoverOption = Required<Pick<PopoverProps, 'placement' | 'arrow' | 'open'>
 const DEFAULT_OPTIONS: PopoverOption = {
   arrow: true,
   open: false,
-  placement: 'top'
+  placement: 'bottom'
 };
 
 const POPOVER_BACKGROUND = getColorByToken('shades-white');
