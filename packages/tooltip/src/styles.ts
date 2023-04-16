@@ -1,12 +1,11 @@
 import { css } from '@emotion/react';
-import type { ColorToken } from '@jdesignlab/theme';
-import type { TooltipAnchor } from './tooltip-types';
-import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
+import type { TooltipAnchor } from './types';
+import { getColorByToken } from '@jdesignlab/theme';
 
 export const tooltipWrapperStyle = css({
   position: 'relative'
 });
-export const tooltipLabelStyle = css({
+export const tooltipContentStyle = css({
   position: 'absolute',
   display: 'inline-block',
   backgroundColor: getColorByToken('grey-darken2'),
@@ -16,7 +15,13 @@ export const tooltipLabelStyle = css({
   whiteSpace: 'pre'
 });
 
-export const tooltipLocationStyle = (labelRef: React.RefObject<HTMLDivElement>, targetW: number, targetH: number, gap: number, on: TooltipAnchor | undefined) => {
+export const tooltipLocationStyle = (
+  labelRef: React.RefObject<HTMLDivElement>,
+  targetW: number,
+  targetH: number,
+  gap: number,
+  on: TooltipAnchor | undefined
+) => {
   const labelW = labelRef.current ? labelRef.current.offsetWidth : 0;
   const labelH = labelRef.current ? labelRef.current.offsetHeight : 0;
   const centerX = { left: targetW / 2, transform: `translateX(-${labelW / 2}px)` };

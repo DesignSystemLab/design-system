@@ -18,10 +18,18 @@ const Template = args => <Tooltip {...args} />;
 export const TooltipBasic = () => (
   <>
     <div
-      style={{ transform: 'translate(100px ,20px)', width: '500px', justifyItems: 'center', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'repeat(3,1fr)', rowGap: '10px' }}
+      style={{
+        transform: 'translate(100px ,20px)',
+        width: '500px',
+        justifyItems: 'center',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3,1fr)',
+        gridTemplateRows: 'repeat(3,1fr)',
+        rowGap: '10px'
+      }}
     >
       <Tooltip>
-        <Tooltip.Label on="top-left">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="top-left">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             top-left
@@ -29,9 +37,9 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="top" background="pink-lighten3">
+        <Tooltip.Content on="top" background="pink-lighten3">
           라벨입니다
-        </Tooltip.Label>
+        </Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             top
@@ -39,7 +47,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="top-right">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="top-right">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             top-right
@@ -48,7 +56,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left-top">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left-top">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             left-top
@@ -57,7 +65,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right-top">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right-top">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             right-top
@@ -66,7 +74,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             left
@@ -75,7 +83,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             right
@@ -84,7 +92,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left-bottom">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left-bottom">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             left-bottom
@@ -93,7 +101,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right-bottom">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right-bottom">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             right-bottom
@@ -102,7 +110,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="bottom-left">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom-left">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             bottom-left
@@ -110,7 +118,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="bottom">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             bottom
@@ -118,7 +126,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="bottom-right">라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom-right">라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="lg" color="teal-base">
             right-bottom
@@ -127,10 +135,18 @@ export const TooltipBasic = () => (
       </Tooltip>
     </div>
     <div
-      style={{ transform: 'translate(100px ,100px)', width: '500px', justifyItems: 'center', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'repeat(3,1fr)', rowGap: '10px' }}
+      style={{
+        transform: 'translate(100px ,100px)',
+        width: '500px',
+        justifyItems: 'center',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3,1fr)',
+        gridTemplateRows: 'repeat(3,1fr)',
+        rowGap: '10px'
+      }}
     >
       <Tooltip>
-        <Tooltip.Label on="top-left">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="top-left">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             top-left
@@ -138,9 +154,9 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="top" background="pink-lighten3">
+        <Tooltip.Content on="top" background="pink-lighten3">
           기이이이이이이이이이이인 라벨입니다
-        </Tooltip.Label>
+        </Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             top
@@ -148,7 +164,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="top-right">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="top-right">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             top-right
@@ -157,7 +173,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left-top">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left-top">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             left-top
@@ -166,7 +182,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right-top">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right-top">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             right-top
@@ -175,7 +191,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             left
@@ -184,7 +200,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             right
@@ -193,7 +209,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="left-bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="left-bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             left-bottom
@@ -202,7 +218,7 @@ export const TooltipBasic = () => (
       </Tooltip>
       <Tooltip></Tooltip>
       <Tooltip>
-        <Tooltip.Label on="right-bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="right-bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             right-bottom
@@ -211,7 +227,7 @@ export const TooltipBasic = () => (
       </Tooltip>
 
       <Tooltip>
-        <Tooltip.Label on="bottom-left">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom-left">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             bottom-left
@@ -219,7 +235,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             bottom
@@ -227,7 +243,7 @@ export const TooltipBasic = () => (
         </Tooltip.Target>
       </Tooltip>
       <Tooltip>
-        <Tooltip.Label on="bottom-right">기이이이이이이이이이이인 라벨입니다</Tooltip.Label>
+        <Tooltip.Content on="bottom-right">기이이이이이이이이이이인 라벨입니다</Tooltip.Content>
         <Tooltip.Target>
           <Button variant="outline" size="xl">
             right-bottom
