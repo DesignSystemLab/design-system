@@ -21,8 +21,8 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (popoverRef.current) {
-      const popoverSizer = calculateSize(popoverRef);
-      setPositionStyle(createPopoverPosition(placement, triggerSize, popoverSizer));
+      const popoverSize = calculateSize(popoverRef);
+      setPositionStyle(createPopoverPosition(placement, triggerSize, popoverSize));
     }
   }, [popoverRef, context.isOpen]);
 
