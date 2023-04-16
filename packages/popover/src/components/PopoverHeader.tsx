@@ -9,18 +9,19 @@ import type { PopoverProps } from '../types';
 export const PopoverHeader = (props: PopoverProps) => {
   const context = useContext(PopoverContext);
   return (
-    <header css={context?.style.headerStyleProps}>
-      <Flex direction="row" items="center" justify="space-between">
-        <h1>{props.children}</h1>
-        <Button
-          variant="unstyled"
-          onClick={e => {
-            context?.setIsOpen(false);
-          }}
-        >
-          <Close width="12" height="12" strokeWidth="4" />
-        </Button>
-      </Flex>
-    </header>
+    <header>h2</header>
+    // <header css={context?.style.headerStyleProps}>
+    //   <Flex direction="row" items="center" justify="space-between">
+    //     <h1>{props.children}</h1>
+    //     <Button
+    //       variant="unstyled"
+    //       onClick={e => {
+    //         context?.setIsOpen(false);
+    //       }}
+    //     >
+    //       <Close width="12" height="12" strokeWidth="4" />
+    //     </Button>
+    //   </Flex>
+    // </header>
   );
 };

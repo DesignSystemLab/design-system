@@ -1,31 +1,24 @@
 /** @jsxImportSource @emotion/react */
-import React, { useContext, Children, useEffect, useRef } from 'react';
+import React, { useContext, Children, useEffect, useRef, useCallback } from 'react';
+import triggerStyle from '../styles/createTriggerStyle';
+import usePopoverControl from '../hooks/usePopoverControl';
 import { PopoverContext } from './PopoverContext';
 
 export const PopoverTrigger = (props: { children: React.ReactNode }) => {
   const context = useContext(PopoverContext);
-  const ref = useRef<HTMLDivElement | null>(null);
   const children = Children.only(props.children);
+  const triggerRef = useRef<HTMLDivElement | null>(null);
+  const { onTogglePopover } = usePopoverControl(context);
 
   useEffect(() => {
-    if (ref.current) {
-      const { width, height } = window.getComputedStyle(ref.current);
-      context?.setTriggerSize({
-        width: parseInt(width) / 2,
-        height: parseInt(height) / 2
-      });
-      return;
+    if (triggerRef.current) {
+      context.setTriggerRef(triggerRef);
+      const { height, width } = window.getComputedStyle(triggerRef.current);
     }
-  }, []);
+  }, [triggerRef]);
 
   return (
-    <div
-      css={context?.style.inlineBlock}
-      ref={ref}
-      onClick={() => {
-        context?.setIsOpen(true);
-      }}
-    >
+    <div ref={triggerRef} css={triggerStyle} role="button" aria-pressed={context.isOpen} onClick={onTogglePopover}>
       {children}
     </div>
   );

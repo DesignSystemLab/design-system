@@ -1,36 +1,42 @@
-import { createContext, useState } from 'react';
-import type { Dispatch, SetStateAction } from 'react';
-import type { PopoverProps, PopoverTrigger, StyleProps } from '../types';
-import { useStyle } from '../useStyle';
+import { createContext, RefObject, useState } from 'react';
+import { DEFAULT_OPTIONS } from '../constants';
+import type { ReturnContext } from '../types';
 
-interface ReturnContext {
-  style: StyleProps;
-  popoverProps: PopoverProps;
-  triggerSize: PopoverTrigger;
-  setTriggerSize: Dispatch<SetStateAction<PopoverTrigger>>;
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-}
-export const PopoverContext = createContext<ReturnContext | null>(null);
+const defaultContextValues: ReturnContext = {
+  isOpen: false,
+  setOpen: () => {},
+  triggerRef: null,
+  setTriggerRef: () => {},
+  popoverProps: {
+    onClose: () => {},
+    onOpen: () => {},
+    arrow: DEFAULT_OPTIONS.arrow,
+    open: DEFAULT_OPTIONS.open,
+    placement: DEFAULT_OPTIONS.placement
+  }
+};
+
+export const PopoverContext = createContext<ReturnContext>(defaultContextValues);
 
 export const PopoverProvider = ({ ...props }) => {
-  const [triggerSize, setTriggerSize] = useState<PopoverTrigger>({
-    width: 0,
-    height: 0
-  });
-
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const style = useStyle({ ...props.popoverProps, trigger: triggerSize, isOpen });
+  const [isOpen, setOpen] = useState<boolean>(false);
+  const [triggerRef, setTriggerRef] = useState<RefObject<HTMLDivElement> | null>(null);
+  const { popoverProps } = props;
+  const defaultPopoverProps = defaultContextValues.popoverProps;
+  const {
+    open = defaultPopoverProps.open,
+    placement = defaultPopoverProps.placement,
+    arrow = defaultPopoverProps.arrow
+  } = popoverProps;
 
   return (
     <PopoverContext.Provider
       value={{
         isOpen,
-        setIsOpen,
-        style: { ...style },
-        popoverProps: { ...props.popoverProps },
-        triggerSize: { ...triggerSize },
-        setTriggerSize
+        setOpen,
+        triggerRef,
+        setTriggerRef,
+        popoverProps: { open, placement, arrow, ...popoverProps }
       }}
     >
       {props.children}

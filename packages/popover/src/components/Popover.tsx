@@ -1,26 +1,31 @@
 /** @jsxImportSource @emotion/react */
 import { filterComponent } from '@jdesignlab/react-utils';
+import { createClassVariant } from '@jdesignlab/theme';
 import { PopoverProvider } from './PopoverContext';
 import { PopoverHeader } from './PopoverHeader';
 import { PopoverTrigger } from './PopoverTrigger';
 import { PopoverBody } from './PopoverBody';
 import { popoverFooter } from './PopoverFooter';
-import { PopoverContainer } from './PopoverContainter';
+import { PopoverContent } from './PopoverContent';
 import type { PopoverProps } from '../types';
 
 export const Popover = (props: PopoverProps) => {
-  const { children } = props;
-
+  const { children, ...propsWithoutChildren } = props;
   const Trigger = filterComponent(children, Popover.Trigger, true);
-  const RestChildren = filterComponent(children, Popover.Trigger, false);
+  const PopoverContents = filterComponent(children, Popover.Trigger, false);
 
   return (
-    <PopoverProvider popoverProps={props}>
-      <PopoverContainer Trigger={Trigger}>{RestChildren}</PopoverContainer>
+    <PopoverProvider popoverProps={propsWithoutChildren}>
+      <div className={createClassVariant('popover', 'wrapper')} css={{ position: 'relative' }}>
+        {Trigger}
+        {PopoverContents}
+      </div>
     </PopoverProvider>
   );
 };
+
 Popover.Trigger = PopoverTrigger;
+Popover.Content = PopoverContent;
 Popover.Header = PopoverHeader;
 Popover.Body = PopoverBody;
 Popover.Footer = popoverFooter;
