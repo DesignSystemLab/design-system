@@ -21,14 +21,17 @@ const rippleStyle = css`
 export const useRipple = () => {
   const [ripples, setRipples] = useState<Ripple[]>([]);
 
-  const createRipple = (event: MouseEvent<HTMLButtonElement>) => {
-    const { pageX, pageY, currentTarget } = event;
-    const button = currentTarget;
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const createRipple = (event: MouseEvent<HTMLElement>) => {
+    const {
+      currentTarget,
+      nativeEvent: { offsetX, offsetY }
+    } = event;
+    const el = currentTarget;
+    const diameter = Math.max(el.clientWidth, el.clientHeight);
     const radius = diameter / 2;
     const newRipple = {
-      x: pageX - button.offsetLeft - radius,
-      y: pageY - button.offsetTop - radius,
+      x: offsetX - radius,
+      y: offsetY - radius,
       size: diameter
     };
     setRipples([...ripples, newRipple]);
