@@ -4,7 +4,9 @@ import { PopoverContext } from './PopoverContext';
 import { PopoverOverlay } from './PopoverOverlay';
 import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
 import useOpenClosePopover from '../hooks/useOpenClosePopover';
+import usePopoverControl from '../hooks/usePopoverControl';
 import useInitialRender from '../hooks/useInitialRender';
+import handleEscapeKey from '../utils/handleEscapeKey';
 import calculateSize from '../utils/calculateSize';
 import createPopoverStyle from '../styles/createPopoverStyle';
 import createPopoverPosition from '../styles/createPopoverPosition';
@@ -14,6 +16,7 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
   const [positionStyle, setPositionStyle] = useState<SerializedStyles | null>(null);
   const context = useContext(PopoverContext);
   const { placement, arrow } = context.popoverProps;
+  const { onClosePopover } = usePopoverControl(context);
   const isInitialRendered = useInitialRender();
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const triggerSize = calculateSize(context.triggerRef);
@@ -22,6 +25,7 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (popoverRef.current) {
+      popoverRef.current.focus();
       const popoverSize = calculateSize(popoverRef);
       setPositionStyle(createPopoverPosition(placement, triggerSize, popoverSize));
     }
@@ -30,7 +34,12 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
   return context.isOpen ? (
     <>
       <PopoverOverlay />
-      <div css={[...popoverContentStyle, positionStyle]} ref={popoverRef}>
+      <div
+        tabIndex={0}
+        css={[...popoverContentStyle, positionStyle]}
+        ref={popoverRef}
+        onKeyDown={e => handleEscapeKey(e, onClosePopover)}
+      >
         {props.children}
       </div>
     </>

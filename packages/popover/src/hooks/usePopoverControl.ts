@@ -6,15 +6,15 @@ const usePopoverControl = (context: ReturnContext) => {
 
   const onTogglePopover = useCallback(() => {
     setOpen(prev => !prev);
-  }, []);
+  }, [setOpen]);
 
   const onClosePopover = useCallback(() => {
     setOpen(false);
-  }, []);
+  }, [setOpen]);
 
   const onOpenPopover = useCallback(() => {
     setOpen(true);
-  }, []);
+  }, [setOpen]);
 
   return { onTogglePopover, onClosePopover, onOpenPopover };
 };
