@@ -19,9 +19,9 @@ const defaultContextValues: ReturnContext = {
 export const PopoverContext = createContext<ReturnContext>(defaultContextValues);
 
 export const PopoverProvider = ({ ...props }) => {
-  const [isOpen, setOpen] = useState<boolean>(false);
   const [triggerRef, setTriggerRef] = useState<RefObject<HTMLDivElement> | null>(null);
   const { popoverProps } = props;
+  const [isOpen, setOpen] = useState<boolean>(popoverProps.open);
   const defaultPopoverProps = defaultContextValues.popoverProps;
   const {
     open = defaultPopoverProps.open,

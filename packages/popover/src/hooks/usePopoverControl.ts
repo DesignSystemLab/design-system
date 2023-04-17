@@ -2,8 +2,7 @@ import { useCallback } from 'react';
 import type { ReturnContext } from '../types';
 
 const usePopoverControl = (context: ReturnContext) => {
-  const { setOpen, popoverProps } = context;
-  const { onOpen, onClose } = popoverProps;
+  const { setOpen } = context;
 
   const onTogglePopover = useCallback(() => {
     setOpen(prev => !prev);
@@ -11,15 +10,11 @@ const usePopoverControl = (context: ReturnContext) => {
 
   const onClosePopover = useCallback(() => {
     setOpen(false);
-    if (onClose) {
-      onClose();
-      return;
-    }
-  }, [onClose]);
+  }, []);
 
   const onOpenPopover = useCallback(() => {
-    setOpen(false);
-  }, [onOpen]);
+    setOpen(true);
+  }, []);
 
   return { onTogglePopover, onClosePopover, onOpenPopover };
 };
