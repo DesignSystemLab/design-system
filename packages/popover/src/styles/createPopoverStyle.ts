@@ -12,7 +12,7 @@ const createPopoverStyle = (placement: Placement, arrow: boolean, background: HE
       backgroundColor: 'white',
       border: `1px solid ${border}`,
       boxShadow: `0 3px 6px ${hexToRgba(border, 0.16)}, 0 3px 6px ${hexToRgba(border, 0.2)}`,
-      top: 0
+      zIndex: 10
     });
   };
   const directionStyle = () => {
