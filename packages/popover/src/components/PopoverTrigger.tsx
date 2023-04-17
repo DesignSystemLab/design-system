@@ -13,7 +13,6 @@ export const PopoverTrigger = (props: { children: React.ReactNode }) => {
   useEffect(() => {
     if (triggerRef.current) {
       context.setTriggerRef(triggerRef);
-      const { height, width } = window.getComputedStyle(triggerRef.current);
     }
   }, [triggerRef]);
 
