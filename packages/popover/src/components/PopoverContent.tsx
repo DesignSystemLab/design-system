@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useContext, useEffect, useRef, useState } from 'react';
 import { PopoverContext } from './PopoverContext';
+import { PopoverOverlay } from './PopoverOverlay';
 import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
 import useOpenClosePopover from '../hooks/useOpenClosePopover';
 import useInitialRender from '../hooks/useInitialRender';
@@ -27,8 +28,11 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
   }, [popoverRef, context.isOpen]);
 
   return context.isOpen ? (
-    <div css={[...popoverContentStyle, positionStyle]} ref={popoverRef}>
-      {props.children}
-    </div>
+    <>
+      <PopoverOverlay />
+      <div css={[...popoverContentStyle, positionStyle]} ref={popoverRef}>
+        {props.children}
+      </div>
+    </>
   ) : null;
 };
