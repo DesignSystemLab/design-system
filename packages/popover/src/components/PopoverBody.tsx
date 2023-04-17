@@ -1,9 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { useContext } from 'react';
-import { PopoverContext } from './PopoverContext';
+import { POPOVER_BORDER_COLOR } from '../constants';
+import bodyStyle from '../styles/createBodyStyle';
 
 export const PopoverBody = (props: { children: React.ReactNode }) => {
-  const context = useContext(PopoverContext);
-  return <section>{props.children}</section>;
-  // return <section css={context?.style.bodyStyleProps}>{props.children}</section>;
+  return <section css={bodyStyle(POPOVER_BORDER_COLOR)}>{props.children}</section>;
 };
