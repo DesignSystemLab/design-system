@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useContext, useEffect, useRef, useState } from 'react';
+import { createClassVariant } from '@jdesignlab/theme';
+import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
 import { PopoverContext } from './PopoverContext';
 import { PopoverOverlay } from './PopoverOverlay';
-import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
 import useOpenClosePopover from '../hooks/useOpenClosePopover';
 import usePopoverControl from '../hooks/usePopoverControl';
 import useInitialRender from '../hooks/useInitialRender';
@@ -35,6 +36,10 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
     <>
       <PopoverOverlay />
       <div
+        className={createClassVariant('popover', 'content', 'modal')}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="false"
         tabIndex={0}
         css={[...popoverContentStyle, positionStyle]}
         ref={popoverRef}

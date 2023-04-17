@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import React, { useContext, Children, useEffect, useRef, useCallback } from 'react';
+import React, { useContext, Children, useEffect, useRef } from 'react';
+import { createClassVariant } from '@jdesignlab/theme';
 import triggerStyle from '../styles/createTriggerStyle';
 import usePopoverControl from '../hooks/usePopoverControl';
 import { PopoverContext } from './PopoverContext';
@@ -17,7 +18,15 @@ export const PopoverTrigger = (props: { children: React.ReactNode }) => {
   }, [triggerRef]);
 
   return (
-    <div ref={triggerRef} css={triggerStyle} role="button" aria-pressed={context.isOpen} onClick={onTogglePopover}>
+    <div
+      ref={triggerRef}
+      role="button"
+      className={createClassVariant('popover', 'trigger')}
+      css={triggerStyle}
+      aria-pressed={context.isOpen}
+      aria-expanded={context.isOpen}
+      onClick={onTogglePopover}
+    >
       {children}
     </div>
   );

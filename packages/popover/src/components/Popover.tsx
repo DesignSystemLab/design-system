@@ -16,7 +16,7 @@ export const Popover = (props: PopoverProps) => {
 
   return (
     <PopoverProvider popoverProps={propsWithoutChildren}>
-      <div className={createClassVariant('popover', 'wrapper')} css={{ position: 'relative' }}>
+      <div className={createClassVariant('popover', 'wrapper')} css={{ position: 'relative', display: 'inline' }}>
         {Trigger}
         {PopoverContents}
       </div>

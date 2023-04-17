@@ -10,6 +10,11 @@ export const PopoverOverlay = () => {
   const { onClosePopover } = usePopoverControl(context);
 
   return (
-    <div className={createClassVariant('popover', 'overlay')} css={createOverlayStyle()} onClick={onClosePopover} />
+    <div
+      role="presentation"
+      className={createClassVariant('popover', 'overlay')}
+      css={createOverlayStyle}
+      onClick={onClosePopover}
+    />
   );
 };
