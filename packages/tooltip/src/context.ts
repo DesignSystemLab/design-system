@@ -1,10 +1,9 @@
 import { createContext } from 'react';
+import type { TooltipAnchor } from './types';
 
 const TooltipContext = createContext({
-  targetWidth: 0,
-  setTargetWidth: (w: number) => {},
-  targetHeight: 0,
-  setTargetHeight: (h: number) => {},
+  targetRef: { current: null },
+  placement: 'top' as TooltipAnchor,
   isHovering: false,
   setIsHovering: (value: boolean) => {},
   gap: 0

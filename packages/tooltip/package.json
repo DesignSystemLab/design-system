@@ -22,6 +22,10 @@
   },
   "dependencies": {
     "@jdesignlab/button": "*",
-    "@jdesignlab/theme": "*"
+    "@jdesignlab/j-provider": "*",
+    "@jdesignlab/react-icons": "*",
+    "@jdesignlab/react-utils": "*",
+    "@jdesignlab/theme": "*",
+    "@jdesignlab/utils": "*"
   }
 }

@@ -1,30 +1,31 @@
 /** @jsxImportSource @emotion/react */
-import { tooltipContentStyle, tooltipLocationStyle } from '../styles';
+import { tooltipContentStyle } from '../styles';
+import { calculateElementPosition } from '@jdesignlab/react-utils';
 import { css } from '@emotion/react';
-import type { TooltipLabelProps } from '../types';
-import React, { useRef, useEffect, useContext, useState } from 'react';
+import type { TooltipContentProps } from '../types';
+import { useRef, useContext } from 'react';
 import TooltipContext from '../context';
+import { getCoponentText } from '@jdesignlab/react-utils';
 
-const Content = (props: TooltipLabelProps) => {
-  const { targetWidth, targetHeight, isHovering, gap } = useContext(TooltipContext);
-  const { on } = props;
-  const [labelStyle, setLabelStyle] = useState<ReturnType<typeof css>>();
-  const labelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setLabelStyle(
-      css({ ...tooltipLocationStyle(labelRef, targetWidth, targetHeight, gap, on) }, { ...tooltipContentStyle })
-    );
-  }, [targetWidth, targetHeight, isHovering]);
+const Content = (props: TooltipContentProps) => {
+  const { targetRef, placement, isHovering, gap } = useContext(TooltipContext);
+  const { children, style } = props;
+  const contentRef = useRef<HTMLDivElement>(null);
+  const position = calculateElementPosition(targetRef, contentRef, placement, gap);
+  const contentStyle = css(position, tooltipContentStyle, style ?? {});
+  const contentText = getCoponentText(children);
 
   return (
-    <>
-      {isHovering && (
-        <div ref={labelRef} css={labelStyle}>
-          {props.children}
-        </div>
-      )}
-    </>
+    <span
+      css={contentStyle}
+      ref={contentRef}
+      role="tooltip"
+      aria-label={contentText}
+      aria-expanded={isHovering ? true : false}
+      className={`${isHovering ? 'tooltip_open' : 'tooltip_close'}`}
+    >
+      {children}
+    </span>
   );
 };
 

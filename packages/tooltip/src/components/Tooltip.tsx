@@ -1,19 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { tooltipWrapperStyle } from '../styles';
 import type { TooltipProps } from '../types';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import TooltipContext from '../context';
 import Target from './TooltipTarget';
 import Content from './TooltipContent';
 
 export const Tooltip = (props: TooltipProps) => {
   const { children } = props;
-  const [targetWidth, setTargetWidth] = useState<number>(0);
-  const [targetHeight, setTargetHeight] = useState<number>(0);
   const [isHovering, setIsHovering] = useState(false);
-  const gap = Number(props.gap) || 2;
+  const gap = Number(props.gap) ?? 4;
 
-  const providerValue = { targetWidth, targetHeight, setTargetWidth, setTargetHeight, gap, isHovering, setIsHovering };
+  const providerValue = {
+    targetRef: useRef(null),
+    placement: props.placement ?? 'top',
+    gap,
+    isHovering,
+    setIsHovering
+  };
   return (
     <TooltipContext.Provider value={providerValue}>
       <div css={tooltipWrapperStyle}>{children}</div>

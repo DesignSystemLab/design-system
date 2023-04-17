@@ -7,12 +7,20 @@ export const tooltipWrapperStyle = css({
 });
 export const tooltipContentStyle = css({
   position: 'absolute',
-  display: 'inline-block',
-  backgroundColor: getColorByToken('grey-darken2'),
-  color: getColorByToken('grey-lighten2'),
+  display: 'block',
+  backgroundColor: '#000000ad',
+  color: '#ffffffc7',
+  zIndex: '100',
+  visibility: 'hidden',
+  // display: 'none',
   padding: '4px 8px',
+  border: 'solid gray 1px',
   borderRadius: '2px',
-  whiteSpace: 'pre'
+  whiteSpace: 'pre',
+  '&.tooltip_open': {
+    visibility: 'visible'
+    // display: 'inline'
+  }
 });
 
 export const tooltipLocationStyle = (
@@ -63,6 +71,4 @@ export const tooltipLocationStyle = (
   }
 };
 
-export const tooltipTargetStyle = {
-  display: 'inline-block'
-};
+export const tooltipTargetStyle = {};
