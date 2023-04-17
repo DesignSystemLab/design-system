@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { hexToRgba } from '@jdesignlab/theme';
 import type { HEX } from '@jdesignlab/theme';
 import type { Placement } from '../types';
 
@@ -10,6 +11,7 @@ const createPopoverStyle = (placement: Placement, arrow: boolean, background: HE
       boxSizing: 'border-box',
       backgroundColor: 'white',
       border: `1px solid ${border}`,
+      boxShadow: `0 3px 6px ${hexToRgba(border, 0.16)}, 0 3px 6px ${hexToRgba(border, 0.2)}`,
       top: 0
     });
   };
