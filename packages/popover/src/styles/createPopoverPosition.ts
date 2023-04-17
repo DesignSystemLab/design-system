@@ -20,7 +20,7 @@ const createPopoverPositon = (placement: Placement, trigger: Size, popover: Size
     case 'left':
       return css({
         left: `${-popoverWidth - 12}px`,
-        top: `50%+${popoverHeight / 2}`,
+        top: `calc(50% - ${triggerHeight / 2}px)`,
         transform: `translateY(-50%)`
       });
     case 'bottom':
@@ -32,7 +32,7 @@ const createPopoverPositon = (placement: Placement, trigger: Size, popover: Size
     default:
       return css({
         right: `${-popoverWidth - 12}px`,
-        top: `50%+${popoverHeight / 2}`,
+        top: `calc(50% - ${triggerHeight / 2}px)`,
         transform: `translateY(-50%)`
       });
   }
