@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button } from '@jdesignlab/button';
 import { Flex } from '@jdesignlab/flex';
 import { Popover } from '../src';
@@ -10,19 +11,55 @@ export default {
 
 const argTypes = {};
 
-const Template = args => (
-  <>
-    <Flex direction="column" items="center" justify="center">
-      <h2>Popover</h2>
-      <Popover {...args}>
-        <Popover.Trigger>
-          <Button color="blue-lighten2">Trigger</Button>
-        </Popover.Trigger>
+const Template = args => {
+  return (
+    <>
+      <Flex direction="column" items="center" justify="center" gap="8px">
+        <h2>Popover</h2>
+        <Popover {...args}>
+          <Popover.Trigger>
+            <Button>Basic Popover</Button>
+          </Popover.Trigger>
+          <Popover.Content>
+            <Popover.Header>Header</Popover.Header>
+            <Popover.Body>Header</Popover.Body>
+            <Popover.Footer>Footer</Popover.Footer>
+          </Popover.Content>
+        </Popover>
+      </Flex>
+    </>
+  );
+};
+
+export const PopoverExample = () => {
+  const [isOpen, setPopoverOpen] = useState(false);
+  return (
+    <Popover
+      open={isOpen}
+      onOpen={() => {
+        setPopoverOpen(true);
+        alert('open');
+      }}
+      onClose={() => {
+        setPopoverOpen(false);
+        alert('close');
+      }}
+    >
+      <Popover.Trigger>
+        <Button color="blue-lighten2">Trigger</Button>
+      </Popover.Trigger>
+      <Popover.Content>
         <Popover.Header>Confirm</Popover.Header>
-        <Popover.Body>안녕하세요.안녕하세요.안녕하세요.안녕하세요.안녕하세요.</Popover.Body>
+        <Popover.Body>Popover Content</Popover.Body>
         <Popover.Footer>
           <Flex gap="8px" justify="flex-end" items="center">
-            <Button size="sm" color="shades-white">
+            <Button
+              size="sm"
+              color="shades-white"
+              onClick={e => {
+                setPopoverOpen(false);
+              }}
+            >
               Cancel
             </Button>
             <Button size="sm" color="blue-lighten2">
@@ -30,10 +67,10 @@ const Template = args => (
             </Button>
           </Flex>
         </Popover.Footer>
-      </Popover>
-    </Flex>
-  </>
-);
+      </Popover.Content>
+    </Popover>
+  );
+};
 
 export const PopoverBasic = Template.bind({});
 PopoverBasic.argTypes = argTypes;

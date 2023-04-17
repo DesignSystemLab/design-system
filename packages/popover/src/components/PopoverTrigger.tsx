@@ -20,7 +20,6 @@ export const PopoverTrigger = (props: { children: React.ReactNode }) => {
   return (
     <div
       ref={triggerRef}
-      role="button"
       className={createClassVariant('popover', 'trigger')}
       css={triggerStyle}
       aria-pressed={context.isOpen}
