@@ -8,7 +8,7 @@ import TooltipContext from '../context';
 import { getCoponentText } from '@jdesignlab/react-utils';
 
 const Content = (props: TooltipContentProps) => {
-  const { id, targetRef, placement, isHovering, gap } = useContext(TooltipContext);
+  const { id, targetRef, placement, isHovering, gap, ...otherProps } = useContext(TooltipContext);
   const { children, style } = props;
   const contentRef = useRef<HTMLDivElement>(null);
   const position = calculateElementPosition(targetRef, contentRef, placement, gap);

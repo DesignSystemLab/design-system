@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import TooltipContext from '../context';
 
 const Target = (props: TooltipTargetPrpos) => {
-  const { id, targetRef, setIsHovering } = useContext(TooltipContext);
+  const { id, targetRef, setIsHovering, ...otherProps } = useContext(TooltipContext);
 
   const onMouseEnter = () => {
     setIsHovering(true);
@@ -25,6 +25,7 @@ const Target = (props: TooltipTargetPrpos) => {
       onMouseLeave={onMouseLeave}
       onFocus={onMouseEnter}
       onBlur={onMouseLeave}
+      className="tooltip_target"
     >
       {props.children}
     </div>
