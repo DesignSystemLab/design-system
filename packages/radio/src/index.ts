@@ -1,3 +1,1 @@
-import Radio from './radio';
-
-export { Radio };
+export * from './components/Radio';
