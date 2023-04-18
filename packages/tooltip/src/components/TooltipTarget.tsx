@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import TooltipContext from '../context';
 
 const Target = (props: TooltipTargetPrpos) => {
-  const { targetRef, setIsHovering } = useContext(TooltipContext);
+  const { id, targetRef, setIsHovering } = useContext(TooltipContext);
 
   const onMouseEnter = () => {
     setIsHovering(true);
@@ -20,6 +20,7 @@ const Target = (props: TooltipTargetPrpos) => {
       css={tooltipTargetStyle}
       ref={targetRef}
       aria-haspopup={true}
+      aria-describedby={id}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={onMouseEnter}
@@ -30,5 +31,5 @@ const Target = (props: TooltipTargetPrpos) => {
   );
 };
 
-Target.display = 'Tooltip.Target';
+Target.displayName = 'Tooltip.Target';
 export default Target;

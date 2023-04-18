@@ -8,7 +8,7 @@ import TooltipContext from '../context';
 import { getCoponentText } from '@jdesignlab/react-utils';
 
 const Content = (props: TooltipContentProps) => {
-  const { targetRef, placement, isHovering, gap } = useContext(TooltipContext);
+  const { id, targetRef, placement, isHovering, gap } = useContext(TooltipContext);
   const { children, style } = props;
   const contentRef = useRef<HTMLDivElement>(null);
   const position = calculateElementPosition(targetRef, contentRef, placement, gap);
@@ -20,6 +20,7 @@ const Content = (props: TooltipContentProps) => {
       css={contentStyle}
       ref={contentRef}
       role="tooltip"
+      id={id}
       aria-label={contentText}
       aria-expanded={isHovering ? true : false}
       className={`${isHovering ? 'tooltip_open' : 'tooltip_close'}`}
