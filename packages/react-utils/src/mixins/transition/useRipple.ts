@@ -1,6 +1,6 @@
 import { useState, createElement } from 'react';
 import { css, jsx, keyframes } from '@emotion/react';
-import type { Ripple } from './types';
+import type { Ripple } from '../../types';
 import { MouseEvent } from 'react';
 
 const rippleEffect = keyframes`
