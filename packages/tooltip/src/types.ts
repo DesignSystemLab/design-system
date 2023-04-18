@@ -16,17 +16,16 @@ export type TooltipAnchor =
 
 export interface TooltipProps extends CSSObject {
   [propertiesName: string]: any;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   placement?: TooltipAnchor;
   gap?: number | string;
 }
 
 export interface TooltipContentProps extends CSSObject {
-  children: string;
+  children?: string;
   style?: CSSObject;
 }
 
 export interface TooltipTargetPrpos {
-  children: React.ReactNode;
-  setIsHovering: any;
+  children?: React.ReactNode;
 }
