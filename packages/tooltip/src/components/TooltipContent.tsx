@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import type { TooltipContentProps } from '../types';
 import { useRef, useContext } from 'react';
 import TooltipContext from '../context';
-import { getCoponentText } from '@jdesignlab/react-utils';
+import { getComponentText } from '@jdesignlab/react-utils';
 
 const Content = (props: TooltipContentProps) => {
   const { id, targetRef, placement, isHovering, gap, ...otherProps } = useContext(TooltipContext);
@@ -13,7 +13,7 @@ const Content = (props: TooltipContentProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const position = calculateElementPosition(targetRef, contentRef, placement, gap);
   const contentStyle = css(position, tooltipContentStyle, style ?? {});
-  const contentText = getCoponentText(children);
+  const contentText = getComponentText(children);
 
   return (
     <span
