@@ -1,6 +1,16 @@
 import { css } from '@emotion/react';
 
 export default css`
+  @font-face {
+    src: url('../../public/fonts/NotoSansKR-Black-Alphobetic.woff2') format('woff2'),
+      url('../../public/fonts/NotoSansKR-Bold-Alphobetic.woff2') format('woff2'),
+      url('../../public/fonts/NotoSansKR-Light-Alphobetic.woff2') format('woff2'),
+      url('../../public/fonts/NotoSansKR-Medium-Alphobetic.woff2') format('woff2'),
+      url('../../public/fonts/NotoSansKR-Regular-Alphobetic.woff2') format('woff2'),
+      url('../../public/fonts/NotoSansKR-Thin-Alphobetic.woff2') format('woff2');
+    font-display: block;
+  }
+
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
   /* Document
@@ -10,6 +20,10 @@ export default css`
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+
+  * {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
 
   html {
     line-height: 1.15; /* 1 */
@@ -25,6 +39,7 @@ export default css`
 
   body {
     margin: 0;
+    // background: red !important;
   }
 
   main {

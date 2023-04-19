@@ -65,7 +65,7 @@ export const WithColors = () => (
   <>
     <ThemeProvider>
       <Button variant="ghost" color="blue-base">
-        blue
+        한국어
       </Button>
       <Button variant="ghost" color="lightGreen-base">
         lightGreen
