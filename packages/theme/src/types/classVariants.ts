@@ -20,7 +20,7 @@ export type JDesignSystemElementRoles =
   | 'overlay'
   | 'wrapper'
   | 'content'
-  | 'lavel'
+  | 'label'
   | 'ul'
   | 'ol'
   | 'item'
