@@ -4,9 +4,8 @@ export type RadioSize = 'sm' | 'md' | 'lg';
 
 export interface RadioLabelProps {
   id: string;
+  size: RadioSize;
   children: React.ReactNode;
-  color?: ColorToken;
-  size?: RadioSize;
 }
 
 export interface RadioProps extends React.HTMLAttributes<HTMLInputElement> {
