@@ -3,8 +3,8 @@ import { callHandler } from '@jdesignlab/utils';
 import type { EventType } from '@jdesignlab/utils';
 import type { RadioProps } from '../types';
 
-const preventUnavailableRadio = (isUnavailable: boolean, props: RadioProps) => {
-  const eventHandlerProps: { [key: string]: string | ((event: EventType) => void) } = {};
+const validateEventHandlers = (isUnavailable: boolean, props: RadioProps) => {
+  const radioProps: { [key: string]: string | ((event: EventType) => void) } = {};
 
   const preventEvent = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -13,13 +13,13 @@ const preventUnavailableRadio = (isUnavailable: boolean, props: RadioProps) => {
   Object.entries(props).forEach(prop => {
     const [name, key] = prop;
     if (typeof key === 'function' && isUnavailable) {
-      eventHandlerProps[name] = callHandler(preventEvent, key);
+      radioProps[name] = callHandler(preventEvent, key);
       return;
     }
-    eventHandlerProps[name] = key;
+    radioProps[name] = key;
   });
 
-  return eventHandlerProps;
+  return radioProps;
 };
 
-export default preventUnavailableRadio;
+export default validateEventHandlers;
