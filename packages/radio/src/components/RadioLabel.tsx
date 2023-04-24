@@ -8,7 +8,7 @@ const RadioLabel = (props: RadioLabelProps) => {
   const { id, children, size } = props;
   const labelStyle = createLabelStyle(size, DEFAULT_FONT_COLOR);
   return (
-    <label htmlFor={id} css={labelStyle} role="radio" className={createClassVariant('radio', 'label')}>
+    <label htmlFor={id} css={labelStyle} className={createClassVariant('radio', 'label')}>
       {children}
     </label>
   );
