@@ -10,7 +10,7 @@ import { CheckboxGroupContext } from '../context';
 import { checkboxWrapperStyle, checkboxInputStyle, checkboxLabelStyle } from '../styles';
 
 export const Checkbox = (props: CheckboxProps) => {
-  const { children, checked, value, color, ...otherProps } = props;
+  const { children, checked, value, color, readOnly, ...otherProps } = props;
   const [checkedState, setCheckedState] = useState<boolean>(!!checked);
   const { defaultValues } = useContext(CheckboxGroupContext); // Checkbox.Group 없으면 undefined
   const themePreset = useContext(ThemeContext);
@@ -18,6 +18,7 @@ export const Checkbox = (props: CheckboxProps) => {
   const id = useId();
   const { onEnterKeyDown, onArrowKeyDown } = useKeyDown();
   const onCheckboxDefaultChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (readOnly === true) return;
     e.target.blur();
     setCheckedState(prev => !prev);
   };
