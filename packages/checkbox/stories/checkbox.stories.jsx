@@ -22,11 +22,17 @@ Basic.argTypes = argTypes;
 
 export const WithColors = () => (
   <>
-    <Checkbox color="amber-lighten1"> color</Checkbox>
-    <Checkbox color="lightBlue-darken1"> color</Checkbox>
+    <Checkbox value={1}> color</Checkbox>
+    <Checkbox> color</Checkbox>
     <Checkbox disabled>disabled</Checkbox>
     <Checkbox checked disabled>
       checked disabled
     </Checkbox>
+    <Checkbox.Group defaultValue={[2]}>
+      <Checkbox value={1}>1</Checkbox>
+      <Checkbox value={2}>2</Checkbox>
+      <Checkbox value={3}>3</Checkbox>
+      <div>123</div>
+    </Checkbox.Group>
   </>
 );
