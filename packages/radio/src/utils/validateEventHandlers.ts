@@ -1,16 +1,45 @@
-import { callHandler } from '@jdesignlab/utils';
-import type { SyntheticEvent } from 'react';
+import { callHandler, EventType } from '@jdesignlab/utils';
+import { SyntheticEvent } from 'react';
 import type { RadioProps, RadioAttributes } from '../types';
 
-const validateEventHandlers = (
-  isUnavailable: boolean,
-  props: RadioProps,
-  rootProps: RadioAttributes | null | undefined
-) => {
-  const radioProps: RadioAttributes = {};
+const validateEventHandlers = (isUnavailable: boolean, props: RadioProps, rootProps?: RadioAttributes | null) => {
+  type EventHandlerType = (event: EventType) => void;
 
   const preventEvent = (event: SyntheticEvent) => {
     event.preventDefault();
+  };
+
+  const combineHandlers = (radioProps: RadioAttributes, rootProps?: RadioAttributes | null) => {
+    let combineProps: RadioAttributes = {};
+    if (rootProps) {
+      Object.entries(rootProps).forEach(rootProp => {
+        const [key, value] = rootProp;
+        if (typeof value === 'function') {
+          if (radioProps[key]) {
+            combineProps[key] = callHandler(radioProps[key] as EventHandlerType, value);
+          }
+          if (isUnavailable) {
+            combineProps[key] = callHandler(combineProps[key] as EventHandlerType, preventEvent);
+            return;
+          }
+          combineProps[key] = value;
+        }
+      });
+    }
+    return combineProps;
+  };
+
+  const applyDefaultPreventHandler = (radioProps: RadioProps) => {
+    let validRadioProps: RadioAttributes = {};
+    Object.entries(radioProps).forEach(prop => {
+      const [key, value] = prop;
+      if (isUnavailable && typeof value === 'function') {
+        validRadioProps[key] = callHandler(value, preventEvent);
+        return;
+      }
+      validRadioProps[key] = value;
+    });
+    return validRadioProps;
   };
 
   const defaultSetPreventEvent = (radioProps: RadioAttributes, preventHandler: (event: SyntheticEvent) => void) => {
@@ -20,32 +49,10 @@ const validateEventHandlers = (
     return radioProps;
   };
 
-  Object.entries(props).forEach(prop => {
-    const [key, value] = prop;
-    if (typeof value === 'function') {
-      if (rootProps && rootProps[key]) {
-        if (isUnavailable) {
-          const combineHandler = callHandler(rootProps[key], value);
-          radioProps[key] = callHandler(preventEvent, combineHandler);
-          return;
-        }
-        radioProps[key] = callHandler(value, rootProps[key]);
-        return;
-      }
+  const validRootProps = combineHandlers(props as RadioAttributes, rootProps);
+  const validRadioProps = applyDefaultPreventHandler(props);
 
-      if (isUnavailable) {
-        radioProps[key] = callHandler(preventEvent, value);
-        return;
-      }
-    }
-    radioProps[key] = value;
-  });
-
-  if (!radioProps['onclick']) {
-    radioProps;
-  }
-
-  return defaultSetPreventEvent(radioProps, preventEvent);
+  return defaultSetPreventEvent({ ...validRadioProps, ...validRootProps }, preventEvent);
 };
 
 export default validateEventHandlers;
