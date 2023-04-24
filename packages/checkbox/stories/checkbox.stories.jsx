@@ -1,4 +1,5 @@
 import { Checkbox } from '../src';
+import { ThemeProvider } from '@jdesignlab/j-provider';
 
 export default {
   title: 'Components/Checkbox',
@@ -21,8 +22,10 @@ Basic.args = {};
 Basic.argTypes = argTypes;
 
 export const WithColors = () => (
-  <>
-    <Checkbox value={1}> color</Checkbox>
+  <ThemeProvider>
+    <Checkbox color="amber-accent2" value={1}>
+      color amber-accent2
+    </Checkbox>
     <Checkbox> color</Checkbox>
     <Checkbox disabled>disabled</Checkbox>
     <Checkbox checked disabled>
@@ -34,5 +37,5 @@ export const WithColors = () => (
       <Checkbox value={3}>3</Checkbox>
       <div>123</div>
     </Checkbox.Group>
-  </>
+  </ThemeProvider>
 );
