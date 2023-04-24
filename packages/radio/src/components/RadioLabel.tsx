@@ -4,7 +4,7 @@ import { DEFAULT_FONT_COLOR } from '../constants';
 import createLabelStyle from '../styles/createLabelStyle';
 import type { RadioLabelProps } from '../types';
 
-export const RadioLabel = (props: RadioLabelProps) => {
+const RadioLabel = (props: RadioLabelProps) => {
   const { id, children, size } = props;
   const labelStyle = createLabelStyle(size, DEFAULT_FONT_COLOR);
   return (
@@ -13,3 +13,5 @@ export const RadioLabel = (props: RadioLabelProps) => {
     </label>
   );
 };
+
+export default RadioLabel;
