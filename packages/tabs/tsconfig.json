@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./src", "setup-jest.ts", "jest.config.ts"],
+  "compilerOptions": {
+    "types": ["@emotion/react/types/css-prop"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
+  }
+}
