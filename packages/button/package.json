@@ -41,10 +41,10 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@jdesignlab/j-provider": "*",
     "@jdesignlab/react-icons": "*",
     "@jdesignlab/react-utils": "*",
     "@jdesignlab/theme": "*",
-    "@jdesignlab/utils": "*",
-    "@jdesignlab/j-provider": "*"
+    "@jdesignlab/utils": "*"
   }
 }
