@@ -26,7 +26,11 @@ export const Radio = (props: RadioProps) => {
   const radioContext = useContext(RadioContext);
   const isUnavailable = !!readonly || !!disabled;
   const validRadioProps = validateEventHandlers(isUnavailable, restProps, radioContext?.rootProps);
-  const { radioValue, handleChange } = useRadio(isUnavailable, validRadioProps, radioContext?.setValue);
+  const { ref, radioValue, handleChange, handleKeyDown } = useRadio(
+    isUnavailable,
+    validRadioProps,
+    radioContext?.setValue
+  );
   const radioId = id ?? `${RADIO_ID_PREFIX}-${useId()}`;
   const radioClassName = className
     ? `${createClassVariant('radio', 'wrapper')} ${className}`
@@ -42,13 +46,16 @@ export const Radio = (props: RadioProps) => {
       <RadioLabel id={radioId} size={size}>
         <input
           type="radio"
-          readOnly={readonly}
+          id={radioId}
           name={radioContext ? radioContext.name : name}
+          ref={ref}
+          readOnly={readonly}
           className={createClassVariant('radio', 'input', 'radio')}
           css={createRadioStyle(color, DEFAULT_DISABLED_COLOR, disabled, size)}
           disabled={disabled}
           {...validRadioProps}
           onChange={handleChange}
+          onKeyDown={handleKeyDown}
         />
         {radioText}
       </RadioLabel>
