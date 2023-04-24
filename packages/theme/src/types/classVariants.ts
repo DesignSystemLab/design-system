@@ -19,8 +19,9 @@ export type JDesignSystemComponent =
 export type JDesignSystemElementRoles =
   | 'overlay'
   | 'wrapper'
+  | 'group'
   | 'content'
-  | 'lavel'
+  | 'label'
   | 'ul'
   | 'ol'
   | 'item'
