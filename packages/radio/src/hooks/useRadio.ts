@@ -13,16 +13,17 @@ const useKeyboardNavigation = (
 
   const combineChangeHandler = (propsOnChange?: (event: EventType) => void) => {
     const defaultOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
       if (isUnavailable) {
         e.preventDefault();
         return;
       }
 
       if (contextSetValue) {
-        contextSetValue(e.target.value);
+        contextSetValue(value);
         return;
       }
-      setValue(e.target.value);
+      setValue(value);
     };
 
     return propsOnChange ? callHandler(defaultOnChange, propsOnChange) : defaultOnChange;
