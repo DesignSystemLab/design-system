@@ -18,7 +18,6 @@ export const checkboxWrapperStyle = () => {
 
 export const checkboxInputStyle = (themePreset: any, color?: ColorToken) => {
   const parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
-  console.log(parsedColor);
   return css({
     appearance: 'none',
     zIndex: '-1',
@@ -35,7 +34,7 @@ export const checkboxInputStyle = (themePreset: any, color?: ColorToken) => {
     outline: 'none',
     opacity: '0',
     transform: 'scale(1)',
-    pointerEvents: 'none',
+    // pointerEvents: 'none',
     transition: 'opacity 0.3s, transform 0.2s',
     '&:focus': {
       opacity: '0.3'
