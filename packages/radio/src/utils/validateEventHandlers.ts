@@ -15,14 +15,13 @@ const validateEventHandlers = (isUnavailable: boolean, props: RadioProps, rootPr
       Object.entries(rootProps).forEach(rootProp => {
         const [key, value] = rootProp;
         if (typeof value === 'function') {
+          combineProps[key] = value;
           if (radioProps[key]) {
             combineProps[key] = callHandler(radioProps[key] as EventHandlerType, value);
           }
           if (isUnavailable) {
             combineProps[key] = callHandler(combineProps[key] as EventHandlerType, preventEvent);
-            return;
           }
-          combineProps[key] = value;
         }
       });
     }
