@@ -1,19 +1,21 @@
 /** @jsxImportSource @emotion/react */
-import { containerStyle, itemStyle } from '../styles';
-import type { FlexItemProps, FlexContainerProps } from '../types';
-import React, { JSXElementConstructor, ReactElement } from 'react';
+import { jsx } from '@emotion/react';
+import { createClassVariant } from '@jdesignlab/theme';
+import { itemStyle } from '../styles';
+import type { FlexItemProps } from '../types';
 
 export const FlexItem = ({ child }: FlexItemProps) => {
-  const { children, as = 'div' ?? child?.type, style, flex, self, order } = child?.props;
+  const { children, as = 'div' ?? child?.type, style, flex, self, order, ...otherProps } = child?.props;
   return (
     <>
       {child &&
-        React.createElement(
+        jsx(
           as,
           {
-            role: 'listitem',
-            css: { ...itemStyle(flex, self, order), ...style },
-            ...child?.props
+            className: createClassVariant('flex', 'item'),
+            css: itemStyle(flex, self, order),
+            style,
+            ...otherProps
           },
           children
         )}
