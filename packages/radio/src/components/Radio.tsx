@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useId, useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
-import { getCoponentText } from '@jdesignlab/react-utils';
+import { getComponentText } from '@jdesignlab/react-utils';
 import { RadioContext } from './RadioContext';
 import RadioGroup from './RadioGroup';
 import RadioLabel from './RadioLabel';
@@ -35,7 +35,7 @@ export const Radio = (props: RadioProps) => {
   const radioClassName = className
     ? `${createClassVariant('radio', 'wrapper')} ${className}`
     : createClassVariant('radio', 'wrapper');
-  const radioText = getCoponentText(children);
+  const radioText = getComponentText(children);
 
   return (
     <div
