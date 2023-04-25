@@ -1,8 +1,9 @@
 export { filterComponent } from './utils/filterComponent';
-export { getCoponentText } from './utils/getComponentText';
+export { useArrowKeyNavigation } from './mixins/keyboard/useArrowKeyNavigation';
+export { getComponentText } from './utils/getComponentText';
 export { hasComponent } from './utils/hasComponent';
 export { getChildrenValidValues } from './utils/getChildrenValidValues';
 export { useRipple } from './mixins/transition/useRipple';
-
+export { calculateElementPosition } from './mixins/styles/calculateElementPosition';
 /** types */
-export * from './mixins/transition/types';
+export * from './types';

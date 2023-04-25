@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { css } from '@emotion/react';
 import { getColorByToken } from '@jdesignlab/theme';
-import type { Placement, PopoverProps } from './popoverTypes';
+import type { Placement, PopoverProps } from './types';
 import type { HEX } from '@jdesignlab/theme';
 
 export const useStyle = (
-  styleProps: Pick<PopoverProps, 'placement' | 'noneArrow'> & {
+  styleProps: Pick<PopoverProps, 'placement' | 'arrow'> & {
     isOpen: boolean;
     trigger?: {
       width: number;
@@ -13,7 +13,7 @@ export const useStyle = (
     };
   }
 ) => {
-  const { placement, noneArrow } = styleProps;
+  const { placement, arrow } = styleProps;
   const defaultPlacement: Placement = placement ?? 'top';
   const defaultColor = getColorByToken('grey-lighten4');
   const defaultBorderColor = getColorByToken('grey-lighten2');
@@ -104,8 +104,8 @@ export const useStyle = (
           });
       }
     },
-    popoverSide(noneArrow: boolean | undefined, placement: Placement, color: HEX) {
-      if (noneArrow) {
+    popoverSide(arrow: boolean | undefined, placement: Placement, color: HEX) {
+      if (arrow) {
         return css({
           '$::after': {
             content: 'none',
@@ -220,7 +220,7 @@ export const useStyle = (
     mainStyleProps: styleProps.isOpen
       ? [
           styleTheme.defaultPopoverContainer(defaultColor, defaultPlacement),
-          styleTheme.popoverSide(noneArrow, defaultPlacement, defaultColor)
+          styleTheme.popoverSide(arrow, defaultPlacement, defaultColor)
         ]
       : styleTheme.visuallyHidden()
   };

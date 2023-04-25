@@ -1,6 +1,6 @@
 import { Button } from '../src';
 import { Settings, Volume } from '@jdesignlab/react-icons';
-import { ThemeContext, themePreset } from '@jdesignlab/j-provider';
+import { ThemeContext, themePreset, ThemeProvider } from '@jdesignlab/j-provider';
 
 export default {
   title: 'Components/Button',
@@ -63,61 +63,61 @@ const onClick = () => {
 
 export const WithColors = () => (
   <>
-    <Button variant="ghost" color="blue-base">
-      blue
-    </Button>
-    <Button variant="ghost" color="lightGreen-base">
-      lightGreen
-    </Button>
-    <Button variant="outline" color="blue-darken1" size="xl">
-      blue-darken1
-    </Button>
-    <Button color="red-lighten3">red-lighten3</Button>
-    <Button color="pink-accent2">pink-accent2</Button>
-    <Button color="primary-500">primary</Button>
-    <Button variant="outline" color="secondary-500">
-      secondary
-    </Button>
-    <Button color="success">success</Button>
-    <Button color="info">info</Button>
-    <Button color="warning">warning</Button>
-    <Button color="disabled">disabled</Button>
-    <Button color="error">error</Button>
-    <Button>no color</Button>
+    <ThemeProvider>
+      <Button variant="ghost" color="blue-base">
+        한국어
+      </Button>
+      <Button variant="ghost" color="lightGreen-base">
+        lightGreen
+      </Button>
+      <Button variant="outline" color="blue-darken1" size="xl">
+        blue-darken1
+      </Button>
+      <Button color="red-lighten3">red-lighten3</Button>
+      <Button color="pink-accent2">pink-accent2</Button>
+      <Button color="primary-500">primary</Button>
+      <Button variant="outline" color="secondary-500">
+        secondary
+      </Button>
+      <Button color="success">success</Button>
+      <Button color="info">info</Button>
+      <Button color="warning">warning</Button>
+      <Button color="disabled">disabled</Button>
+      <Button color="error">error</Button>
+      <Button>no color</Button>
+    </ThemeProvider>
   </>
 );
 
 export const WithVariants = () => (
-  <ThemeContext.Provider value={themePreset}>
-    <div>
-      <Button variant="solid" onClick={onClick}>
-        solid
-      </Button>
-      <Button variant="outline" onClick={onClick}>
-        outline
-      </Button>
-      <Button variant="ghost">ghost</Button>
-      <Button variant="link">link</Button>
-      <Button variant="unstyled">unstyled</Button>
-      <br />
-      <br />
-      <Button variant="solid" onClick={onClick} disabled>
-        solid
-      </Button>
-      <Button variant="outline" onClick={onClick} disabled>
-        outline
-      </Button>
-      <Button variant="ghost" disabled>
-        ghost
-      </Button>
-      <Button variant="link" disabled>
-        link
-      </Button>
-      <Button variant="unstyled" disabled>
-        unstyled
-      </Button>
-    </div>
-  </ThemeContext.Provider>
+  <div>
+    <Button variant="solid" onClick={onClick}>
+      solid
+    </Button>
+    <Button variant="outline" onClick={onClick}>
+      outline
+    </Button>
+    <Button variant="ghost">ghost</Button>
+    <Button variant="link">link</Button>
+    <Button variant="unstyled">unstyled</Button>
+    <br />
+    <br />
+    <Button variant="solid" onClick={onClick} disabled>
+      solid
+    </Button>
+    <Button variant="outline" onClick={onClick} disabled>
+      outline
+    </Button>
+    <Button variant="ghost" disabled>
+      ghost
+    </Button>
+    <Button variant="link" disabled>
+      link
+    </Button>
+    <Button variant="unstyled" disabled>
+      unstyled
+    </Button>
+  </div>
 );
 
 export const WithSizes = () => (
