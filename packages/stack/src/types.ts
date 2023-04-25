@@ -13,6 +13,7 @@ export type SpacingMap = Record<SpacingToken, string>;
 export type StyleProps = Omit<StackProps, 'as' | 'children'>;
 
 export interface StackProps {
+  as?: AsElement;
   children?: React.ReactNode;
   spacing?: SpacingToken;
   align?: FlexToken;
