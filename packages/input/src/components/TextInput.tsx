@@ -1,14 +1,16 @@
 /** @jsxImportSource @emotion/react */
+import { ThemeContext } from '@jdesignlab/j-provider';
 import type { InputProps } from '../types';
 import { inputWrapperStyle, inputRightStyle, inputStyle, inputPrependStyle } from '../styles';
 import { Close, Eye } from '@jdesignlab/react-icons';
 import { hasComponent } from '@jdesignlab/react-utils';
 import { InputContext } from '../context';
-import React, { useState, useId, useRef } from 'react';
+import React, { useState, useId, useRef, useContext } from 'react';
 import { Label } from './InputLabel';
 import { Message } from './InputMessage';
 
 export const TextInput = (props: InputProps) => {
+  const themePreset = useContext(ThemeContext);
   const id = useId();
   const inputRef = useRef(null);
   const [value, setValue] = useState<string | number | readonly string[] | undefined>(props.value);
@@ -19,6 +21,7 @@ export const TextInput = (props: InputProps) => {
   const hasMessage = hasComponent(children as React.ReactElement[], 'Message');
 
   const inputStyleProps = {
+    themePreset,
     size: props.size || 'md',
     hasLabel,
     hasIcon,

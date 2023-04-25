@@ -3,7 +3,6 @@ import { css } from '@emotion/react';
 import type { InputStyleProps, InputSize } from './types';
 import { getColorByToken } from '@jdesignlab/theme';
 
-const inputDefaultColorToken = 'teal-base';
 const inputSizeSet: InputSize[] = ['sm', 'md', 'lg'];
 
 export const inputWrapperStyle = (hasMessage: boolean, width?: number) => {
@@ -73,11 +72,11 @@ export const inputLabelStyle = css({
   transition: 'all .15s'
 });
 
-export const inputStyle = ({ size, hasLabel, hasIcon, clearable, type, color }: InputStyleProps) => {
+export const inputStyle = ({ themePreset, size, hasLabel, hasIcon, clearable, type, color }: InputStyleProps) => {
+  const parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
   const paddingX = 16;
   let sizeIndex = inputSizeSet.indexOf(size);
   if (sizeIndex === -1) sizeIndex = 1;
-  if (!color) color = inputDefaultColorToken;
 
   return css({
     fontSize: `${sizeIndex < 2 ? '15px' : '16px'}`,
@@ -93,7 +92,7 @@ export const inputStyle = ({ size, hasLabel, hasIcon, clearable, type, color }: 
     // focus
     '&:focus': {
       '&::placeholder': { color: `${getColorByToken('grey-base')}` },
-      border: `solid ${getColorByToken('grey-darken3')} 1px`
+      border: `solid ${parsedColor} 2px`
     },
 
     // placeholder (label있을땐 안보이게 투명)
@@ -102,7 +101,7 @@ export const inputStyle = ({ size, hasLabel, hasIcon, clearable, type, color }: 
     // label 이동
     '&[value=""] ~ label': { ...insideLabel, marginLeft: hasIcon ? '32px' : 0 },
     '&:not([value=""]) ~ label': { ...upsideLabel, marginLeft: 0 },
-    '&:focus ~ label': { ...upsideLabel, marginLeft: 0 },
+    '&:focus ~ label': { ...upsideLabel, marginLeft: 0, color: parsedColor },
 
     // message
     '&:focus ~ div.input_message': {

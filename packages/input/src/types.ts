@@ -22,6 +22,7 @@ export interface InputMessageProps {
 }
 
 export interface InputStyleProps {
+  themePreset: any;
   size: InputSize;
   hasLabel: boolean;
   hasIcon: boolean;
