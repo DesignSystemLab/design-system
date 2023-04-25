@@ -12,9 +12,6 @@ jobs:
         with:
           node-version: '16.x'
           token: ${{ secrets.WORKFLOW_TOKEN }}
-      - name: Increase memory limit
-        env:
-          NODE_OPTIONS: '--max_old_space_size=4096'
       - name: Install dependencies
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
