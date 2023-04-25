@@ -1,30 +1,19 @@
 /** @jsxImportSource @emotion/react */
+import React from 'react';
 import { containerStyle, itemStyle } from '../styles';
 import type { FlexItemProps, FlexContainerProps } from '../types';
-import React from 'react';
+import { FlexItem } from './FlexItem';
 
 export const Flex = (props: FlexContainerProps) => {
-  const { children, style } = props;
-  const FlexItem = ({ child }: FlexItemProps) => {
-    const { children, style } = child?.props;
-    return (
-      <>
-        {child && (
-          <child.type {...child.props} css={{ ...itemStyle(child.props), ...style }}>
-            {children}
-          </child.type>
-        )}
-      </>
-    );
-  };
+  const { children, style, ...otherProps } = props;
 
   return (
-    <div css={{ ...containerStyle(props), ...style }}>
+    <div role="list" css={{ ...containerStyle(props), ...style }} {...otherProps}>
       {children?.map((child: React.ReactElement, index: number) => {
         return <FlexItem child={child} key={index} />;
       })}
     </div>
   );
 };
-
+Flex.Item = FlexItem;
 Flex.displayName = 'Flex';

@@ -11,8 +11,6 @@ export interface FlexContainerProps extends Omit<CSSObject, Direction> {
   [propertiesName: string]: any;
   children?: React.ReactElement[];
   style?: CSSObject;
-  width?: number;
-  height?: number;
   direction?: Direction;
   wrap?: Wrap;
   justify?: Justify;

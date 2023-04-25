@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import type { FlexItemProps, FlexContainerProps } from './types';
+import type { FlexContainerProps, Self } from './types';
 
 export const containerStyle = (props: FlexContainerProps) => {
   return css({
@@ -14,10 +14,10 @@ export const containerStyle = (props: FlexContainerProps) => {
   });
 };
 
-export const itemStyle = (props: FlexItemProps) => {
+export const itemStyle = (flex?: number, self?: Self, order?: number) => {
   return css({
-    flexGrow: props.flex,
-    alignSelf: props.self,
-    order: props.order
+    flexGrow: flex,
+    alignSelf: self,
+    order: order
   });
 };
