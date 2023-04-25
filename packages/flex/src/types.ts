@@ -22,6 +22,7 @@ export interface FlexContainerProps extends Omit<CSSObject, Direction> {
 export interface FlexItemProps extends CSSObject {
   [propertiesName: string]: any;
   child?: React.ReactElement;
+  as?: React.ElementType;
   style?: CSSObject;
   flex?: number;
   self?: Self;
