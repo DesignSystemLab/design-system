@@ -13,7 +13,8 @@ jobs:
           node-version: '16.x'
           token: ${{ secrets.WORKFLOW_TOKEN }}
       - name: Install dependencies
-          YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+          env: 
+            YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
         run: yarn install
       - name: Run tests
         env:
