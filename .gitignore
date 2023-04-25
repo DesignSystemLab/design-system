@@ -13,5 +13,3 @@
 **/node_modules
 /storybook-static
 **.test.tsx.snap
-
-storybook-static/
