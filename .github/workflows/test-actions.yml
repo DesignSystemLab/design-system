@@ -13,9 +13,11 @@ jobs:
           node-version: '16.x'
           token: ${{ secrets.WORKFLOW_TOKEN }}
       - name: Increase memory limit
-        run: export NODE_OPTIONS="--max_old_space_size=4096"
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
       - name: Install dependencies
         env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
           YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
         run: yarn install
       - name: Run tests
