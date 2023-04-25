@@ -16,7 +16,7 @@ export const Box = (props: BoxProps) => {
   }
 
   return (
-    <Component css={style} className={boxClassName} {...restProps}>
+    <Component role="presentation" css={style} className={boxClassName} {...restProps}>
       {children}
     </Component>
   );
