@@ -3,7 +3,7 @@ import { getColorByToken, setTextColorByBackground, createClassVariant } from '@
 import { BoxProps } from '../types';
 
 export const Box = (props: BoxProps) => {
-  const { children, as = 'div', color, style = {}, className, ...restProps } = props;
+  const { children, as = 'div', color, style = {}, className, role = 'presentation', ...restProps } = props;
   const Component = as;
   const defaultClassName = createClassVariant('box', 'wrapper');
   const boxClassName = className ? `${defaultClassName} ${className}` : defaultClassName;
@@ -16,7 +16,7 @@ export const Box = (props: BoxProps) => {
   }
 
   return (
-    <Component role="presentation" css={style} className={boxClassName} {...restProps}>
+    <Component role={role} css={style} className={boxClassName} {...restProps}>
       {children}
     </Component>
   );
