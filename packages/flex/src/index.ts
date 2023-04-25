@@ -1,3 +1,1 @@
-import Flex from './flex';
-
-export { Flex };
+export * from './components/Flex';

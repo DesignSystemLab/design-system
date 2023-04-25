@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import type { FlexItemProps, FlexContainerProps } from './flex-types';
+import type { FlexItemProps, FlexContainerProps } from './types';
 
 export const containerStyle = (props: FlexContainerProps) => {
   return css({
