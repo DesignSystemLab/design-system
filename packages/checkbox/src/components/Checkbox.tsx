@@ -27,7 +27,7 @@ export const Checkbox = (props: CheckboxProps) => {
     if (!checkboxRef.current) return;
     const currentEl = checkboxRef.current;
     switch (e.key) {
-      case 'Enter':
+      case 'Space':
         onEnterKeyDown(e, setCheckedState);
         break;
       case 'ArrowUp':
