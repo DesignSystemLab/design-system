@@ -31,12 +31,16 @@ export const ModalBasic = () => {
         </Modal.Header>
         <Modal.Body>
           <Flex direction="column" gap={10}>
-            <TextInput size="md" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-            </TextInput>
-            <TextInput size="md" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-            </TextInput>
+            <Flex.Item>
+              <TextInput size="md" placeholder="hiihihi">
+                <TextInput.Label>label</TextInput.Label>
+              </TextInput>
+            </Flex.Item>
+            <Flex.Item>
+              <TextInput size="md" placeholder="hiihihi">
+                <TextInput.Label>label</TextInput.Label>
+              </TextInput>
+            </Flex.Item>
           </Flex>
         </Modal.Body>
         <Modal.Footer>

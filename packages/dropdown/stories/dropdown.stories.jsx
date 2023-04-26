@@ -56,8 +56,12 @@ export const DropdownBasic = () => (
 
         <Dropdown.MenuItem sub>
           <Flex justify="space-between" items="center">
-            <div>서브메뉴입니다</div>
-            <ChevronRight height={16} />
+            <Flex.Item>
+              <div>서브메뉴입니다</div>
+            </Flex.Item>
+            <Flex.Item>
+              <ChevronRight height={16} />
+            </Flex.Item>
           </Flex>
           <Dropdown.SubMenu>
             <Dropdown.SubMenuItem>첫번째sub1</Dropdown.SubMenuItem>
@@ -71,8 +75,12 @@ export const DropdownBasic = () => (
 
         <Dropdown.MenuItem sub>
           <Flex justify="space-between" items="center">
-            <div>서브메뉴하나더</div>
-            <ChevronRight height={16} />
+            <Flex.Item>
+              <div>서브메뉴하나더</div>
+            </Flex.Item>
+            <Flex.Item>
+              <ChevronRight height={16} />
+            </Flex.Item>
           </Flex>
           <Dropdown.SubMenu>
             <Dropdown.SubMenuItem>첫번째sub1</Dropdown.SubMenuItem>
@@ -123,8 +131,12 @@ export const DropdownBasic = () => (
 
         <Dropdown.MenuItem sub>
           <Flex justify="space-between" items="center">
-            <div>서브메뉴입니다</div>
-            <ChevronRight height={16} />
+            <Flex.Item>
+              <div>서브메뉴입니다</div>
+            </Flex.Item>
+            <Flex.Item>
+              <ChevronRight height={16} />
+            </Flex.Item>
           </Flex>
           <Dropdown.SubMenu>
             <Dropdown.SubMenuItem>첫번째sub1</Dropdown.SubMenuItem>
@@ -138,8 +150,12 @@ export const DropdownBasic = () => (
 
         <Dropdown.MenuItem sub>
           <Flex justify="space-between" items="center">
-            <div>서브메뉴하나더</div>
-            <ChevronRight height={16} />
+            <Flex.Item>
+              <div>서브메뉴입니다</div>
+            </Flex.Item>
+            <Flex.Item>
+              <ChevronRight height={16} />
+            </Flex.Item>
           </Flex>
           <Dropdown.SubMenu>
             <Dropdown.SubMenuItem>첫번째sub1</Dropdown.SubMenuItem>
