@@ -1,32 +1,37 @@
 /** @jsxImportSource @emotion/react */
 import { tooltipContentStyle } from '../styles';
-import { calculateElementPosition } from '@jdesignlab/react-utils';
-import { css } from '@emotion/react';
 import type { TooltipContentProps } from '../types';
-import { useRef, useContext } from 'react';
+import { useState, useContext } from 'react';
 import TooltipContext from '../context';
-import { getComponentText } from '@jdesignlab/react-utils';
+import { getComponentText, usePlacementStyle } from '@jdesignlab/react-utils';
+import type { PlacementStyleProps } from '@jdesignlab/react-utils';
 
 const Content = (props: TooltipContentProps) => {
-  const { id, targetRef, placement, isHovering, gap, ...otherProps } = useContext(TooltipContext);
+  const { id, placement, isHovering, gap, targetEl } = useContext(TooltipContext);
   const { children, style } = props;
-  const contentRef = useRef<HTMLDivElement>(null);
-  const position = calculateElementPosition(targetRef, contentRef, placement, gap);
-  const contentStyle = css(position, tooltipContentStyle, style ?? {});
-  const contentText = getComponentText(children);
+  const [contentEl, setContentEl] = useState<HTMLDivElement | null>(null);
+
+  const contentStyleParams: PlacementStyleProps = {
+    contentEl,
+    triggerEl: targetEl,
+    isHovering,
+    contentStyle: { ...tooltipContentStyle, ...style },
+    placement,
+    gap
+  };
 
   return (
-    <span
-      css={contentStyle}
-      ref={contentRef}
+    <div
+      css={usePlacementStyle(contentStyleParams)}
+      ref={setContentEl}
       role="tooltip"
       id={id}
-      aria-label={contentText}
+      aria-label={getComponentText(children)}
       aria-expanded={isHovering ? true : false}
       className={`${isHovering ? 'tooltip_open' : 'tooltip_close'}`}
     >
       {children}
-    </span>
+    </div>
   );
 };
 
