@@ -14,15 +14,15 @@ export const Button = (props: ButtonProps) => {
   const { createRipple, rippleNodes } = useRipple();
 
   const buttonStyle = css(buttonDefaultStyle, {
-    ...buttonSizeStyle(props.size || 'md', props.full ?? false),
-    ...buttonVariantStyle(themePreset, props.variant || 'solid', disabled ?? false, props.color)
+    ...buttonSizeStyle(props.size ?? 'md', props.full ?? false),
+    ...buttonVariantStyle(themePreset, props.variant ?? 'solid', disabled ?? false, props.color)
   });
 
   return (
     <button
       css={buttonStyle}
       onClick={callHandler(createRipple, disabled ? () => {} : onClick)}
-      type={props.type || 'button'}
+      type={props.type ?? 'button'}
       tabIndex={!disabled ? 0 : -1}
       role="button"
       disabled={!!disabled}
