@@ -2,6 +2,7 @@ import type { ColorToken } from '@jdesignlab/theme';
 import { css } from '@emotion/react';
 import type { ButtonVariant, ButtonSize } from './types';
 import { getColorByToken, setTextColorByBackground } from '@jdesignlab/theme';
+import { ThemePreset } from '@jdesignlab/j-provider';
 
 const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
@@ -31,7 +32,12 @@ export const buttonSizeStyle = (size: ButtonSize, full: boolean) => {
   };
 };
 
-export const buttonVariantStyle = (themePreset: any, variant: ButtonVariant, disabled: boolean, color?: ColorToken) => {
+export const buttonVariantStyle = (
+  themePreset: ThemePreset,
+  variant: ButtonVariant,
+  disabled: boolean,
+  color?: ColorToken
+) => {
   let parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
 
   let disabledStyle;
