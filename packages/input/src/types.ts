@@ -1,3 +1,4 @@
+import { ThemePreset } from '@jdesignlab/j-provider';
 import type { ColorToken } from '@jdesignlab/theme';
 
 export type InputSize = 'sm' | 'md' | 'lg';
@@ -22,7 +23,7 @@ export interface InputMessageProps {
 }
 
 export interface InputStyleProps {
-  themePreset: any;
+  themePreset: ThemePreset;
   size: InputSize;
   hasLabel: boolean;
   hasIcon: boolean;

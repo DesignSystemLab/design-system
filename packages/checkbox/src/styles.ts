@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { ThemePreset } from '@jdesignlab/j-provider';
 import type { ColorToken } from '@jdesignlab/theme';
 import { getColorByToken, setTextColorByBackground } from '@jdesignlab/theme';
 
@@ -16,7 +17,7 @@ export const checkboxWrapperStyle = () => {
   });
 };
 
-export const checkboxInputStyle = (themePreset: any, color?: ColorToken) => {
+export const checkboxInputStyle = (themePreset: ThemePreset, color?: ColorToken) => {
   const parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
   return css({
     appearance: 'none',
