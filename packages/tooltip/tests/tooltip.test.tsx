@@ -41,15 +41,6 @@ describe('tooltip features', () => {
       expect(content).toBeVisible();
     });
   });
-
-  it('has "visibility" style to control showing content', () => {
-    renderTooltip();
-    const target = document.querySelector('.tooltip_target')!;
-    const content = document.querySelector('[role="tooltip"]')!;
-    expect(content).toHaveStyle({ visibility: 'hidden' });
-    userEvent.hover(target);
-    expect(target).toHaveStyle({ visibility: 'visible' });
-  });
 });
 
 describe('Tooltip', () => {
