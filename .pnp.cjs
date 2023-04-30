@@ -5161,6 +5161,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-preset-css-prop", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:11.10.0"],\
             ["@emotion/react", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.6"],\
             ["@jdesignlab/button", "workspace:packages/button"],\
+            ["@jdesignlab/j-provider", "workspace:packages/j-provider"],\
             ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@jdesignlab/react-utils", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#workspace:packages/react-utils"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
@@ -5372,6 +5373,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-plugin", "npm:11.10.6"],\
             ["@emotion/babel-preset-css-prop", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.0"],\
             ["@emotion/react", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.6"],\
+            ["@jdesignlab/utils", "workspace:packages/utils"],\
             ["@rollup/plugin-babel", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:6.0.3"],\
             ["@rollup/plugin-commonjs", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:15.0.2"],\
@@ -5396,6 +5398,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/babel-plugin", "npm:11.10.6"],\
             ["@emotion/babel-preset-css-prop", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.0"],\
             ["@emotion/react", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.6"],\
+            ["@jdesignlab/utils", "workspace:packages/utils"],\
             ["@rollup/plugin-babel", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:6.0.3"],\
             ["@rollup/plugin-commonjs", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:24.0.1"],\
             ["@rollup/plugin-node-resolve", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:15.0.2"],\
