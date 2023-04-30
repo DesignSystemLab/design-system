@@ -1962,6 +1962,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
+    "@jdesignlab/j-provider": "*"
     "@jdesignlab/theme": "*"
     "@jdesignlab/utils": "*"
     "@rollup/plugin-babel": ^6.0.3
@@ -2407,6 +2408,7 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
+    "@jdesignlab/j-provider": "*"
     "@jdesignlab/react-utils": "*"
     "@jdesignlab/theme": "*"
     "@jdesignlab/utils": "*"
