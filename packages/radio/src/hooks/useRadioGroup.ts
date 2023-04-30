@@ -15,7 +15,7 @@ const useRadioGroup = (defalutValue: string | null) => {
 
   useEffect(() => {
     if (ref.current) {
-      const radioElements = ref.current.querySelectorAll('input');
+      const radioElements = ref.current.querySelectorAll('input[type="radio"]') as NodeListOf<HTMLInputElement>;
       radioElements.forEach(el => {
         setDefaultValueCheck(el, defalutValue);
       });
