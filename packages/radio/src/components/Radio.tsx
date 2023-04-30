@@ -8,6 +8,7 @@ import RadioLabel from './RadioLabel';
 import useRadio from '../hooks/useRadio';
 import { DEFAULT_COLOR, DEFAULT_DISABLED_COLOR, RADIO_ID_PREFIX } from '../constants';
 import validateEventHandlers from '../utils/validateEventHandlers';
+import createRadioWrapperStyle from '../styles/createRadioWrapperStyle';
 import createRadioStyle from '../styles/createRadioStyle';
 import type { RadioProps } from '../types';
 
@@ -40,7 +41,7 @@ export const Radio = (props: RadioProps) => {
   return (
     <div
       className={radioClassName}
-      css={{ display: 'inline-block' }}
+      css={createRadioWrapperStyle}
       aria-checked={radioContext ? radioContext.value === props.value : radioValue === props.value}
     >
       <RadioLabel id={radioId} size={size}>
@@ -57,7 +58,7 @@ export const Radio = (props: RadioProps) => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
         />
-        {radioText}
+        <span>{radioText}</span>
       </RadioLabel>
     </div>
   );

@@ -4,15 +4,33 @@ import type { RadioSize } from '../types';
 
 const createRadioStyle = (color: HEX, disabledColor: HEX, disabled: boolean, size: RadioSize) => {
   const radioStyle = css({
-    width: '16px',
-    height: '16px',
-    border: `2px solid ${color}`,
+    position: 'absolute',
+    display: 'block',
     borderRadius: '50%',
     cursor: 'pointer',
     appearance: 'none',
     verticalAlign: 'middle',
+    opacity: '0',
+    transition: 'opacity 0.3s, transform 0.2s',
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
     '&:checked': {
-      border: `4px solid ${color}`
+      opacity: '0'
+    },
+    '&:disabled': {
+      cursor: 'not-allowed',
+      opacity: '0'
+    },
+    '&:checked + span::after': {
+      visibility: 'visible'
+    },
+    '&:checked + span::before': {
+      borderColor: `${color}`,
+      backgroundColor: `${color}`
+    },
+    '&:hover': {
+      cursor: 'pointer',
+      visibility: 'visible',
+      opacity: '1'
     },
     '&:focus-visible': {
       outline: `2px solid ${color}`
@@ -22,18 +40,27 @@ const createRadioStyle = (color: HEX, disabledColor: HEX, disabled: boolean, siz
   const disabledStyle = () => {
     if (disabled) {
       return css({
+        opacity: '0',
         cursor: 'not-allowed',
-        backgroundColor: `${disabledColor}`,
-        border: `4px solid ${disabledColor}`,
-        opacity: '0.7',
+        '&:hover': {
+          cursor: 'not-allowed',
+          visibility: 'visible',
+          opacity: '0'
+        },
+        '& + span': {
+          color: `${disabledColor}`,
+          cursor: 'not-allowed',
+          '&::before': {
+            borderColor: 'currentcolor'
+          }
+        },
         '&:checked': {
           borderStyle: `none`
         }
       });
     }
     return css({
-      cursor: 'pointer',
-      border: `2px solid ${color}`
+      cursor: 'pointer'
     });
   };
 
@@ -41,14 +68,18 @@ const createRadioStyle = (color: HEX, disabledColor: HEX, disabled: boolean, siz
     switch (size) {
       case 'sm':
         return css({
-          width: '12px',
-          height: '12px',
+          width: '24px',
+          height: '24px',
+          left: '2px',
+          top: '-6px',
           borderWidth: '1px'
         });
       case 'lg':
         return css({
-          width: '20px',
-          height: '20px',
+          width: '40px',
+          height: '40px',
+          left: '-2px',
+          top: '-10px',
           borderWidth: `4px solid ${color}`,
           '&:focus-visible': {
             outline: `4px solid ${color}`
@@ -56,8 +87,10 @@ const createRadioStyle = (color: HEX, disabledColor: HEX, disabled: boolean, siz
         });
       default:
         return css({
-          width: '16px',
-          height: '16px',
+          width: '32px',
+          height: '32px',
+          left: '0',
+          top: '-8px',
           borderWidth: `2px solid ${color}`,
           '&:checked': {
             borderWidth: `4px solid ${color}`
