@@ -10,6 +10,7 @@ export interface ThemePreset {
     warning: HEX;
     error: HEX;
     disabled: HEX;
+    font: HEX;
   };
   effect: {
     disabledOpacity: string | number;

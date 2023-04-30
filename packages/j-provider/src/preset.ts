@@ -13,7 +13,8 @@ export const preset: Preset = {
       info: getColorByToken('info'),
       warning: getColorByToken('warning'),
       error: getColorByToken('error'),
-      disabled: getColorByToken('disabled')
+      disabled: getColorByToken('disabled'),
+      font: getColorByToken('grey-darken4')
     },
     effect: {
       disabledOpacity: '77',
@@ -36,7 +37,8 @@ export const preset: Preset = {
       info: getColorByToken('info'),
       warning: getColorByToken('warning'),
       error: getColorByToken('error'),
-      disabled: getColorByToken('disabled')
+      disabled: getColorByToken('disabled'),
+      font: getColorByToken('grey-lighten4')
     },
     effect: {
       disabledOpacity: '77',
