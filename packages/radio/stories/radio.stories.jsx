@@ -1,5 +1,6 @@
-import { variantPresetColors } from '@jdesignlab/theme';
 import React, { useState } from 'react';
+import { variantPresetColors } from '@jdesignlab/theme';
+import { ThemeProvider } from '@jdesignlab/j-provider';
 import { Radio } from '../src';
 
 function getVariantPresetColors() {
@@ -55,13 +56,15 @@ export const RadioGroup = () => {
   return (
     <div>
       <h2>Radio Group</h2>
-      <Radio.Group defaultValue="radio1" onChange={e => console.log(e.target.value)}>
-        <Radio defaultChecked value="radio1">
-          first
-        </Radio>
-        <Radio value="radio2">second</Radio>
-        <Radio value="radio3">third</Radio>
-      </Radio.Group>
+      <ThemeProvider>
+        <Radio.Group defaultValue="radio1" onChange={e => console.log(e.target.value)}>
+          <Radio defaultChecked value="radio1">
+            first
+          </Radio>
+          <Radio value="radio2">second</Radio>
+          <Radio value="radio3">third</Radio>
+        </Radio.Group>
+      </ThemeProvider>
     </div>
   );
 };
@@ -73,7 +76,7 @@ export const RadioTempalte = () => {
   };
 
   return (
-    <>
+    <ThemeProvider>
       <p>Select Value : {value}</p>
       <Radio name="contract" color="amber-lighten3" value="email" onChange={handleRadioChange}>
         email
@@ -102,6 +105,6 @@ export const RadioTempalte = () => {
       >
         readonly (ClickMe)
       </Radio>
-    </>
+    </ThemeProvider>
   );
 };

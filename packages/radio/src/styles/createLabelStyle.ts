@@ -1,14 +1,13 @@
 import { css } from '@emotion/react';
-import { getColorByToken } from '@jdesignlab/theme';
-import type { ColorToken } from '@jdesignlab/theme';
+import type { HEX } from '@jdesignlab/theme';
 import type { RadioSize } from '../types';
 
-const createLabelStyle = (size: RadioSize, fontColor: ColorToken) => {
+const createLabelStyle = (size: RadioSize, fontColor: HEX) => {
   const labelStyle = css({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: `${getColorByToken(fontColor)}`,
+    color: `${fontColor}`,
     boxSizing: 'border-box',
     padding: 0,
     whiteSpace: 'nowrap',

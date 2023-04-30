@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@jdesignlab/button": "*",
+    "@jdesignlab/j-provider": "*",
     "@jdesignlab/theme": "*",
     "@jdesignlab/utils": "*"
   },

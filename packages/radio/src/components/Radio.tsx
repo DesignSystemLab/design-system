@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useId, useContext } from 'react';
-import { createClassVariant } from '@jdesignlab/theme';
+import { createClassVariant, getColorByTokenOrHex } from '@jdesignlab/theme';
 import { getComponentText } from '@jdesignlab/react-utils';
 import { RadioContext } from './RadioContext';
 import RadioGroup from './RadioGroup';
@@ -51,7 +51,7 @@ export const Radio = (props: RadioProps) => {
           ref={ref}
           readOnly={readonly}
           className={createClassVariant('radio', 'input', 'radio')}
-          css={createRadioStyle(color, DEFAULT_DISABLED_COLOR, disabled, size)}
+          css={createRadioStyle(getColorByTokenOrHex(color), DEFAULT_DISABLED_COLOR, disabled, size)}
           disabled={disabled}
           {...validRadioProps}
           onChange={handleChange}

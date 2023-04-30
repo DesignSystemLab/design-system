@@ -1,25 +1,21 @@
 import { css } from '@emotion/react';
-import { getColorByToken } from '@jdesignlab/theme';
-import type { ColorToken } from '@jdesignlab/theme';
+import type { HEX } from '@jdesignlab/theme';
 import type { RadioSize } from '../types';
 
-const createRadioStyle = (color: ColorToken, disabledColor: ColorToken, disabled: boolean, size: RadioSize) => {
-  const hexColor = getColorByToken(color);
-  const hexDisabledColor = getColorByToken(disabledColor);
-
+const createRadioStyle = (color: HEX, disabledColor: HEX, disabled: boolean, size: RadioSize) => {
   const radioStyle = css({
     width: '16px',
     height: '16px',
-    border: `2px solid ${hexColor}`,
+    border: `2px solid ${color}`,
     borderRadius: '50%',
     cursor: 'pointer',
     appearance: 'none',
     verticalAlign: 'middle',
     '&:checked': {
-      border: `4px solid ${hexColor}`
+      border: `4px solid ${color}`
     },
     '&:focus-visible': {
-      outline: `2px solid ${hexColor}`
+      outline: `2px solid ${color}`
     }
   });
 
@@ -27,8 +23,8 @@ const createRadioStyle = (color: ColorToken, disabledColor: ColorToken, disabled
     if (disabled) {
       return css({
         cursor: 'not-allowed',
-        backgroundColor: `${hexDisabledColor}`,
-        border: `4px solid ${hexDisabledColor}`,
+        backgroundColor: `${disabledColor}`,
+        border: `4px solid ${disabledColor}`,
         opacity: '0.7',
         '&:checked': {
           borderStyle: `none`
@@ -37,7 +33,7 @@ const createRadioStyle = (color: ColorToken, disabledColor: ColorToken, disabled
     }
     return css({
       cursor: 'pointer',
-      border: `2px solid ${hexColor}`
+      border: `2px solid ${color}`
     });
   };
 
@@ -53,21 +49,21 @@ const createRadioStyle = (color: ColorToken, disabledColor: ColorToken, disabled
         return css({
           width: '20px',
           height: '20px',
-          borderWidth: `4px solid ${hexColor}`,
+          borderWidth: `4px solid ${color}`,
           '&:focus-visible': {
-            outline: `4px solid ${hexColor}`
+            outline: `4px solid ${color}`
           }
         });
       default:
         return css({
           width: '16px',
           height: '16px',
-          borderWidth: `2px solid ${hexColor}`,
+          borderWidth: `2px solid ${color}`,
           '&:checked': {
-            borderWidth: `4px solid ${hexColor}`
+            borderWidth: `4px solid ${color}`
           },
           '&:focus-visible': {
-            outline: `2px solid ${hexColor}`
+            outline: `2px solid ${color}`
           }
         });
     }
