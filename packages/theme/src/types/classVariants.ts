@@ -33,6 +33,6 @@ export type JDesignSystemElementRoles =
   | 'button'
   | 'input';
 
-export type CssVariant =
+export type ClassNameVariant =
   | `j-${JDesignSystemComponent}__${string}-${JDesignSystemElementRoles}`
   | `j-${JDesignSystemComponent}__${JDesignSystemElementRoles}`;
