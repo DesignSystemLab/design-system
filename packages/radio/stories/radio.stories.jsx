@@ -105,6 +105,16 @@ export const RadioTempalte = () => {
       >
         readonly (ClickMe)
       </Radio>
+      <hr />
+      <Radio name="contract" color="amber-lighten3" size="sm" value="sm" onChange={handleRadioChange}>
+        small-radio
+      </Radio>
+      <Radio name="contract" color="amber-lighten3" size="md" value="md" onChange={handleRadioChange}>
+        medium-radio
+      </Radio>
+      <Radio name="contract" color="amber-lighten3" size="lg" value="lg" onChange={handleRadioChange}>
+        large-radio
+      </Radio>
     </ThemeProvider>
   );
 };
