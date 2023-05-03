@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-const useInitialRender = () => {
+export const useInitialRender = () => {
   const isInitial = useRef<boolean>(true);
 
   if (isInitial.current) {
@@ -10,5 +10,3 @@ const useInitialRender = () => {
 
   return isInitial.current;
 };
-
-export default useInitialRender;
