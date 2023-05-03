@@ -5034,6 +5034,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/react", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#npm:11.10.6"],\
             ["@jdesignlab/button", "workspace:packages/button"],\
             ["@jdesignlab/flex", "workspace:packages/flex"],\
+            ["@jdesignlab/j-provider", "workspace:packages/j-provider"],\
             ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@jdesignlab/react-utils", "virtual:7e81a77da007dbba430caeb45264bfee1eb05a36544569553989820557b0f820fdb7f22759e38b666bb8bc0aedeaeecb53576d2b2d4506b16cc10f5ab55e2bec#workspace:packages/react-utils"],\
             ["@jdesignlab/theme", "workspace:packages/theme"],\
@@ -5059,8 +5060,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["rollup-plugin-typescript2", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:0.34.1"],\
             ["ts-jest", "virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:29.1.0"],\
             ["tslib", "npm:2.5.0"],\
-            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"],\
-            ["use-callback-ref", "virtual:9fb7c38312df1fd5e2ff8e2a9d5e3f5a66a74803df3bd76fe3ba411a376aa9a31f81f526e35325f4b51b2f9e095d4cb24cc0af3290e16e5a22735d625d99ac4d#npm:1.3.0"]\
+            ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -25096,29 +25096,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/use-npm-3.1.1-7ba643714c-08a130289f.zip/node_modules/use/",\
           "packageDependencies": [\
             ["use", "npm:3.1.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["use-callback-ref", [\
-        ["npm:1.3.0", {\
-          "packageLocation": "./.yarn/cache/use-callback-ref-npm-1.3.0-6c0773783f-7913df383a.zip/node_modules/use-callback-ref/",\
-          "packageDependencies": [\
-            ["use-callback-ref", "npm:1.3.0"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:9fb7c38312df1fd5e2ff8e2a9d5e3f5a66a74803df3bd76fe3ba411a376aa9a31f81f526e35325f4b51b2f9e095d4cb24cc0af3290e16e5a22735d625d99ac4d#npm:1.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/use-callback-ref-virtual-b190ac9679/0/cache/use-callback-ref-npm-1.3.0-6c0773783f-7913df383a.zip/node_modules/use-callback-ref/",\
-          "packageDependencies": [\
-            ["use-callback-ref", "virtual:9fb7c38312df1fd5e2ff8e2a9d5e3f5a66a74803df3bd76fe3ba411a376aa9a31f81f526e35325f4b51b2f9e095d4cb24cc0af3290e16e5a22735d625d99ac4d#npm:1.3.0"],\
-            ["@types/react", "npm:18.0.33"],\
-            ["react", "npm:18.2.0"],\
-            ["tslib", "npm:2.5.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
           ],\
           "linkType": "HARD"\
         }]\
