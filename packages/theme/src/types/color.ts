@@ -1,6 +1,7 @@
 type HEX = `#${string}`;
 
 interface UniqueColorScheme {
+  50: HEX;
   100: HEX;
   200: HEX;
   300: HEX;
