@@ -1,18 +1,7 @@
 import { Color } from '../types/color';
 
 const primary = Object.freeze({
-  100: '#FFFBEE',
-  200: '#FFF7DE',
-  300: '#FFF3CF',
-  400: '#FFEFBD',
-  500: '#FFEAA7',
-  600: '#FFE79C',
-  700: '#FFE38B',
-  800: '#FFDC70',
-  900: '#FFD145'
-});
-
-const secondary = Object.freeze({
+  50: '#F4FAFF',
   100: '#D1E8FF',
   200: '#B9DCFF',
   300: '#9BCAFA',
@@ -22,6 +11,19 @@ const secondary = Object.freeze({
   700: '#1E7AD7',
   800: '#0B6BCC',
   900: '#0058B1'
+});
+
+const secondary = Object.freeze({
+  50: '#FFFDF7',
+  100: '#FFFBEE',
+  200: '#FFF7DE',
+  300: '#FFF3CF',
+  400: '#FFEFBD',
+  500: '#FFEAA7',
+  600: '#FFE79C',
+  700: '#FFE38B',
+  800: '#FFDC70',
+  900: '#FFD145'
 });
 
 const red = Object.freeze({
