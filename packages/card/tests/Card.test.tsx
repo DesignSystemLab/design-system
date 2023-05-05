@@ -64,7 +64,7 @@ describe('Card', () => {
     const card = screen.getByRole('article');
     expect(card).toHaveStyle({
       'box-shadow': 'none',
-      'background-color': '#FFEFBD'
+      'background-color': '#6AACEF'
     });
     debug();
   });
