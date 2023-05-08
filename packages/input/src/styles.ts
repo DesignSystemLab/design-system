@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { InputStyleProps, InputSize } from './types';
 import { getColorByToken } from '@jdesignlab/theme';
