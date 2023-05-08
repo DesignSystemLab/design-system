@@ -37,6 +37,7 @@ export const Modal = (props: ModalProps) => {
           css={{ ...modalWrapperStyle(props.width) }}
           {...otherProps}
           className={`modal_content ${open ? 'modal_open' : 'modal_close'}`}
+          role="dialog"
         >
           {filterComponent(children, Trigger, false)}
         </div>
