@@ -47,10 +47,8 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <ModalContext.Provider value={providerValue}>
-      <>
-        {triggerChildren}
-        {lazy ? open && <ModalContent /> : <ModalContent />}
-      </>
+      {triggerChildren}
+      {lazy ? open && <ModalContent /> : <ModalContent />}
     </ModalContext.Provider>
   );
 };
