@@ -10,9 +10,9 @@
     "build:clean": "rimraf dist/"
   },
   "dependencies": {
-    "@jdesignlab/flex": "*",
-    "@jdesignlab/theme": "*",
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/flex": "workspace:*",
+    "@jdesignlab/theme": "workspace:*",
+    "@jdesignlab/utils": "workspace:*"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
@@ -45,6 +45,7 @@
   },
   "peerDependencies": {
     "@types/react": "~18",
-    "react": "~18"
+    "react": "~18",
+    "react-dom": "~18"
   }
 }

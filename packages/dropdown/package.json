@@ -9,6 +9,11 @@
     "build": "rollup --bundleConfigAsCjs -c rollup.config.js",
     "build:clean": "rimraf dist/"
   },
+  "dependencies": {
+    "@jdesignlab/flex": "workspace:*",
+    "@jdesignlab/react-icons": "workspace:*",
+    "@jdesignlab/theme": "workspace:*"
+  },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
@@ -42,9 +47,9 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.5"
   },
-  "dependencies": {
-    "@jdesignlab/flex": "*",
-    "@jdesignlab/react-icons": "*",
-    "@jdesignlab/theme": "*"
+  "peerDependencies": {
+    "@types/react": "~18",
+    "react": "~18",
+    "react-dom": "~18"
   }
 }

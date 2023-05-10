@@ -10,12 +10,12 @@
     "build:clean": "rimraf dist/"
   },
   "dependencies": {
-    "@jdesignlab/button": "*",
-    "@jdesignlab/flex": "*",
-    "@jdesignlab/react-icons": "*",
-    "@jdesignlab/react-utils": "*",
-    "@jdesignlab/theme": "*",
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*",
+    "@jdesignlab/flex": "workspace:*",
+    "@jdesignlab/react-icons": "workspace:*",
+    "@jdesignlab/react-utils": "workspace:*",
+    "@jdesignlab/theme": "workspace:*",
+    "@jdesignlab/utils": "workspace:*"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",
@@ -51,6 +51,7 @@
   },
   "peerDependencies": {
     "@types/react": "~18",
-    "react": "~18"
+    "react": "~18",
+    "react-dom": "~18"
   }
 }

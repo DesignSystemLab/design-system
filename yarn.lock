@@ -1961,10 +1961,10 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -1990,10 +1990,11 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/button@*, @jdesignlab/button@workspace:packages/button":
+"@jdesignlab/button@*, @jdesignlab/button@workspace:*, @jdesignlab/button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/button@workspace:packages/button"
   dependencies:
@@ -2004,11 +2005,11 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2032,6 +2033,10 @@ __metadata:
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
     typescript: ^4.9.4
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2046,9 +2051,9 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2072,6 +2077,7 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2087,10 +2093,10 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2114,6 +2120,10 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2128,13 +2138,13 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2176,9 +2186,9 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/theme": "*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2202,10 +2212,14 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/flex@*, @jdesignlab/flex@workspace:packages/flex":
+"@jdesignlab/flex@workspace:*, @jdesignlab/flex@workspace:packages/flex":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/flex@workspace:packages/flex"
   dependencies:
@@ -2216,8 +2230,8 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/theme": "*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2241,10 +2255,14 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/input@*, @jdesignlab/input@workspace:packages/input":
+"@jdesignlab/input@workspace:*, @jdesignlab/input@workspace:packages/input":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/input@workspace:packages/input"
   dependencies:
@@ -2256,10 +2274,10 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
     "@jdesignlab/button": "*"
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2283,10 +2301,14 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/j-provider@*, @jdesignlab/j-provider@workspace:packages/j-provider":
+"@jdesignlab/j-provider@*, @jdesignlab/j-provider@workspace:*, @jdesignlab/j-provider@workspace:packages/j-provider":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/j-provider@workspace:packages/j-provider"
   dependencies:
@@ -2319,12 +2341,12 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/input": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/input": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2349,6 +2371,10 @@ __metadata:
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
     typescript: ^4.9.4
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2364,12 +2390,12 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/jest": ^11.10.5
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2395,6 +2421,7 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2409,10 +2436,10 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2438,10 +2465,11 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/react-icons@*, @jdesignlab/react-icons@workspace:packages/icons":
+"@jdesignlab/react-icons@workspace:*, @jdesignlab/react-icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/react-icons@workspace:packages/icons"
   dependencies:
@@ -2456,7 +2484,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/react-utils@*, @jdesignlab/react-utils@workspace:packages/react-utils":
+"@jdesignlab/react-utils@*, @jdesignlab/react-utils@workspace:*, @jdesignlab/react-utils@workspace:packages/react-utils":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/react-utils@workspace:packages/react-utils"
   dependencies:
@@ -2491,11 +2519,11 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/flex": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2520,6 +2548,7 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2534,9 +2563,9 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2561,6 +2590,7 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2602,6 +2632,10 @@ __metadata:
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
     typescript: ^4.9.4
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
@@ -2616,8 +2650,8 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2642,10 +2676,11 @@ __metadata:
   peerDependencies:
     "@types/react": ~18
     react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/theme@*, @jdesignlab/theme@workspace:packages/theme":
+"@jdesignlab/theme@*, @jdesignlab/theme@workspace:*, @jdesignlab/theme@workspace:packages/theme":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/theme@workspace:packages/theme"
   dependencies:
@@ -2666,12 +2701,12 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
-    "@jdesignlab/button": "*"
-    "@jdesignlab/j-provider": "*"
-    "@jdesignlab/react-icons": "*"
-    "@jdesignlab/react-utils": "*"
-    "@jdesignlab/theme": "*"
-    "@jdesignlab/utils": "*"
+    "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2696,10 +2731,14 @@ __metadata:
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
     typescript: ^4.9.4
+  peerDependencies:
+    "@types/react": ~18
+    react: ~18
+    react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/utils@*, @jdesignlab/utils@workspace:packages/utils":
+"@jdesignlab/utils@*, @jdesignlab/utils@workspace:*, @jdesignlab/utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/utils@workspace:packages/utils"
   dependencies:
