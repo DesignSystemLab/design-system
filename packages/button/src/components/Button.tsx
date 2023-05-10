@@ -21,12 +21,10 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       css={buttonStyle}
-      onClick={callHandler(createRipple, disabled ? () => {} : onClick)}
+      onClick={callHandler(createRipple, disabled && onClick ? () => {} : onClick)}
       type={props.type ?? 'button'}
-      tabIndex={!disabled ? 0 : -1}
       role="button"
       disabled={!!disabled}
-      aria-disabled={!!disabled}
       {...otherProps}
     >
       {props.icon}
