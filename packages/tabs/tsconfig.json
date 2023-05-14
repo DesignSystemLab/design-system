@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./src", "setup-jest.ts", "jest.config.ts"],
+  "include": ["./src"],
   "compilerOptions": {
+    "declaration": true,
+    "isolatedModules": false,
+    "esModuleInterop": true, //  es module이 아니어도 import export 쓸 수 있게 함
+    "importHelpers": true,
     "types": ["@emotion/react/types/css-prop"],
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react"

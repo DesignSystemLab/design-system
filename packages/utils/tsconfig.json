@@ -1,8 +1,11 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "declaration": true,
-        "outDir": "./dist"
-    },
-    "include": ["src"]
+  "extends": "../../tsconfig.json",
+  "include": ["./src"],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "isolatedModules": false,
+    "esModuleInterop": true, //  es module이 아니어도 import export 쓸 수 있게 함
+    "importHelpers": true
+  }
 }

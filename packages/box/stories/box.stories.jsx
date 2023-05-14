@@ -11,7 +11,7 @@ export const BoxTemplate = () => (
     <Box>Basic Box</Box>
     <Box color="green-darken4" style={{ backgroundColor: 'tomato', width: '64px', height: '64px' }}>
       <span>first</span>
-    </Box>
+    </Box>``
     <Box color="primary-500" style={{ backgroundColor: 'tomato', width: '64px', height: '64px' }}>
       <span>second</span>
     </Box>

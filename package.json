@@ -1,7 +1,6 @@
 {
   "name": "jdesignlab",
-  "version": "1.0.0",
-  "private": false,
+  "version": "1.0.2",
   "packageManager": "yarn@3.3.1",
   "homepage": "https://github.com/DesignSystemLab/design-system",
   "scripts": {
@@ -9,7 +8,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy-storybook": "gh-pages -d storybook-static",
+    "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public"
   },
   "workspaces": [
     "packages/*"
@@ -51,13 +51,17 @@
     "prettier": "^2.8.3",
     "rimraf": "^4.1.2",
     "rollup": "^3.12.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.5",
     "ts-node": "^10.9.1",
-    "turbo": "^1.7.0",
+    "tsup": "^6.7.0",
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@babel/runtime": "^7.21.5",
+    "@jdesignlab/j-provider": "workspace:^",
     "@yarnpkg/pnpify": "^4.0.0-rc.36",
     "react": "18.0.0",
     "react-dom": "18.0.0"

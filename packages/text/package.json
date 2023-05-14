@@ -1,12 +1,16 @@
 {
   "name": "@jdesignlab/typography",
   "packageManager": "yarn@3.3.1",
-  "version": "0.0.1",
-  "main": "src/index",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "preview": "jest-preview",
     "test": "jest",
-    "build": "rollup --bundleConfigAsCjs -c rollup.config.js",
+    "build": "tsup src --dts --format esm,cjs",
     "build:clean": "rimraf dist/"
   },
   "dependencies": {
@@ -41,9 +45,12 @@
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
     "rollup": "^3.12.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.5",
     "tslib": "^2.5.0",
+    "tsup": "^6.7.0",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {

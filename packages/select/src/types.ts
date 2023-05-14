@@ -12,6 +12,11 @@ export type StyleProps = {
   defaultValue: string | null;
 };
 
+export interface ContainerProps {
+  Trigger: React.ReactNode;
+  Options: React.ReactNode;
+}
+
 export type OptionValue = {
   key: string;
   name: string;

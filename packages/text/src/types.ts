@@ -32,14 +32,10 @@ export interface TextProps {
   color?: ColorToken;
   size?: FontSize;
   align?: FontAlign;
-  decoration: FontDecoration;
+  decoration?: FontDecoration;
   fontStyle?: FontStyleToken;
   transform?: FontTransformToken;
   truncate?: boolean;
   as?: ElementType;
   style?: ExternalStyle;
 }
-
-const a: CSSProperties = {
-  textTransform: 'lowercase'
-};

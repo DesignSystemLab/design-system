@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "declaration": true,
     "jsx": "react-jsx",
     "target": "es6", // 컴파일 결과물의 문법 -> es6
@@ -16,9 +17,9 @@
     "moduleResolution": "node", // 모듈 해석 전략 -> node
     "resolveJsonModule": true, // JSON을 import할 수 있음
     "isolatedModules": true, // 모든 파일을 모듈로 만들어야 함 (import, export 하지 않으면 에러)
-    "noEmit": true, // 결과물을 만들지 않음 -> 타입 체크용
+    "noEmit": false, // 결과물을 만들지 않음 -> 타입 체크용
     "noImplicitAny": true, // 암묵적 any 금지
     "sourceMap": true // 디버깅시 원본 TypeScript 코드를 보여줌
   },
-  "exclude": ["**/dist/**, **/node_modules", "**/*.stories.tsx"]
+  "exclude": ["**/dist/**, **/node_modules", "**/*.stories.tsx", "tests"]
 }

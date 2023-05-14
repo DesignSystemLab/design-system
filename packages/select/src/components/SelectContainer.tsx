@@ -4,11 +4,7 @@ import { SelectContext } from '../hooks/SelectContext';
 import { createSelectStyle } from '../styles/createSelectStyle';
 import { ComboboxOption } from './ComboboxOption';
 import { SelectNotfound } from './SearchNotfound';
-
-interface ContainerProps {
-  Trigger: React.ReactNode;
-  Options: React.ReactNode;
-}
+import { ContainerProps } from '../types';
 
 export const SelectContainer = (props: ContainerProps) => {
   const { selectProps, open, setSelectRef, searchValues, searchKeyword } = useContext(SelectContext);

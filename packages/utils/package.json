@@ -1,11 +1,19 @@
 {
   "name": "@jdesignlab/utils",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src --dts --format esm,cjs"
+  },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "tsup": "^6.7.0",
     "typescript": "^4.9.4"
   }
 }

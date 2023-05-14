@@ -1,12 +1,15 @@
 {
-  "name": "@jdesignlab/select-bak",
+  "name": "@jdesignlab/select",
   "packageManager": "yarn@3.3.1",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "preview": "jest-preview",
     "test": "jest",
-    "build": "rollup --bundleConfigAsCjs -c rollup.config.js",
+    "build": "tsup src --dts --format esm,cjs",
     "build:clean": "rimraf dist/"
   },
   "dependencies": {
@@ -44,6 +47,7 @@
     "rollup": "^3.12.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.5",
+    "tsup": "^6.7.0",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {

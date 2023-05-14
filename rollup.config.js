@@ -20,11 +20,14 @@ export default {
     }
   ],
   plugins: [
+    // peerDepsExternal(),
+    // dts.default(),
     resolve({ extensions }),
-    commonjs(),
-    babel({ babelHelpers: 'runtime', exclude: '**/node_modules/**' }),
     typescript({
-      tsconfig: 'tsconfig.json'
-    })
+      tsconfig: 'tsconfig.json',
+      clean: true
+    }),
+    commonjs(),
+    babel({ babelHelpers: 'runtime', exclude: '**/node_modules/**', skipPreflightCheck: true })
   ]
 };
