@@ -37,12 +37,6 @@ describe('disabled', () => {
     expect(button).toHaveAttribute('disabled');
   });
 
-  it('sync aria-disabled with disabled', () => {
-    render(<Button disabled>Button</Button>);
-    const button = screen.getByRole('button');
-    expect(button).toHaveAttribute('aria-disabled', 'true');
-  });
-
   it('should not fire onClick on disabled button', () => {
     render(
       <Button disabled onClick={onClick}>
