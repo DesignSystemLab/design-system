@@ -2362,6 +2362,7 @@ __metadata:
     "@jdesignlab/button": "*"
     "@jdesignlab/flex": "workspace:*"
     "@jdesignlab/react-icons": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
     "@jdesignlab/theme": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
@@ -2386,6 +2387,7 @@ __metadata:
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
     ts-jest: ^29.0.5
+    tslib: ^2.5.0
     tsup: ^6.7.0
     typescript: 4.9.4
   peerDependencies:
