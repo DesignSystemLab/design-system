@@ -1,6 +1,7 @@
 /** mixins */
 export * from './mixins/transition/useRipple';
-export * from './mixins/keyboard/useArrowKeyNavigation';
+export * from './mixins/keyboard/spaceKeyToggleHandler';
+export * from './mixins/keyboard/arrowKeyNavigationHandler';
 export * from './mixins/styles/usePlacementStyle';
 
 /** utils */
