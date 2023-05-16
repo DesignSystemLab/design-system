@@ -15,6 +15,7 @@
   "dependencies": {
     "@jdesignlab/flex": "workspace:*",
     "@jdesignlab/react-icons": "workspace:*",
+    "@jdesignlab/react-utils": "workspace:*",
     "@jdesignlab/theme": "workspace:*"
   },
   "devDependencies": {
