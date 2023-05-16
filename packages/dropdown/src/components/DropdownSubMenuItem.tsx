@@ -5,14 +5,22 @@ import { useContext, useRef, useState } from 'react';
 import { DropdownContext, DropdownSubContext } from '../context';
 import { dropdownItemStyle } from '../style';
 import type { DropdownSubMenuItemProps } from '../types';
-import useArrowKeyHandle from '../hooks/useArrowKeyDown';
+import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
 
 export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
   const { open } = useContext(DropdownContext);
   const { children, onClick, ...otherProps } = props;
   const disabled = props.disabled === undefined ? false : props.disabled;
-  const keyDownHandle = useArrowKeyHandle();
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (!menuItemRef.current) return;
+    useKeyboardHandler({
+      event,
+      parentScope: '.menu_item',
+      selectorOfList: '.sub_item:not([disabled])'
+    });
+  };
 
   return (
     <li
@@ -23,9 +31,7 @@ export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
       className={`sub_item ${disabled ? 'disabled' : ''}`}
       aria-disabled={disabled ? true : false}
       css={{ ...dropdownItemStyle(disabled) }}
-      onKeyDown={e => {
-        keyDownHandle(e, menuItemRef);
-      }}
+      onKeyDown={e => onKeyDown(e)}
     >
       {children}
     </li>

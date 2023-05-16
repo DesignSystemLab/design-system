@@ -6,6 +6,7 @@ import { DropdownContext, DropdownSubContext } from '../context';
 import { dropdownItemStyle } from '../style';
 import type { DropdownMenuItemProps } from '../types';
 import useArrowKeyDown from '../hooks/useArrowKeyDown';
+import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
@@ -27,21 +28,31 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
     }
   };
 
+  const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (!menuItemRef.current) return;
+    useKeyboardHandler({
+      event,
+      parentScope: '.menu',
+      selectorOfList: '.menu_item:not([disabled])',
+      setState: setSubOpen
+    });
+  };
+
   return (
     <DropdownSubContext.Provider value={{ subOpen, setSubOpen }}>
       <li
         {...otherProps}
         ref={menuItemRef}
         role="menuitem"
-        tabIndex={open && !disabled ? 0 : -1}
+        tabIndex={open ? 0 : -1}
         className="menu_item"
         aria-disabled={disabled ? true : false}
         css={{ ...dropdownItemStyle(disabled) }}
         onMouseOver={onMouseOverHandle}
         onMouseLeave={onMouseLeaveHandle}
-        onKeyDown={e => {
-          keyDownHandle(e, menuItemRef, setSubOpen);
-        }}
+        // onFocus={onMouseOverHandle}
+        // onBlur={onMouseLeaveHandle}
+        onKeyDown={e => onKeyDown(e)}
       >
         {children}
       </li>
