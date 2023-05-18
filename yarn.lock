@@ -2139,6 +2139,7 @@ __metadata:
     "@types/jest": ^29.4.0
     "@types/react": ^18.0.27
     "@types/testing-library__jest-dom": ^5.14.5
+    clean-package: ^2.2.0
     jest: ^29.5.0
     jest-config: ^29.5.0
     jest-preview: ^0.3.1
@@ -2152,6 +2153,7 @@ __metadata:
     tsup: ^6.7.0
     typescript: ^4.9.4
   peerDependencies:
+    "@emotion/react": ~11
     "@types/react": ~18
     react: ~18
     react-dom: ~18
@@ -2185,6 +2187,7 @@ __metadata:
     "@types/jest-axe": ^3.5.5
     "@types/react": ^18.0.27
     "@types/testing-library__jest-dom": ^5.14.5
+    clean-package: ^2.2.0
     jest: ^29.5.0
     jest-axe: ^7.0.0
     jest-config: ^29.5.0
@@ -2200,13 +2203,14 @@ __metadata:
     tsup: ^6.7.0
     typescript: ^4.9.4
   peerDependencies:
+    "@emotion/react": ~11
     "@types/react": ~18
     react: ~18
     react-dom: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/card@workspace:*, @jdesignlab/card@workspace:packages/card":
+"@jdesignlab/card@workspace:packages/card":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/card@workspace:packages/card"
   dependencies:
@@ -2251,7 +2255,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/checkbox@workspace:*, @jdesignlab/checkbox@workspace:packages/checkbox":
+"@jdesignlab/checkbox@workspace:packages/checkbox":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/checkbox@workspace:packages/checkbox"
   dependencies:
@@ -2300,7 +2304,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/drawer@workspace:*, @jdesignlab/drawer@workspace:packages/drawer":
+"@jdesignlab/drawer@workspace:packages/drawer":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/drawer@workspace:packages/drawer"
   dependencies:
@@ -2348,7 +2352,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/dropdown@workspace:*, @jdesignlab/dropdown@workspace:packages/dropdown":
+"@jdesignlab/dropdown@workspace:packages/dropdown":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/dropdown@workspace:packages/dropdown"
   dependencies:
@@ -2505,6 +2509,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
     "@types/react": ^18.0.27
+    clean-package: ^2.2.0
     react: ^18.2.0
     react-dom: ^18.2.0
     rimraf: ^4.1.2
@@ -2515,12 +2520,13 @@ __metadata:
     tsup: ^6.7.0
     typescript: ^4.9.4
   peerDependencies:
+    "@emotion/react": ~11
     "@types/react": ~18
     react: ~18
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/modal@workspace:*, @jdesignlab/modal@workspace:packages/modal":
+"@jdesignlab/modal@workspace:packages/modal":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/modal@workspace:packages/modal"
   dependencies:
@@ -2618,7 +2624,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/radio@workspace:*, @jdesignlab/radio@workspace:packages/radio":
+"@jdesignlab/radio@workspace:packages/radio":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/radio@workspace:packages/radio"
   dependencies:
@@ -2673,10 +2679,13 @@ __metadata:
     "@rollup/plugin-node-resolve": ^15.0.1
     "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
+    clean-package: ^2.2.0
     react: ^18.2.0
     tslib: ^2.5.0
     tsup: ^6.7.0
     typescript: ^4.9.5
+  peerDependencies:
+    "@emtoion/react": ~11
   languageName: unknown
   linkType: soft
 
@@ -2692,6 +2701,7 @@ __metadata:
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
     "@types/react": ^18.0.27
+    clean-package: ^2.2.0
     react: ^18.2.0
     react-dom: ^18.2.0
     rimraf: ^4.1.2
@@ -2701,6 +2711,7 @@ __metadata:
     tsup: ^6.7.0
     typescript: ^4.9.4
   peerDependencies:
+    "@emotion/react": ~11
     "@types/react": ~18
     react: ~18
   languageName: unknown
@@ -2714,30 +2725,8 @@ __metadata:
     "@babel/core": ^7.20.12
     "@babel/preset-env": ^7.20.2
     "@babel/preset-react": ^7.18.6
-    "@emotion/babel-plugin": ^11.10.5
-    "@emotion/babel-preset-css-prop": ^11.10.0
-    "@emotion/react": ^11.10.5
     "@jdesignlab/box": "workspace:*"
     "@jdesignlab/button": "workspace:*"
-    "@jdesignlab/card": "workspace:*"
-    "@jdesignlab/checkbox": "workspace:*"
-    "@jdesignlab/drawer": "workspace:*"
-    "@jdesignlab/dropdown": "workspace:*"
-    "@jdesignlab/flex": "workspace:*"
-    "@jdesignlab/input": "workspace:*"
-    "@jdesignlab/j-provider": "workspace:*"
-    "@jdesignlab/modal": "workspace:*"
-    "@jdesignlab/radio": "workspace:*"
-    "@jdesignlab/react-icons": "workspace:*"
-    "@jdesignlab/react-utils": "workspace:*"
-    "@jdesignlab/select": "workspace:*"
-    "@jdesignlab/stack": "workspace:*"
-    "@jdesignlab/tabs": "workspace:*"
-    "@jdesignlab/textarea": "workspace:*"
-    "@jdesignlab/theme": "workspace:*"
-    "@jdesignlab/tooltip": "workspace:*"
-    "@jdesignlab/typography": "workspace:*"
-    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2749,6 +2738,7 @@ __metadata:
     "@types/jest-axe": ^3.5.5
     "@types/react": ^18.0.27
     "@types/testing-library__jest-dom": ^5.14.5
+    clean-package: ^2.2.0
     jest: ^29.5.0
     jest-axe: ^7.0.0
     jest-config: ^29.5.0
@@ -2772,7 +2762,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/select@workspace:*, @jdesignlab/select@workspace:packages/select":
+"@jdesignlab/select@workspace:packages/select":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/select@workspace:packages/select"
   dependencies:
@@ -2818,7 +2808,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/stack@workspace:*, @jdesignlab/stack@workspace:packages/stack":
+"@jdesignlab/stack@workspace:packages/stack":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/stack@workspace:packages/stack"
   dependencies:
@@ -2862,7 +2852,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/tabs@workspace:*, @jdesignlab/tabs@workspace:packages/tabs":
+"@jdesignlab/tabs@workspace:packages/tabs":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/tabs@workspace:packages/tabs"
   dependencies:
@@ -2957,7 +2947,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/textarea@workspace:*, @jdesignlab/textarea@workspace:packages/textarea":
+"@jdesignlab/textarea@workspace:packages/textarea":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/textarea@workspace:packages/textarea"
   dependencies:
@@ -3011,7 +3001,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/tooltip@workspace:*, @jdesignlab/tooltip@workspace:packages/tooltip":
+"@jdesignlab/tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/tooltip@workspace:packages/tooltip"
   dependencies:
@@ -7895,6 +7885,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"clean-package@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "clean-package@npm:2.2.0"
+  dependencies:
+    dot-prop: ^6.0.1
+  bin:
+    clean-package: bin/main.js
+  checksum: 6585ace5d378405bda3d1b0080a30fc3755d334e6b610d4daa7bede820b407473d6860f77b89cbdbd9b474e1c719c09b21ae67bf1b91b6a61e55611bf18988e1
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -9005,6 +9006,15 @@ __metadata:
   dependencies:
     is-obj: ^2.0.0
   checksum: d5775790093c234ef4bfd5fbe40884ff7e6c87573e5339432870616331189f7f5d86575c5b5af2dcf0f61172990f4f734d07844b1f23482fff09e3c4bead05ea
+  languageName: node
+  linkType: hard
+
+"dot-prop@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "dot-prop@npm:6.0.1"
+  dependencies:
+    is-obj: ^2.0.0
+  checksum: 0f47600a4b93e1dc37261da4e6909652c008832a5d3684b5bf9a9a0d3f4c67ea949a86dceed9b72f5733ed8e8e6383cc5958df3bbd0799ee317fd181f2ece700
   languageName: node
   linkType: hard
 
@@ -12118,6 +12128,7 @@ __metadata:
     "@yarnpkg/plugin-workspace-tools": ^4.0.0-rc.36
     "@yarnpkg/pnpify": ^4.0.0-rc.36
     babel-loader: ^9.1.2
+    clean-package: ^2.2.0
     gh-pages: ^5.0.0
     jest: ^29.5.0
     jest-environment-jsdom: ^29.5.0
