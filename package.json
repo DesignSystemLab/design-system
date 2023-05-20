@@ -9,7 +9,11 @@
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
-    "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public"
+    "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public",
+    "sync": "lerna run install",
+    "build": "lerna run build",
+    "prepack": "lerna run prepack",
+    "postpack": "lerna run postpack"
   },
   "workspaces": [
     "packages/*"
@@ -44,6 +48,7 @@
     "@types/react-dom": "^18.0.10",
     "@yarnpkg/plugin-workspace-tools": "^4.0.0-rc.36",
     "babel-loader": "^9.1.2",
+    "clean-package": "^2.2.0",
     "gh-pages": "^5.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
@@ -64,6 +69,7 @@
     "@babel/runtime": "^7.21.5",
     "@jdesignlab/j-provider": "workspace:^",
     "@yarnpkg/pnpify": "^4.0.0-rc.36",
+    "lerna": "^6.6.2",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   }
