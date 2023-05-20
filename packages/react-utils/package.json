@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/react-utils",
   "packageManager": "yarn@3.3.1",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "src/index.ts",
   "sideEffects": false,
   "files": [
@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "build": "tsup src --dts --format esm,cjs",
-    "build:clean": "rimraf dist/"
+    "build:clean": "rimraf dist/",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.10.5",
@@ -19,6 +21,7 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/react": "^18.0.27",
+    "clean-package": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
@@ -29,10 +32,12 @@
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
+    "@emotion/react": "~11",
     "@types/react": "~18",
     "react": "~18"
   },
   "dependencies": {
     "@jdesignlab/utils": "*"
-  }
+  },
+  "clean-package": "../../clean-package.config.json"
 }
