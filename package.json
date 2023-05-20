@@ -10,10 +10,9 @@
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
     "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public",
-    "sync": "lerna run install",
-    "build": "lerna run build",
-    "prepack": "lerna run prepack",
-    "postpack": "lerna run postpack"
+    "build": "yarn workspaces foreach run build",
+    "version": "changeset version",
+    "release": "changeset publish"
   },
   "workspaces": [
     "packages/*"
@@ -67,6 +66,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.21.5",
+    "@changesets/cli": "^2.26.1",
     "@jdesignlab/j-provider": "workspace:^",
     "@yarnpkg/pnpify": "^4.0.0-rc.36",
     "lerna": "^6.6.2",
