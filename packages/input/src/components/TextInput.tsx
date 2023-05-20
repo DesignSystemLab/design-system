@@ -4,18 +4,19 @@ import type { InputProps } from '../types';
 import { inputWrapperStyle, inputRightStyle, inputStyle, inputPrependStyle } from '../styles';
 import { Close, Eye } from '@jdesignlab/react-icons';
 import { hasComponent } from '@jdesignlab/react-utils';
+import { createClassVariant } from '@jdesignlab/theme';
 import { InputContext } from '../context';
-import React, { useState, useId, useRef, useContext } from 'react';
+import React, { useId, useRef, useContext } from 'react';
 import { Label } from './InputLabel';
 import { Message } from './InputMessage';
+import { combineClassNames } from '@jdesignlab/utils';
+import { VISIBLE_ICON_CLASSNAME, CLEARABLE_ICON_CLASSNAME } from '../constants';
 
 export const TextInput = (props: InputProps) => {
   const themePreset = useContext(ThemeContext);
   const id = useId();
   const inputRef = useRef(null);
-  const [value, setValue] = useState<string | number | readonly string[] | undefined>(props.value);
-  const [statusError, setStatusError] = useState<boolean>(false);
-  const { children, size, clearable = false, ...otherProps } = props;
+  const { children, size, className, clearable = false, ...otherProps } = props;
   const hasIcon = props.icon ? true : false;
   const hasLabel = hasComponent(children as React.ReactElement[], 'Label');
   const hasMessage = hasComponent(children as React.ReactElement[], 'Message');
@@ -28,15 +29,13 @@ export const TextInput = (props: InputProps) => {
     width: props.width,
     clearable,
     type: props.type
-    // color: props.color
-  };
-
-  const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
   };
 
   const initValue = () => {
-    setValue('');
+    if (inputRef.current) {
+      const el: HTMLInputElement = inputRef.current;
+      el.value = '';
+    }
   };
   const togglePasswordType = () => {
     if (props.type === 'password') {
@@ -48,26 +47,35 @@ export const TextInput = (props: InputProps) => {
 
   return (
     <InputContext.Provider value={{ id, clearable }}>
-      <div css={inputWrapperStyle(hasMessage, props.width)}>
+      <div
+        css={inputWrapperStyle(hasMessage, props.width)}
+        className={combineClassNames(createClassVariant('input', 'message'), className)}
+      >
         <input
           {...otherProps}
           type={props.type}
           id={id}
           ref={inputRef}
-          // size={props.maxLength || 100}
           css={inputStyle(inputStyleProps)}
-          value={value}
-          onChange={onChangeInput}
+          className={`${createClassVariant('input', 'input')}`}
         />
         {hasIcon && <span css={inputPrependStyle}>{props.icon}</span>}
         {children && Array.isArray(children) ? children?.map(child => child) : children}
         {clearable ? (
-          <div css={inputRightStyle} onClick={initValue} className="input_close">
+          <div
+            css={inputRightStyle}
+            onClick={initValue}
+            className={combineClassNames(createClassVariant('input', 'icon'), CLEARABLE_ICON_CLASSNAME)}
+          >
             <Close width={16} height={16} />
           </div>
         ) : (
           props.type === 'password' && (
-            <div css={inputRightStyle} onClick={togglePasswordType} className="input_eye">
+            <div
+              css={inputRightStyle}
+              onClick={togglePasswordType}
+              className={combineClassNames(createClassVariant('input', 'icon'), VISIBLE_ICON_CLASSNAME)}
+            >
               <Eye width={16} height={16} />
             </div>
           )
