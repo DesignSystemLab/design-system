@@ -5,17 +5,20 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { TextInput } from '../src';
 import { debug } from 'jest-preview';
+import { createClassVariant } from '@jdesignlab/theme';
+import { CLEARABLE_ICON_CLASSNAME, VISIBLE_ICON_CLASSNAME } from '../src/constants';
 
 expect.extend(toHaveNoViolations);
 
 const COMPONENT_DISPLAY_NAME_REGEX = /^[A-Z][A-Za-z]+(\.[A-Z][A-Za-z]+)*$/;
 const TEXTINPUT_LABEL = 'textinput-label';
+const TEXTINPUT_MESSAGE = createClassVariant('input', 'message');
 const TEST_STR = 'HelloWorld';
 
 // input element features
 describe('input element features', () => {
   it('changes value when typed into', () => {
-    render(<TextInput type="text" value="initial value"></TextInput>);
+    render(<TextInput type="text"></TextInput>);
     const input = screen.getByRole('textbox');
     fireEvent.change(input, { target: { value: TEST_STR } });
     expect(input).toHaveValue(TEST_STR);
@@ -39,20 +42,20 @@ describe('input element features', () => {
     expect(input).toHaveAttribute('placeholder', TEST_STR);
   });
 
-  it('max length', () => {
+  it('max length', async () => {
     const testLength = 5;
-    render(<TextInput maxLength={testLength} value="initial value"></TextInput>);
-    const input = screen.getByRole('textbox');
+    render(<TextInput maxLength={testLength}></TextInput>);
+    const input = screen.getByRole('textbox') as HTMLInputElement;
     fireEvent.change(input, { target: { value: TEST_STR } });
     expect(input).toHaveValue(TEST_STR);
-    expect(input.getAttribute('value')!.length).toBe(TEST_STR.length);
+    expect(input.value.length).toBe(TEST_STR.length);
   });
 });
 
 // type password
 describe('input element with type password', () => {
   it('hides entered text', () => {
-    render(<TextInput type="password" value="initial value"></TextInput>);
+    render(<TextInput type="password"></TextInput>);
     const input = document.querySelector('input[type="password"]');
     if (input) {
       fireEvent.change(input, { target: { value: TEST_STR } });
@@ -76,16 +79,16 @@ describe('input element with type password', () => {
 
   it('has <Eye> icon', () => {
     render(<TextInput type="password"></TextInput>);
-    const eyeIcon = document.querySelector('.input_eye');
-    expect(eyeIcon).toBeVisible();
+    const visibleIcon = document.querySelector(`.${VISIBLE_ICON_CLASSNAME}`);
+    expect(visibleIcon).toBeVisible();
   });
 
   it('shows entered text when <Eye> icon is clicked', () => {
     render(<TextInput type="password"></TextInput>);
     const input = document.querySelector('input[type="password"]');
-    const eyeIcon = document.querySelector('.input_eye');
-    if (eyeIcon) {
-      userEvent.click(eyeIcon);
+    const visibleIcon = document.querySelector(`.${VISIBLE_ICON_CLASSNAME}`);
+    if (visibleIcon) {
+      userEvent.click(visibleIcon);
       waitFor(() => {
         expect(input).toHaveAttribute('type', 'text');
       });
@@ -98,14 +101,14 @@ describe('input element with type password', () => {
 describe('clearable property', () => {
   it('has <Close> icon when if it has clearable property', () => {
     render(<TextInput clearable></TextInput>);
-    const closeIcon = document.querySelector('.input_close');
+    const closeIcon = document.querySelector(`.${CLEARABLE_ICON_CLASSNAME}`);
     expect(closeIcon).toBeVisible();
   });
 
   it('remove entered text when <Close> icon is clicked', () => {
     render(<TextInput clearable></TextInput>);
     const input = screen.getByRole('textbox');
-    const closeIcon = document.querySelector('.input_close');
+    const closeIcon = document.querySelector(`.${CLEARABLE_ICON_CLASSNAME}`);
     if (closeIcon) {
       userEvent.click(closeIcon);
       waitFor(() => {
@@ -141,7 +144,7 @@ describe('TextInput.Label', () => {
         <TextInput.Label data-testid={TEXTINPUT_LABEL}>{TEST_STR}</TextInput.Label>
       </TextInput>
     );
-    const label = document.querySelector('.input_label');
+    const label = screen.getByTestId(TEXTINPUT_LABEL);
     expect(label).toHaveTextContent(TEST_STR);
   });
 
@@ -182,11 +185,11 @@ describe('TextInput.Message', () => {
   it('shows Message when it has focus', () => {
     render(
       <TextInput>
-        <TextInput.Message>{TEST_STR}</TextInput.Message>
+        <TextInput.Message data-testid={TEXTINPUT_MESSAGE}>{TEST_STR}</TextInput.Message>
       </TextInput>
     );
     const input = screen.getByRole('textbox');
-    const message = document.querySelector('.input_message');
+    const message = screen.getByTestId(TEXTINPUT_MESSAGE);
     expect(message).not.toBeVisible();
     userEvent.click(input);
     waitFor(() => {
@@ -197,11 +200,13 @@ describe('TextInput.Message', () => {
   it('keeps showing message if it has consistent property', () => {
     render(
       <TextInput>
-        <TextInput.Message consistent>{TEST_STR}</TextInput.Message>
+        <TextInput.Message consistent data-testid={TEXTINPUT_MESSAGE}>
+          {TEST_STR}
+        </TextInput.Message>
       </TextInput>
     );
     const input = screen.getByRole('textbox');
-    const message = document.querySelector('.input_message');
+    const message = screen.getByTestId(TEXTINPUT_MESSAGE);
     expect(message).toBeVisible();
     userEvent.click(input);
     waitFor(() => {
