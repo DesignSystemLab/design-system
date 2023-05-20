@@ -2236,7 +2236,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/card@workspace:packages/card":
+"@jdesignlab/card@workspace:*, @jdesignlab/card@workspace:packages/card":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/card@workspace:packages/card"
   dependencies:
@@ -2282,7 +2282,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/checkbox@workspace:packages/checkbox":
+"@jdesignlab/checkbox@workspace:*, @jdesignlab/checkbox@workspace:packages/checkbox":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/checkbox@workspace:packages/checkbox"
   dependencies:
@@ -2332,7 +2332,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/drawer@workspace:packages/drawer":
+"@jdesignlab/drawer@workspace:*, @jdesignlab/drawer@workspace:packages/drawer":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/drawer@workspace:packages/drawer"
   dependencies:
@@ -2381,7 +2381,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/dropdown@workspace:packages/dropdown":
+"@jdesignlab/dropdown@workspace:*, @jdesignlab/dropdown@workspace:packages/dropdown":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/dropdown@workspace:packages/dropdown"
   dependencies:
@@ -2558,7 +2558,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/modal@workspace:packages/modal":
+"@jdesignlab/modal@workspace:*, @jdesignlab/modal@workspace:packages/modal":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/modal@workspace:packages/modal"
   dependencies:
@@ -2658,7 +2658,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/radio@workspace:packages/radio":
+"@jdesignlab/radio@workspace:*, @jdesignlab/radio@workspace:packages/radio":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/radio@workspace:packages/radio"
   dependencies:
@@ -2721,7 +2721,6 @@ __metadata:
     tsup: ^6.7.0
     typescript: ^4.9.5
   peerDependencies:
-    "@emotion/react": ~11
     "@emtoion/react": ~11
   languageName: unknown
   linkType: soft
@@ -2763,6 +2762,24 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@jdesignlab/box": "workspace:*"
     "@jdesignlab/button": "workspace:*"
+    "@jdesignlab/card": "workspace:*"
+    "@jdesignlab/checkbox": "workspace:*"
+    "@jdesignlab/drawer": "workspace:*"
+    "@jdesignlab/dropdown": "workspace:*"
+    "@jdesignlab/flex": "workspace:*"
+    "@jdesignlab/input": "workspace:*"
+    "@jdesignlab/j-provider": "workspace:*"
+    "@jdesignlab/modal": "workspace:*"
+    "@jdesignlab/radio": "workspace:*"
+    "@jdesignlab/react-utils": "workspace:*"
+    "@jdesignlab/select": "workspace:*"
+    "@jdesignlab/stack": "workspace:*"
+    "@jdesignlab/tabs": "workspace:*"
+    "@jdesignlab/textarea": "workspace:*"
+    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/tooltip": "workspace:*"
+    "@jdesignlab/typography": "workspace:*"
+    "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-node-resolve": ^15.0.1
@@ -2785,7 +2802,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/select@workspace:packages/select":
+"@jdesignlab/select@workspace:*, @jdesignlab/select@workspace:packages/select":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/select@workspace:packages/select"
   dependencies:
@@ -2832,7 +2849,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/stack@workspace:packages/stack":
+"@jdesignlab/stack@workspace:*, @jdesignlab/stack@workspace:packages/stack":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/stack@workspace:packages/stack"
   dependencies:
@@ -2877,7 +2894,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/tabs@workspace:packages/tabs":
+"@jdesignlab/tabs@workspace:*, @jdesignlab/tabs@workspace:packages/tabs":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/tabs@workspace:packages/tabs"
   dependencies:
@@ -2974,7 +2991,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/textarea@workspace:packages/textarea":
+"@jdesignlab/textarea@workspace:*, @jdesignlab/textarea@workspace:packages/textarea":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/textarea@workspace:packages/textarea"
   dependencies:
@@ -3031,7 +3048,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/tooltip@workspace:packages/tooltip":
+"@jdesignlab/tooltip@workspace:*, @jdesignlab/tooltip@workspace:packages/tooltip":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/tooltip@workspace:packages/tooltip"
   dependencies:
@@ -13876,7 +13893,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
     "@types/jest": ^29.5.0
-    "@types/react": 18.0.27
+    "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.10
     "@yarnpkg/plugin-workspace-tools": ^4.0.0-rc.36
     "@yarnpkg/pnpify": ^4.0.0-rc.36
@@ -13900,8 +13917,6 @@ __metadata:
     tslib: ^2.5.0
     tsup: ^6.7.0
     typescript: ^4.9.4
-  peerDependencies:
-    "@emotion/react": ~11
   languageName: unknown
   linkType: soft
 
