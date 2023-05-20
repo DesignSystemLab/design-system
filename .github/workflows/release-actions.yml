@@ -1,4 +1,4 @@
-name: Release
+name: Release Action
 on:
   push:
     branches:
@@ -12,13 +12,11 @@ jobs:
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
+          node-version: '16.x'
+          token: ${{ secrets.WORKFLOW_TOKEN }}
           fetch-depth: '0'
       - name: Add GiHub Package Token
         run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GIT_TEST_TOKEN }}" > ~/.npmrc
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.18.0
       - name: Install dependencies
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
