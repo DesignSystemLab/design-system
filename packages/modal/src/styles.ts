@@ -30,13 +30,13 @@ export const modalWrapperStyle = (width: number | undefined) => {
     '&.modal_open': {
       display: 'flex'
     },
-    '&.modal_open ~ .modal_overlay': {
+    '&.modal_open + .modal_overlay': {
       display: 'block'
     },
     '&.modal_close': {
       display: 'none'
     },
-    '&.modal_close ~ .modal_overlay': {
+    '&.modal_close + .modal_overlay': {
       display: 'none'
     }
   });
