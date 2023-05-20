@@ -6,6 +6,7 @@ export type InputSize = 'sm' | 'md' | 'lg';
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> {
   children?: React.ReactElement | React.ReactElement[];
   type?: 'text' | 'password';
+  className?: string;
   size?: InputSize;
   clearable?: boolean;
   width?: number;
@@ -15,10 +16,12 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
 
 export interface InputLabelProps {
   children?: string;
+  className?: string;
 }
 
 export interface InputMessageProps {
   children?: string;
+  className?: string;
   consistent?: boolean;
 }
 

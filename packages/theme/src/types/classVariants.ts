@@ -31,7 +31,8 @@ export type JDesignSystemElementRoles =
   | 'message'
   | 'article'
   | 'button'
-  | 'input';
+  | 'input'
+  | 'icon';
 
 export type ClassNameVariant =
   | `j-${JDesignSystemComponent}__${string}-${JDesignSystemElementRoles}`

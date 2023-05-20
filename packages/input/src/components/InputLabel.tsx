@@ -3,12 +3,20 @@ import type { InputLabelProps } from '../types';
 import { useContext } from 'react';
 import { inputLabelStyle } from '../styles';
 import { InputContext } from '../context';
+import { createClassVariant } from '@jdesignlab/theme';
+import { combineClassNames } from '@jdesignlab/utils';
 
 export const Label = (props: InputLabelProps) => {
   const { id } = useContext(InputContext);
-  const { children, ...otherProps } = props;
+  const { children, className, ...otherProps } = props;
+
   return (
-    <label className="input_label" css={inputLabelStyle} htmlFor={id} {...otherProps}>
+    <label
+      className={combineClassNames(createClassVariant('input', 'label'), className)}
+      css={inputLabelStyle}
+      htmlFor={id}
+      {...otherProps}
+    >
       {children}
     </label>
   );
