@@ -19,10 +19,15 @@ jobs:
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
         run: yarn install
+      - name: Configure npm
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build packages
         run: yarn build
-      - name: Add GiHub Package Token
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.JDS_RELLEASE_TOKEN }}" > ~/.npmrc
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
