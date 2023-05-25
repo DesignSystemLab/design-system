@@ -1,5 +1,11 @@
 # @jdesignlab/button
 
+## 0.4.0
+
+### Minor Changes
+
+- Added 'as' property to Button component.
+
 ## 0.3.0
 
 ### Minor Changes

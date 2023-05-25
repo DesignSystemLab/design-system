@@ -11,4 +11,5 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   color?: ColorToken;
   full?: boolean;
   icon?: JSX.Element;
+  as?: React.ElementType;
 }
