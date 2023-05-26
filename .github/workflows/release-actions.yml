@@ -22,7 +22,7 @@ jobs:
       - name: Configure npm
         run: |
           cat << EOF > "$HOME/.npmrc"
-            @jdesignlab:registry=https://registry.npmjs.org/jdesignlab
+            @jdesignlab:registry=https://registry.npmjs.org/
             //registry.npmjs.org/:_authToken=$NPM_TOKEN
           EOF
         env:
