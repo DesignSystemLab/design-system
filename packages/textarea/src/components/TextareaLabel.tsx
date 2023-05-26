@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useContext } from 'react';
+import { Text } from '@jdesignlab/typography';
 import { TEXTAREA_LABEL_COLOR } from '../constants';
 import { createLabelStyle } from '../styles/createLabelStyle';
 import { TextareaContext } from './TextareaContext';
@@ -15,7 +16,9 @@ export const TextareaLabel = (props: TextareaLabelProps) => {
 
   return (
     <label htmlFor={textareaId} css={labelStype} {...attributesWithoutChildren}>
-      {labelText}
+      <Text variant="label" size="sm">
+        {labelText}
+      </Text>
     </label>
   );
 };
