@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { ColorToken, getColorByToken } from '@jdesignlab/theme';
+import { TEXTAREA_TEXT_COLOR } from '../constants';
 import type { StyleProps } from '../types';
 
 export const createTextareaStyle = (styleProps: Required<StyleProps>, placholderColor: ColorToken) => {
@@ -8,15 +9,16 @@ export const createTextareaStyle = (styleProps: Required<StyleProps>, placholder
 
   const defaultTextareaStyle = () => {
     return css({
-      color,
+      color: `${TEXTAREA_TEXT_COLOR}`,
       fontSize: '16px',
-      padding: '8px 16px',
+      padding: '12px',
       width: `${styleProps.width}px`,
       height: `${styleProps.height}px`,
       border: `1px solid ${color}`,
-      borderRadius: '12px',
+      borderRadius: '4px',
       outlineColor: `2px solid ${color}`,
       boxSizing: 'border-box',
+      overflow: 'hidden',
       '&::placeholder': {
         fontSize: '16px',
         color: `${placeholderColor}`
@@ -49,7 +51,7 @@ export const createTextareaStyle = (styleProps: Required<StyleProps>, placholder
   const defaultSizeStyle = () => {
     return css({
       maxWidth: `${styleProps.maxWidth}px`,
-      maxHeight: `${styleProps.maxHeight}px`
+      maxHeight: styleProps.resize === 'smart' ? 'none' : `${styleProps.maxHeight}px`
     });
   };
 
