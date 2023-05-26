@@ -3239,6 +3239,7 @@ __metadata:
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
     "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/typography": "workspace:*"
     "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
