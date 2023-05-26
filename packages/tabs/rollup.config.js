@@ -1,3 +1,3 @@
-import rollupConfig from 'jdesignlab/rollup.config';
+import rollupConfig from '../../rollup.config';
 
 export default Object.assign(rollupConfig);
