@@ -7,20 +7,45 @@ import { Header } from './ModalHeader';
 import { Body } from './ModalBody';
 import { Footer } from './ModalFooter';
 import { Trigger } from './ModalTrigger';
-import { filterComponent } from '@jdesignlab/react-utils';
+import { filterComponent, useInitialRender } from '@jdesignlab/react-utils';
 
 export const Modal = (props: ModalProps) => {
   const {
     children,
     lazy,
+    onOpen,
+    onClose,
     hasCloseIcon = props.hasCloseIcon === undefined ? false : props.hasCloseIcon,
+    open = false,
     ...otherProps
   } = props;
-  const [open, setOpen] = useState<boolean>(false);
-  const triggerChildren = filterComponent(children, Trigger, true);
+  const [isOpen, setOpen] = useState<boolean>(open);
+  const isInitialRendered = useInitialRender();
 
+  useEffect(() => {
+    setOpen(open);
+  }, [open]);
+
+  useEffect(() => {
+    if (isOpen && onOpen) {
+      onOpen();
+      return;
+    }
+
+    if (!isInitialRendered) {
+      if (!isOpen && onClose) {
+        onClose();
+      }
+      if (isOpen && onOpen) {
+        onOpen();
+      }
+    }
+  }, [isOpen]);
+
+  const triggerChildren = filterComponent(children, Trigger, true);
   const providerValue = {
     open,
+    isOpen,
     setOpen,
     hasCloseIcon,
     lazy
@@ -36,12 +61,12 @@ export const Modal = (props: ModalProps) => {
         <div
           css={{ ...modalWrapperStyle(props.width) }}
           {...otherProps}
-          className={`modal_content ${open ? 'modal_open' : 'modal_close'}`}
+          className={`modal_content ${isOpen ? 'modal_open' : 'modal_close'}`}
           role="dialog"
         >
           {filterComponent(children, Trigger, false)}
         </div>
-        <div css={modalOverlayStyle} onClick={onClickModalClose} className="modal_overlay"></div>
+        <div role="presentation" css={modalOverlayStyle} onClick={onClickModalClose} className="modal_overlay"></div>
       </>
     );
   };
@@ -49,13 +74,12 @@ export const Modal = (props: ModalProps) => {
   return (
     <ModalContext.Provider value={providerValue}>
       {triggerChildren}
-      {lazy ? open && <ModalContent /> : <ModalContent />}
+      {lazy ? isOpen && <ModalContent /> : <ModalContent />}
     </ModalContext.Provider>
   );
 };
 
 Modal.displayName = 'Modal';
-
 Modal.Trigger = Trigger;
 Modal.Header = Header;
 Modal.Body = Body;
