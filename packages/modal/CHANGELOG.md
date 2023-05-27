@@ -1,5 +1,17 @@
 # @jdesignlab/modal
 
+## 0.5.0
+
+### Minor Changes
+
+- Remove unused codes
+
+## 0.4.0
+
+### Minor Changes
+
+- Changed the open and close interfaces.
+
 ## 0.3.1
 
 ### Patch Changes
