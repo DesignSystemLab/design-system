@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/react",
   "packageManager": "yarn@3.3.1",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -22,8 +22,6 @@
     }
   ],
   "scripts": {
-    "prepack": "clean-package",
-    "postpack": "clean-package restore",
     "test": "jest",
     "build": "tsup src --dts --format esm,cjs",
     "build:clean": "rimraf dist/"
@@ -59,7 +57,6 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/react": "18.0.27",
-    "clean-package": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "4.1.2",
@@ -75,5 +72,12 @@
     "@emotion/react": "~11",
     "react": "~18",
     "react-dom": "~18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "_release/package",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
   }
 }

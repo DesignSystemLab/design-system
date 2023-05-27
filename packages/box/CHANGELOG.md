@@ -1,5 +1,19 @@
 # @jdesignlab/box
 
+## 0.5.0
+
+### Minor Changes
+
+- remove clean-package
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/j-provider@0.5.0
+  - @jdesignlab/button@0.6.0
+  - @jdesignlab/theme@0.5.0
+  - @jdesignlab/utils@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes

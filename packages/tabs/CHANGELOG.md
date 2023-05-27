@@ -1,5 +1,18 @@
 # @jdesignlab/tabs
 
+## 0.5.0
+
+### Minor Changes
+
+- remove clean-package
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.5.0
+  - @jdesignlab/theme@0.5.0
+  - @jdesignlab/utils@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes

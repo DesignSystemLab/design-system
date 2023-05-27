@@ -1,5 +1,18 @@
 # @jdesignlab/textarea
 
+## 0.6.0
+
+### Minor Changes
+
+- remove clean-package
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.5.0
+  - @jdesignlab/utils@0.5.0
+  - @jdesignlab/typography@0.5.0
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,14 +1,12 @@
 {
   "name": "@jdesignlab/react-icons",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepack": "clean-package",
-    "postpack": "clean-package restore",
     "build": "tsup src --dts --format esm,cjs",
     "build:clean": "rimraf dist/"
   },
@@ -19,7 +17,6 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/react": "18.0.27",
     "@types/react-dom": "^18.0.10",
-    "clean-package": "^2.2.0",
     "react": "^18.2.0",
     "rimraf": "4.1.2",
     "tslib": "^2.5.0",
@@ -29,7 +26,6 @@
   "peerDependencies": {
     "@emtoion/react": "~11"
   },
-  "clean-package": "../../clean-package.config.json",
   "publishConfig": {
     "access": "public",
     "directory": "_release/package",

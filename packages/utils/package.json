@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/utils",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "sideEffects": false,
@@ -9,14 +9,11 @@
   ],
   "scripts": {
     "build": "tsup src --dts --format esm,cjs",
-    "build:clean": "rimraf dist/",
-    "prepack": "clean-package",
-    "postpack": "clean-package restore"
+    "build:clean": "rimraf dist/"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "clean-package": "^2.2.0",
     "rimraf": "^5.0.1",
     "tslib": "^2.5.0",
     "tsup": "^6.7.0",
@@ -28,6 +25,5 @@
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts"
-  },
-  "clean-package": "../../clean-package.config.json"
+  }
 }

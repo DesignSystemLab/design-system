@@ -1,5 +1,18 @@
 # @jdesignlab/card
 
+## 0.5.0
+
+### Minor Changes
+
+- remove clean-package
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.5.0
+  - @jdesignlab/utils@0.5.0
+  - @jdesignlab/flex@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes

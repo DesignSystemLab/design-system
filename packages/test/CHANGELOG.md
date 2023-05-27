@@ -1,5 +1,16 @@
 # @jdesignlab/test
 
+## 0.7.0
+
+### Minor Changes
+
+- remove clean-package
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/typography@0.5.0
+
 ## 0.6.0
 
 ### Minor Changes
