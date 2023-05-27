@@ -1,5 +1,4 @@
 import React from 'react';
-import { ThemeProvider } from '@jdesignlab/j-provider';
 
 const preview = {
   decorators: [
