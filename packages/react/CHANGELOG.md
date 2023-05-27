@@ -1,5 +1,41 @@
 # @jdesignlab/react
 
+## 0.5.0
+
+### Minor Changes
+
+- change publish config
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.4.0
+  - @jdesignlab/j-provider@0.4.0
+  - @jdesignlab/checkbox@0.4.0
+  - @jdesignlab/dropdown@0.4.0
+  - @jdesignlab/textarea@0.5.0
+  - @jdesignlab/tooltip@0.4.0
+  - @jdesignlab/button@0.5.0
+  - @jdesignlab/drawer@0.4.0
+  - @jdesignlab/select@0.4.0
+  - @jdesignlab/input@0.4.0
+  - @jdesignlab/modal@0.6.0
+  - @jdesignlab/radio@0.4.0
+  - @jdesignlab/stack@0.4.0
+  - @jdesignlab/theme@0.4.0
+  - @jdesignlab/utils@0.4.0
+  - @jdesignlab/card@0.4.0
+  - @jdesignlab/flex@0.4.0
+  - @jdesignlab/tabs@0.4.0
+  - @jdesignlab/typography@0.4.0
+  - @jdesignlab/box@0.4.0
+
+## 0.4.0
+
+### Minor Changes
+
+- version update
+
 ## 0.3.4
 
 ### Patch Changes

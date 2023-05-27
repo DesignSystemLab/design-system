@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/test",
   "packageManager": "yarn@3.3.1",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "main": "src/index.ts",
   "sideEffects": false,
   "files": [
@@ -13,7 +13,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsup src --dts --format esm,cjs"
+    "build": "tsup src --dts --format esm,cjs",
+    "build:release": "yarn build && yarn exec rm -rf _release && yarn pack && yarn exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\""
   },
   "dependencies": {
     "@babel/runtime": "^7.21.5",
@@ -64,14 +65,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "exports": {
-      ".": {
-        "require": "./dist/index.js",
-        "import": "./dist/index.mjs",
-        "types": "./dist/index.d.ts"
-      },
-      "./package.json": "./package.json"
-    },
+    "directory": "_release/package",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts"

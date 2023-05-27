@@ -1,5 +1,29 @@
 # @jdesignlab/test
 
+## 0.6.0
+
+### Minor Changes
+
+- change publish config
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/typography@0.4.0
+
+## 0.6.0
+
+### Minor Changes
+
+- Minor Version update
+- Minor Version Update
+
+## 0.5.0
+
+### Minor Changes
+
+- Test V3
+
 ## 0.4.0
 
 ### Minor Changes

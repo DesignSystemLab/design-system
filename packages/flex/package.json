@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/flex",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "files": [
@@ -62,14 +62,7 @@
   "clean-package": "../../clean-package.config.json",
   "publishConfig": {
     "access": "public",
-    "exports": {
-      ".": {
-        "require": "./dist/index.js",
-        "import": "./dist/index.mjs",
-        "types": "./dist/index.d.ts"
-      },
-      "./package.json": "./package.json"
-    },
+    "directory": "_release/package",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts"
