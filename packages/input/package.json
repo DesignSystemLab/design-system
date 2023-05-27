@@ -1,11 +1,11 @@
 {
   "name": "@jdesignlab/input",
-  "version": "0.5.0",
+  "packageManager": "yarn@3.3.1",
+  "version": "0.6.0",
   "main": "src/index.ts",
   "files": [
     "dist"
   ],
-  "packageManager": "yarn@3.3.1",
   "scripts": {
     "test": "jest",
     "build": "tsup src --dts --format esm,cjs",
