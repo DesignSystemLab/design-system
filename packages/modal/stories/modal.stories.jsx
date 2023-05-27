@@ -15,16 +15,23 @@ const argTypes = {};
 const Template = args => <Modal {...args} />;
 
 export const ModalBasic = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
-      <Modal hasCloseIcon>
-        <Modal.Trigger
-          open
-          onOpen={() => {
-            alert('onOpen!');
-          }}
-        >
-          <Button>버튼</Button>
+      <Modal
+        hasCloseIcon
+        open={modalOpen}
+        onOpen={() => {
+          setModalOpen(true);
+          alert('onOpen!');
+        }}
+        onClose={() => {
+          setModalOpen(false);
+          alert('onClosse!');
+        }}
+      >
+        <Modal.Trigger>
+          <Button>Modal Trigger</Button>
         </Modal.Trigger>
         <Modal.Header>
           <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
@@ -44,16 +51,15 @@ export const ModalBasic = () => {
           </Flex>
         </Modal.Body>
         <Modal.Footer>
-          <Modal.Trigger
-            close
-            onClose={() => {
-              alert('onClose!');
+          <Button
+            size="lg"
+            variant="solid"
+            onClick={() => {
+              setModalOpen(false);
             }}
           >
-            <Button size="lg" variant="solid">
-              확인
-            </Button>
-          </Modal.Trigger>
+            확인
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
