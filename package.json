@@ -10,9 +10,11 @@
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
     "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public",
+    "allpackages": "yarn workspaces foreach --no-private --verbose",
     "build": "yarn workspaces foreach run build",
+    "build:release": "yarn allpackages exec rm -rf _release && yarn allpackages pack && yarn allpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "version": "changeset version",
-    "release": "changeset publish"
+    "release": "yarn build:release && changeset publish"
   },
   "workspaces": [
     "packages/*"
