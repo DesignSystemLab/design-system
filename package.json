@@ -10,17 +10,14 @@
     "predeploy": "npm run build-storybook",
     "deploy-storybook": "gh-pages -d storybook-static",
     "jds-publish": "yarn workspaces foreach npm publish --tolerate-republish --access=public",
-<<<<<<< HEAD
-    "cruiser": "dependency-cruiser packages",
-    "cruiser-graph": "dependency-cruiser . --output-type dot --output-to graph.dot"
-=======
     "allpackages": "yarn workspaces foreach --no-private --verbose",
     "build": "yarn workspaces foreach run build",
     "build:clean": "yarn allpackages run rimraf _release/",
     "build:release": "yarn allpackages exec rm -rf _release && yarn allpackages pack && yarn allpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "version": "changeset version",
-    "release": "yarn build:release && changeset publish"
->>>>>>> main
+    "release": "yarn build:release && changeset publish",
+    "cruiser": "dependency-cruiser packages",
+    "cruiser-graph": "dependency-cruiser packages --output-type dot --output-to graph.dot"
   },
   "workspaces": [
     "packages/*"
