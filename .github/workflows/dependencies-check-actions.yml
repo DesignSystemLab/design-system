@@ -19,5 +19,3 @@ jobs:
         run: yarn install
       - name: Check dependencies
         run: yarn dependency-cruiser packages
-      - name: Echo Success
-        run: echo "Success"
