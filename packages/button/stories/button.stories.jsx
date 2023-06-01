@@ -98,7 +98,9 @@ export const WithVariants = () => (
       outline
     </Button>
     <Button variant="ghost">ghost</Button>
-    <Button variant="link">link</Button>
+    <Button variant="link" as="a" onClick={onClick}>
+      link
+    </Button>
     <Button variant="unstyled">unstyled</Button>
     <br />
     <br />

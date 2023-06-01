@@ -28,6 +28,14 @@ describe('button element features', () => {
       expect(onClick).toHaveBeenCalled();
     });
   });
+
+  it('A Button component with the as attribute can be rendered as another element.', () => {
+    render(
+      <Button as={'a'} onClick={onClick}>
+        Link Button
+      </Button>
+    );
+  });
 });
 
 describe('disabled', () => {

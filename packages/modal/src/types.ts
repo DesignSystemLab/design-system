@@ -1,5 +1,7 @@
 export interface ModalProps {
   children?: React.ReactElement | React.ReactElement[];
+  onOpen?: () => void;
+  onClose?: () => void;
   open?: boolean;
   hasCloseIcon?: boolean;
   width?: number;
@@ -8,10 +10,6 @@ export interface ModalProps {
 
 export interface ModalTriggerProps {
   children?: React.ReactNode;
-  open?: boolean;
-  close?: boolean;
-  onOpen?: () => void;
-  onClose?: () => void;
 }
 
 export interface ModalHeaderProps {

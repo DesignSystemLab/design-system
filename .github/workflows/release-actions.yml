@@ -1,0 +1,39 @@
+name: Release Action
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+          fetch-depth: '0'
+      - name: Install dependencies
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
+        run: yarn install
+      - name: Configure npm
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            email=jdesignsystem@gmail.com
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Build packages
+        run: yarn build
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: yarn release
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

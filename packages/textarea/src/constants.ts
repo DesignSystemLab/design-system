@@ -1,19 +1,21 @@
 import { StyleProps } from './types';
-import type { ColorToken } from '@jdesignlab/theme';
+import type { ColorToken, HEX } from '@jdesignlab/theme';
 
 const DEFAULT_STYLE: Required<StyleProps> = {
   label: '',
   resize: 'none',
-  color: 'teal-base',
+  color: 'grey-base',
   appearance: 'standard',
   width: 480,
   height: 64,
-  maxWidth: 640,
-  maxHeight: 480,
+  maxWidth: 320,
+  maxHeight: 120,
   maxLength: null
 };
+
+const TEXTAREA_TEXT_COLOR: HEX = '#444444';
 const TEXTAREA_PLACEHOLDER_COLOR: ColorToken = 'grey-lighten1';
 const TEXTAREA_LABEL_COLOR: ColorToken = 'grey-darken2';
 const TEXTAREA_ID_PREFIX: string = 'jds-textarea';
 
-export { DEFAULT_STYLE, TEXTAREA_ID_PREFIX, TEXTAREA_LABEL_COLOR, TEXTAREA_PLACEHOLDER_COLOR };
+export { TEXTAREA_TEXT_COLOR, DEFAULT_STYLE, TEXTAREA_ID_PREFIX, TEXTAREA_LABEL_COLOR, TEXTAREA_PLACEHOLDER_COLOR };

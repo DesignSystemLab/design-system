@@ -1,39 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Button } from '@jdesignlab/button';
 import { render, screen, waitFor } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Modal } from '../src';
 import { debug } from 'jest-preview';
+import type { ModalProps } from '../src/types';
 
 expect.extend(toHaveNoViolations);
 
 const COMPONENT_DISPLAY_NAME_REGEX = /^[A-Z][A-Za-z]+(\.[A-Z][A-Za-z]+)*$/;
 const MODAL_TRIGGER_OPEN = 'modal-trigger-open';
 const MODAL_TRIGGER_CLOSE = 'modal-trigger-close';
-
-interface renderModalProps {
-  hasCloseIcon?: boolean;
-  lazy?: boolean;
-}
-
 const onToggleModal = jest.fn();
 
-function renderModal({ hasCloseIcon, lazy }: renderModalProps) {
+function renderModal(props: ModalProps) {
+  const { hasCloseIcon = false, open = false, lazy, ...restProps } = props;
+
   return render(
     <>
-      <Modal hasCloseIcon={hasCloseIcon} lazy={lazy}>
-        <Modal.Trigger data-testid={MODAL_TRIGGER_OPEN} onOpen={onToggleModal}>
-          트리거
+      <Modal hasCloseIcon={hasCloseIcon} lazy={lazy} open={open} {...restProps}>
+        <Modal.Trigger data-testid={MODAL_TRIGGER_OPEN}>
+          <Button>트리거</Button>
         </Modal.Trigger>
         <Modal.Header>헤더</Modal.Header>
         <Modal.Body>바디</Modal.Body>
-        <Modal.Footer>
-          푸터
-          <Modal.Trigger data-testid={MODAL_TRIGGER_CLOSE} close onClose={onToggleModal}>
-            닫기
-          </Modal.Trigger>
-        </Modal.Footer>
+        <Modal.Footer>푸터</Modal.Footer>
       </Modal>
     </>
   );
@@ -46,63 +39,53 @@ describe('open and close modal correctly', () => {
     expect(modalContent).not.toBeVisible();
   });
 
-  it('shows modal when Trigger is clicked', () => {
+  it('shows modal when Trigger is clicked', async () => {
     renderModal({});
-    const modalContent = document.querySelector('.modal_content');
-    const trigger = document.querySelector('modal_trigger');
-    userEvent.click(trigger!);
-    waitFor(() => {
-      expect(modalContent).toBeVisible();
-    });
+    const trigger = screen.getByRole('button');
+    await userEvent.click(trigger);
+    const modalContent = screen.getByRole('dialog');
+    expect(modalContent).toBeInTheDocument();
   });
 
-  it('fires onOpen when modal is opend', () => {
-    renderModal({});
-    const openTrigger = document.querySelector('.trigger_open');
-    userEvent.click(openTrigger!);
-    waitFor(() => {
-      expect(onToggleModal).toHaveBeenCalled();
+  it('fires onOpen when modal is opend', async () => {
+    renderModal({
+      onOpen: onToggleModal
     });
+    const openTrigger = screen.getByRole('button');
+    await userEvent.click(openTrigger);
+    expect(onToggleModal).toHaveBeenCalled();
   });
 
-  it('fires onClose when modal get closed', () => {
-    renderModal({});
-    const modalContent = document.querySelector('modal_content');
-    const openTrigger = document.querySelector('.trigger_open');
-    userEvent.click(openTrigger!);
-    waitFor(() => {
-      expect(modalContent).toBeVisible();
+  it('fires onClose when modal get closed', async () => {
+    renderModal({
+      onClose: onToggleModal
     });
-    const closeTrigger = document.querySelector('.trigger_close');
-    userEvent.click(closeTrigger!);
-    waitFor(() => {
-      expect(onToggleModal).toHaveBeenCalled();
-    });
+    const Trigger = screen.getByRole('button');
+    await userEvent.click(Trigger);
+    const modalContent = screen.getByRole('dialog');
+    expect(modalContent).toBeInTheDocument();
+    await userEvent.click(Trigger);
+    expect(onToggleModal).toHaveBeenCalled();
   });
 
-  it('closes modal when <Trigger close> is clicked', () => {
+  it('closes modal when <Trigger close> is clicked', async () => {
     renderModal({});
-    const modalContent = document.querySelector('.modal_content');
-    const openTrigger = document.querySelector('.trigger_open');
-    userEvent.click(openTrigger!);
-    waitFor(() => {
-      expect(modalContent).toBeVisible();
-    });
-    const closeTrigger = document.querySelector('.trigger_close');
-    userEvent.click(closeTrigger!);
-    waitFor(() => {
-      expect(modalContent).not.toBeVsibiel();
-    });
+    const Trigger = screen.getByRole('button');
+    await userEvent.click(Trigger);
+    const modalContent = screen.getByRole('dialog');
+    expect(modalContent).toBeInTheDocument();
+    await userEvent.click(Trigger);
+    expect(modalContent).not.toBeInTheDocument();
   });
 
-  it('closes modal when background is clikced', () => {
-    renderModal({});
-    const modalContent = document.querySelector('.modal_content');
-    const background = document.querySelector('.modal_overlay');
-    userEvent.click(background!);
-    waitFor(() => {
-      expect(modalContent).not.toBeVisible();
+  it('closes modal when background is clikced', async () => {
+    renderModal({
+      open: true
     });
+    const modalContent = screen.getByRole('dialog');
+    const overlay = screen.getByRole('presentation');
+    await userEvent.click(overlay);
+    expect(modalContent).not.toBeInTheDocument();
   });
 });
 

@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import { TextareaLabel } from './components/TextareaLabel';
 import type { ColorToken } from '@jdesignlab/theme';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 export interface ReturnContext {
   textareaId: string;
   styleProps: Required<StyleProps>;
-  textareaProps: React.HTMLAttributes<HTMLTextAreaElement>;
+  textareaProps: HTMLAttributes<HTMLTextAreaElement>;
 }
 export type ResizeProps = 'vertical' | 'horizontal' | 'smart' | 'none';
 export type ApperanceProps = 'standard' | 'none';
@@ -13,11 +14,13 @@ export type StyleProps = Pick<
   'width' | 'maxWidth' | 'maxHeight' | 'maxLength' | 'color' | 'resize' | 'appearance' | 'label' | 'height'
 >;
 
-export interface TextareaLabelProps extends React.HTMLAttributes<HTMLLabelElement> {
-  children: React.ReactNode;
+export interface TextareaLabelProps extends HTMLAttributes<HTMLLabelElement> {
+  children: ReactNode;
 }
 
-export interface TextAreaProps extends React.HTMLAttributes<HTMLTextAreaElement> {
+export type ExtendedTextAreaProps = TextAreaProps & { Label?: typeof TextareaLabel };
+
+export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
   [key: string]: any;
   label?: string;
   width?: number;
@@ -28,5 +31,5 @@ export interface TextAreaProps extends React.HTMLAttributes<HTMLTextAreaElement>
   color?: ColorToken;
   resize?: ResizeProps;
   appearance?: ApperanceProps;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
