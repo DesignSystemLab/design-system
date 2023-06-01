@@ -96,3 +96,6 @@ export * from './components/Video';
 export * from './components/Volume';
 export * from './components/Work';
 export * from './components/ZoomIn';
+export * from './components/ZoomOut';
+export * from './components/ZoomReset';
+export * from './components/Import';
