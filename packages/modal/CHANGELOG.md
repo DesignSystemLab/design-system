@@ -1,5 +1,15 @@
 # @jdesignlab/modal
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.6.0
+  - @jdesignlab/button@0.6.1
+  - @jdesignlab/input@0.6.1
+  - @jdesignlab/flex@0.5.1
+
 ## 0.7.1
 
 ### Patch Changes

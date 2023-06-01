@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/textarea",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "files": [

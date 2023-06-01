@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/dropdown",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "src/index.ts",
   "packageManager": "yarn@3.3.1",
   "files": [

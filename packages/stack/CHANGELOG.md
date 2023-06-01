@@ -1,5 +1,12 @@
 # @jdesignlab/stack
 
+## 0.5.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.6.0
+
 ## 0.5.0
 
 ### Minor Changes

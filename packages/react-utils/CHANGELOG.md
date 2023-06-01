@@ -1,5 +1,11 @@
 # @jdesignlab/react-utils
 
+## 0.6.0
+
+### Minor Changes
+
+- add number type from getComponentText
+
 ## 0.5.0
 
 ### Minor Changes

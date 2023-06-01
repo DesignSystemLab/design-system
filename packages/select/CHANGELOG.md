@@ -1,5 +1,12 @@
 # @jdesignlab/select
 
+## 0.5.1
+
+### Patch Changes
+
+- @jdesignlab/button@0.6.1
+- @jdesignlab/flex@0.5.1
+
 ## 0.5.0
 
 ### Minor Changes
