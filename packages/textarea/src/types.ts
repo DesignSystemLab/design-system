@@ -1,4 +1,3 @@
-import { TextareaLabel } from './components/TextareaLabel';
 import type { ColorToken } from '@jdesignlab/theme';
 import type { ReactNode, HTMLAttributes } from 'react';
 
@@ -17,8 +16,6 @@ export type StyleProps = Pick<
 export interface TextareaLabelProps extends HTMLAttributes<HTMLLabelElement> {
   children: ReactNode;
 }
-
-export type ExtendedTextAreaProps = TextAreaProps & { Label?: typeof TextareaLabel };
 
 export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
   [key: string]: any;

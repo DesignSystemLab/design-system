@@ -1,5 +1,4 @@
 import { Children, isValidElement } from 'react';
-import type { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 
 export const useTextarea = () => {
   const getChildText = (children: React.ReactNode) => {
@@ -28,17 +27,5 @@ export const useTextarea = () => {
     return labelId || null;
   };
 
-  const filterChildren = (
-    children: React.ReactNode | React.ReactNode[],
-    compoenent: (props: any) => EmotionJSX.Element,
-    isEqual: boolean
-  ) => {
-    return Children.toArray(children).filter(child => {
-      if (isValidElement(child)) {
-        return isEqual ? child.type === compoenent : child.type !== compoenent;
-      }
-    });
-  };
-
-  return { filterChildren, getChildText, getLabelId };
+  return { getChildText, getLabelId };
 };
