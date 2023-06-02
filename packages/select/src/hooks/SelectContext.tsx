@@ -1,4 +1,6 @@
 import { createContext, RefObject, useRef, useState } from 'react';
+import { useSelect } from './useSelect';
+import { BORDER_COLOR } from '../constants';
 import type { OptionValue, ReturnContext, StyleProps } from '../types';
 
 const defaultContextValues: ReturnContext = {
@@ -20,7 +22,7 @@ const defaultContextValues: ReturnContext = {
   searchKeyword: '',
   setSearchKeyword: () => {},
   selectProps: {
-    color: 'green-lighten3',
+    color: BORDER_COLOR,
     disabled: false,
     placement: 'bottom',
     placeholder: null,
@@ -31,12 +33,13 @@ const defaultContextValues: ReturnContext = {
 export const SelectContext = createContext<ReturnContext>(defaultContextValues);
 
 export const SelectProvider = ({ ...props }) => {
+  const { getSelectValues } = useSelect();
   const [selectRef, setSelectRef] = useState<RefObject<HTMLElement>>(useRef(null));
   const [open, setOpen] = useState<boolean>(false);
   const [selectedOption, setSelectedOption] = useState<OptionValue>({ key: '', name: '', isDisabled: false });
   const [defaultSelectProps, _] = useState<StyleProps>(defaultContextValues.selectProps);
   const [options, setOptions] = useState<OptionValue[]>([]);
-  const [searchValues, setSearchValues] = useState<OptionValue[]>([]);
+  const [searchValues, setSearchValues] = useState<OptionValue[]>(getSelectValues(props.options));
   const [searchKeyword, setSearchKeyword] = useState<string>('');
 
   return (

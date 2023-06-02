@@ -1,5 +1,5 @@
-import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
 import React, { Children, isValidElement } from 'react';
+import { OptionValue } from '../types';
 
 export const useSelect = () => {
   const getPlaceHolder = (children: React.ReactNode) => {
@@ -11,33 +11,47 @@ export const useSelect = () => {
     return placeholder || null;
   };
 
+  const getSelectValues = (children: React.ReactNode): OptionValue[] => {
+    const optionValues: OptionValue[] = [];
+    if (children) {
+      React.Children.forEach(children, child => {
+        if (isValidElement(child)) {
+          const defaultValue: OptionValue = {
+            isDisabled: false,
+            key: '',
+            name: ''
+          };
+          optionValues.push(
+            Object.assign(defaultValue, {
+              name: getChildText(child),
+              key: child.props.value,
+              isDisabled: child.props.disabled || false
+            })
+          );
+        }
+      });
+    }
+    //푸시해야함
+    return optionValues;
+  };
+
   const getChildText = (children: React.ReactNode) => {
     let childText = '';
     if (children) {
       React.Children.forEach(children, child => {
-        if (React.isValidElement(child)) {
+        if (isValidElement(child)) {
           return typeof child.props.children === 'string'
             ? (childText += child.props.children)
             : (childText += getChildText(child.props.children));
         } else if (typeof child === 'string') {
           childText += child;
+        } else if (typeof child === 'number') {
+          childText += String(childText);
         }
       });
     }
     return childText;
   };
 
-  const filterChildren = (
-    children: React.ReactNode | React.ReactNode[],
-    compoenent: (props: any) => EmotionJSX.Element,
-    isEqual: boolean
-  ) => {
-    return Children.toArray(children).filter(child => {
-      if (isValidElement(child)) {
-        return isEqual ? child.type === compoenent : child.type !== compoenent;
-      }
-    });
-  };
-
-  return { filterChildren, getChildText, getPlaceHolder };
+  return { getChildText, getPlaceHolder, getSelectValues };
 };
