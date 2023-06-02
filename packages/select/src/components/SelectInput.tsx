@@ -9,9 +9,8 @@ export const SelectInput = () => {
   const { setOpen, searchKeyword, selectProps } = useContext(SelectContext);
   const comboboxInputRef = useRef<HTMLInputElement>(null);
   const { comboboxStyle } = createComboboxStyle(selectProps);
-  const { handleInput } = useSearchOptions();
+  const { handleInput, handleInputEnter } = useSearchOptions();
   const { handleInputKeydown } = useKeyboardNavigation();
-  const { handleInputEnter } = useSearchOptions();
 
   useEffect(() => {
     if (comboboxInputRef.current) {
@@ -26,7 +25,7 @@ export const SelectInput = () => {
       ref={comboboxInputRef}
       css={comboboxStyle}
       type="text"
-      placeholder="Search Options.."
+      placeholder={selectProps.placeholder || 'Search Options..'}
       onInput={handleInput}
       onKeyDown={e => {
         switch (e.key) {
