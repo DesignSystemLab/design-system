@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
 import { hexToRgba, getColorByToken } from '@jdesignlab/theme';
+import { FONT_COLOR, DISABLED_COLOR } from '../constants';
 import type { StyleProps } from '../types';
 
 export const createComboboxStyle = (styleProps: StyleProps) => {
-  const color = getColorByToken(styleProps.color || 'green-base');
-  const listColor = getColorByToken('shades-black');
-  const disabledColor = getColorByToken('grey-lighten1');
+  const color = styleProps?.color || null;
+  const selectColor = getColorByToken(color || FONT_COLOR);
+  const disabledColor = getColorByToken(DISABLED_COLOR);
 
   const comboboxStyle = css({
     width: '228px',
@@ -13,8 +14,8 @@ export const createComboboxStyle = (styleProps: StyleProps) => {
     borderStyle: 'none',
     padding: '0',
     '&:focus': {
-      outlineColor: `${color}`,
-      outline: `${color}`
+      outlineColor: `${selectColor}`,
+      outline: `${selectColor}`
     },
     '&:hover': {
       cursor: 'pointer'
@@ -22,22 +23,20 @@ export const createComboboxStyle = (styleProps: StyleProps) => {
   });
 
   const activeItemStyle = css({
-    color: `${listColor}`,
+    color: `${getColorByToken(FONT_COLOR)}`,
     padding: '4px 8px',
-    borderRadius: '8px',
     '&[data-hover="hover"]': {
-      backgroundColor: `${hexToRgba(color, 0.8)}`
+      backgroundColor: `${hexToRgba(selectColor, 0.6)}`
     },
     '&:hover': {
       cursor: 'pointer',
-      outline: `${color}`
+      outline: `${selectColor}`
     }
   });
 
   const disabledItemStyle = css({
     color: `${disabledColor}`,
     padding: '4px 8px',
-    borderRadius: '8px',
     '&:hover': {
       background: 'none',
       outline: `${disabledColor}`,

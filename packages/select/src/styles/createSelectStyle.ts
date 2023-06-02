@@ -1,23 +1,27 @@
+import { useContext } from 'react';
 import { css } from '@emotion/react';
 import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
-import { useContext } from 'react';
-import type { StyleProps } from '../types';
 import { SelectContext } from '../hooks/SelectContext';
+import { BORDER_RADIUS, BORDER_COLOR, FONT_COLOR, DISABLED_COLOR } from '../constants';
+import type { StyleProps } from '../types';
 
 export const createSelectStyle = (styleProps?: StyleProps) => {
-  const color = getColorByToken(styleProps?.color || 'green-base');
-  const listColor = getColorByToken('shades-black');
-  const disabledColor = getColorByToken('grey-lighten1');
+  console.log(styleProps);
+
+  const borderRadius = `${BORDER_RADIUS}px`;
+  const color = styleProps?.color || null;
+  const selectColor = getColorByToken(color || FONT_COLOR);
+  const borderColor = getColorByToken(color || BORDER_COLOR);
+  const disabledColor = getColorByToken(DISABLED_COLOR);
   const { open } = useContext(SelectContext);
 
   const activeOptionStyle = () => {
     return css({
-      color: `${listColor}`,
+      color: `${getColorByToken(FONT_COLOR)}`,
       padding: '4px 8px',
-      borderRadius: '8px',
       '&:focus': {
-        backgroundColor: `${hexToRgba(color, 0.8)}`,
-        outline: `${color}`
+        backgroundColor: `${hexToRgba(selectColor, 0.4)}`,
+        outline: `${selectColor}`
       },
       '&:hover': {
         cursor: 'pointer'
@@ -27,11 +31,11 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
 
   const notfoundStyle = () => {
     return css({
-      color: `${listColor}`,
+      color: `${getColorByToken(FONT_COLOR)}`,
       padding: '4px 8px',
-      borderRadius: '8px',
+      borderRadius,
       '&:focus': {
-        backgroundColor: `${hexToRgba(color, 0.8)}`,
+        backgroundColor: `${hexToRgba(selectColor, 0.8)}`,
         outline: `${color}`
       },
       '&:hover': {
@@ -43,7 +47,7 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
     return css({
       color: `${disabledColor}`,
       padding: '4px 8px',
-      borderRadius: '8px',
+      borderRadius,
       '&:focus': {
         background: 'none',
         outline: `${disabledColor}`
@@ -57,14 +61,16 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
   const listStyle = () => {
     if (open) {
       return css({
-        display: 'block',
+        boxSizing: 'border-box',
+        display: 'inline-block',
         listStyle: 'none',
         padding: '0',
         margin: '0',
         width: '274px',
-        border: `1px solid ${color}`,
-        borderRadius: '12px',
-        marginTop: '4px'
+        border: `1px solid ${borderColor}`,
+        borderRadius,
+        marginTop: '4px',
+        boxShadow: '0px 4px 14px 0px rgba(0,0,0,0.1)'
       });
     }
     return css(
