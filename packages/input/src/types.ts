@@ -1,6 +1,4 @@
 import { ThemePreset } from '@jdesignlab/j-provider';
-import { Label } from './components/InputLabel';
-import { Message } from './components/InputMessage';
 import type { ColorToken } from '@jdesignlab/theme';
 
 export type InputSize = 'sm' | 'md' | 'lg';
@@ -38,5 +36,3 @@ export interface InputStyleProps {
   type?: 'text' | 'password';
   color?: ColorToken;
 }
-
-export type ExtendedInputProps = InputProps & { Label?: typeof Label; Message?: typeof Message };

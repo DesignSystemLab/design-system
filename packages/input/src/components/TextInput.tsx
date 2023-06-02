@@ -10,8 +10,9 @@ import { Label } from './InputLabel';
 import { Message } from './InputMessage';
 import { combineClassNames } from '@jdesignlab/utils';
 import { VISIBLE_ICON_CLASSNAME, CLEARABLE_ICON_CLASSNAME } from '../constants';
-import type { ExtendedInputProps } from '../types';
+import type { InputProps } from '../types';
 
+type ExtendedInputProps = InputProps & { Label?: typeof Label; Message?: typeof Message };
 export const TextInput = Object.assign(
   forwardRef<HTMLInputElement, ExtendedInputProps>((props, extendRef) => {
     const themePreset = useContext(ThemeContext);
