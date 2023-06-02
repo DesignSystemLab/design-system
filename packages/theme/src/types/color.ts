@@ -41,7 +41,8 @@ type ShadesColorSchme = {
 
 type UniquePallete = 'primary' | 'secondary';
 
-type StatusPallete = 'success' | 'info' | 'warning' | 'error' | 'disabled';
+type StatusPallete = 'success' | 'info' | 'warning' | 'error';
+type ShapePallete = 'border' | 'font' | 'disabled';
 
 type ExtendedPalette =
   | 'red'
@@ -65,6 +66,7 @@ type CommonPalette = 'brown' | 'blueGrey' | 'grey';
 type ShadesPalette = 'shades';
 
 type ColorToken =
+  | `${ShapePallete}`
   | `${StatusPallete}`
   | `${UniquePallete}-${keyof UniqueColorScheme}`
   | `${ExtendedPalette}-${keyof AccentColorScheme}`
@@ -95,6 +97,7 @@ type Color = {
   blueGrey: Readonly<BaseColorScheme>;
   grey: Readonly<BaseColorScheme>;
   shades: Readonly<ShadesColorSchme>;
+  font: HEX;
   success: HEX;
   info: HEX;
   warning: HEX;

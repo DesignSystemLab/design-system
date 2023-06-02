@@ -348,6 +348,8 @@ const info = '#246BFD';
 const warning = '#FACC15';
 const error = '#F75555';
 const disabled = '#D8D8D8';
+const font = '#333333';
+const border = '#cccccc';
 
 export const variantPresetColors: Color = Object.freeze({
   success,
@@ -376,5 +378,7 @@ export const variantPresetColors: Color = Object.freeze({
   brown,
   blueGrey,
   grey,
-  shades
+  shades,
+  font,
+  border
 });
