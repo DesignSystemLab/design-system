@@ -13,6 +13,7 @@
     "build:clean": "rimraf dist/"
   },
   "dependencies": {
+    "@jdesignlab/react-utils": "workspace:*",
     "@jdesignlab/theme": "workspace:*",
     "@jdesignlab/typography": "workspace:*",
     "@jdesignlab/utils": "workspace:*"
