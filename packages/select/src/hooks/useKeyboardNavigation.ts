@@ -40,6 +40,7 @@ export const useKeyboardNavigation = () => {
 
   const handleInputKeydown: KeyboardEventHandler<HTMLElement> = (e: KeyboardEvent) => {
     const { key } = e;
+
     const comboboxItems = selectRef?.current?.querySelectorAll(
       'li:not([data-disabled="true"]'
     ) as NodeListOf<HTMLLIElement>;
@@ -58,11 +59,11 @@ export const useKeyboardNavigation = () => {
   };
 
   const handleKeydown: KeyboardEventHandler<HTMLElement> = (e: KeyboardEvent) => {
-    const selectOptions = selectRef?.current?.querySelectorAll(
-      '[role="listitem"]:not([data-disabled="true"])'
-    ) as NodeListOf<HTMLLIElement>;
     const { key } = e;
-    e.stopPropagation();
+
+    const selectOptions = selectRef?.current?.querySelectorAll(
+      '[role="option"]:not([data-disabled="true"])'
+    ) as NodeListOf<HTMLLIElement>;
 
     if (e.nativeEvent.isComposing) {
       return;

@@ -52,6 +52,7 @@ export const SelectOption = (props: SelectOptionProps) => {
       data-disabled={disabled}
       tabIndex={0}
       onKeyDown={e => {
+        e.preventDefault();
         switch (e.key) {
           case 'Enter':
             if (onValueChange) {
