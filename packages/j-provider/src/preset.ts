@@ -6,7 +6,7 @@ export const preset: Preset = {
   light: {
     color: {
       background: getColorByToken('shades-white'),
-      fontColor: '#444444',
+      fontColor: getColorByToken('font'),
       primary: getColorByToken('primary-500'),
       secondary: getColorByToken('secondary-500'),
       success: getColorByToken('success'),
