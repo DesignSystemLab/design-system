@@ -2,6 +2,7 @@ import React, { RefObject } from 'react';
 import { ColorToken } from '@jdesignlab/theme';
 import type { Dispatch, SetStateAction } from 'react';
 
+type Value = string | number;
 export type Placement = 'top' | 'right' | 'bottom' | 'left';
 
 export type StyleProps = {
@@ -18,13 +19,13 @@ export interface ContainerProps {
 }
 
 export type OptionValue = {
-  key: string;
+  key: Value;
   name: string;
   isDisabled: boolean;
 };
 
 export interface ReturnContext {
-  onValueChange?: (value: string | null) => void;
+  onValueChange?: (value: string | number | null) => void;
   selectProps: StyleProps;
   setOpen: Dispatch<SetStateAction<boolean>>;
   open: boolean;
@@ -51,12 +52,12 @@ export interface SelectProps {
 
 export interface SelectOptionProps {
   children: React.ReactNode;
-  value: string;
+  value: Value;
   disabled?: boolean;
 }
 
 export interface ComoboboxOptionProps {
   children: React.ReactNode;
-  value: string;
+  value: Value;
   disabled?: boolean;
 }
