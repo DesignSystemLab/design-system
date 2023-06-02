@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { filterComponent } from '@jdesignlab/react-utils';
 import { SelectProvider } from '../hooks/SelectContext';
 import { useSelect } from '../hooks/useSelect';
 import { SelectContainer } from './SelectContainer';
@@ -9,9 +10,9 @@ import type { SelectProps } from '../types';
 
 export const Select = (props: SelectProps) => {
   const { children, ...propsWithoutChildren } = props;
-  const { filterChildren, getPlaceHolder } = useSelect();
-  const SelectTrigger = filterChildren(children, Select.Trigger, true);
-  const RestChildren = filterChildren(children, Select.Trigger, false);
+  const { getPlaceHolder } = useSelect();
+  const SelectTrigger = filterComponent(children, Select.Trigger, true);
+  const RestChildren = filterComponent(children, Select.Trigger, false);
 
   const selectProps = {
     ...propsWithoutChildren,
@@ -20,12 +21,11 @@ export const Select = (props: SelectProps) => {
 
   return (
     <SelectProvider selectProps={selectProps} onValueChange={props.onValueChange} options={RestChildren}>
-      <Select.Container Trigger={SelectTrigger} Options={RestChildren} />
+      <SelectContainer Trigger={SelectTrigger} Options={RestChildren} />
     </SelectProvider>
   );
 };
 
-Select.Container = SelectContainer;
 Select.Trigger = SelectTrigger;
 Select.Input = SelectInput;
 Select.Option = SelectOption;
