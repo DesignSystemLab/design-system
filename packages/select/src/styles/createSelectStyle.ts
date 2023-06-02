@@ -6,8 +6,6 @@ import { BORDER_RADIUS, BORDER_COLOR, FONT_COLOR, DISABLED_COLOR } from '../cons
 import type { StyleProps } from '../types';
 
 export const createSelectStyle = (styleProps?: StyleProps) => {
-  console.log(styleProps);
-
   const borderRadius = `${BORDER_RADIUS}px`;
   const color = styleProps?.color || null;
   const selectColor = getColorByToken(color || FONT_COLOR);
