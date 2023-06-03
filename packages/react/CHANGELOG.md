@@ -1,5 +1,32 @@
 # @jdesignlab/react
 
+## 0.6.3
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/j-provider@0.6.0
+  - @jdesignlab/select@0.6.0
+  - @jdesignlab/textarea@0.7.0
+  - @jdesignlab/input@0.7.0
+  - @jdesignlab/theme@0.6.0
+  - @jdesignlab/box@0.5.2
+  - @jdesignlab/button@0.6.2
+  - @jdesignlab/checkbox@0.5.2
+  - @jdesignlab/drawer@0.5.2
+  - @jdesignlab/flex@0.5.2
+  - @jdesignlab/radio@0.5.2
+  - @jdesignlab/typography@0.5.2
+  - @jdesignlab/tooltip@0.5.2
+  - @jdesignlab/modal@0.7.3
+  - @jdesignlab/card@0.5.2
+  - @jdesignlab/dropdown@0.5.2
+  - @jdesignlab/stack@0.5.2
+
 ## 0.6.2
 
 ### Patch Changes

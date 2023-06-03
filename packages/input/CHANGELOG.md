@@ -1,5 +1,18 @@
 # @jdesignlab/input
 
+## 0.7.0
+
+### Minor Changes
+
+- fixed typescript circular reference
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/j-provider@0.6.0
+  - @jdesignlab/theme@0.6.0
+
 ## 0.6.1
 
 ### Patch Changes

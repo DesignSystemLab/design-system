@@ -1,5 +1,16 @@
 # @jdesignlab/j-provider
 
+## 0.6.0
+
+### Minor Changes
+
+- add 'font' color token
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.6.0
+
 ## 0.5.1
 
 ### Patch Changes

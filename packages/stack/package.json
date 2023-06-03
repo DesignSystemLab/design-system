@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/stack",
   "packageManager": "yarn@3.3.1",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "main": "src/index.ts",
   "files": [
     "dist"

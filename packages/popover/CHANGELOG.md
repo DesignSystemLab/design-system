@@ -1,5 +1,14 @@
 # @jdesignlab/popover
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.6.0
+  - @jdesignlab/button@0.6.2
+  - @jdesignlab/flex@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes

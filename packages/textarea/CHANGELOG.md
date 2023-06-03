@@ -1,5 +1,17 @@
 # @jdesignlab/textarea
 
+## 0.7.0
+
+### Minor Changes
+
+- fixed typescript circular reference
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.6.0
+  - @jdesignlab/typography@0.5.2
+
 ## 0.6.1
 
 ### Patch Changes

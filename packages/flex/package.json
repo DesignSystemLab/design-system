@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/flex",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "files": [
