@@ -160,7 +160,7 @@ module.exports = {
       to: {
         dependencyTypes: ['npm-optional']
       }
-    },
+    }
     // {
     //   name: 'peer-deps-used',
     //   comment:
@@ -182,7 +182,7 @@ module.exports = {
        for a complete list
     */
     doNotFollow: {
-      path: ['node_modules', 'dist']
+      path: ['node_modules', 'dist', 'checkbox']
     },
 
     /* conditions specifying which dependencies to exclude
