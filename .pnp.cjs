@@ -6705,9 +6705,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@jdesignlab/react-icons", "virtual:a52c88bb323d87b395737ef6d3ac2ba40354af74bf752803832bc32bb7ed75b70c392bae41aae37bbec0143aec4f906b144428896371fc8a6a28cbce38752003#workspace:packages/icons"],\
             ["@emotion/react", "virtual:76cbc6fb37db18db35ec42620d0c49e4fe1668e5fbe3b1ed133b4163b04b62c2b6659f0f254d0b327b01fa7a11d2c5b777eabdf1266be2b8caa3c09c28217e06#npm:11.10.6"],\
             ["@emtoion/react", null],\
-            ["@rollup/plugin-babel", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:6.0.3"],\
-            ["@rollup/plugin-commonjs", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:24.0.1"],\
-            ["@rollup/plugin-node-resolve", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:15.0.2"],\
             ["@types/emtoion__react", null],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.11"],\
@@ -6728,9 +6725,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@jdesignlab/react-icons", "workspace:packages/icons"],\
             ["@emotion/react", "virtual:76cbc6fb37db18db35ec42620d0c49e4fe1668e5fbe3b1ed133b4163b04b62c2b6659f0f254d0b327b01fa7a11d2c5b777eabdf1266be2b8caa3c09c28217e06#npm:11.10.6"],\
-            ["@rollup/plugin-babel", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:6.0.3"],\
-            ["@rollup/plugin-commonjs", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:24.0.1"],\
-            ["@rollup/plugin-node-resolve", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:15.0.2"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["react", "npm:18.2.0"],\
@@ -8864,25 +8858,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:6.0.3", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-33094eb830/0/cache/@rollup-plugin-babel-npm-6.0.3-1259d28dd2-412c1c3bb5.zip/node_modules/@rollup/plugin-babel/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-babel", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:6.0.3"],\
-            ["@babel/core", null],\
-            ["@babel/helper-module-imports", "npm:7.21.4"],\
-            ["@rollup/pluginutils", "virtual:33094eb8304e3d02469d53519bf7e2c36bf3347f62661ec0220fb98340a51642cee4136e749093fe27dbb852435bdcf368ce1216ab58622b4d352d4c1aadff72#npm:5.0.2"],\
-            ["@types/babel__core", null],\
-            ["@types/rollup", null],\
-            ["rollup", null]\
-          ],\
-          "packagePeers": [\
-            "@babel/core",\
-            "@types/babel__core",\
-            "@types/rollup",\
-            "rollup"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:e44f8e351075c03554ff83c6338bd2a913538b8a27d78c15081f9b7c0ff956a2f4f79d968330ca0c96266db2d35439b145bca46e0706c388009d0f6b24504729#npm:6.0.3", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-plugin-babel-virtual-f609fb104d/0/cache/@rollup-plugin-babel-npm-6.0.3-1259d28dd2-412c1c3bb5.zip/node_modules/@rollup/plugin-babel/",\
           "packageDependencies": [\
@@ -8930,25 +8905,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:24.0.1", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-commonjs-virtual-aa9fed7f6c/0/cache/@rollup-plugin-commonjs-npm-24.0.1-c413f6302d-ff5b09f5c3.zip/node_modules/@rollup/plugin-commonjs/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-commonjs", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:24.0.1"],\
-            ["@rollup/pluginutils", "virtual:33094eb8304e3d02469d53519bf7e2c36bf3347f62661ec0220fb98340a51642cee4136e749093fe27dbb852435bdcf368ce1216ab58622b4d352d4c1aadff72#npm:5.0.2"],\
-            ["@types/rollup", null],\
-            ["commondir", "npm:1.0.1"],\
-            ["estree-walker", "npm:2.0.2"],\
-            ["glob", "npm:8.1.0"],\
-            ["is-reference", "npm:1.2.1"],\
-            ["magic-string", "npm:0.27.0"],\
-            ["rollup", null]\
-          ],\
-          "packagePeers": [\
-            "@types/rollup",\
-            "rollup"\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:24.0.1", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-plugin-commonjs-virtual-c6f5a13176/0/cache/@rollup-plugin-commonjs-npm-24.0.1-c413f6302d-ff5b09f5c3.zip/node_modules/@rollup/plugin-commonjs/",\
           "packageDependencies": [\
@@ -8976,25 +8932,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/plugin-node-resolve", "npm:15.0.2"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:15.0.2", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-d973ea2b8e/0/cache/@rollup-plugin-node-resolve-npm-15.0.2-3c7757ccf0-328eafee06.zip/node_modules/@rollup/plugin-node-resolve/",\
-          "packageDependencies": [\
-            ["@rollup/plugin-node-resolve", "virtual:698a47daee58f207feedd9b45a37a5fcd591ba4ddbe5d8ec9ce32208713528e20727e64f3d02ec8ffe674b504e69f7a093bf4592ef24c371d943b505e08596f0#npm:15.0.2"],\
-            ["@rollup/pluginutils", "virtual:33094eb8304e3d02469d53519bf7e2c36bf3347f62661ec0220fb98340a51642cee4136e749093fe27dbb852435bdcf368ce1216ab58622b4d352d4c1aadff72#npm:5.0.2"],\
-            ["@types/resolve", "npm:1.20.2"],\
-            ["@types/rollup", null],\
-            ["deepmerge", "npm:4.3.1"],\
-            ["is-builtin-module", "npm:3.2.1"],\
-            ["is-module", "npm:1.0.0"],\
-            ["resolve", "patch:resolve@npm%3A1.22.2#~builtin<compat/resolve>::version=1.22.2&hash=c3c19d"],\
-            ["rollup", null]\
-          ],\
-          "packagePeers": [\
-            "@types/rollup",\
-            "rollup"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:f613fb873bbdabdfb454f96147880dae321b044f0d370496002ca860b2e61afa2a0fbfed6261f93aa6b6863e9d7272aded0fb6380ea4d2017e676100c01780ca#npm:15.0.2", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-plugin-node-resolve-virtual-73b097db54/0/cache/@rollup-plugin-node-resolve-npm-15.0.2-3c7757ccf0-328eafee06.zip/node_modules/@rollup/plugin-node-resolve/",\
@@ -9064,22 +9001,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@rollup/pluginutils", "npm:5.0.2"]\
           ],\
           "linkType": "SOFT"\
-        }],\
-        ["virtual:33094eb8304e3d02469d53519bf7e2c36bf3347f62661ec0220fb98340a51642cee4136e749093fe27dbb852435bdcf368ce1216ab58622b4d352d4c1aadff72#npm:5.0.2", {\
-          "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-8c2a9cf679/0/cache/@rollup-pluginutils-npm-5.0.2-6aa9d0ddd4-edea15e543.zip/node_modules/@rollup/pluginutils/",\
-          "packageDependencies": [\
-            ["@rollup/pluginutils", "virtual:33094eb8304e3d02469d53519bf7e2c36bf3347f62661ec0220fb98340a51642cee4136e749093fe27dbb852435bdcf368ce1216ab58622b4d352d4c1aadff72#npm:5.0.2"],\
-            ["@types/estree", "npm:1.0.0"],\
-            ["@types/rollup", null],\
-            ["estree-walker", "npm:2.0.2"],\
-            ["picomatch", "npm:2.3.1"],\
-            ["rollup", null]\
-          ],\
-          "packagePeers": [\
-            "@types/rollup",\
-            "rollup"\
-          ],\
-          "linkType": "HARD"\
         }],\
         ["virtual:4677793e2712b5d45b3430024bc2e4fbdb15830e13ddc8423040d60e77c541580e2f57dd8122764c3fdc06104ff999eab418e6ed32faef42b5fd4a94be3961bf#npm:5.0.2", {\
           "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-acccbd6c5c/0/cache/@rollup-pluginutils-npm-5.0.2-6aa9d0ddd4-edea15e543.zip/node_modules/@rollup/pluginutils/",\

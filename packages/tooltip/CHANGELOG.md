@@ -1,5 +1,13 @@
 # @jdesignlab/tooltip
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+  - @jdesignlab/button@0.6.3
+
 ## 0.5.2
 
 ### Patch Changes

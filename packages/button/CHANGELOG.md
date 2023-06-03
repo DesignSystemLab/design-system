@@ -1,5 +1,12 @@
 # @jdesignlab/button
 
+## 0.6.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+
 ## 0.6.2
 
 ### Patch Changes

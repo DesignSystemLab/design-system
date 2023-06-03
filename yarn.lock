@@ -2933,9 +2933,6 @@ __metadata:
   resolution: "@jdesignlab/react-icons@workspace:packages/icons"
   dependencies:
     "@emotion/react": ^11.10.6
-    "@rollup/plugin-babel": ^6.0.3
-    "@rollup/plugin-commonjs": ^24.0.1
-    "@rollup/plugin-node-resolve": ^15.0.1
     "@types/react": 18.0.27
     "@types/react-dom": ^18.0.10
     react: ^18.2.0

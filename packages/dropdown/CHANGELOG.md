@@ -1,5 +1,12 @@
 # @jdesignlab/dropdown
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+
 ## 0.5.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @jdesignlab/modal
 
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+  - @jdesignlab/button@0.6.3
+  - @jdesignlab/input@0.7.1
+
 ## 0.7.3
 
 ### Patch Changes

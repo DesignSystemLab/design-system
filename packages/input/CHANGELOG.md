@@ -1,5 +1,12 @@
 # @jdesignlab/input
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+
 ## 0.7.0
 
 ### Minor Changes

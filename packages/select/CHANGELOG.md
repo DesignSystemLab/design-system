@@ -1,5 +1,13 @@
 # @jdesignlab/select
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.6.0
+  - @jdesignlab/button@0.6.3
+
 ## 0.6.0
 
 ### Minor Changes

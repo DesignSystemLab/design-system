@@ -1,5 +1,11 @@
 # @jdesignlab/react-icons
 
+## 0.6.0
+
+### Minor Changes
+
+- remove rollup dependency, added icons
+
 ## 0.5.0
 
 ### Minor Changes
