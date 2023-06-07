@@ -2,6 +2,7 @@ name: Dependecy Check Action
 on:
   push:
   pull_request:
+  workflow_dispatch:
 jobs:
   dependency-check:
     runs-on: ubuntu-latest
