@@ -1,5 +1,5 @@
 name: Dependecy Check Action
-on: 
+on:
   push:
   pull_request:
 jobs:
