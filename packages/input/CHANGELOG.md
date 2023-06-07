@@ -1,5 +1,13 @@
 # @jdesignlab/input
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.7.0
+  - @jdesignlab/j-provider@0.6.1
+
 ## 0.7.1
 
 ### Patch Changes

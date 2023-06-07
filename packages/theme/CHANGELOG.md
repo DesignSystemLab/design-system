@@ -1,5 +1,11 @@
 # @jdesignlab/theme
 
+## 0.7.0
+
+### Minor Changes
+
+- change text color by background
+
 ## 0.6.0
 
 ### Minor Changes

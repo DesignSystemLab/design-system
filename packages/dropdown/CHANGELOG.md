@@ -1,5 +1,13 @@
 # @jdesignlab/dropdown
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.7.0
+  - @jdesignlab/flex@0.5.3
+
 ## 0.5.3
 
 ### Patch Changes
