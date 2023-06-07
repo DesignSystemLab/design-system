@@ -1,5 +1,13 @@
 # @jdesignlab/textarea
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.7.0
+  - @jdesignlab/typography@0.5.3
+
 ## 0.7.0
 
 ### Minor Changes

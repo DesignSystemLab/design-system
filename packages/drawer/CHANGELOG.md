@@ -1,5 +1,15 @@
 # @jdesignlab/drawer
 
+## 0.5.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/theme@0.7.0
+  - @jdesignlab/button@0.7.1
+  - @jdesignlab/flex@0.5.3
+  - @jdesignlab/j-provider@0.6.1
+
 ## 0.5.4
 
 ### Patch Changes
