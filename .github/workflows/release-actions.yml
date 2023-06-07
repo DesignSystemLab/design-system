@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-          token: ${{ secrets.WORKFLOW_TOKEN }}
+          token: ${{ secrets.JDS_RELLEASE_TOKEN }}
           fetch-depth: '0'
       - name: Install dependencies
         env:
