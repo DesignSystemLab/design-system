@@ -7,7 +7,7 @@ export default {
   component: Button,
   decorators: [
     Story => (
-      <div style={{ display: 'flex', gap: '5px' }}>
+      <div style={{ height: '100vh' }}>
         <Story />
       </div>
     )
@@ -64,7 +64,7 @@ const onClick = () => {
 export const WithColors = () => (
   <>
     <ThemeProvider>
-      <Button variant="ghost" color="blue-base">
+      <Button variant="ghost" color="blue-base" full>
         한국어
       </Button>
       <Button variant="ghost" color="lightGreen-base">

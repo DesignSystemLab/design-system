@@ -8,7 +8,7 @@ const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 export const buttonDefaultStyle = css({
   position: 'relative',
-  display: 'inline-flex',
+  display: 'block',
   alignItems: 'center',
   gap: '4px',
   flexShrink: '0',
@@ -16,10 +16,7 @@ export const buttonDefaultStyle = css({
   letterSpacing: '1.5px',
   overflow: 'hidden',
   minWidth: 'fit-content',
-  whiteSpace: 'nowrap',
-  '&:active': {
-    transform: 'translateY(2px)'
-  }
+  whiteSpace: 'nowrap'
 });
 
 export const buttonSizeStyle = (size: ButtonSize, full: boolean) => {
@@ -39,16 +36,12 @@ export const buttonVariantStyle = (
   color?: ColorToken
 ) => {
   let parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
-
   let disabledStyle;
   if (disabled) {
     parsedColor += themePreset.effect.disabledOpacity;
     disabledStyle = {
       cursor: 'not-allowed',
-      color: themePreset.color.disabled,
-      '&:active': {
-        transform: 'translateY(0)'
-      }
+      color: themePreset.color.disabled
     };
   } else {
     disabledStyle = { cursor: 'pointer', color: parsedColor };
