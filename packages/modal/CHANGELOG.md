@@ -1,5 +1,12 @@
 # @jdesignlab/modal
 
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.7.0
+
 ## 0.7.4
 
 ### Patch Changes

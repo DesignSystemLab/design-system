@@ -1,5 +1,11 @@
 # @jdesignlab/button
 
+## 0.7.0
+
+### Minor Changes
+
+- update button style
+
 ## 0.6.3
 
 ### Patch Changes
