@@ -47,7 +47,7 @@ export const createSelectTriggerStyle = (color: ColorToken, isDisabled: boolean)
       padding: '0 8px',
       borderRadius,
       width: 'auto',
-      maxWidth: '256px',
+      maxWidth: '200px',
       '& span': {
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',

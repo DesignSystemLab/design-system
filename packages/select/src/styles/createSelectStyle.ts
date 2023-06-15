@@ -13,6 +13,11 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
   const disabledColor = getColorByToken(DISABLED_COLOR);
   const { open } = useContext(SelectContext);
 
+  const wrapperStyle = css({
+    position: 'relative',
+    maxWidth: '200px'
+  });
+
   const activeOptionStyle = () => {
     return css({
       color: `${getColorByToken(FONT_COLOR)}`,
@@ -70,7 +75,7 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
         listStyle: 'none',
         padding: '0',
         margin: '0',
-        width: '274px',
+        width: '100%',
         border: `1px solid ${borderColor}`,
         borderRadius,
         boxShadow: '0px 4px 14px 0px rgba(0,0,0,0.1)',
@@ -107,6 +112,7 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
     listStyle: listStyle(),
     disable: disabledOptionStyle(),
     active: activeOptionStyle(),
-    notfound: notfoundStyle()
+    notfound: notfoundStyle(),
+    wrapperStyle
   };
 };

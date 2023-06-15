@@ -9,7 +9,7 @@ export const createComboboxStyle = (styleProps: StyleProps) => {
   const disabledColor = getColorByToken(DISABLED_COLOR);
 
   const comboboxStyle = css({
-    width: '228px',
+    width: '88%',
     fontSize: '16px',
     borderStyle: 'none',
     padding: '0',
