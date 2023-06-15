@@ -16,26 +16,17 @@ export const SelectTrigger = (props: { placeholder: string; children?: React.Rea
       css={triggerStyle}
       role="button"
       onClick={e => {
-        if (selectInput.length || selectProps.disabled) {
+        if (!selectProps.disabled) {
+          setOpen(prev => !prev);
           e.preventDefault();
-          return;
         }
-        setOpen(prev => !prev);
       }}
     >
       <div css={flexStyle}>
+        {selectInput.length ? selectInput : <span role="label">{selectedOption.name || props.placeholder}</span>}
         <div>
-          {selectInput.length ? selectInput : <span role="label">{selectedOption.name || props.placeholder}</span>}
+          <ChevronBottom width="12px" color={color} />
         </div>
-        <span>
-          <ChevronBottom
-            width="12px"
-            color={color}
-            onClick={e => {
-              setOpen(prev => !prev);
-            }}
-          />
-        </span>
       </div>
     </div>
   );
