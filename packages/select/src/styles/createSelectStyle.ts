@@ -59,7 +59,13 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
   const listStyle = () => {
     if (open) {
       return css({
+        visibility: 'visible',
+        maxHeight: '512px',
+        backgroundColor: '#ffffff',
+        zIndex: 1,
         boxSizing: 'border-box',
+        position: 'absolute',
+        top: '36px',
         display: 'inline-block',
         listStyle: 'none',
         padding: '0',
@@ -67,13 +73,21 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
         width: '274px',
         border: `1px solid ${borderColor}`,
         borderRadius,
-        marginTop: '4px',
-        boxShadow: '0px 4px 14px 0px rgba(0,0,0,0.1)'
+        boxShadow: '0px 4px 14px 0px rgba(0,0,0,0.1)',
+        overflowY: 'auto',
+        transition: 'max-height 0.3s ease-in-out',
+        '&::-webkit-scrollbar': {
+          width: '8px'
+        },
+        '&::-webkit-scrollbar-thumb': {
+          borderRadius: '4px',
+          background: hexToRgba(borderColor, 0.3)
+        }
       });
     }
     return css(
       {
-        display: 'none',
+        visibility: 'hidden',
         position: 'absolute',
         width: '1px',
         height: '1px',
@@ -82,7 +96,8 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
         overflow: 'hidden',
         clip: 'rect(0, 0, 0, 0)',
         whiteSpace: 'nowrap',
-        border: '0'
+        border: '0',
+        maxHeight: '0'
       },
       { important: true }
     );

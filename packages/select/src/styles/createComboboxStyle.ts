@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { hexToRgba, getColorByToken } from '@jdesignlab/theme';
-import { FONT_COLOR, DISABLED_COLOR } from '../constants';
+import { FONT_COLOR, DISABLED_COLOR, FOCUS_COLOR } from '../constants';
 import type { StyleProps } from '../types';
 
 export const createComboboxStyle = (styleProps: StyleProps) => {
@@ -14,8 +14,9 @@ export const createComboboxStyle = (styleProps: StyleProps) => {
     borderStyle: 'none',
     padding: '0',
     '&:focus': {
-      outlineColor: `${selectColor}`,
-      outline: `${selectColor}`
+      height: '24px',
+      padding: '0 4px',
+      outlineColor: `${getColorByToken(FOCUS_COLOR)}`
     },
     '&:hover': {
       cursor: 'pointer'
