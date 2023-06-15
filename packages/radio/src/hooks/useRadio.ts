@@ -10,16 +10,16 @@ const useRadio = (
   contextSetValue?: Dispatch<SetStateAction<string>> | null
 ) => {
   const [radioValue, setValue] = useState<string>('');
-  const ref = useRef<HTMLInputElement>(null);
+  const radioRef = useRef<HTMLInputElement | null>(null);
 
   const combineKeydownHandler = useCallback(
     (propsOnKeyDown?: (event: EventType) => void) => {
-      const radioRef = ref.current;
+      const refCurrent = radioRef.current;
       const defaultHandleKeydown = (e: EventType) => {
-        if (e.key === ' ' && !isUnavailable && radioRef) {
-          const targetValue = radioRef.value;
-          radioRef.checked = true;
-          radioRef.blur();
+        if (e.key === ' ' && !isUnavailable && refCurrent) {
+          const targetValue = refCurrent.value;
+          refCurrent.checked = true;
+          refCurrent.blur();
           if (contextSetValue) {
             contextSetValue(targetValue);
             return;
@@ -30,7 +30,7 @@ const useRadio = (
 
       return propsOnKeyDown ? callHandler(defaultHandleKeydown, propsOnKeyDown) : defaultHandleKeydown;
     },
-    [ref]
+    [radioRef]
   );
 
   const combineChangeHandler = (propsOnChange?: (event: EventType) => void) => {
@@ -53,7 +53,7 @@ const useRadio = (
 
   const handleChange = combineChangeHandler(radioProps.onChange as (event: EventType) => void);
   const handleKeyDown = combineKeydownHandler(radioProps.onKeyDown as (event: EventType) => void);
-  return { ref, radioValue, handleChange, handleKeyDown };
+  return { radioRef, radioValue, handleChange, handleKeyDown };
 };
 
 export default useRadio;

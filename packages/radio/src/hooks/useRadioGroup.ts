@@ -1,13 +1,16 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { ForwardedRef, useCallback, useEffect, useRef } from 'react';
 
-const useRadioGroup = (defalutValue: string | null) => {
-  const ref = useRef<HTMLDivElement>(null);
+const useRadioGroup = (defalutValue: string | null, externalRef?: ForwardedRef<HTMLInputElement>) => {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   const setDefaultValueCheck = useCallback(
-    (el: HTMLInputElement, targetValue: string | null) => {
+    (el: HTMLInputElement, targetValue: string | null, externalRef?: ForwardedRef<HTMLInputElement>) => {
       const isUnavailable = el.hasAttribute('readonly') || el.hasAttribute('disabled');
       if (targetValue && targetValue === el.value && !isUnavailable) {
         el.checked = true;
+      }
+      if (externalRef && typeof externalRef === 'function') {
+        externalRef(el);
       }
     },
     [ref]
@@ -17,7 +20,7 @@ const useRadioGroup = (defalutValue: string | null) => {
     if (ref.current) {
       const radioElements = ref.current.querySelectorAll('input[type="radio"]') as NodeListOf<HTMLInputElement>;
       radioElements.forEach(el => {
-        setDefaultValueCheck(el, defalutValue);
+        setDefaultValueCheck(el, defalutValue, externalRef);
       });
     }
   }, [ref]);
