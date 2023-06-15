@@ -1,9 +1,8 @@
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/
-    }
-  }
-};
+import { ThemeProvider } from '@jdesignlab/j-provider';
+export const decorators = [
+  Story => (
+    <ThemeProvider>
+      <Story />
+    </ThemeProvider>
+  )
+];

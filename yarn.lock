@@ -2743,7 +2743,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/j-provider@workspace:*, @jdesignlab/j-provider@workspace:packages/j-provider":
+"@jdesignlab/j-provider@workspace:*, @jdesignlab/j-provider@workspace:^, @jdesignlab/j-provider@workspace:packages/j-provider":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/j-provider@workspace:packages/j-provider"
   dependencies:
@@ -12848,6 +12848,7 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.5
     "@emotion/babel-preset-css-prop": ^11.10.0
     "@emotion/react": ^11.10.5
+    "@jdesignlab/j-provider": "workspace:^"
     "@mdx-js/react": ^1.6.22
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
