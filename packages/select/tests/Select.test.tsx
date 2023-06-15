@@ -37,12 +37,12 @@ describe('Select', () => {
       </Select>
     );
     const trigger = screen.getByRole('button');
-    const selectList = selectRender.container.querySelector('#jdesignlab-select-list');
+    const selectList = selectRender.container.querySelector('[id^="jdesignlab-select-list"]');
     fireEvent.click(trigger);
 
     if (selectList !== null) {
       const style = window.getComputedStyle(selectList);
-      expect(style.display).toBe('none');
+      expect(style.visibility).toBe('hidden');
       return;
     }
 
