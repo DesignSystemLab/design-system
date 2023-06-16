@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - '.changeset/**'
+      - 'packages/**'
   workflow_dispatch:
 jobs:
   deploy:
