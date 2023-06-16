@@ -77,19 +77,19 @@ describe('Card', () => {
     });
   });
 
-  it('size 속성이 sm을 갖는 Card 컴포넌트는 최대 너비가 480px으로 제한된다.', () => {
+  it('size 속성이 sm을 갖는 Card 컴포넌트는 최대 너비가 200px으로 제한된다.', () => {
     render(<BasicCard size="sm" />);
     const card = screen.getByRole('article');
     expect(card).toHaveStyle({
-      'max-width': '480px'
+      'max-width': '200px'
     });
   });
 
-  it('size 속성이 lg을 갖는 Card 컴포넌트는 최대 너비가 1024px으로 제한된다.', () => {
+  it('size 속성이 lg을 갖는 Card 컴포넌트는 최대 너비가 720px으로 제한된다.', () => {
     render(<BasicCard size="lg" />);
     const card = screen.getByRole('article');
     expect(card).toHaveStyle({
-      'max-width': '1024px'
+      'max-width': '720px'
     });
   });
 
