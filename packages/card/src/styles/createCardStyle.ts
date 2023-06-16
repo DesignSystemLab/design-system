@@ -6,6 +6,11 @@ import type { Direction, Size, Variant } from '../types';
 const createCardStyle = (size: Size, variant: Variant, backgroundColor: ColorToken, borderColor: ColorToken) => {
   const hexBorderColor = getColorByToken(borderColor);
 
+  const baseStyle = css({
+    boxSizing: 'border-box',
+    padding: '12px 24px'
+  });
+
   const variantStyle = () => {
     switch (variant) {
       case 'filled':
@@ -28,26 +33,21 @@ const createCardStyle = (size: Size, variant: Variant, backgroundColor: ColorTok
     switch (size) {
       case 'lg':
         return css({
-          fontSize: '20px',
-          padding: '18px',
-          maxWidth: '1024px'
+          maxWidth: '720px'
         });
       case 'sm':
         return css({
-          fontSize: '12px',
-          padding: '8px',
-          maxWidth: '480px'
+          maxWidth: '200px'
         });
+      //medium
       default:
         return css({
-          fontSize: '16px',
-          padding: '8px',
-          maxWidth: '720px'
+          maxWidth: '440px'
         });
     }
   };
 
-  return [variantStyle(), sizeStyle()];
+  return [baseStyle, variantStyle(), sizeStyle()];
 };
 
 export default createCardStyle;

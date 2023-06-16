@@ -7,6 +7,7 @@ const createContentStyle = (direction: Direction, borderColor: ColorToken) => {
     return css({
       boxSizing: 'border-box',
       borderRight: `1px solid ${borderColor}`,
+      maxWidth: '33%',
       wordWrap: 'break-word'
     });
   }
@@ -16,7 +17,6 @@ const createContentStyle = (direction: Direction, borderColor: ColorToken) => {
     wordWrap: 'break-word',
     boxSizing: 'border-box'
   });
-  // return css({ padding: '0', borderStyle: 'none', wordWrap: 'break-word' });
 };
 
 export default createContentStyle;
