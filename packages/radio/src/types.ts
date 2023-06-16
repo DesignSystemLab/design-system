@@ -3,13 +3,14 @@ import type { EventType } from '@jdesignlab/utils';
 import type { Dispatch, SetStateAction } from 'react';
 
 export type RadioSize = 'sm' | 'md' | 'lg';
+export type RadioValueType = string | number | boolean;
 export type RadioAttributes = { [key: string]: string | ((event: EventType) => void) };
 export interface ReturnContext {
   defaultValue?: string;
   name: string;
   rootProps: RadioAttributes | null;
   setValue: Dispatch<SetStateAction<string>> | null;
-  value: string | null;
+  value: RadioValueType | null;
 }
 
 export interface RadioLabelProps {
@@ -29,5 +30,5 @@ export interface RadioProps extends React.HTMLAttributes<HTMLInputElement> {
   readonly?: boolean;
   size?: RadioSize;
   name?: string;
-  value?: string;
+  value?: RadioValueType;
 }
