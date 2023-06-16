@@ -1,5 +1,5 @@
 import { Card } from '../src';
-import { Flex } from '@jdesignlab/flex';
+import { Text } from '@jdesignlab/typography';
 export default {
   title: 'Components/Card',
   component: Card,
@@ -10,9 +10,11 @@ const argTypes = {};
 
 const Template = args => (
   <>
-    <Card {...args} className={'testcard'} style={{ display: '' }}>
+    <Card {...args} className={'testcard'}>
       <Card.Header>
-        <h2>Famicom Controller</h2>
+        <Text variant="heading" size="lg" color="orange-accent2">
+          Super Famicom
+        </Text>
       </Card.Header>
       <Card.Divider />
       <Card.Body>
@@ -47,30 +49,22 @@ const Template = args => (
 export const Basic = () => {
   return (
     <ul>
-      <Card
-        as="li"
-        align="center"
-        size="sm"
-        variant="filled"
-        direction="horizontal"
-        justify="start"
-        role={'list'}
-        className="ASed"
-      >
+      <Card as="li" align="center" size="md" direction="horizontal" justify="around" className="sample-classname">
         <Card.Header>
-          <h1>Title</h1>
+          <Text>Left</Text>
         </Card.Header>
         <Card.Divider />
         <Card.Body>
-          <p>Card Content.</p>
+          <Text>Center</Text>
         </Card.Body>
+        <Card.Divider />
         <Card.Footer>
-          <p>Footer</p>
+          <Text>Right</Text>
         </Card.Footer>
       </Card>
-      <Card as="li" align="center" direction="vertical" justify="start">
+      <Card as="li" align="start" direction="vertical" justify="start">
         <Card.Header>
-          <h1>Title</h1>
+          <p>Title</p>
         </Card.Header>
         <Card.Divider />
         <Card.Body>
@@ -84,10 +78,6 @@ export const Basic = () => {
     </ul>
   );
 };
-
-// export const SmallCard = () => {
-//   <Card></Card>;
-// };
 
 export const Example = Template.bind({});
 Example.argTypes = argTypes;
