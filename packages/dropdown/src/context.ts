@@ -1,10 +1,8 @@
 import { createContext } from 'react';
 
 export const DropdownContext = createContext({
-  open: false,
-  setOpen: (value: boolean) => {},
+  width: 0,
   placement: 'top',
-  lazy: false,
   triggerWidth: 0,
   setTriggerWidth: (w: any) => {},
   triggerHeight: 0,

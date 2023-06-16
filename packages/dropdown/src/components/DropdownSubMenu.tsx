@@ -7,13 +7,13 @@ import type { DropdownSubMenuProps } from '../types';
 
 export const SubMenu = (props: DropdownSubMenuProps) => {
   const { children, ...otherProps } = props;
-  const { open } = useContext(DropdownContext);
+  const { width } = useContext(DropdownContext);
   const { subOpen } = useContext(DropdownSubContext);
   const [menuStyle, setMenuStyle] = useState<ReturnType<typeof css>>();
   const menuRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    setMenuStyle(css({ ...dropdownSubLocationStyle(menuRef) }, { ...dropdownMenuStyle }));
+    setMenuStyle(css({ ...dropdownSubLocationStyle(menuRef, width) }, { ...dropdownMenuStyle }));
   }, [open]);
 
   return (

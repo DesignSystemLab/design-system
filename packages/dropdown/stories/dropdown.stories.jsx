@@ -21,13 +21,13 @@ export const DropdownBasic = () => (
       gap: '200px',
       alignItems: 'start',
       width: '100vw',
-      height: '100vh'
-      // transform: 'translate(100px, 100px)'
+      height: '100vh',
+      transform: 'translate(100px, 100px)'
     }}
   >
-    <Dropdown gap={4} placement="right" lazy>
+    <Dropdown gap={4} placement="right" width={200}>
       <Dropdown.Trigger>
-        <Button color="lime-lighten5">lazy</Button>
+        <Button color="lime-lighten5">click</Button>
       </Dropdown.Trigger>
       <Dropdown.Menu>
         <Dropdown.MenuItem
@@ -100,7 +100,7 @@ export const DropdownBasic = () => (
         <Dropdown.MenuItem disabled>이건 disabled</Dropdown.MenuItem>
       </Dropdown.Menu>
     </Dropdown>
-    <Dropdown gap={4} placement="right">
+    {/* <Dropdown gap={4} placement="right">
       <Dropdown.Trigger>
         <Button color="lime-lighten5">click</Button>
       </Dropdown.Trigger>
@@ -174,6 +174,6 @@ export const DropdownBasic = () => (
         <Dropdown.Divider />
         <Dropdown.MenuItem disabled>이건 disabled</Dropdown.MenuItem>
       </Dropdown.Menu>
-    </Dropdown>
+    </Dropdown> */}
   </div>
 );

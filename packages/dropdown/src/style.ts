@@ -70,11 +70,33 @@ export const dropdownDividerStyle = css({
 
 export const dropdownLocationStyle = (
   labelRef: React.RefObject<HTMLUListElement>,
+  width: number,
   triggerWidth: number,
   triggerHeight: number,
   gap: number,
   placement: string | undefined
 ) => {
+  const defaultStyle = {
+    // position: 'absolute',
+    zIndex: 100,
+    minWidth: `${width}px`,
+    margin: 0,
+    background: 'rgba(255,255,255,0.5)',
+    backdropFilter: 'blur(20px)',
+    display: 'flex',
+    border: 'solid lightgray 1px',
+    borderRadius: '6px',
+    padding: '5px',
+    boxShadow: '10.5px 10.5px 15px -4.5px rgba(100,100,100,0.2)',
+    'flex-direction': 'column', // TODO <ul></ul>??
+    '&.menu_open': {
+      display: 'flex'
+    },
+    '&.menu_close': {
+      display: 'none'
+    }
+  };
+
   const labelWidth = labelRef.current ? labelRef.current.offsetWidth : 0;
   const labelHeight = labelRef.current ? labelRef.current.offsetHeight : 0;
   const centerX = { left: triggerWidth / 2, transform: `translateX(-${labelWidth / 2}px)` };
@@ -86,23 +108,23 @@ export const dropdownLocationStyle = (
 
   switch (placement) {
     case 'top':
-      return css({ ...moveTop, ...centerX });
+      return css({ ...defaultStyle, ...moveTop, ...centerX });
     case 'right':
-      return css({ ...moveRight, ...centerY });
+      return css({ ...defaultStyle, ...moveRight, ...centerY });
     case 'left':
-      return css({ ...moveLeft, ...centerY });
+      return css({ ...defaultStyle, ...moveLeft, ...centerY });
     case 'bottom':
-      return css({ ...moveBottom, ...centerX });
+      return css({ ...defaultStyle, ...moveBottom, ...centerX });
     default: //top
-      return css({ ...moveBottom, ...centerX });
+      return css({ ...defaultStyle, ...moveBottom, ...centerX });
   }
 };
 
-export const dropdownSubLocationStyle = (labelRef: React.RefObject<HTMLUListElement>) => {
+export const dropdownSubLocationStyle = (labelRef: React.RefObject<HTMLUListElement>, width: number) => {
   const menu = labelRef.current?.closest<HTMLElement>('[role="menu"]');
   const rightSub = {
-    left: `${menu?.offsetWidth || 0}px`,
-    transform: 'translate(15px, -30px)'
+    left: `${width}px`,
+    transform: 'translate(12px, -30px)'
   };
   return css({
     ...rightSub,
