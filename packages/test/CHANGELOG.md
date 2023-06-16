@@ -1,5 +1,11 @@
 # @jdesignlab/test
 
+## 0.7.4
+
+### Patch Changes
+
+- @jdesignlab/typography@0.5.4
+
 ## 0.7.3
 
 ### Patch Changes

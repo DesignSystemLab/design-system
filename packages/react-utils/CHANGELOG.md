@@ -1,5 +1,11 @@
 # @jdesignlab/react-utils
 
+## 0.7.0
+
+### Minor Changes
+
+- supply react hook form
+
 ## 0.6.0
 
 ### Minor Changes

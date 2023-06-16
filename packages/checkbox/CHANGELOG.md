@@ -1,5 +1,17 @@
 # @jdesignlab/checkbox
 
+## 0.6.0
+
+### Minor Changes
+
+- supply react hook form
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.7.0
+  - @jdesignlab/j-provider@0.6.2
+
 ## 0.5.3
 
 ### Patch Changes

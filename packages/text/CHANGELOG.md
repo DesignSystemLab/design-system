@@ -1,5 +1,13 @@
 # @jdesignlab/typography
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.7.0
+  - @jdesignlab/j-provider@0.6.2
+
 ## 0.5.3
 
 ### Patch Changes

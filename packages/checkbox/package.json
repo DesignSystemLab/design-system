@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/checkbox",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "main": "src/index.ts",
   "packageManager": "yarn@3.3.1",
   "files": [

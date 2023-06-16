@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/box",
   "packageManager": "yarn@3.3.1",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "main": "src/index.ts",
   "files": [
     "dist"

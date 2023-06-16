@@ -2536,6 +2536,7 @@ __metadata:
     jest-preview: latest
     react: ^18.2.0
     react-dom: ^18.2.0
+    react-hook-form: ^7.44.3
     rimraf: ^4.1.2
     rollup: ^3.12.0
     rollup-plugin-typescript2: ^0.34.1
@@ -16414,6 +16415,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1
   checksum: 42bcd4423f12e9ee21b2d3f0c2a28805ff4953bd82b6be4c1f5b5f9a371115aafa36a6f3d82726d43b4912179b79e99550c2b9a772c7fe6a5cd8f7e93ff34ceb
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.44.3":
+  version: 7.44.3
+  resolution: "react-hook-form@npm:7.44.3"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 8dc97e705d28d842c60fd79b0f07b8b045c458c234e3bf422baab87a844d0ebecbdf3e349538eaaa5c12366cd85169f60a52ed84dd31cdd99729899e424548bf
   languageName: node
   linkType: hard
 

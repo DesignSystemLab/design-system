@@ -1,5 +1,17 @@
 # @jdesignlab/dropdown
 
+## 0.6.0
+
+### Minor Changes
+
+- supply react hook form
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.7.0
+  - @jdesignlab/flex@0.5.4
+
 ## 0.5.4
 
 ### Patch Changes
