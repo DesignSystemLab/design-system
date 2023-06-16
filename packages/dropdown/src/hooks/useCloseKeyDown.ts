@@ -1,26 +1,15 @@
-import type { Dispatch, SetStateAction } from 'react';
 import React, { useContext, useCallback, RefObject } from 'react';
+import useToggleOpen from './useToggleOpen';
 
-const useCloseKeyDown = () => {
-  const handleKeyDown = useCallback(
-    (
-      event: React.KeyboardEvent<HTMLElement>,
-      menuRef: RefObject<HTMLElement>,
-      open: boolean,
-      setOpen: (value: boolean) => void
-    ) => {
-      if (!menuRef.current) return;
-      switch (event.key) {
-        case 'Escape':
-          event.preventDefault();
-          if (open) setOpen(!open);
-          return;
-      }
-    },
-    []
-  );
-
-  return handleKeyDown;
+const useCloseKeyDown = () => (event: React.KeyboardEvent<HTMLElement>) => {
+  const el = event.currentTarget;
+  switch (event.key) {
+    case 'Escape':
+    case 'Esc':
+      event.preventDefault();
+      useToggleOpen(el);
+      return;
+  }
 };
 
 export default useCloseKeyDown;

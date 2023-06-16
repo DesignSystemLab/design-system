@@ -22,7 +22,7 @@ describe('checkbox element features', () => {
   });
 
   it('has checked value if it has checked property', () => {
-    render(<Checkbox checked={true}>checkbox</Checkbox>);
+    render(<Checkbox defaultChecked={true}>checkbox</Checkbox>);
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toBeChecked();
   });

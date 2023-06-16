@@ -1,19 +1,14 @@
 /** @jsxImportSource @emotion/react */
-import { Flex } from '@jdesignlab/flex';
-import { ChevronRight, Checkmark } from '@jdesignlab/react-icons';
-import { useContext, useRef, useState } from 'react';
-import { DropdownContext, DropdownSubContext } from '../context';
+import { useRef, useState } from 'react';
+import { DropdownSubContext } from '../context';
 import { dropdownItemStyle } from '../style';
 import type { DropdownMenuItemProps } from '../types';
-import useArrowKeyDown from '../hooks/useArrowKeyDown';
 import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
-  const { open } = useContext(DropdownContext);
   const { children, onClick, sub, ...otherProps } = props;
   const disabled = props.disabled === undefined ? false : props.disabled;
-  const keyDownHandle = useArrowKeyDown();
   const [subOpen, setSubOpen] = useState<boolean>(false);
 
   const onMouseOverHandle = () => {
@@ -44,7 +39,7 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
         {...otherProps}
         ref={menuItemRef}
         role="menuitem"
-        tabIndex={open ? 0 : -1}
+        tabIndex={0}
         className="menu_item"
         aria-disabled={disabled ? true : false}
         css={{ ...dropdownItemStyle(disabled) }}

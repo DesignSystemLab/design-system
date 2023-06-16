@@ -8,7 +8,8 @@ const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 export const buttonDefaultStyle = css({
   position: 'relative',
-  display: 'block',
+  display: 'inline-flex',
+  justifyContent: 'center',
   alignItems: 'center',
   gap: '4px',
   flexShrink: '0',

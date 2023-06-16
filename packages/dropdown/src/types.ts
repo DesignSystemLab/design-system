@@ -4,9 +4,9 @@ import type { ColorToken } from '@jdesignlab/theme';
 
 export interface DropdownProps {
   children?: React.ReactNode;
+  width?: number;
   placement?: string;
   gap?: number | string;
-  lazy?: boolean;
 }
 
 export interface DropdownTriggerProps {

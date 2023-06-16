@@ -2,7 +2,7 @@
 
 import type { DropdownProps } from '../types';
 import { dropdownWrapperStyle, dropdownOverlayStyle } from '../style';
-import { useState, useRef } from 'react';
+import { useState, useRef, useMemo, useEffect, MouseEvent, MouseEventHandler } from 'react';
 import { Divider } from './DropdownDivider';
 import { Menu } from './DropdownMenu';
 import { Trigger } from './DropdownTrigger';
@@ -12,18 +12,15 @@ import { SubMenuItem } from './DropdownSubMenuItem';
 import { DropdownContext } from '../context';
 
 export const Dropdown = (props: DropdownProps) => {
-  const [open, setOpen] = useState<boolean>(false);
   const [triggerWidth, setTriggerWidth] = useState<number>(0);
   const [triggerHeight, setTriggerHeight] = useState<number>(0);
-  const { children, lazy, ...otherProps } = props;
+  const { children, width = 200, ...otherProps } = props;
   const placement = props.placement === undefined ? 'bottom' : props.placement;
   const gap = Number(props.gap) || 0;
 
   const providerValue = {
-    open,
-    setOpen,
     placement,
-    lazy: lazy || false,
+    width,
     triggerWidth,
     setTriggerWidth,
     triggerHeight,
@@ -31,14 +28,10 @@ export const Dropdown = (props: DropdownProps) => {
     gap
   };
 
-  const onClickOverlayHandle = () => {
-    setOpen(false);
-  };
-
   return (
     <DropdownContext.Provider value={providerValue}>
-      {open && <div css={dropdownOverlayStyle} className="menu_overlay" onClick={onClickOverlayHandle}></div>}
       <div css={dropdownWrapperStyle} {...otherProps} className="menu_wrapper">
+        {/* <div css={dropdownOverlayStyle} className="menu_overlay" onClick={e => useToggleOpen(e.currentTarget)}></div> */}
         {children}
       </div>
     </DropdownContext.Provider>
