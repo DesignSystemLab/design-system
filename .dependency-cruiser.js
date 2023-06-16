@@ -101,23 +101,6 @@ module.exports = {
         couldNotResolve: true
       }
     },
-    // {
-    //   name: 'no-duplicate-dep-types',
-    //   comment:
-    //     "Likely this module depends on an external ('npm') package that occurs more than once " +
-    //     'in your package.json i.e. bot as a devDependencies and in dependencies. This will cause ' +
-    //     'maintenance problems later on.',
-    //   severity: 'warn',
-    //   from: {},
-    //   to: {
-    //     moreThanOneDependencyType: true,
-    //     // as it's pretty common to have a type import be a type only import
-    //     // _and_ (e.g.) a devDependency - don't consider type-only dependency
-    //     // types for this rule
-    //     dependencyTypesNot: ['type-only']
-    //   }
-    // },
-
     /* rules you might want to tweak for your specific situation: */
     {
       name: 'not-to-spec',
@@ -131,23 +114,6 @@ module.exports = {
         path: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$'
       }
     },
-    // {
-    //   name: 'not-to-dev-dep',
-    //   severity: 'error',
-    //   comment:
-    //     "This module depends on an npm package from the 'devDependencies' section of your " +
-    //     'package.json. It looks like something that ships to production, though. To prevent problems ' +
-    //     "with npm packages that aren't there on production declare it (only!) in the 'dependencies'" +
-    //     'section of your package.json. If this module is development only - add it to the ' +
-    //     'from.pathNot re of the not-to-dev-dep rule in the dependency-cruiser configuration',
-    //   from: {
-    //     path: '^(packages)',
-    //     pathNot: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$'
-    //   },
-    //   to: {
-    //     dependencyTypes: ['npm-dev']
-    //   }
-    // },
     {
       name: 'optional-deps-used',
       severity: 'info',
@@ -161,19 +127,6 @@ module.exports = {
         dependencyTypes: ['npm-optional']
       }
     }
-    // {
-    //   name: 'peer-deps-used',
-    //   comment:
-    //     'This module depends on an npm package that is declared as a peer dependency ' +
-    //     'in your package.json. This makes sense if your package is e.g. a plugin, but in ' +
-    //     'other cases - maybe not so much. If the use of a peer dependency is intentional ' +
-    //     'add an exception to your dependency-cruiser configuration.',
-    //   severity: 'warn',
-    //   from: {},
-    //   to: {
-    //     dependencyTypes: ['npm-peer']
-    //   }
-    // }
   ],
   options: {
     /* conditions specifying which files not to follow further when encountered:
@@ -182,7 +135,7 @@ module.exports = {
        for a complete list
     */
     doNotFollow: {
-      path: ['node_modules', 'dist', 'checkbox']
+      path: ['node_modules', 'dist']
     },
 
     /* conditions specifying which dependencies to exclude
