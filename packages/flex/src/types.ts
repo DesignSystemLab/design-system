@@ -9,7 +9,7 @@ export type Self = 'auto' | 'stretch' | 'flex-start' | 'flex-end' | 'center' | '
 
 export interface FlexContainerProps extends Omit<CSSObject, Direction> {
   [propertiesName: string]: any;
-  children?: React.ReactElement[];
+  children?: React.ReactNode;
   style?: CSSObject;
   direction?: Direction;
   wrap?: Wrap;
