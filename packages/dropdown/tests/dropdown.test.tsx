@@ -19,9 +19,9 @@ const DISABLED_ITEM = 'disabled-menu-item';
 
 const onClick = jest.fn();
 
-function renderDropdown(lazy?: any) {
+function renderDropdown() {
   return render(
-    <Dropdown data-testid={DROPDOWN_WRAPPER} gap={4} placement="bottom" lazy={lazy}>
+    <Dropdown data-testid={DROPDOWN_WRAPPER} gap={4} placement="bottom">
       <Dropdown.Trigger data-testid={DROPDOWN_TRIGGER}>
         <button>click</button>
       </Dropdown.Trigger>
@@ -114,20 +114,6 @@ describe('disabled', () => {
     renderDropdown();
     const disabledItem = screen.getByTestId(DISABLED_ITEM);
     expect(disabledItem).toHaveAttribute('aria-disabled', 'true');
-  });
-});
-
-describe('lazy', () => {
-  it('has already rendered items if it is not lazy', () => {
-    renderDropdown(false);
-    const dropdown = screen.getByTestId(DROPDOWN_MENU);
-    expect(dropdown).toBeInTheDocument();
-  });
-
-  it('should not render items if it is lazy', () => {
-    renderDropdown(true); // to be clear
-    const dropdown = screen.queryByTestId(DROPDOWN_MENU);
-    expect(dropdown).not.toBeInTheDocument();
   });
 });
 
