@@ -14,6 +14,12 @@ const Template = args => <Flex {...args} />;
 export const Basic = () => (
   <>
     <Flex direction="row">
+      <Flex.Item style={{ color: 'white', width: '100px', height: '100px', background: 'red', textAlign: 'center' }}>
+        Solo
+      </Flex.Item>
+    </Flex>
+    <hr />
+    <Flex direction="row">
       <Flex.Item style={{ width: '100px', height: '100px', background: 'red' }}>1</Flex.Item>
       <Flex.Item style={{ width: '100px', height: '100px', background: 'blue' }}>2</Flex.Item>
       <Flex.Item style={{ width: '100px', height: '100px', background: 'green' }}>3</Flex.Item>
