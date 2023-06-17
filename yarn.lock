@@ -2469,6 +2469,7 @@ __metadata:
     "@emotion/react": ^11.10.5
     "@jdesignlab/flex": "workspace:*"
     "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/typography": "workspace:^"
     "@jdesignlab/utils": "workspace:*"
     "@rollup/plugin-babel": ^6.0.3
     "@rollup/plugin-commonjs": ^24.0.1
@@ -3300,7 +3301,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/typography@workspace:*, @jdesignlab/typography@workspace:packages/text":
+"@jdesignlab/typography@workspace:*, @jdesignlab/typography@workspace:^, @jdesignlab/typography@workspace:packages/text":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/typography@workspace:packages/text"
   dependencies:
