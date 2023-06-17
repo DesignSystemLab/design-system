@@ -17,6 +17,7 @@ export interface FlexContainerProps extends Omit<CSSObject, Direction> {
   items?: Align;
   content?: Content;
   gap?: number | string;
+  as?: React.ElementType;
 }
 
 export interface FlexItemProps extends CSSObject {
