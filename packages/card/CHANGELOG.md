@@ -1,5 +1,16 @@
 # @jdesignlab/card
 
+## 0.6.0
+
+### Minor Changes
+
+- Card UI update
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/flex@0.6.0
+
 ## 0.5.4
 
 ### Patch Changes

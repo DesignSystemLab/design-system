@@ -1,5 +1,11 @@
 # @jdesignlab/flex
 
+## 0.6.0
+
+### Minor Changes
+
+- Fixed the issue with handling flex single items
+
 ## 0.5.4
 
 ### Patch Changes

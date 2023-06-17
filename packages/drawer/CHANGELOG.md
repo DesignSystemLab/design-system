@@ -1,5 +1,12 @@
 # @jdesignlab/drawer
 
+## 0.5.7
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/flex@0.6.0
+
 ## 0.5.6
 
 ### Patch Changes

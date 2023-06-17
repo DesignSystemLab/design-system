@@ -1,5 +1,18 @@
 # @jdesignlab/react
 
+## 0.6.8
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/card@0.6.0
+  - @jdesignlab/flex@0.6.0
+  - @jdesignlab/drawer@0.5.7
+  - @jdesignlab/dropdown@0.6.1
+  - @jdesignlab/modal@0.7.8
+  - @jdesignlab/select@0.7.1
+
 ## 0.6.7
 
 ### Patch Changes
