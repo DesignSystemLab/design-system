@@ -1,5 +1,11 @@
 # @jdesignlab/flex
 
+## 0.7.0
+
+### Minor Changes
+
+- change container children typwe
+
 ## 0.6.0
 
 ### Minor Changes

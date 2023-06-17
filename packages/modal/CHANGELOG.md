@@ -1,5 +1,12 @@
 # @jdesignlab/modal
 
+## 0.7.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/flex@0.7.0
+
 ## 0.7.8
 
 ### Patch Changes

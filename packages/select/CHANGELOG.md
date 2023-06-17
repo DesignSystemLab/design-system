@@ -1,5 +1,12 @@
 # @jdesignlab/select
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/flex@0.7.0
+
 ## 0.7.1
 
 ### Patch Changes
