@@ -1,5 +1,11 @@
 # @jdesignlab/react
 
+## 0.7.0
+
+### Minor Changes
+
+- export Popover
+
 ## 0.6.9
 
 ### Patch Changes
