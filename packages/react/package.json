@@ -37,6 +37,7 @@
     "@jdesignlab/input": "workspace:*",
     "@jdesignlab/j-provider": "workspace:*",
     "@jdesignlab/modal": "workspace:*",
+    "@jdesignlab/popover": "workspace:*",
     "@jdesignlab/radio": "workspace:*",
     "@jdesignlab/react-utils": "workspace:*",
     "@jdesignlab/select": "workspace:*",
