@@ -14,7 +14,7 @@
     "build-clean": "yarn allpackages run rimraf _release/",
     "build-release": "yarn allpackages exec rm -rf _release && yarn allpackages pack && yarn allpackages exec \"mkdir _release && tar zxvf package.tgz --directory _release && rm package.tgz\"",
     "version": "changeset version",
-    "release": "yarn build:release && changeset publish",
+    "release": "yarn build-release && changeset publish",
     "cruiser": "dependency-cruiser packages",
     "cruiser-graph": "dependency-cruiser packages --output-type dot --output-to graph.dot"
   },
