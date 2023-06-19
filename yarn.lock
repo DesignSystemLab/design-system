@@ -2823,7 +2823,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jdesignlab/popover@workspace:packages/popover":
+"@jdesignlab/popover@workspace:*, @jdesignlab/popover@workspace:packages/popover":
   version: 0.0.0-use.local
   resolution: "@jdesignlab/popover@workspace:packages/popover"
   dependencies:
@@ -2977,6 +2977,7 @@ __metadata:
     "@jdesignlab/input": "workspace:*"
     "@jdesignlab/j-provider": "workspace:*"
     "@jdesignlab/modal": "workspace:*"
+    "@jdesignlab/popover": "workspace:*"
     "@jdesignlab/radio": "workspace:*"
     "@jdesignlab/react-utils": "workspace:*"
     "@jdesignlab/select": "workspace:*"
