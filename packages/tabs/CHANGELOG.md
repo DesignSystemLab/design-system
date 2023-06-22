@@ -1,5 +1,16 @@
 # @jdesignlab/tabs
 
+## 0.6.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.8.0
+
 ## 0.5.0
 
 ### Minor Changes

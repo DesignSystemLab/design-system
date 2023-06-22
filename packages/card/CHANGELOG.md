@@ -1,5 +1,16 @@
 # @jdesignlab/card
 
+## 0.7.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/flex@0.8.0
+
 ## 0.6.1
 
 ### Patch Changes

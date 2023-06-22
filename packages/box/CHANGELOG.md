@@ -1,5 +1,17 @@
 # @jdesignlab/box
 
+## 0.6.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/j-provider@0.7.0
+  - @jdesignlab/button@0.9.0
+
 ## 0.5.6
 
 ### Patch Changes

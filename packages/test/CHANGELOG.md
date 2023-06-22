@@ -1,5 +1,16 @@
 # @jdesignlab/test
 
+## 0.8.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/typography@0.6.0
+
 ## 0.7.4
 
 ### Patch Changes

@@ -12,11 +12,11 @@ export const SelectInput = () => {
   const { handleInput, handleInputEnter } = useSearchOptions();
   const { handleInputKeydown } = useKeyboardNavigation();
 
-  useEffect(() => {
-    if (comboboxInputRef.current) {
-      comboboxInputRef.current.focus();
-    }
-  }, [comboboxInputRef]);
+  // useEffect(() => {
+  //   if (comboboxInputRef.current) {
+  //     // comboboxInputRef.current.focus();
+  //   }
+  // }, [comboboxInputRef]);
 
   return (
     <input

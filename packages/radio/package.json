@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/radio",
   "packageManager": "yarn@3.3.1",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "src/index.ts",
   "files": [
     "dist"
@@ -26,9 +26,6 @@
     "@emotion/babel-plugin": "^11.10.5",
     "@emotion/babel-preset-css-prop": "^11.10.0",
     "@emotion/react": "^11.10.5",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-node-resolve": "^15.0.1",
     "@storybook/react": "^6.5.16",
     "@testing-library/dom": "^9.0.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -43,8 +40,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^4.1.2",
-    "rollup": "^3.12.0",
-    "rollup-plugin-typescript2": "^0.34.1",
     "ts-jest": "^29.0.5",
     "tslib": "^2.5.0",
     "tsup": "^6.7.0",

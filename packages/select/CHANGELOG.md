@@ -1,5 +1,18 @@
 # @jdesignlab/select
 
+## 0.8.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.8.0
+  - @jdesignlab/button@0.9.0
+  - @jdesignlab/flex@0.8.0
+
 ## 0.7.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @jdesignlab/textarea
 
+## 0.8.0
+
+### Minor Changes
+
+- Remove rollup packages and configure files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.8.0
+  - @jdesignlab/typography@0.6.0
+
 ## 0.7.2
 
 ### Patch Changes
