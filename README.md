@@ -17,14 +17,14 @@
 
 ## Installation
 
-💄 `emotion` 환경에서 동작하기 때문에 emotion dpendency가 필요합니다.
-**React UI Component**  
+💄 `emotion` 환경에서 동작하기 때문에 emotion dpendency가 필요합니다.  
+**React UI Component**
 
 ```bash
 npm install --save @jdesignlab/react @emotion/react@^11
 ```
 
-**SVG Icons**  
+**SVG Icons**
 
 ```bash
 npm install --save @jdesignlab/react-icons @emotion/react@^11
