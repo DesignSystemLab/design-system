@@ -53,7 +53,7 @@ import {Mail, Bell, Book, ...} from '@jdesignlab/react-icons'
 - **[⌨️ Keyboard Controll: 키보드 제어 기능을 포함하여 사용자 상호작용과 접근성에 주의를 기울였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Keyboard-Control)**
 - **[✅ dependency-cruiser를 사용하여 의존성을 체크하여 패키지 간 참조 관계를 검사하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/dependency-cruiser)**
 - **[💅 Emotion을 사용하여 컴포넌트 스타일링을 구현하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Styling-Library:-Emotion)**
-- **[🧪 Jest와 React Testing Library를 사용하여 테스트를 구성하였습니다.](https://papago.naver.com/?sk=en&tk=ko&hn=1&st=Test%20Using%20JEST%20%25amp%20React%20Testing%20Library)**
+- **[🧪 Jest와 React Testing Library를 사용하여 테스트를 구성하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Test-Using-JEST-&-React-Testing-Library)**
 - **[📦 모듈 번들링을 위해 tsup을 사용하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/tsup%EC%9D%84-%ED%99%9C%EC%9A%A9%ED%95%9C-%EB%B2%88%EB%93%A4%EB%A7%81)**
 - **[🚀 Changeset과 함께 CI/CD 파이프라인을 구축하여 자동화된 빌드 및 배포 환경을 구성하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/%F0%9F%A6%8B-Changeset-CI-CD)**
 
