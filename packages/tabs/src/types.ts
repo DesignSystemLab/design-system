@@ -10,7 +10,6 @@ export interface TabsProps {
   variant?: TabVariant;
   onChange?: () => void;
   size?: TabSize;
-  color?: ColorToken;
   lazy?: boolean;
   full?: boolean;
 }
