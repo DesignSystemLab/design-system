@@ -8,7 +8,7 @@ export interface TabsProps {
   children: React.ReactNode;
   defaultValue?: string;
   variant?: TabVariant;
-  onChange?: () => {};
+  onChange?: () => void;
   size?: TabSize;
   color?: ColorToken;
   lazy?: boolean;
@@ -34,5 +34,5 @@ export interface TabChangeHandleProps {
   selectedTab: string | undefined;
   hasTouched: boolean;
   setHasTouched: Dispatch<SetStateAction<boolean>>;
-  onChange?: () => {};
+  onChange?: () => void;
 }
