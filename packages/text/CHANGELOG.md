@@ -1,5 +1,11 @@
 # @jdesignlab/typography
 
+## 0.7.0
+
+### Minor Changes
+
+- bug fixing & add truncate feature (Text)
+
 ## 0.6.0
 
 ### Minor Changes
