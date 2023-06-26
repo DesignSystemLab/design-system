@@ -8,7 +8,7 @@ import Trigger from './TabTrigger';
 import Content from './TabContent';
 
 export const Tabs = (props: TabsProps) => {
-  const { children, defaultValue, onChange } = props;
+  const { children, defaultValue, onChange, ...rest } = props;
   const [selectedTab, setSelectedTab] = useState<string>(defaultValue || '');
   const [hasTouched, setHasTouched] = useState<boolean>(false);
 
@@ -31,7 +31,7 @@ export const Tabs = (props: TabsProps) => {
 
   return (
     <TabsContext.Provider value={contextValue}>
-      <div>{children}</div>
+      <div {...rest}>{children}</div>
     </TabsContext.Provider>
   );
 };
