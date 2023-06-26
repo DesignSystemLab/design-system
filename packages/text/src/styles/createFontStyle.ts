@@ -7,9 +7,19 @@ export const createFontStyle = (
   style: FontStyleToken,
   decoration: FontDecoration,
   align: FontAlign,
-  color: HEX
+  color: HEX,
+  truncate: boolean
 ) => {
+  let truncateStyle = {};
+  if (truncate) {
+    truncateStyle = {
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis'
+    };
+  }
   return css({
+    ...truncateStyle,
     textTransform: transform,
     fontStyle: style,
     textDecoration: decoration,

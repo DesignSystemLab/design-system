@@ -16,7 +16,9 @@ export const Text = (props: TextProps) => {
     fontStyle = 'normal',
     decoration = 'none',
     align = 'start',
-    color = DEFAULT_COLOR
+    color = DEFAULT_COLOR,
+    truncate = false,
+    ...rest
   } = props;
 
   const elementToken: ElementToken = variant === 'heading' ? `${variant}-${size}` : variant;
@@ -25,7 +27,10 @@ export const Text = (props: TextProps) => {
   const fontColor = getColorByTokenOrHex(color);
 
   return (
-    <Component css={[typography(size, variant), createFontStyle(transform, fontStyle, decoration, align, fontColor)]}>
+    <Component
+      css={[typography(size, variant), createFontStyle(transform, fontStyle, decoration, align, fontColor, truncate)]}
+      {...rest}
+    >
       {text}
     </Component>
   );
