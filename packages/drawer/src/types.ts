@@ -16,6 +16,7 @@ export interface DrawerProps extends DrawerCallback {
   children?: React.ReactNode;
   open?: boolean;
   placement?: Placement;
+  full?: boolean;
 }
 
 export type DrawerChildrenProps = {

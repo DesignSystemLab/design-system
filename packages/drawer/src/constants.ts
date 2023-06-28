@@ -1,10 +1,11 @@
 import type { ColorToken } from '@jdesignlab/theme';
 import type { DrawerProps } from './types';
 
-type DrwaerOption = Pick<DrawerProps, 'open' | 'placement'>;
+type DrwaerOption = Pick<DrawerProps, 'open' | 'placement' | 'full'>;
 
 const DEFAULT_OPTIONS: Required<DrwaerOption> = {
   open: false,
+  full: false,
   placement: 'left'
 };
 

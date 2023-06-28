@@ -15,26 +15,25 @@ import type { DrawerChildrenProps } from '../types';
 export const DrawerContent = (props: DrawerChildrenProps) => {
   const isInitialRendered = useInitialRender();
   const { drawerProps, setOpen, isOpen } = useContext(DrawerContext);
-  const { onOpen, onClose, placement } = drawerProps;
+  const { onOpen, onClose, placement, full } = drawerProps;
   const { stopEventHandler, closeDrawer } = useDrawer();
   const drawerId = props.id ? props.id : `${DRAWER_ID_PREFIX}-${useId()}`;
-  const activeClassName = isOpen ? 'open' : 'close';
   useDrawerEffect(isOpen, isInitialRendered, onClose, onOpen);
 
   useEffect(() => {
     setOpen(drawerProps.open);
   }, [drawerProps.open]);
 
-  return isOpen ? (
+  return (
     <div
       className={`${createClassVariant('drawer', 'wrapper')}`}
-      css={overlayStyle(DRAWER_OVERRAY_BACKGROUND)}
+      css={overlayStyle(DRAWER_OVERRAY_BACKGROUND, isOpen)}
       onClick={event => closeDrawer(event, setOpen)}
       aria-labelledby={drawerId}
     >
       <div
         className={`${createClassVariant('drawer', 'content')}`}
-        css={directionStyle(placement, DRAWER_BACKROUND)}
+        css={directionStyle(placement, DRAWER_BACKROUND, isOpen, full)}
         onClick={stopEventHandler}
         role="dialog"
         aria-modal="true"
@@ -44,5 +43,5 @@ export const DrawerContent = (props: DrawerChildrenProps) => {
         <div css={flex()}>{props.children}</div>
       </div>
     </div>
-  ) : null;
+  );
 };
