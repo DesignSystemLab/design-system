@@ -3,17 +3,23 @@ import { getColorByToken, setTextColorByBackground, createClassVariant } from '@
 import { BoxProps } from '../types';
 
 export const Box = (props: BoxProps) => {
-  const { children, as = 'div', color, style = {}, className, role = 'presentation', ...restProps } = props;
+  const {
+    children,
+    as = 'div',
+    color,
+    backgroundColor = 'shades-transparent',
+    style = {},
+    className,
+    role = 'presentation',
+    ...restProps
+  } = props;
   const Component = as;
   const defaultClassName = createClassVariant('box', 'wrapper');
   const boxClassName = className ? `${defaultClassName} ${className}` : defaultClassName;
-
-  if (color) {
-    const bgColor = getColorByToken(color);
-    const textColor = setTextColorByBackground(bgColor);
-    style.color = textColor;
-    style.backgroundColor = bgColor;
-  }
+  const defaultBackgroundColor = getColorByToken(backgroundColor);
+  const defaultTextColor = setTextColorByBackground(defaultBackgroundColor);
+  style.backgroundColor = defaultBackgroundColor;
+  style.color = color ? getColorByToken(color) : defaultTextColor;
 
   return (
     <Component role={role} css={style} className={boxClassName} {...restProps}>
