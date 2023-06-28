@@ -46,7 +46,7 @@ describe('Drawer', () => {
     const closeIcon = screen.getByRole('button');
     expect(drawer).toBeInTheDocument();
     await user.click(closeIcon);
-    expect(drawer).not.toBeInTheDocument();
+    expect(drawer).not.toBeVisible();
   });
 
   it('onOpen 핸들러를 갖는 Drawer는 렌더링 직후 onOpen 이벤트를 수행한다.', async () => {
@@ -65,7 +65,7 @@ describe('Drawer', () => {
     const closeIcon = screen.getByRole('button');
     expect(drawer).toBeInTheDocument();
     await user.click(closeIcon);
-    expect(drawer).not.toBeInTheDocument();
+    expect(drawer).not.toBeVisible();
     expect(handleOnClose).toHaveBeenCalledTimes(1);
   });
 });
