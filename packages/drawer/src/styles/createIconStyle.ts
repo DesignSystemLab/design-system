@@ -11,7 +11,7 @@ const createIconStyle = (placement: Placement) => {
   }
   return css({
     position: 'absolute',
-    right: '44px'
+    right: '8px'
   });
 };
 
