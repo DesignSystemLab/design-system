@@ -3,11 +3,9 @@ import { ColorToken } from '@jdesignlab/theme';
 import type { Dispatch, SetStateAction } from 'react';
 
 type Value = string | number;
-export type Placement = 'top' | 'right' | 'bottom' | 'left';
 
 export type StyleProps = {
   color: ColorToken;
-  placement: Placement;
   disabled: boolean;
   placeholder: string | null;
   defaultValue: string | null;
@@ -45,7 +43,6 @@ export interface SelectProps {
   children: React.ReactNode;
   onValueChange?: (value: string | null) => void;
   color?: ColorToken;
-  placement?: Placement;
   disabled?: boolean;
   defaultValue?: string | null;
 }

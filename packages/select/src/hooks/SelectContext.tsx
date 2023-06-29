@@ -24,7 +24,6 @@ const defaultContextValues: ReturnContext = {
   selectProps: {
     color: BORDER_COLOR,
     disabled: false,
-    placement: 'bottom',
     placeholder: null,
     defaultValue: null
   }
