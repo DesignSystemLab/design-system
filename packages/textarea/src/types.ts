@@ -28,4 +28,5 @@ export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
   resize?: ResizeProps;
   appearance?: ApperanceProps;
   children?: ReactNode;
+  disabled?: boolean;
 }
