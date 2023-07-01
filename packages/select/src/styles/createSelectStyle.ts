@@ -14,7 +14,9 @@ export const createSelectStyle = (styleProps?: StyleProps) => {
   const { open } = useContext(SelectContext);
 
   const wrapperStyle = css({
+    boxSizing: 'border-box',
     position: 'relative',
+    width: '100%',
     maxWidth: '200px'
   });
 
