@@ -18,7 +18,6 @@ export interface TextareaLabelProps extends HTMLAttributes<HTMLLabelElement> {
 }
 
 export interface TextAreaProps extends HTMLAttributes<HTMLTextAreaElement> {
-  [key: string]: any;
   label?: string;
   width?: number;
   height?: number;
