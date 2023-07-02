@@ -1,5 +1,19 @@
 # @jdesignlab/react
 
+## 0.9.2
+
+### Patch Changes
+
+- @jdesignlab/button@0.9.1
+- @jdesignlab/drawer@0.6.1
+- @jdesignlab/dropdown@0.7.1
+- @jdesignlab/input@0.8.1
+- @jdesignlab/modal@0.8.1
+- @jdesignlab/popover@0.6.1
+- @jdesignlab/select@0.8.1
+- @jdesignlab/tooltip@0.6.1
+- @jdesignlab/box@0.6.1
+
 ## 0.9.1
 
 ### Patch Changes

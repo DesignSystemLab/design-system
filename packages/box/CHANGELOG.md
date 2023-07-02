@@ -1,5 +1,11 @@
 # @jdesignlab/box
 
+## 0.6.1
+
+### Patch Changes
+
+- @jdesignlab/button@0.9.1
+
 ## 0.6.0
 
 ### Minor Changes

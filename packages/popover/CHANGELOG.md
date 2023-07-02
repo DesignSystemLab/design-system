@@ -1,5 +1,13 @@
 # @jdesignlab/popover
 
+## 0.6.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.7.0
+  - @jdesignlab/button@0.9.1
+
 ## 0.6.0
 
 ### Minor Changes
