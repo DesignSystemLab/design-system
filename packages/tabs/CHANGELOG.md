@@ -1,5 +1,12 @@
 # @jdesignlab/tabs
 
+## 0.8.0
+
+### Minor Changes
+
+- add className following convention
+- prevent assigning non-boolean attribute to div
+
 ## 0.7.0
 
 ### Minor Changes

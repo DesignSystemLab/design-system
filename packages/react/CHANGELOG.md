@@ -1,5 +1,14 @@
 # @jdesignlab/react
 
+## 0.9.3
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/tabs@0.8.0
+  - @jdesignlab/textarea@0.9.0
+
 ## 0.9.2
 
 ### Patch Changes
