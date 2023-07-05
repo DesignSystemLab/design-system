@@ -1,5 +1,18 @@
 # @jdesignlab/react
 
+## 0.9.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.10.0
+  - @jdesignlab/box@0.6.2
+  - @jdesignlab/drawer@0.6.2
+  - @jdesignlab/modal@0.8.2
+  - @jdesignlab/popover@0.6.2
+  - @jdesignlab/select@0.8.2
+  - @jdesignlab/tooltip@0.6.2
+
 ## 0.9.3
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @jdesignlab/drawer
 
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.10.0
+
 ## 0.6.1
 
 ### Patch Changes
