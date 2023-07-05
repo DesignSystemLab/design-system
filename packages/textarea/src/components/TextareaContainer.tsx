@@ -7,6 +7,7 @@ import { createWrapperStyle } from '../styles/createWrapperStyle';
 import { TextareaContext } from './TextareaContext';
 import { useTextarea } from '../hooks/useTextarea';
 import type { ReturnContext } from '../types';
+import { createClassVariant } from '@jdesignlab/theme';
 
 export const TextareaContainer = forwardRef(
   (props: { children: React.ReactNode }, externalRef: ForwardedRef<any> | null) => {
@@ -19,13 +20,14 @@ export const TextareaContainer = forwardRef(
     const labelId = getLabelId(props.children);
 
     return (
-      <div css={wrapperStyle}>
+      <div css={wrapperStyle} className={createClassVariant('textarea', 'wrapper')}>
         {props.children}
         <textarea
           role="textbox"
           aria-multiline="true"
           id={textareaId}
           css={textareaStyle}
+          className={createClassVariant('textarea', 'input')}
           ref={e => {
             if (typeof externalRef === 'function') {
               externalRef(e);

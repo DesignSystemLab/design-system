@@ -6,6 +6,7 @@ import TabsContext from '../context';
 import List from './TabList';
 import Trigger from './TabTrigger';
 import Content from './TabContent';
+import { createClassVariant } from '@jdesignlab/theme';
 
 export const Tabs = (props: TabsProps) => {
   const { children, defaultValue, onChange, ...rest } = props;
@@ -31,7 +32,9 @@ export const Tabs = (props: TabsProps) => {
 
   return (
     <TabsContext.Provider value={contextValue}>
-      <div {...rest}>{children}</div>
+      <div className={createClassVariant('tabs', 'wrapper')} {...rest}>
+        {children}
+      </div>
     </TabsContext.Provider>
   );
 };

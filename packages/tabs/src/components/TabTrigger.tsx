@@ -5,6 +5,8 @@ import { useSelectKeyDown } from '../hooks/useSelectKeyDown';
 import type { TabsTriggerProps } from '../types';
 import TabsContext from '../context';
 import type { Dispatch, SetStateAction } from 'react';
+import { createClassVariant } from '@jdesignlab/theme';
+import { combineClassNames } from '@jdesignlab/utils';
 
 const Trigger = (props: TabsTriggerProps) => {
   const triggerRef = useRef(null);
@@ -26,7 +28,7 @@ const Trigger = (props: TabsTriggerProps) => {
       onKeyDown={e => {
         useSelectKeyDown(e, value, setSelectedTab as Dispatch<SetStateAction<string>>);
       }}
-      className="tab"
+      className={combineClassNames(createClassVariant('tabs', 'trigger'), 'tab')}
       tabIndex={!disabled ? 0 : -1}
       role="tab"
       aria-disabled={!!disabled}
