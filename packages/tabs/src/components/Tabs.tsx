@@ -9,7 +9,7 @@ import Content from './TabContent';
 import { createClassVariant } from '@jdesignlab/theme';
 
 export const Tabs = (props: TabsProps) => {
-  const { children, defaultValue, onChange, ...rest } = props;
+  const { children, defaultValue, onChange, lazy, ...rest } = props;
   const [selectedTab, setSelectedTab] = useState<string>(defaultValue || '');
   const [hasTouched, setHasTouched] = useState<boolean>(false);
 
@@ -26,7 +26,7 @@ export const Tabs = (props: TabsProps) => {
     setSelectedTab,
     variant: props.variant || 'underline',
     size: props.size || 'md',
-    lazy: !!props.lazy,
+    lazy: !!lazy,
     full: !!props.full
   };
 
