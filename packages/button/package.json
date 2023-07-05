@@ -1,6 +1,6 @@
 {
   "name": "@jdesignlab/button",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "packageManager": "yarn@3.3.1",
   "main": "src/index.ts",
   "files": [
