@@ -1,5 +1,11 @@
 # @jdesignlab/stack
 
+## 0.7.0
+
+### Minor Changes
+
+- Publish Readme
+
 ## 0.6.0
 
 ### Minor Changes

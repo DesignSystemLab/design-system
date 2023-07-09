@@ -1,5 +1,11 @@
 # @jdesignlab/textarea
 
+## 0.10.0
+
+### Minor Changes
+
+- Publish Readme
+
 ## 0.9.0
 
 ### Minor Changes

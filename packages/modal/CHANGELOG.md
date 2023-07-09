@@ -1,5 +1,18 @@
 # @jdesignlab/modal
 
+## 0.9.0
+
+### Minor Changes
+
+- Publish Readme
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.11.0
+  - @jdesignlab/flex@0.9.0
+  - @jdesignlab/input@0.9.0
+
 ## 0.8.2
 
 ### Patch Changes
