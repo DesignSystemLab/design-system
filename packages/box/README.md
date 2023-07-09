@@ -16,7 +16,6 @@ Box는 스타일링을 위한 기본적인 UI 컴포넌트입니다. 기본적�
 
 | Property        | Allow Types         | Description                   | Default       |
 | --------------- | ------------------- | ----------------------------- | ------------- |
-| children        | `React.ReactNode`   | Box Children                  |               |
 | as              | `React.ElementType` | Elemenet Type                 | `div`         |
 | backgroundColor | `ColorToken`        | Background 색상을 지정합니다. | `transparent` |
 | color           | `CorlorToken`       | Color 색상을 지정합니다.      |               |

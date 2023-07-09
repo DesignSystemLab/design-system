@@ -58,13 +58,12 @@ Drawer 컴포넌트는 마치 서랍 처럼 화면 사이드에서 정보를 출
 
 ### Drawer
 
-| Property | Allow Types       | Description                              | Default |
-| -------- | ----------------- | ---------------------------------------- | ------- |
-| children | `React.ReactNode` | Drawer의 자식 요소 입니다.               |         |
-| open     | `boolean`         | Drawer의 `open` 상태를 지정합니다.       | `false` |
-| full     | `boolean`         | full size 형태의 Drawer로 사용합니다.    | `false` |
-| onOpen   | `() => void`      | Drawer가 열릴 때 발생하는 이벤트 입니다. |         |
-| onClose  | `() => void`      | Drawer가 닫힐 때 발생하는 이벤트 입니다. |         |
+| Property | Allow Types  | Description                              | Default |
+| -------- | ------------ | ---------------------------------------- | ------- |
+| open     | `boolean`    | Drawer의 `open` 상태를 지정합니다.       | `false` |
+| full     | `boolean`    | full size 형태의 Drawer로 사용합니다.    | `false` |
+| onOpen   | `() => void` | Drawer가 열릴 때 발생하는 이벤트 입니다. |         |
+| onClose  | `() => void` | Drawer가 닫힐 때 발생하는 이벤트 입니다. |         |
 
 ### Drawer.Header
 

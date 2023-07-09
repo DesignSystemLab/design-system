@@ -53,7 +53,6 @@ export const PopoverExample = () => {
 
 | Property | Allow Types                   | Description                               | Default  |
 | -------- | ----------------------------- | ----------------------------------------- | -------- |
-| children | `React.ReactNode`             | Popover의 자식 요소 입니다.               |          |
 | open     | `top`,`right`,`bottom`,`left` | Popover가 열리는 방향을 지정합니다.       | `bottom` |
 | open     | `boolean`                     | Popover의 `open` 상태를 지정합니다.       | `false`  |
 | arrow    | `boolean`                     | Popover의 arrow 여부를 지정합니다.        | `true`   |

@@ -22,7 +22,6 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property  | Allow Types                                         | Description                                                | Default       |
 | --------- | --------------------------------------------------- | ---------------------------------------------------------- | ------------- |
-| children  | `React.ReactNode`                                   | Box Children                                               |               |
 | as        | `React.ElementType`                                 | Elemenet Type                                              | `div`         |
 | style     | `CssObject`                                         | 추가적인 스타일을 지정합니다.                              |               |
 | variant   | `elevated` `outlined` `filled`                      | Card 스타일을 지정합니다.                                  | `elevated`    |
@@ -36,7 +35,6 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| children | `React.ReactNode`   | Card.Header Children          |         |
 | as       | `React.ElementType` | Elemenet Type                 | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |
 
@@ -44,7 +42,6 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| children | `React.ReactNode`   | Card.Body Children            |         |
 | as       | `React.ElementType` | Elemenet Type                 | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |
 
@@ -52,6 +49,5 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| children | `React.ReactNode`   | Card.Footer Children          |         |
 | as       | `React.ElementType` | Elemenet Type                 | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |
