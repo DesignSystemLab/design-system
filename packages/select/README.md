@@ -1,74 +1,60 @@
-# select
+# Select
 
-## 가장 기본적인 설계
+Select 컴포넌트는 정의된 여러 옵션에서, 특정 옵션 값을 선택할 수 있는 UI 컴포넌트입니다. 사용자에게 펼침, 닫힘 효과가 나타납니다.
 
-```tsx
-// select.tsx
+## Usage
 
-interface Props {
-  value?: string;
-  onValueChange?: (value: string) => void;
-  children: ReactNode;
-}
+[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/forms-select--basic)
 
-export function Select({ children }) {
-  // 1. open인지 아닌지 상태
-  // 1-1. open일 때, option 목록을 보여준다.
-  //
-  return (
-
-  )
-}
-
-function SelectOption {
-  // 1-1. option을 클릭하면 현재 value를 업데이트 하고
-  // 1-2. close 한다.
-}
-
-Select.Option = SelectOption;
-```
-
-## stoybook
-
-```tsx
-// select.stories.tsx
-function Main() {
-  // [value, setValue] = useState(null);
-
+```jsx
+const SelectExample = args => {
+  const [skill, setSkill] = useState('');
   return (
     <>
-      <Select value={value} onValueChange={x => setValue(x)}>
-        <Select.Option value="react">리액트</Select.Option>
-        <Select.Option value="solid">쏠리드</Select.Option>
-        <Select.Option value="qwik">퀴이익</Select.Option>
-        // 도전과제
-        <Select.Value />
+      <h2>Selectbox</h2>
+      <strong>SelectValue: {skill || '값을 선택해주세요.'}</strong>
+      <Select
+        color="purple-lighten3"
+        defaultValue="react"
+        onValueChange={value => {
+          setSkill(value);
+        }}
+      >
+        <Select.Trigger placeholder="programming-languages" />
+        <Select.Option value="javascript">JavaScript</Select.Option>
+        <Select.Option value="typescript">TypeScript</Select.Option>
+        <Select.Option value="html5">HTML</Select.Option>
+        <Select.Option value="vue" disabled>
+          Vue.js
+        </Select.Option>
+        <Select.Option value="react">React</Select.Option>
+        <Select.Option value="java">Java</Select.Option>
       </Select>
-      <div>{value}</div>
     </>
   );
-}
+};
 ```
 
-## 추가적인 요소
+## Props
 
-1. 구현이 필요한 기본적인 기능들, 상태들 정의
-2. Select 기본 기능들 추가해주기 (4점)
-   1. defaultValue
-   2. placeholder
-   3. readonly
-   4. disabled
-3. div에 생명 불어넣기 (3점)
-   1. focused 라는 상태를 추가해서
-   2. aria-\*
-4. UX (2점)
-   1. 펼쳐지는 방향 결정하기
+### Select
 
-- 키보드 제어 처리
-- <Value>
+| Property      | Allow Types        | Description                                      | Default |
+| ------------- | ------------------ | ------------------------------------------------ | ------- |
+| color         | `Color`            | Select의 색상을 지정합니다.                      | `font`  |
+| defaultValue  | `string`, `number` | Select의 기본 선택 값을 지정합니다.              |         |
+| onValueChange | `(value) => void`  | Select Option이 변경될 때 발생하는 이벤트입니다. |         |
 
-* [ ]
+### Select.Trigger
 
-1. 키보드 네비게이션 처리
-2. value없을 때 첫 value-> firstChild
-3. disabled 처리
+| Property    | Allow Types       | Description                                | Default |
+| ----------- | ----------------- | ------------------------------------------ | ------- |
+| Input       | `React.ReactNode` | Combobox에서 사용될 Input 컴포넌트 입니다. |         |
+| placeholder | `string`          | Select의 기본 선택 값을 지정합니다.        |         |
+
+### Select.Option
+
+| Property | Allow Types        | Description                                              | Default |
+| -------- | ------------------ | -------------------------------------------------------- | ------- |
+| value    | `string`, `number` | Select Optionvalue 값 입니다.                            |         |
+| disabled | `boolean`          | 비활성화 여부 입니다. `true` 일 경우, 선택되지 않습니다. | `false` |
