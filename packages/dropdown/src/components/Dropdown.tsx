@@ -14,8 +14,7 @@ import { DropdownContext } from '../context';
 export const Dropdown = (props: DropdownProps) => {
   const [triggerWidth, setTriggerWidth] = useState<number>(0);
   const [triggerHeight, setTriggerHeight] = useState<number>(0);
-  const { children, width = 200, ...otherProps } = props;
-  const placement = props.placement === undefined ? 'bottom' : props.placement;
+  const { children, width = 200, placement = 'buttom', ...otherProps } = props;
   const gap = Number(props.gap) || 0;
 
   const providerValue = {
@@ -31,7 +30,6 @@ export const Dropdown = (props: DropdownProps) => {
   return (
     <DropdownContext.Provider value={providerValue}>
       <div css={dropdownWrapperStyle} {...otherProps} className="menu_wrapper">
-        {/* <div css={dropdownOverlayStyle} className="menu_overlay" onClick={e => useToggleOpen(e.currentTarget)}></div> */}
         {children}
       </div>
     </DropdownContext.Provider>

@@ -33,10 +33,10 @@ export const dropdownMenuStyle = css({
   backdropFilter: 'blur(20px)',
   display: 'flex',
   flexDirection: 'column', // TODO <ul></ul>??
-  border: 'solid lightgray 1px',
-  borderRadius: '6px',
+  borderRadius: '2px',
   padding: '5px',
-  boxShadow: '10.5px 10.5px 15px -4.5px rgba(100,100,100,0.2)',
+  boxShadow:
+    'rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px',
   '&.menu_open': {
     display: 'flex'
   },
@@ -84,10 +84,11 @@ export const dropdownLocationStyle = (
     background: 'rgba(255,255,255,0.5)',
     backdropFilter: 'blur(20px)',
     display: 'flex',
-    border: 'solid lightgray 1px',
-    borderRadius: '6px',
+    // border: 'solid lightgray 1px',
+    borderRadius: '2px',
     padding: '5px',
-    boxShadow: '10.5px 10.5px 15px -4.5px rgba(100,100,100,0.2)',
+    boxShadow:
+      'rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px',
     'flex-direction': 'column', // TODO <ul></ul>??
     '&.menu_open': {
       display: 'flex'
