@@ -3,7 +3,7 @@ import type { StyleProps } from './types';
 
 const REQUIRED_CARD_PROPS: (keyof StyleProps)[] = ['align', 'color', 'direction', 'justify', 'size', 'variant'];
 const DEFAULT_CARD_STYLE: Required<StyleProps> = {
-  color: 'lightBlue-lighten5',
+  color: 'primary-500',
   align: 'start',
   justify: 'start',
   direction: 'vertical',
