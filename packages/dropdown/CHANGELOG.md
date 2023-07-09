@@ -1,5 +1,11 @@
 # @jdesignlab/dropdown
 
+## 0.9.0
+
+### Minor Changes
+
+- Remove unused property
+
 ## 0.8.0
 
 ### Minor Changes

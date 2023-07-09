@@ -1,5 +1,11 @@
 # @jdesignlab/drawer
 
+## 0.8.0
+
+### Minor Changes
+
+- Update Readme
+
 ## 0.7.0
 
 ### Minor Changes

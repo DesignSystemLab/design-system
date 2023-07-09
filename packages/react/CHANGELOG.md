@@ -1,5 +1,18 @@
 # @jdesignlab/react
 
+## 0.10.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/dropdown@0.9.0
+  - @jdesignlab/textarea@0.11.0
+  - @jdesignlab/popover@0.8.0
+  - @jdesignlab/drawer@0.8.0
+  - @jdesignlab/card@0.9.0
+  - @jdesignlab/box@0.8.0
+
 ## 0.10.0
 
 ### Minor Changes
