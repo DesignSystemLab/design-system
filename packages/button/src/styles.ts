@@ -17,8 +17,7 @@ export const buttonDefaultStyle = css({
   letterSpacing: '1.5px',
   overflow: 'hidden',
   minWidth: 'fit-content',
-  whiteSpace: 'nowrap',
-  textTransform: 'uppercase'
+  whiteSpace: 'nowrap'
 });
 
 export const buttonSizeStyle = (size: ButtonSize, full: boolean) => {

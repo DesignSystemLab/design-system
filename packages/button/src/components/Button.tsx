@@ -10,13 +10,13 @@ import type { Ripple } from '@jdesignlab/react-utils';
 
 export const Button = (props: ButtonProps) => {
   const themePreset = useContext(ThemeContext);
-  const { children, onClick, disabled, full, as = 'button', ...otherProps } = props;
+  const { children, variant = 'solid', onClick, disabled = false, full, as = 'button', ...otherProps } = props;
   const { createRipple, rippleNodes } = useRipple();
   const Component = as;
 
   const buttonStyle = css(buttonDefaultStyle, {
     ...buttonSizeStyle(props.size ?? 'md', full ?? false),
-    ...buttonVariantStyle(themePreset, props.variant ?? 'solid', disabled ?? false, props.color)
+    ...buttonVariantStyle(themePreset, variant, disabled, props.color)
   });
 
   return (
