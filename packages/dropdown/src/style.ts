@@ -76,8 +76,8 @@ export const dropdownLocationStyle = (
   gap: number,
   placement: string | undefined
 ) => {
-  const defaultStyle = {
-    // position: 'absolute',
+  const defaultStyle = css({
+    position: 'absolute',
     zIndex: 100,
     minWidth: `${width}px`,
     margin: 0,
@@ -96,7 +96,7 @@ export const dropdownLocationStyle = (
     '&.menu_close': {
       display: 'none'
     }
-  };
+  });
 
   const labelWidth = labelRef.current ? labelRef.current.offsetWidth : 0;
   const labelHeight = labelRef.current ? labelRef.current.offsetHeight : 0;

@@ -23,10 +23,7 @@ export const Menu = React.memo((props: DropdownMenuProps) => {
         onKeyDown={e => {
           keyDownHandle(e);
         }}
-        css={{
-          position: 'absolute',
-          ...dropdownLocationStyle(menuRef, width, triggerWidth, triggerHeight, gap, placement)
-        }}
+        css={dropdownLocationStyle(menuRef, width, triggerWidth, triggerHeight, gap, placement)}
         {...otherProps}
       >
         {children}
