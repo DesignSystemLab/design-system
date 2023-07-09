@@ -1,5 +1,11 @@
 # @jdesignlab/dropdown
 
+## 0.10.0
+
+### Minor Changes
+
+- update ui
+
 ## 0.9.0
 
 ### Minor Changes

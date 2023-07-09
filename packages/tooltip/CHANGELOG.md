@@ -1,5 +1,12 @@
 # @jdesignlab/tooltip
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.12.0
+
 ## 0.7.0
 
 ### Minor Changes

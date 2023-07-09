@@ -1,5 +1,12 @@
 # @jdesignlab/select
 
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.12.0
+
 ## 0.9.0
 
 ### Minor Changes

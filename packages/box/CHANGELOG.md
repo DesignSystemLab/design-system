@@ -1,5 +1,12 @@
 # @jdesignlab/box
 
+## 0.8.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/button@0.12.0
+
 ## 0.8.0
 
 ### Minor Changes
