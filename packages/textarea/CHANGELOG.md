@@ -1,5 +1,11 @@
 # @jdesignlab/textarea
 
+## 0.9.0
+
+### Minor Changes
+
+- add className following convention
+
 ## 0.8.1
 
 ### Patch Changes

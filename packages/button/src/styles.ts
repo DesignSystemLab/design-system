@@ -17,7 +17,8 @@ export const buttonDefaultStyle = css({
   letterSpacing: '1.5px',
   overflow: 'hidden',
   minWidth: 'fit-content',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  textTransform: 'uppercase'
 });
 
 export const buttonSizeStyle = (size: ButtonSize, full: boolean) => {
@@ -49,7 +50,8 @@ export const buttonVariantStyle = (
   }
 
   const hasShadow = {
-    boxShadow: '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%)'
+    // boxShadow: '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%)'
+    boxShadow: 'rgba(0, 0, 0, 0.02) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset'
   };
 
   const switchBackground = {

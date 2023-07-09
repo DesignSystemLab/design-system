@@ -1,5 +1,11 @@
 # @jdesignlab/react-icons
 
+## 0.7.0
+
+### Minor Changes
+
+- allow to get rest properties
+
 ## 0.6.0
 
 ### Minor Changes

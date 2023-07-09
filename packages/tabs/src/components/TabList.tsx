@@ -4,6 +4,7 @@ import { getChildrenValidValues } from '@jdesignlab/react-utils';
 import { tabListStyle } from '../styles';
 import type { TabsListProps } from '../types';
 import TabsContext from '../context';
+import { createClassVariant } from '@jdesignlab/theme';
 
 const List = (props: TabsListProps) => {
   const { children, ...otherProps } = props;
@@ -22,7 +23,7 @@ const List = (props: TabsListProps) => {
   }, []);
 
   return (
-    <div css={style} role="tablist" {...otherProps}>
+    <div css={style} role="tablist" className={createClassVariant('tabs', 'ul')} {...otherProps}>
       {children}
     </div>
   );

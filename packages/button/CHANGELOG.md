@@ -1,5 +1,18 @@
 # @jdesignlab/button
 
+## 0.10.0
+
+### Minor Changes
+
+- change button style
+
+## 0.9.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-icons@0.7.0
+
 ## 0.9.0
 
 ### Minor Changes
