@@ -7,7 +7,7 @@ import { useSelectItem } from '../hooks/useSelectItem';
 
 export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
-  const { children, onClick, value, ...otherProps } = props;
+  const { children, onClick, ...otherProps } = props;
   const disabled = props.disabled === undefined ? false : props.disabled;
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
