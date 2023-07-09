@@ -49,7 +49,7 @@ export const checkboxInputStyle = (themePreset: ThemePreset, color?: ColorToken)
       opacity: '0',
       '& + span': {
         color: 'lightgray',
-        cursor: 'initial',
+        cursor: 'not-allowed',
         '&::before': {
           borderColor: 'currentcolor'
         }
@@ -75,7 +75,7 @@ export const checkboxInputStyle = (themePreset: ThemePreset, color?: ColorToken)
 export const checkboxLabelStyle = () => {
   return css({
     display: 'inline-flex',
-    alignItems: 'end',
+    alignItems: 'center',
     width: '100%',
     cursor: 'pointer',
     '&::before': {

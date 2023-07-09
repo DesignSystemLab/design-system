@@ -9,24 +9,24 @@ export const modalOverlayStyle = css({
   left: 0,
   width: '100vw',
   height: '100vh',
-  background: `${hexToRgba(getColorByToken('shades-black'), 0.3)}`
+  background: `${hexToRgba(getColorByToken('shades-black'), 0.25)}`
 });
 
 export const modalWrapperStyle = (width: number | undefined) => {
-  const customWidth = `${width || 600}px`;
+  const customWidth = `${width || 500}px`;
   return css({
     zIndex: 1000,
     position: 'fixed',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    background: getColorByToken('grey-lighten5'),
+    background: getColorByToken('shades-white'),
     display: 'flex',
     flexDirection: 'column',
-    border: 'solid gray 1px',
     width: customWidth,
-    boxShadow: '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%)',
-    borderRadius: '10px',
+    boxShadow:
+      'rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px',
+    borderRadius: '8px',
     '&.modal_open': {
       display: 'flex'
     },

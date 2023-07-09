@@ -3,14 +3,16 @@ import { useContext, useRef, useState } from 'react';
 import { dropdownItemStyle } from '../style';
 import type { DropdownSubMenuItemProps } from '../types';
 import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
+import { useSelectItem } from '../hooks/useSelectItem';
 
 export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
-  const { children, onClick, ...otherProps } = props;
+  const { children, onClick, value, ...otherProps } = props;
   const disabled = props.disabled === undefined ? false : props.disabled;
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (!menuItemRef.current) return;
+
     useKeyboardHandler({
       event,
       parentScope: '.menu_item',
@@ -20,14 +22,15 @@ export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
 
   return (
     <li
-      {...otherProps}
       ref={menuItemRef}
       role="menuitem"
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
       className={`sub_item ${disabled ? 'disabled' : ''}`}
+      onClick={e => useSelectItem(e, onClick)}
       aria-disabled={disabled ? true : false}
       css={{ ...dropdownItemStyle(disabled) }}
       onKeyDown={e => onKeyDown(e)}
+      {...otherProps}
     >
       {children}
     </li>

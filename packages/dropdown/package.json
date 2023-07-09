@@ -16,7 +16,8 @@
     "@jdesignlab/flex": "workspace:*",
     "@jdesignlab/react-icons": "workspace:*",
     "@jdesignlab/react-utils": "workspace:*",
-    "@jdesignlab/theme": "workspace:*"
+    "@jdesignlab/theme": "workspace:*",
+    "@jdesignlab/utils": "workspace:*"
   },
   "devDependencies": {
     "@babel/cli": "^7.20.7",

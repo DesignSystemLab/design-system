@@ -1,11 +1,11 @@
 import type { ColorToken } from '@jdesignlab/theme';
 
-// export type DropdownAnchor = 'top' | 'right' | 'bottom' | 'left'
+export type DropdownAnchor = 'top' | 'right' | 'bottom' | 'left';
 
 export interface DropdownProps {
   children?: React.ReactNode;
   width?: number;
-  placement?: string;
+  placement?: DropdownAnchor;
   gap?: number | string;
 }
 
@@ -20,8 +20,8 @@ export interface DropdownMenuProps {
 export interface DropdownMenuItemProps {
   children?: React.ReactNode;
   disabled?: boolean;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-  sub?: boolean;
+  onClick?: () => void;
+  hasSub?: boolean;
 }
 
 export interface DropdownSubMenuProps {
@@ -31,5 +31,5 @@ export interface DropdownSubMenuProps {
 export interface DropdownSubMenuItemProps {
   children?: React.ReactNode;
   disabled?: boolean;
-  onClick?: React.MouseEventHandler<HTMLElement>;
+  onClick?: () => void;
 }

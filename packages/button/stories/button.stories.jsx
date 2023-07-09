@@ -1,13 +1,13 @@
 import { Button } from '../src';
-import { Settings, Volume } from '@jdesignlab/react-icons';
-import { ThemeContext, themePreset, ThemeProvider } from '@jdesignlab/j-provider';
+import { Mobile, Heart } from '@jdesignlab/react-icons';
 
 export default {
-  title: 'Components/Button',
+  title: 'Actions/Button',
+  tags: ['autodocs'],
   component: Button,
   decorators: [
     Story => (
-      <div style={{ height: '100vh' }}>
+      <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
         <Story />
       </div>
     )
@@ -15,36 +15,13 @@ export default {
 };
 
 const argTypes = {
-  color: {
-    name: 'color',
-    type: { name: 'string', required: false },
-    description: 'button color',
-    control: 'text'
+  icon: {
+    name: 'icon',
+    control: { type: 'boolean' }
   },
-  variant: {
-    name: 'variant',
-    type: { name: 'string', required: false },
-    description: 'button variant',
-    control: {
-      type: 'select',
-      options: ['solid', 'outline', 'ghost', 'link', 'unstyled']
-    }
-  },
-  children: {
-    name: 'children',
-    type: { name: 'string', required: false },
-    description: 'button label',
-    table: {
-      type: { summary: 'string' },
-      defaultValue: { summary: 'Button' }
-    },
-    control: 'text'
-  },
-  size: {
-    name: 'size',
-    type: { name: 'string', required: false },
-    description: 'button size',
-    control: { type: 'radio', options: ['sm', 'md', 'lg', 'xl'] }
+  as: {
+    name: 'as',
+    control: { type: 'select' }
   }
 };
 
@@ -57,76 +34,47 @@ Basic.args = {
 };
 Basic.argTypes = argTypes;
 
-const onClick = () => {
-  console.log('clicked!');
-};
-
-export const WithColors = () => (
+export const variant = () => (
   <>
-    <ThemeProvider>
-      <Button variant="ghost" color="blue-base" full>
-        한국어
-      </Button>
-      <Button variant="ghost" color="lightGreen-base">
-        lightGreen
-      </Button>
-      <Button variant="outline" color="blue-darken1" size="xl">
-        blue-darken1
-      </Button>
-      <Button color="red-lighten3">red-lighten3</Button>
-      <Button color="pink-accent2">pink-accent2</Button>
-      <Button color="primary-500">primary</Button>
-      <Button variant="outline" color="secondary-500">
-        secondary
-      </Button>
-      <Button color="success">success</Button>
-      <Button color="info">info</Button>
-      <Button color="warning">warning</Button>
-      <Button color="disabled">disabled</Button>
-      <Button color="error">error</Button>
-      <Button>no color</Button>
-    </ThemeProvider>
-  </>
-);
-
-export const WithVariants = () => (
-  <div>
-    <Button variant="solid" onClick={onClick}>
-      solid
-    </Button>
-    <Button variant="outline" onClick={onClick}>
-      outline
-    </Button>
+    <Button variant="solid">solid</Button>
+    <Button variant="outline">outline</Button>
     <Button variant="ghost">ghost</Button>
-    <Button variant="link" as="a" onClick={onClick}>
-      link
-    </Button>
+    <Button variant="link">link</Button>
     <Button variant="unstyled">unstyled</Button>
-    <br />
-    <br />
-    <Button variant="solid" onClick={onClick} disabled>
-      solid
-    </Button>
-    <Button variant="outline" onClick={onClick} disabled>
-      outline
-    </Button>
-    <Button variant="ghost" disabled>
-      ghost
-    </Button>
-    <Button variant="link" disabled>
-      link
-    </Button>
-    <Button variant="unstyled" disabled>
-      unstyled
-    </Button>
-  </div>
-);
-
-export const WithSizes = () => (
-  <>
-    <Button size="sm">Button</Button>
-    <Button size="md">Button</Button>
-    <Button size="lg">Button</Button>
-    <Button size="xl">Button</Button>
   </>
 );
+
+export const size = () => (
+  <>
+    <Button size="sm">SM</Button>
+    <Button size="md">MD</Button>
+    <Button size="lg">LG</Button>
+    <Button size="xl">XL</Button>
+  </>
+);
+
+export const disabled = () => <Button disabled>disabled</Button>;
+
+export const color = () => (
+  <>
+    <Heart color="grey" fill="grey" width={16} height={16} />0<Button color="red-lighten5">red-lighten5</Button>
+    <Button color="pink-lighten4">pink-lighten4</Button>
+    <Button color="purple-lighten3">purple-lighten3</Button>
+    <Button color="deepPurple-lighten2">deepPurple-lighten2</Button>
+    <Button color="indigo-lighten1">indigo-lighten1</Button>
+    <Button color="blue-base">blue-base</Button>
+    <Button color="lightBlue-darken1">lightBlue-darken1</Button>
+    <Button color="cyan-darken2">cyan-darken2</Button>
+    <Button color="teal-darken3">teal-darken3</Button>
+    <Button color="green-darken4">green-darken4</Button>
+    <Button color="lightGreen-accent1">lightGreen-accent1</Button>
+    <Button color="orange-accent2">orange-accent2</Button>
+    <Button color="deepOrange-accent3">deepOrange-accent3</Button>
+  </>
+);
+
+export const full = () => <Button full>full</Button>;
+
+export const icon = () => <Button icon={<Mobile />}>CALL</Button>;
+
+export const as = () => <Button as="a"> Anchor</Button>;

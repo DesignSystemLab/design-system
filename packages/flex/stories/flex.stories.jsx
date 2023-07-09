@@ -1,8 +1,7 @@
 import { Flex } from '../src';
-// import type { FlexItemProps, FlexContainerProps } from '../src/flex-types';
 
 export default {
-  title: 'Components/Flex',
+  title: 'Layout/Flex',
   component: Flex,
   decorators: [Story => <Story />]
 };
@@ -14,9 +13,7 @@ const Template = args => <Flex {...args} />;
 export const Basic = () => (
   <>
     <Flex direction="row">
-      <Flex.Item style={{ color: 'white', width: '100px', height: '100px', background: 'red', textAlign: 'center' }}>
-        Solo
-      </Flex.Item>
+      <Flex.Item style={{ width: '100px', height: '100px', background: 'red' }}>Solo</Flex.Item>
     </Flex>
     <hr />
     <Flex direction="row">
