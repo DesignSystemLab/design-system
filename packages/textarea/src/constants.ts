@@ -6,9 +6,9 @@ const DEFAULT_STYLE: Required<StyleProps> = {
   resize: 'none',
   color: 'grey-base',
   appearance: 'standard',
-  width: 480,
+  width: 320,
   height: 64,
-  maxWidth: 320,
+  maxWidth: 480,
   maxHeight: 120,
   maxLength: null
 };
