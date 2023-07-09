@@ -56,6 +56,7 @@ export const Checkbox = Object.assign(
           }}
           onChange={props?.onChange}
           onKeyDown={e => onKeyDown(e)}
+          value={value}
           {...otherProps}
         />
         <span className={createClassVariant('checkbox', 'label')} css={checkboxLabelStyle}>
