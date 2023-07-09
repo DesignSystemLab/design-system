@@ -1,19 +1,12 @@
 import { Stack } from '../src';
 
 export default {
-  title: 'Components/Stack',
+  title: 'layout/Stack',
   component: Stack,
   decorators: [Story => <Story style={{ border: '2px solid blue' }} />]
 };
 
-const argTypes = {
-  spacing: {
-    name: 'sapcing',
-    type: { name: 'boolean', required: false },
-    description: 'Item Spacing',
-    control: { type: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
-  }
-};
+const argTypes = {};
 
 const Template = args => (
   <Stack {...args}>
@@ -23,26 +16,31 @@ const Template = args => (
   </Stack>
 );
 
-export const StackBasic = Template.bind({});
-StackBasic.argTypes = argTypes;
+export const Basic = Template.bind({});
+Basic.argTypes = argTypes;
 
-export const StackTemplate = () => (
-  <>
-    <h2>Vertical.</h2>
+export const direction = () => {
+  return (
     <Stack direction="vertical" justify="stretch" spacing="20px">
       <div style={{ height: '64px', width: '64px', backgroundColor: '#ff4d4d' }}>first</div>
       <div style={{ height: '64px', width: '64px', backgroundColor: '#3ae374' }}>second</div>
       <div style={{ height: '64px', width: '64px', backgroundColor: '#18dcff' }}>third</div>
       <div style={{ height: '64px', width: '64px', backgroundColor: '#7d5fff' }}>fourth</div>
     </Stack>
-    <h2>Horizontal And Responsive.</h2>
-    <Stack direction="horizontal" justify="stretch" responsive>
-      <div style={{ height: '64px', width: '64px', backgroundColor: '#ff4d4d' }}>first</div>
-      <div style={{ height: '64px', width: '64px', backgroundColor: '#3ae374' }}>second</div>
-      <div style={{ height: '64px', width: '64px', backgroundColor: '#18dcff' }}>third</div>
-      <div style={{ height: '64px', width: '64px', backgroundColor: '#7d5fff' }}>fourth</div>
-    </Stack>
-    <h2>Change element through 'as' prop</h2>
+  );
+};
+
+export const Responsive = () => (
+  <Stack direction="horizontal" justify="stretch" responsive>
+    <div style={{ height: '64px', width: '64px', backgroundColor: '#ff4d4d' }}>first</div>
+    <div style={{ height: '64px', width: '64px', backgroundColor: '#3ae374' }}>second</div>
+    <div style={{ height: '64px', width: '64px', backgroundColor: '#18dcff' }}>third</div>
+    <div style={{ height: '64px', width: '64px', backgroundColor: '#7d5fff' }}>fourth</div>
+  </Stack>
+);
+
+export const asChild = () => {
+  return (
     <ul>
       <Stack direction="horizontal" align="start" responsive as="li">
         <strong>Mario Familly</strong>
@@ -59,5 +57,5 @@ export const StackTemplate = () => (
         <a href="#">Waluigi</a>
       </Stack>
     </ul>
-  </>
-);
+  );
+};

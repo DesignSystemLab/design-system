@@ -1,5 +1,6 @@
 import { Textarea } from '../src';
 import { variantPresetColors } from '@jdesignlab/theme';
+import { Stack } from '../../stack';
 
 function getVariantPresetColors() {
   const colors = [];
@@ -13,15 +14,9 @@ function getVariantPresetColors() {
 }
 
 export default {
-  title: 'Components/Textarea',
+  title: 'forms/Textarea',
   component: Textarea,
-  decorators: [
-    Story => (
-      <div style={{ display: 'flex', gap: '5px', flexDirection: 'column' }}>
-        <Story />
-      </div>
-    )
-  ]
+  decorators: [Story => <Story />]
 };
 
 const argTypes = {
@@ -69,24 +64,42 @@ const argTypes = {
 
 const Template = args => <Textarea {...args} />;
 
-export const TextAreaBasic = Template.bind({});
-TextAreaBasic.argTypes = argTypes;
+export const Basic = Template.bind({});
+Basic.argTypes = argTypes;
 
-export const Example = () => (
-  <>
-    <Textarea />
-    <Textarea resize="smart" placeholder="내용을 입력해주세요." />
-    <Textarea maxWidth={640} defaultValue={'안녕하세요.'} resize="horizontal" />
-    <Textarea maxWidth={640} defaultValue={'Red Style!'} color="red-darken4" resize="none" />
-    <Textarea
-      maxWidth={640}
-      onClick={e => alert(e.target.value)}
-      defaultValue={'Click to Alert Message!'}
-      color="green-base"
-      resize="none"
-    />
-    <Textarea resize="vertical">
-      <Textarea.Label id="asd">Article</Textarea.Label>
-    </Textarea>
-  </>
-);
+export const resize = () => {
+  return (
+    <Stack direction="vertical">
+      <Textarea resize="horizontal" placeholder="horizontal" />
+      <Textarea resize="vertical" placeholder="vertical" />
+      <Textarea resize="smart" placeholder="smart" />
+      <Textarea resize="none" placeholder="none" />
+    </Stack>
+  );
+};
+
+export const appearance = () => {
+  return (
+    <Stack direction="vertical">
+      <Textarea appearance="standard" color="primary-500" placeholder="standard textarea" />
+      <Textarea appearance="none" color="error" placeholder="none textarea" />
+    </Stack>
+  );
+};
+
+export const maxwidth = () => {
+  return (
+    <Stack direction="vertical">
+      <Textarea resize="horizontal" color="primary-500" placeholder="maxWidth: 480px" />
+      <Textarea resize="horizontal" maxWidth={720} placeholder="maxWidth: 720px" />
+    </Stack>
+  );
+};
+export const maxHeight = () => {
+  return (
+    <Stack direction="vertical">
+      <Textarea color="primary-500" resize="vertical" placeholder="maxHeight: 64px" />
+      <Textarea maxHeight={128} resize="vertical" placeholder="maxHeight: 128px" />
+    </Stack>
+  );
+};

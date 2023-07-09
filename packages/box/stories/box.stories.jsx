@@ -1,38 +1,47 @@
 import { Box } from '../src';
+import { Text } from '../../text';
 
 export default {
-  title: 'Components/Box',
+  title: 'layout/Box',
   component: Box,
   decorators: [Story => <Story />]
 };
 
-export const BoxTemplate = () => (
-  <>
-    <Box>Basic Box</Box>
-    <Box color="green-darken4" style={{ backgroundColor: 'tomato', width: '64px', height: '64px' }}>
+const argTypes = {};
+const Template = args => <Box {...args}>Basic Box</Box>;
+export const Basic = Template.bind({});
+Basic.argTypes = argTypes;
+
+export const Example = () => (
+  <Box>
+    <Text variant="heading">Basic Box</Text>
+    <Box backgroundColor="primary-500" color="font" style={{ width: '64px', height: '64px' }}>
       <span>first</span>
-    </Box>``
-    <Box color="primary-500" style={{ backgroundColor: 'tomato', width: '64px', height: '64px' }}>
+    </Box>
+    <Box backgroundColor="secondary-500" color="font" style={{ width: '64px', height: '64px' }}>
       <span>second</span>
     </Box>
-    <Box style={{ backgroundColor: 'tomato', width: '64px', height: '64px' }}>
+    <Box backgroundColor="red-base" color="font" style={{ width: '64px', height: '64px' }}>
       <span>Third</span>
     </Box>
+  </Box>
+);
 
-    <Box as="h3">As Box List</Box>
+export const as = () => {
+  return (
     <ul>
-      <Box as="li" color="red-base" style={{ maxWidth: '50px' }}>
+      <Box as="li" color="font" style={{ maxWidth: '50px' }}>
         <span>first</span>
       </Box>
-      <Box as="li" color="orange-base" style={{ maxWidth: '50px' }}>
+      <Box as="li" color="font" style={{ maxWidth: '50px' }}>
         <span>second</span>
       </Box>
-      <Box as="li" color="yellow-base" style={{ maxWidth: '50px' }}>
+      <Box as="li" color="font" style={{ maxWidth: '50px' }}>
         <span>third</span>
       </Box>
-      <Box as="li" color="green-base" style={{ maxWidth: '50px' }}>
+      <Box as="li" color="font" style={{ maxWidth: '50px' }}>
         <span>fourth</span>
       </Box>
     </ul>
-  </>
-);
+  );
+};
