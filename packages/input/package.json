@@ -43,6 +43,7 @@
     "jest-preview": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.3",
     "rimraf": "^4.1.2",
     "ts-jest": "^29.0.5",
     "tslib": "^2.5.0",
