@@ -1,16 +1,12 @@
 import { TextInput } from '../src';
-import { Telephone, Mobile } from '@jdesignlab/react-icons';
+import { useForm } from 'react-hook-form';
+import { Mobile } from '@jdesignlab/react-icons';
+import { Button } from '../../button';
 
 export default {
-  title: 'Components/TextInput',
+  title: 'Forms/TextInput',
   component: TextInput,
-  decorators: [
-    Story => (
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-        <Story />
-      </div>
-    )
-  ]
+  decorators: [Story => <Story />]
 };
 
 const argTypes = {
@@ -47,43 +43,58 @@ Basic.args = {
 };
 Basic.argTypes = argTypes;
 
-export const Examples = () => (
+export const withLabel = () => (
+  <TextInput>
+    <TextInput.Label>라벨이에요</TextInput.Label>
+  </TextInput>
+);
+export const withMessage = () => (
+  <TextInput>
+    <TextInput.Message consistent={true}>메세지예요</TextInput.Message>
+  </TextInput>
+);
+export const defaultValue = () => <TextInput defaultValue="디폴트값이에요"></TextInput>;
+export const placeholder = () => (
+  <TextInput placeholder="나는 placeholder">
+    <TextInput.Label>라벨</TextInput.Label>
+  </TextInput>
+);
+export const disabled = () => <TextInput disabled defaultValue="디폴트로 넣어놓고 disabled!" />;
+export const clearable = () => <TextInput clearable defaultValue="디폴트값인데 clearable!" />;
+export const withIcon = () => <TextInput icon={<Mobile />} />;
+export const size = () => (
   <>
-    <TextInput width={300} size="sm" maxLength={5} icon={<Mobile />}>
-      <TextInput.Label>sm 라벨</TextInput.Label>
-      <TextInput.Message consistent>consistentmessageconsistentmessage</TextInput.Message>
+    <TextInput size="sm" width={300} defaultValue="sm">
+      <TextInput.Label>sm이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="md">
-      <TextInput.Label>md clearable이 아니야</TextInput.Label>
-      <TextInput.Message>messagemessage</TextInput.Message>
+    <TextInput size="md" width={300} defaultValue="md">
+      <TextInput.Label>md이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="lg" disabled>
-      <TextInput.Label>disabled</TextInput.Label>
+    <TextInput size="lg" width={300} defaultValue="lg">
+      <TextInput.Label>lg이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="lg" placeholder="나는 placeholder">
-      <TextInput.Label>라벨이자나</TextInput.Label>
+    <TextInput size="sm" defaultValue="sm">
+      <TextInput.Label>sm이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="sm" defaultValue="나는 defaultValue">
-      <TextInput.Label>defaultValue</TextInput.Label>
+    <TextInput size="md" defaultValue="md">
+      <TextInput.Label>md이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="md" clearable defaultValue="나는 clearable">
-      <TextInput.Label>clearable</TextInput.Label>
+    <TextInput size="lg" defaultValue="lg">
+      <TextInput.Label>lg이에요</TextInput.Label>
     </TextInput>
-    <TextInput size="lg" disabled>
-      <TextInput.Label>disabled</TextInput.Label>
-    </TextInput>
-    <TextInput placeholder="나는 placeholder">
-      <TextInput.Label>라벨이자나</TextInput.Label>
-    </TextInput>
-    <TextInput size="sm" defaultValue="나는 defaultValue">
-      <TextInput.Label>defaultValue</TextInput.Label>
-    </TextInput>
-    <TextInput size="md" clearable defaultValue="나는 clearable">
-      <TextInput.Label>clearable</TextInput.Label>
-    </TextInput>
-    <TextInput size="lg" disabled>
-      <TextInput.Label>disabled</TextInput.Label>
-    </TextInput>
-    <TextInput placeholder="나는 placeholder"></TextInput>
   </>
 );
+export const withReactHookForm = () => {
+  const { register, handleSubmit } = useForm();
+  const createChallenge = data => {
+    console.log(data);
+  };
+  return (
+    <form onSubmit={handleSubmit(createChallenge)}>
+      <TextInput {...register('testInput1', { required: true })}>
+        <TextInput.Label>ReactHookForm도 돼요</TextInput.Label>
+      </TextInput>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+};
