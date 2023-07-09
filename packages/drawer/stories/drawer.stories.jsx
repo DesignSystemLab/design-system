@@ -31,6 +31,7 @@ const Template = args => {
         onOpen={() => {
           setDrawerOpen(true);
         }}
+        {...args}
       >
         <Drawer.Content>
           <Drawer.Header>Header</Drawer.Header>
