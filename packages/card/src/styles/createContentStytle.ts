@@ -15,6 +15,7 @@ const createContentStyle = (direction: Direction, borderColor: ColorToken) => {
   return css({
     borderTop: `1px solid ${borderColor}`,
     wordWrap: 'break-word',
+    maxWidth: '100%',
     boxSizing: 'border-box'
   });
 };
