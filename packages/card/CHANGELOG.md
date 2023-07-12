@@ -1,5 +1,11 @@
 # @jdesignlab/card
 
+## 0.10.0
+
+### Minor Changes
+
+- set maxWidth value when in vertical state.
+
 ## 0.9.0
 
 ### Minor Changes

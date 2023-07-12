@@ -1,5 +1,12 @@
 # @jdesignlab/react
 
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/card@0.10.0
+
 ## 0.10.2
 
 ### Patch Changes
