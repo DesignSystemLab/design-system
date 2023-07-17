@@ -1,5 +1,15 @@
 # @jdesignlab/react
 
+## 0.10.4
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies
+  - @jdesignlab/typography@0.8.0
+  - @jdesignlab/card@0.11.0
+  - @jdesignlab/textarea@0.11.1
+
 ## 0.10.3
 
 ### Patch Changes
