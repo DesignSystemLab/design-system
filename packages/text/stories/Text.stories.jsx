@@ -2,13 +2,13 @@ import { Text } from '../src';
 import { ThemeContext, themePreset, ThemeProvider } from '@jdesignlab/j-provider';
 
 export default {
-  title: 'Components/Text',
+  title: 'Typography/Text',
   component: Text,
   decorators: [Story => <Story />]
 };
 
 export const Typography = () => (
-  <ThemeProvider>
+  <>
     <Text variant="heading" size="2xl">
       2XL Heading
     </Text>
@@ -46,7 +46,7 @@ export const Typography = () => (
     <Text size="lg">Large Paragraph</Text>
     <Text size="md">Medium Paragraph</Text>
     <Text size="sm">Small Paragraph</Text>
-  </ThemeProvider>
+  </>
 );
 
 export const FontStyle = () => {
