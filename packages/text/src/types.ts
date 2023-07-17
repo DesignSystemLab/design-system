@@ -26,6 +26,8 @@ export type FontSizeMap = Record<FontSize, FontSizeToken>;
 export type Variant = Paragraph | Label | Heading;
 export type FontSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
+export type BoldType = 'light' | 'medium' | 'semi' | 'extra' | number;
+
 export interface TextProps {
   children: React.ReactNode;
   variant?: Variant;
@@ -38,4 +40,5 @@ export interface TextProps {
   truncate?: boolean;
   as?: ElementType;
   style?: ExternalStyle;
+  bold?: BoldType;
 }

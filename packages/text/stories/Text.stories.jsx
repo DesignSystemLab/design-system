@@ -1,5 +1,4 @@
 import { Text } from '../src';
-import { ThemeContext, themePreset, ThemeProvider } from '@jdesignlab/j-provider';
 
 export default {
   title: 'Typography/Text',
@@ -7,70 +6,87 @@ export default {
   decorators: [Story => <Story />]
 };
 
-export const Typography = () => (
+export const Basic = args => <Text {...args}>Text</Text>;
+
+export const Size = () => (
   <>
-    <Text variant="heading" size="2xl">
-      2XL Heading
-    </Text>
-    <Text variant="heading" size="xl">
-      XL Heading
-    </Text>
-    <Text variant="heading" size="lg">
-      Large Heading
-    </Text>
-    <Text variant="heading" size="md">
-      Medium Heading
-    </Text>
-    <Text variant="heading" size="sm">
-      Small Heading
-    </Text>
-    <hr />
-    <Text variant="label" size="2xl">
-      2XL Label
-    </Text>
-    <Text variant="label" size="xl">
-      XL Label
-    </Text>
-    <Text variant="label" size="lg">
-      Large Label
-    </Text>
-    <Text variant="label" size="md">
-      Medium Label
-    </Text>
-    <Text variant="label" size="sm">
-      Small Label
-    </Text>
-    <hr />
-    <Text size="2xl">2XL Paragraph</Text>
-    <Text size="xl">XL Paragraph</Text>
-    <Text size="lg">Large Paragraph</Text>
-    <Text size="md">Medium Paragraph</Text>
-    <Text size="sm">Small Paragraph</Text>
+    <Text size="sm">Small</Text>
+    <Text>Medium</Text>
+    <Text size="lg">Large</Text>
+    <Text size="xl">X-Large</Text>
+    <Text size="2xl">2X-Large</Text>
   </>
 );
 
+export const Variant = () => {
+  return (
+    <>
+      <Text variant="heading">Heading</Text>
+      <Text variant="paragraph">Paragraph</Text>
+      <Text variant="label">Label</Text>
+    </>
+  );
+};
+
+export const Transform = () => {
+  return (
+    <>
+      <Text transform="capitalize">capitalize</Text>
+      <Text transform="lowercase">Lowercase</Text>
+      <Text transform="uppercase">Uppercase</Text>
+    </>
+  );
+};
+
+export const Decoration = () => {
+  return (
+    <>
+      <Text decoration="overline">Overline</Text>
+      <Text decoration="underline">Underline</Text>
+      <Text decoration="line-through">Line Through</Text>
+    </>
+  );
+};
+
+export const Align = () => {
+  return (
+    <>
+      <Text align="start">Start</Text>
+      <Text align="center">Center</Text>
+      <Text align="end">End</Text>
+    </>
+  );
+};
+
+export const Color = () => {
+  return (
+    <>
+      <Text color="primary-500">Primary</Text>
+      <Text color="secondary-500">Secondary</Text>
+      <Text color="orange-base">Orange</Text>
+      <Text color="red-base">Red</Text>
+      <Text color="green-base">Green</Text>
+    </>
+  );
+};
+
 export const FontStyle = () => {
   return (
-    <ThemeProvider>
-      <Text variant="heading" color="primary-500">
-        Decoration
-      </Text>
-      <Text decoration="line-through">Line-through</Text>
-      <Text decoration="overline">Line-through</Text>
-      <Text decoration="underline">underLine</Text>
-      <hr />
-      <Text variant="heading" color="primary-500">
-        Align
-      </Text>
-      <Text align="start">Align Start</Text>
-      <Text align="center">Align Center</Text>
-      <Text align="end">Align End</Text>
-      <hr />
-      <Text variant="heading" color="primary-500">
-        Font-Style
-      </Text>
+    <>
       <Text fontStyle="italic">italic</Text>
       <Text fontStyle="oblique">oblique</Text>
-    </ThemeProvider>
+    </>
+  );
+};
+
+export const Bold = () => {
+  return (
+    <>
+      <Text bold="light">light</Text>
+      <Text bold="medium">medium</Text>
+      <Text bold="semi">semi-bold</Text>
+      <Text bold="extra">extra</Text>
+      <Text bold={900}>900</Text>
+    </>
   );
 };

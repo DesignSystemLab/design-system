@@ -18,6 +18,7 @@ export const Text = (props: TextProps) => {
     align = 'start',
     color = DEFAULT_COLOR,
     truncate = false,
+    bold,
     ...rest
   } = props;
 
@@ -28,7 +29,10 @@ export const Text = (props: TextProps) => {
 
   return (
     <Component
-      css={[typography(size, variant), createFontStyle(transform, fontStyle, decoration, align, fontColor, truncate)]}
+      css={[
+        typography(size, variant, bold),
+        createFontStyle(transform, fontStyle, decoration, align, fontColor, truncate)
+      ]}
       {...rest}
     >
       {text}

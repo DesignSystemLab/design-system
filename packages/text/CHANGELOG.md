@@ -1,5 +1,11 @@
 # @jdesignlab/typography
 
+## 0.8.0
+
+### Minor Changes
+
+- Added font styles and types to the Text component
+
 ## 0.7.0
 
 ### Minor Changes
