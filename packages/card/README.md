@@ -22,10 +22,10 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property  | Allow Types                                         | Description                                                | Default       |
 | --------- | --------------------------------------------------- | ---------------------------------------------------------- | ------------- |
-| as        | `React.ElementType`                                 | Elemenet Type                                              | `div`         |
+| as        | `React.ElementType`                                 | Element Type                                               | `div`         |
 | style     | `CssObject`                                         | 추가적인 스타일을 지정합니다.                              |               |
 | variant   | `elevated` `outlined` `filled`                      | Card 스타일을 지정합니다.                                  | `elevated`    |
-| color     | `CorlorToken`                                       | Color 색상을 지정합니다. **filled 스타일에만 적용됩니다.** | `primary-500` |
+| color     | `ColorToken`                                        | Color 색상을 지정합니다. **filled 스타일에만 적용됩니다.** | `primary-500` |
 | direction | `vertical`,`horizontal`                             | Card의 방향을 지정합니다.                                  | `vertical`    |
 | align     | `start` `end` `center` `between` `around` `stretch` | Card의 `align-items` 속성을 지정합니다.                    | `start`       |
 | justify   | `start` `end` `center` `between` `around` `stretch` | Card의 `justify-content` 속성을 지정합니다.                | `start`       |
@@ -35,19 +35,19 @@ Card 컴포넌트는 `Flexible`한 UI 컴포넌트 입니다. 특정 주제에 �
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| as       | `React.ElementType` | Elemenet Type                 | `div`   |
+| as       | `React.ElementType` | Element Type                  | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |
 
 ### Card.Body
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| as       | `React.ElementType` | Elemenet Type                 | `div`   |
+| as       | `React.ElementType` | Element Type                  | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |
 
 ### Card.Footer
 
 | Property | Allow Types         | Description                   | Default |
 | -------- | ------------------- | ----------------------------- | ------- |
-| as       | `React.ElementType` | Elemenet Type                 | `div`   |
+| as       | `React.ElementType` | Element Type                  | `div`   |
 | style    | `CssObject`         | 추가적인 스타일을 지정합니다. |         |

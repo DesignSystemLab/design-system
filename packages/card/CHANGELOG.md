@@ -1,5 +1,11 @@
 # @jdesignlab/card
 
+## 0.11.0
+
+### Minor Changes
+
+- Modify Readme typo
+
 ## 0.10.0
 
 ### Minor Changes
