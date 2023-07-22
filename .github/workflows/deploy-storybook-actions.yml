@@ -21,3 +21,5 @@ jobs:
         run: yarn build-storybook
       - name: Run deploy storybook
         run: yarn deploy-storybook
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN }}
