@@ -2,7 +2,7 @@ name: Deploy Storybook Action
 on:
   push:
   pull_request:
-    workflow_dispatch:
+  workflow_dispatch:
 jobs:
   storybook-deploy:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
       - name: Run build storybook
         run: yarn build-storybook
       - name: Run deploy storybook
-        run: |
+        run: >
           git config --global user.email ${{vars.EMAIL}}
           git config --global user.name ${{vars.NAME}}
           yarn gh-pages -d storybook-static
