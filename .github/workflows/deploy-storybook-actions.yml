@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
 jobs:
-  test:
+  storybook-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,6 +20,6 @@ jobs:
       - name: Run build storybook
         run: yarn build-storybook
       - name: Run deploy storybook
-        run: yarn deploy-storybook
+        run: yarn gh-pages -d storybook-static
         with:
           token: ${{ secrets.WORKFLOW_TOKEN }}
