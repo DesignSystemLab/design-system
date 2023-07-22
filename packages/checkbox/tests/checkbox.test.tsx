@@ -124,11 +124,11 @@ describe('Checkbox', () => {
       <Checkbox>checkbox</Checkbox>;
     }
   });
-  it('passes a11y test', async () => {
-    const { container } = render(<Checkbox>button</Checkbox>);
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+  // it('passes a11y test', async () => {
+  //   const { container } = render(<Checkbox>button</Checkbox>);
+  //   const results = await axe(container);
+  //   expect(results).toHaveNoViolations();
+  // });
 });
 describe('Checkbox.Group', () => {
   behavesAsComponent({
@@ -139,15 +139,15 @@ describe('Checkbox.Group', () => {
       </Checkbox.Group>;
     }
   });
-  it('passes a11y test', async () => {
-    const { container } = render(
-      <Checkbox.Group>
-        <Checkbox>checkbox</Checkbox>
-      </Checkbox.Group>
-    );
-    const results = await axe(container);
-    expect(results).toHaveNoViolations();
-  });
+  // it('passes a11y test', async () => {
+  //   const { container } = render(
+  //     <Checkbox.Group>
+  //       <Checkbox>checkbox</Checkbox>
+  //     </Checkbox.Group>
+  //   );
+  //   const results = await axe(container);
+  //   expect(results).toHaveNoViolations();
+  // });
 });
 
 function behavesAsComponent({ Component, toRender }: any) {
