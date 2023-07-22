@@ -20,7 +20,7 @@ jobs:
       - name: Run build storybook
         run: yarn build-storybook
       - name: Run deploy storybook
-        run: echo "vars ${{vars.EMAIL}}, ${{vars.NAME}}"
+        run: >
           git config --global user.email ${{vars.EMAIL}}
           git config --global user.name ${{vars.NAME}}
           yarn gh-pages -d storybook-static
