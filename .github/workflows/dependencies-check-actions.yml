@@ -1,4 +1,4 @@
-name: Dependecy Check Action
+name: Dependency Check Action
 on:
   push:
   pull_request:
