@@ -21,9 +21,10 @@ jobs:
       - name: Run build storybook
         run: yarn build-storybook
       - name: Run deploy storybook
-        run: >
+        run: |
           git config --global user.email ${{vars.EMAIL}}
           git config --global user.name ${{vars.NAME}}
+          git remote set-url origin https://${{vars.NAME}}:${{secrets.GITHUB_TOKEN}}@github.com/DesignSystemLab/design-system.git
           yarn gh-pages -d storybook-static
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
