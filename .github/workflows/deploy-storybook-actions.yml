@@ -18,6 +18,6 @@ jobs:
           YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
         run: yarn install
       - name: Run build storybook
-        run: build-storybook
+        run: yarn build-storybook
       - name: Run deploy storybook
-        run: deploy-storybook
+        run: yarn deploy-storybook
