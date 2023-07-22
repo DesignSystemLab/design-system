@@ -5,12 +5,12 @@ import { createClassVariant } from '@jdesignlab/theme';
 import { combineClassNames } from '@jdesignlab/utils';
 
 export const Message = (props: InputMessageProps) => {
-  const { className, ...otherProps } = props;
+  const { className, consistent, ...otherProps } = props;
 
   return (
     <div
       className={combineClassNames(createClassVariant('input', 'message'), className)}
-      css={inputMessageStyle(props.consistent)}
+      css={inputMessageStyle(consistent)}
       {...otherProps}
     >
       {props.children}
