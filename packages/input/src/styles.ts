@@ -55,13 +55,6 @@ export const inputMessageStyle = (consistent?: boolean) => {
   });
 };
 
-const insideLabel = {
-  top: 'calc(50% + 2px)',
-  transform: 'translateY(-50%)',
-  lineHeight: 'inherit',
-  fontSize: '16px'
-};
-
 const upsideLabel = {
   top: 0,
   lineHeight: '0.3',
