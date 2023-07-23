@@ -4,8 +4,8 @@ on:
     branches:
       - main  
     paths:
-      - 'packages/src/**',
-      - 'packages/stories/**',
+      - 'packages/**/src/**',
+      - 'packages/**/stories/**',
   pull_request:
   workflow_dispatch:
 jobs:
