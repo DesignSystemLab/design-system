@@ -42,7 +42,7 @@ describe('disabled', () => {
   it('sets disabled correctly', () => {
     render(<Button disabled>button</Button>);
     const button = screen.getByRole('button');
-    expect(button).not.toHaveAttribute('disabled');
+    expect(button).toHaveAttribute('disabled');
   });
 
   it('should not fire onClick on disabled button', () => {
