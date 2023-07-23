@@ -28,22 +28,26 @@
 | width        | `number`     | 모달의 가로너비를 지정합니다.                                                                           | `500`       |
 | lazy         | `boolean`    | 모달의 내용을 지연 로딩하여 필요한 때만 렌더링하도록 지정합니다.                                        | `false`     |
 
-### Tabs.Trigger
+### Modal.Trigger
 
-| Property | Allow Types | Description | Default |
-| -------- | ----------- | ----------- | ------- |
+| Property | Allow Types       | Description                     | Default |
+| -------- | ----------------- | ------------------------------- | ------- |
+| children | `React.ReactNode` | Modal.Trigger 자식 요소 입니다. |         |
 
-### Tabs.Header
+### Modal.Header
 
-| Property | Allow Types | Description | Default |
-| -------- | ----------- | ----------- | ------- |
+| Property | Allow Types       | Description                    | Default |
+| -------- | ----------------- | ------------------------------ | ------- |
+| children | `React.ReactNode` | Modal.Header 자식 요소 입니다. |         |
 
-### Tabs.Body
+### Modal.Body
 
-| Property | Allow Types | Description | Default |
-| -------- | ----------- | ----------- | ------- |
+| Property | Allow Types       | Description                  | Default |
+| -------- | ----------------- | ---------------------------- | ------- |
+| children | `React.ReactNode` | Modal.Body 자식 요소 입니다. |         |
 
-### Tabs.Footer
+### Modal.Footer
 
-| Property | Allow Types | Description | Default |
-| -------- | ----------- | ----------- | ------- |
+| Property | Allow Types       | Description                    | Default |
+| -------- | ----------------- | ------------------------------ | ------- |
+| children | `React.ReactNode` | Modal.Footer 자식 요소 입니다. |         |
