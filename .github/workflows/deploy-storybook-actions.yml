@@ -1,10 +1,11 @@
 name: Deploy Storybook Action
 on:
   push:
+    branches:
+      - main  
     paths:
-      - '**.stories.jsx'
-      - 'packages/**/stories'
-      - '/stories/**'
+      - 'packages/src/**',
+      - 'packages/stories/**',
   pull_request:
   workflow_dispatch:
 jobs:
