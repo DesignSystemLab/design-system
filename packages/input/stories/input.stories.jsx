@@ -91,8 +91,8 @@ export const withReactHookForm = () => {
   };
   return (
     <form onSubmit={handleSubmit(createChallenge)}>
-      <TextInput {...register('testInput1', { required: true })}>
-        <TextInput.Label>ReactHookForm도 돼요</TextInput.Label>
+      <TextInput {...register('myInput', { required: true })}>
+        <TextInput.Label>with React-Hook-Form (console)</TextInput.Label>
       </TextInput>
       <Button type="submit">Submit</Button>
     </form>
