@@ -19,7 +19,6 @@ jobs:
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: 'false'
         run: |
-          echo "$(steps.yarn-cache.outputs.cache-hit)"
           yarn install
       - name: Check dependencies
         run: yarn dependency-cruiser packages
