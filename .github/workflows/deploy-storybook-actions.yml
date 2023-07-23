@@ -1,7 +1,7 @@
 name: Deploy Storybook Action
-on
+on:
   push:
-    paths: 
+    paths:
       - '**.stories.jsx'
       - 'packages/**/stories'
       - '/stories/**'
