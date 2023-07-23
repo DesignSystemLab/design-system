@@ -19,20 +19,29 @@ describe('Box', () => {
     expect(div).toBeInTheDocument();
   });
 
-  it('color 속성을 갖는 Box 컴포넌트는 Backgorund 색상을 갖는다.', () => {
+  it('color 속성을 갖는 Box 컴포넌트는 Color 속성을 갖는다.', () => {
     const boxColor = 'primary-500';
-    const bgColor = getColorByToken(boxColor);
-    const textColor = setTextColorByBackground(bgColor);
+    const textColor = getColorByToken(boxColor);
     render(<Box color={boxColor}>Box</Box>);
     const box = screen.getByRole('presentation');
     expect(box).toBeInTheDocument();
     expect(box).toHaveStyle({
-      backgroundColor: bgColor,
       color: textColor
     });
   });
 
-  it('Box 컴포넌트는 style 속성을 통해 스타일 적용이 가능하다. ', () => {
+  it('Box 컴포넌트에 color 속성이 주어졌을 때, 해당 컴포넌트의 텍스트 색상은 color 속성 값과 동일해야 한다.', () => {
+    const boxColor = 'primary-500';
+    const backgroundColor = getColorByToken(boxColor);
+    render(<Box backgroundColor={boxColor}>Box</Box>);
+    const box = screen.getByRole('presentation');
+    expect(box).toBeInTheDocument();
+    expect(box).toHaveStyle({
+      backgroundColor
+    });
+  });
+
+  it('Box 컴포넌트에 backgroundColor 속성이 주어졌을 때, 해당 컴포넌트의 배경 색상은 backgroundColor 속성 값과 동일해야 한다.', () => {
     const boxWidth = '64px';
     const boxHeight = '128px';
     render(<Box style={{ width: boxWidth, height: boxHeight }}>Box</Box>);
@@ -66,7 +75,6 @@ describe('Box', () => {
       </Box>
     );
     const ulBox = screen.getByRole('list');
-    const ulList = screen.getAllByRole('listitem');
     const ulElement = container.querySelector('ul');
     const listElements = container.querySelectorAll('li');
     expect(ulBox).toBeInTheDocument();
