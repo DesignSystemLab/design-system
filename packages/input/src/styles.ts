@@ -16,12 +16,21 @@ export const inputWrapperStyle = (hasMessage: boolean, width?: number) => {
 export const inputRightStyle = css({
   cursor: 'pointer',
   position: 'absolute',
-  right: '16px',
+  right: '14px',
   top: 'calc(50% + 1px)',
   transform: 'translateY(-50%)',
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  width: '12px',
+  height: '12px',
+  padding: '10px',
+  color: getColorByToken('grey-darken2'),
+  borderRadius: '50%',
+  ':hover': {
+    background: getColorByToken('grey-lighten4'),
+    color: getColorByToken('grey-darken4')
+  }
 });
 
 export const inputPrependStyle = css({
