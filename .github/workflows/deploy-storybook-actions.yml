@@ -1,6 +1,8 @@
 name: Deploy Storybook Action
 on:
   push:
+    branches:
+      - 'main'
     paths:
       - '.storybook/**'
       - 'packages/**'
