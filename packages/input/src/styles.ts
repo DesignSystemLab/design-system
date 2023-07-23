@@ -85,12 +85,12 @@ export const inputStyle = ({ themePreset, size, hasLabel, hasIcon, clearable, ty
     paddingInlineStart: `${hasIcon ? paddingX + 32 + 'px' : paddingX + 'px'}`,
     paddingInlineEnd: `${clearable || type === 'password' ? paddingX + 24 + 'px' : paddingX + 'px'}`,
     height: `${(sizeIndex + 5) * 8}px`,
-    border: `solid ${getColorByToken('grey-base')} 1px`,
+    border: `solid ${getColorByToken('border')} 1px`,
     boxSizing: 'border-box',
 
     // focus
     '&:focus': {
-      '&::placeholder': { color: `${getColorByToken('grey-base')}` },
+      '&::placeholder': { color: `${getColorByToken('border')}` },
       border: `solid ${parsedColor} 2px`
     },
 
@@ -111,13 +111,13 @@ export const inputStyle = ({ themePreset, size, hasLabel, hasIcon, clearable, ty
 
     // disabled
     '&[disabled]': {
-      background: `${getColorByToken('grey-lighten3')}`,
-      color: `${getColorByToken('grey-base')}`,
+      background: `${getColorByToken('grey-lighten4')}`,
+      color: `${getColorByToken('grey-lighten1')}`,
       cursor: 'not-allowed'
     },
     '&[disabled] ~ label': {
-      background: `${getColorByToken('grey-lighten3')}`,
-      color: `${getColorByToken('grey-base')}`
+      background: `${getColorByToken('grey-lighten4')}`,
+      color: `${getColorByToken('grey-lighten1')}`
     }
   });
 };
