@@ -101,7 +101,6 @@ export const inputStyle = ({ themePreset, size, hasLabel, hasIcon, clearable, ty
     '&::placeholder': { color: getColorByToken('grey-base') },
 
     // label 이동
-    // '&[value=""] ~ label': { ...insideLabel, marginLeft: hasIcon ? '32px' : 0 },
     '&:not([value=""]) ~ label': { ...upsideLabel, marginLeft: 0 },
     '&:focus ~ label': { ...upsideLabel, marginLeft: 0, color: parsedColor },
 
