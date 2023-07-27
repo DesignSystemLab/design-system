@@ -4,7 +4,7 @@
 
 ## Usage
 
-[Storybook](https://###)
+[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/navigation-tabs--basic)
 
 ```jsx
 <Tabs>

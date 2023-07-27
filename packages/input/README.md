@@ -6,7 +6,7 @@
 
 ## Usage
 
-[Storybook](https://###)
+[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/forms-textinput--basic)
 
 ```jsx
 <TextInput>
