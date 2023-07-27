@@ -21,7 +21,7 @@
 - **[🚚 Yarn Berry: 패키지 매니저로 Yarn Berry를 활용하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Package-Manager:-Yarn-Berry)**
 - **[⚡️ Compound Component 패턴을 활용하여 유연한 구성이 가능하도록 설계되었습니다.](https://github.com/DesignSystemLab/design-system/wiki/Compound-Component-Pattern)**
 - **[🏢 Monorepo Architecture를 채택해 코드 공유와 협업을 용이하게 구성하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Monorepo-Architecture)**
-- **[⌨️ Keyboard Controll: 키보드 제어 기능을 포함하여 사용자 상호작용과 접근성에 주의를 기울였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Keyboard-Control)**
+- **[⌨️ Keyboard Control: 키보드 제어 기능을 포함하여 사용자 상호작용과 접근성에 주의를 기울였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Keyboard-Control)**
 - **[✅ dependency-cruiser를 사용하여 의존성을 체크하여 패키지 간 참조 관계를 검사하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/dependency-cruiser)**
 - **[💅 Emotion을 사용하여 컴포넌트 스타일링을 구현하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Styling-Library:-Emotion)**
 - **[🧪 Jest와 React Testing Library를 사용하여 테스트를 구성하였습니다.](https://github.com/DesignSystemLab/design-system/wiki/Test-Using-JEST-&-React-Testing-Library)**
