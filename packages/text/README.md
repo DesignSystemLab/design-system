@@ -1,4 +1,4 @@
-# text
+# Text
 
 Text 컴포넌트를 사용한다면, 목적에 맞는 컨텐츠를 표현하기 위해 간편하게 타이포그라피를 적용하실 수 있습니다.
 
@@ -46,7 +46,7 @@ Text 컴포넌트를 사용한다면, 목적에 맞는 컨텐츠를 표현하기
   <Text size="sm">Small Paragraph</Text>
 ```
 
-## **Props**
+## Props
 
 ### Text
 

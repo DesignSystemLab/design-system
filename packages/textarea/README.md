@@ -4,7 +4,7 @@ Textarea 컴포넌트는 여러 줄을 허용하는 텍스트 입력 공간입�
 
 ## Usage
 
-[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/actions-textarea--basic)
+[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/forms-textarea--basic)
 
 ```jsx
 <Textarea />

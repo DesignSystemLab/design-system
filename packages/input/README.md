@@ -1,6 +1,4 @@
-# input
-
-# Checkbox
+# TextInput
 
 사용자로부터 텍스트 입력을 받기 위한 UI요소입니다.
 

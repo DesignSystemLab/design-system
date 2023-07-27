@@ -4,7 +4,7 @@ Stack 컴포넌트는 요소들을 공통으로 그룹화하고, 요소 사이�
 
 ## Usage
 
-[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/actions-stack--basic)
+[Storybook](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
 
 ```jsx
 <Stack direction="vertical" justify="stretch" spacing="20px">
