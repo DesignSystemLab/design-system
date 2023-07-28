@@ -12,7 +12,7 @@
 - 🌈 `as` 속성을 통해 컴포넌트 다형성을 지원하도록 구현했습니다.
 - ⚠️ 웹 접근성을 고려해 적절한 `html role`을 사용하여 컴포넌트를 구성하였습니다.
 - 🧩 다양한 사용 환경을 고려해 `cjs`, `esm` 모듈을 지원하도록 번들링을 구성하였습니다.
-- ⌨️ Unconrolled Component 특성을 활용해 인터랙션이 필요한 컴포넌트들을 지원하였습니다.
+- ⌨️ Uncontrolled Component 특성을 활용해 인터랙션이 필요한 컴포넌트들을 지원하였습니다.
 - 💫 Form 관련 컴포넌트들은 [React Hook Form](https://react-hook-form.com/)을 지원합니다.
 
 ## Project Overview
@@ -52,24 +52,56 @@ import {Mail, Bell, Book, ...} from '@jdesignlab/react-icons'
 
 ## Components
 
-- [Box](https://designsystemlab.github.io/design-system/?path=/docs/layout-box--basic)
-- [Button](https://designsystemlab.github.io/design-system/?path=/docs/actions-button--basic)
-- [Card](https://designsystemlab.github.io/design-system/?path=/docs/data-display-card--basic)
-- [Checkbox](https://designsystemlab.github.io/design-system/?path=/docs/forms-checkbox--basic)
-- [Drawer](https://designsystemlab.github.io/design-system/?path=/docs/actions-drawer--basic)
-- [Dropdown](https://designsystemlab.github.io/design-system/?path=/docs/layout-dropdown--basic)
-- [Flex](https://designsystemlab.github.io/design-system/?path=/docs/layout-flex--basic)
-- [Input](https://designsystemlab.github.io/design-system/?path=/docs/forms-textinput--basic)
-- [Modal](https://designsystemlab.github.io/design-system/?path=/docs/actions-modal--basic)
-- [Popover](https://designsystemlab.github.io/design-system/?path=/docs/actions-popover--basic)
-- [Radio](https://designsystemlab.github.io/design-system/?path=/docs/forms-radio--basic)
-- [Select](https://designsystemlab.github.io/design-system/?path=/docs/forms-select--basic)
-- [Stack](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
-- [Tabs](https://designsystemlab.github.io/design-system/?path=/docs/navigation-tabs--basic)
-- [Text](https://designsystemlab.github.io/design-system/?path=/docs/typography-text--basic)
-- [Textarea](https://designsystemlab.github.io/design-system/?path=/docs/forms-textarea--basic)
-- [Tooltip](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
+**Box**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/box) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-box--basic)
 
+**Button**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/button) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-button--basic)
+
+**Card**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/card) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/data-display-card--basic)
+
+**Checkbox**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/checkbox) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/data-display-card--basic)
+
+**Drawer**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/drawer) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-drawer--basic)
+
+**Dropdown**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/dropdown) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-dropdown--basic)
+
+**Flex**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/flex) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-flex--basic)
+
+**Input**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/input) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/forms-textinput--basic)
+
+**Modal**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/modal) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-modal--basic)
+
+**Popover**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/popover) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-popover--basic)
+
+**Radio**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/radio) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/forms-radio--basic)
+
+**Select**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/select) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/forms-select--basic)
+
+**Stack**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/stack) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
+
+**Tabs**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/tabs) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/navigation-tabs--basic)
+
+**Text**
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/tabs) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/typography-text--basic)
+
+**Textarea**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/textarea) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/forms-textarea--basic)
+
+**Tooltip**  
+[<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/tooltip) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
 
 ## Contributors
 
