@@ -70,16 +70,16 @@ import {Mail, Bell, Book, ...} from '@jdesignlab/react-icons'
 **Dropdown**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/dropdown) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-dropdown--basic)
 
-**Flex**
+**Flex**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/flex) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-flex--basic)
 
-**Input**
+**Input**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/input) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/forms-textinput--basic)
 
-**Modal**
+**Modal**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/modal) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-modal--basic)
 
-**Popover**
+**Popover**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/popover) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/actions-popover--basic)
 
 **Radio**  
@@ -91,10 +91,10 @@ import {Mail, Bell, Book, ...} from '@jdesignlab/react-icons'
 **Stack**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/stack) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/layout-stack--basic)
 
-**Tabs**
+**Tabs**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/tabs) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/navigation-tabs--basic)
 
-**Text**
+**Text**  
 [<img src="https://img.shields.io/badge/README-1dd1a1?style=flat&logo=README&logoColor=white">](https://github.com/DesignSystemLab/design-system/tree/main/packages/tabs) [<img src="https://img.shields.io/badge/storybook-FF4785?style=flat&logo=storybook&logoColor=white&style">](https://designsystemlab.github.io/design-system/?path=/docs/typography-text--basic)
 
 **Textarea**  
