@@ -10,7 +10,6 @@ export * from '@jdesignlab/j-provider';
 export * from '@jdesignlab/modal';
 export * from '@jdesignlab/popover';
 export * from '@jdesignlab/radio';
-// export * from '@jdesignlab/react-icons';
 export * from '@jdesignlab/react-utils';
 export * from '@jdesignlab/select';
 export * from '@jdesignlab/stack';

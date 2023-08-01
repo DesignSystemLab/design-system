@@ -16,3 +16,4 @@ export * from './mixins/styles/usePlacementStyle';
 
 /** hooks */
 export * from './hooks/useInitialRender';
+export * from './hooks/useOutsideClick';

@@ -1,5 +1,11 @@
 # @jdesignlab/card
 
+## 0.11.1
+
+### Patch Changes
+
+- @jdesignlab/flex@0.9.1
+
 ## 0.11.0
 
 ### Minor Changes

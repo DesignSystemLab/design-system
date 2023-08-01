@@ -1,5 +1,11 @@
 # @jdesignlab/react-utils
 
+## 0.9.0
+
+### Minor Changes
+
+- Add useOutsideClick hook for external clicks
+
 ## 0.8.0
 
 ### Minor Changes

@@ -1,7 +1,7 @@
 {
   "name": "@jdesignlab/react",
   "packageManager": "yarn@3.3.1",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "module": "./dist/index.mjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -9,6 +9,7 @@
   "files": [
     "dist"
   ],
+  "license": "MIT",
   "contributors": [
     {
       "name": "jiny",
@@ -20,6 +21,15 @@
       "email": "jy7828@gmail.com",
       "url": "https://github.com/yoycode"
     }
+  ],
+  "keywords": [
+    "components",
+    "design-system",
+    "emotion",
+    "library",
+    "react",
+    "react-components",
+    "ui"
   ],
   "scripts": {
     "test": "jest",

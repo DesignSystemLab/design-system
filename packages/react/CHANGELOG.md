@@ -1,5 +1,33 @@
 # @jdesignlab/react
 
+## 0.11.0
+
+### Minor Changes
+
+- remove unused export files
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/dropdown@0.11.0
+  - @jdesignlab/select@0.10.0
+  - @jdesignlab/button@0.12.1
+  - @jdesignlab/checkbox@0.8.1
+  - @jdesignlab/drawer@0.8.2
+  - @jdesignlab/input@0.9.1
+  - @jdesignlab/j-provider@0.7.1
+  - @jdesignlab/modal@0.9.2
+  - @jdesignlab/popover@0.8.2
+  - @jdesignlab/radio@0.8.1
+  - @jdesignlab/stack@0.7.1
+  - @jdesignlab/typography@0.8.1
+  - @jdesignlab/textarea@0.11.2
+  - @jdesignlab/tooltip@0.7.2
+  - @jdesignlab/box@0.8.2
+  - @jdesignlab/flex@0.9.1
+  - @jdesignlab/card@0.11.1
+
 ## 0.10.4
 
 ### Patch Changes

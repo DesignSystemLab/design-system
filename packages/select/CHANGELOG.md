@@ -1,5 +1,18 @@
 # @jdesignlab/select
 
+## 0.10.0
+
+### Minor Changes
+
+- Add useOutsideClick hook for external clicks
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/button@0.12.1
+  - @jdesignlab/flex@0.9.1
+
 ## 0.9.1
 
 ### Patch Changes

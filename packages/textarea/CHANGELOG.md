@@ -1,5 +1,13 @@
 # @jdesignlab/textarea
 
+## 0.11.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/typography@0.8.1
+
 ## 0.11.1
 
 ### Patch Changes
