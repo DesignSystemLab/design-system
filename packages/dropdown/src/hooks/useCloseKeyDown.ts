@@ -1,5 +1,5 @@
 import React, { useContext, useCallback, RefObject } from 'react';
-import useToggleOpen from './useToggleOpen';
+import { useToggleOpen } from './useToggleOpen';
 
 const useCloseKeyDown = () => (event: React.KeyboardEvent<HTMLElement>) => {
   const el = event.currentTarget;

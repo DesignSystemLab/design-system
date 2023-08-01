@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import React, { useContext, useCallback, RefObject } from 'react';
-import useToggleOpen from './useToggleOpen';
+import { useToggleOpen } from './useToggleOpen';
 
 const MENU_WRAPPER_SELECTOR = '.menu_wrapper';
 const MENU_ITEM_SELECTOR = '.menu_item:not([disabled])';

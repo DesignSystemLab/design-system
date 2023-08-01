@@ -1,4 +1,4 @@
-import useToggleOpen from './useToggleOpen';
+import { useToggleOpen } from './useToggleOpen';
 
 export const useSelectItem = (
   event: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>,
