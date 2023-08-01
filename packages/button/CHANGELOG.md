@@ -1,5 +1,13 @@
 # @jdesignlab/button
 
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/j-provider@0.7.1
+
 ## 0.12.0
 
 ### Minor Changes

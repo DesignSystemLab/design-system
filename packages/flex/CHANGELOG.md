@@ -1,5 +1,11 @@
 # @jdesignlab/flex
 
+## 0.9.1
+
+### Patch Changes
+
+- @jdesignlab/j-provider@0.7.1
+
 ## 0.9.0
 
 ### Minor Changes

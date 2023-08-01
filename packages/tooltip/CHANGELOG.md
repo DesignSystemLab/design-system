@@ -1,5 +1,14 @@
 # @jdesignlab/tooltip
 
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/button@0.12.1
+  - @jdesignlab/j-provider@0.7.1
+
 ## 0.7.1
 
 ### Patch Changes

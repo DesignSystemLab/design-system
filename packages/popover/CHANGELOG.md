@@ -1,5 +1,14 @@
 # @jdesignlab/popover
 
+## 0.8.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/react-utils@0.9.0
+  - @jdesignlab/button@0.12.1
+  - @jdesignlab/flex@0.9.1
+
 ## 0.8.1
 
 ### Patch Changes

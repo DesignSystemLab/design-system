@@ -1,5 +1,12 @@
 # @jdesignlab/box
 
+## 0.8.2
+
+### Patch Changes
+
+- @jdesignlab/button@0.12.1
+- @jdesignlab/j-provider@0.7.1
+
 ## 0.8.1
 
 ### Patch Changes
