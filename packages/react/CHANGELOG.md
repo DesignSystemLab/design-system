@@ -1,5 +1,18 @@
 # @jdesignlab/react
 
+## 0.12.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/dropdown@0.12.0
+
+## 0.12.0
+
+### Minor Changes
+
+- remove useOutsideClick hook (incorrectly placed)
+
 ## 0.11.0
 
 ### Minor Changes

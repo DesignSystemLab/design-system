@@ -1,5 +1,11 @@
 # @jdesignlab/dropdown
 
+## 0.12.0
+
+### Minor Changes
+
+- fix incorrect export method (named export)
+
 ## 0.11.0
 
 ### Minor Changes
