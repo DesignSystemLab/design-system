@@ -50,6 +50,7 @@ export const variant = () => (
       <Tabs.Content value="tab2">content2</Tabs.Content>
       <Tabs.Content value="tab3">content3</Tabs.Content>
     </Tabs>
+    <br />
     <Tabs variant="enclosed" size="lg">
       <Tabs.List>
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
@@ -64,6 +65,7 @@ export const variant = () => (
       <Tabs.Content value="tab2">content2</Tabs.Content>
       <Tabs.Content value="tab3">content3</Tabs.Content>
     </Tabs>
+    <br />
     <Tabs variant="unstyled" size="lg">
       <Tabs.List>
         <Tabs.Trigger value="tab1">tab1</Tabs.Trigger>
