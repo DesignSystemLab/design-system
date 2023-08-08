@@ -1,38 +1,27 @@
 import { css } from '@emotion/react';
-import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
+import { ColorToken, getColorByToken, hexToRgba, setTextColorByBackground } from '@jdesignlab/theme';
 import type { TabVariant, TabSize } from './types';
 
-export const tabListStyle = (full: boolean, variant: TabVariant, size: TabSize) => {
+export const tabListStyle = (baseColor: ColorToken, full: boolean, variant: TabVariant, size: TabSize) => {
   let variantStyle = {};
   switch (variant) {
     case 'enclosed':
       variantStyle = {};
       break;
-    default: // underline
+    case 'underline': // underline
+      const backgroundColor = getColorByToken(baseColor);
       variantStyle = {
         borderRadius: '4px 4px 0 0 ',
-        background: getColorByToken('purple-darken3'),
-        color: getColorByToken('shades-white')
+        background: backgroundColor,
+        color: setTextColorByBackground(backgroundColor)
       };
       break;
-  }
-
-  let sizeStyle = {};
-  switch (size) {
-    case 'sm':
-      sizeStyle = {};
-      break;
-    case 'lg':
-      sizeStyle = {};
-      break;
-    default: // md
-      sizeStyle = {};
-      break;
+    default:
+      variantStyle = {};
   }
 
   return css({
     ...variantStyle,
-    ...sizeStyle,
     display: 'flex',
     flexDirection: 'row',
     gap: '2px',
@@ -48,43 +37,64 @@ export const tabTriggerStyle = (
   isActivated: boolean,
   variant: TabVariant,
   size: TabSize,
+  baseColor: ColorToken,
+  accentColor: ColorToken,
   disabled: boolean | undefined
 ) => {
   let variantStyle = {};
   switch (variant) {
     case 'enclosed':
       variantStyle = {
-        border: ' solid lightgray 1px',
+        border: isActivated ? `solid ${getColorByToken(accentColor)} 1px` : 'none',
         borderRadius: '5px 5px 0 0 ',
         position: 'relative',
         bottom: '-1px',
-        borderBottom: isActivated ? `solid 1px white` : 'solid lightgray 1px',
-        background: isActivated ? 'white' : hexToRgba(getColorByToken('grey-lighten3'), 0.3),
-        color: disabled ? 'lightgray' : 'black'
+        borderBottom: isActivated ? `solid 1px white` : `solid ${getColorByToken(accentColor)} 1px`,
+        background: isActivated ? 'white' : hexToRgba(getColorByToken(baseColor), 0.3),
+        color: disabled
+          ? getColorByToken('disabled')
+          : isActivated
+          ? getColorByToken(accentColor)
+          : getColorByToken('grey-darken2')
       };
       break;
-    default: // underline
+    case 'underline': // underline
       variantStyle = {
-        color: disabled ? 'lightgray' : 'white',
-        borderBottom: isActivated ? `solid 4px ${getColorByToken('pink-lighten2')}` : 'none'
+        color: disabled
+          ? getColorByToken('disabled')
+          : isActivated
+          ? getColorByToken(accentColor)
+          : setTextColorByBackground(getColorByToken(baseColor)),
+        borderBottom: isActivated ? `solid 4px ${getColorByToken(accentColor)}` : 'none'
       };
       break;
+    case 'unstyled':
+      variantStyle = {
+        color: disabled
+          ? getColorByToken('disabled')
+          : isActivated
+          ? getColorByToken(accentColor)
+          : getColorByToken(baseColor)
+      };
   }
 
   let sizeStyle = {};
   switch (size) {
     case 'sm':
       sizeStyle = {
+        fontSize: '16px',
         padding: '8px 16px 4px'
       };
       break;
     case 'lg':
       sizeStyle = {
+        fontSize: variant === 'unstyled' ? '28px' : '24px',
         padding: '16px 26px 12px'
       };
       break;
     default: // md
       sizeStyle = {
+        fontSize: '20px',
         padding: '12px 20px 6px'
       };
       break;
@@ -93,21 +103,18 @@ export const tabTriggerStyle = (
   return css({
     ...variantStyle,
     ...sizeStyle,
+    fontWeight: isActivated ? '700' : 'normal',
     cursor: disabled ? 'not-allowed' : 'pointer'
   });
 };
 
-export const tabContentStyle = (variant: TabVariant, lazy: boolean) => {
-  let variantStyle = {
-    border: variant === 'enclosed' ? 'solid lightgray 1px' : 'none',
+export const tabContentStyle = (variant: TabVariant, lazy: boolean, accentColor: ColorToken) => {
+  return css({
+    border: variant === 'enclosed' ? `solid ${getColorByToken(accentColor)} 1px` : 'none',
+    padding: variant === 'unstyled' ? '4px 18px 18px' : '18px',
     display: lazy ? 'block' : 'none',
     '&.tab_active': {
       display: 'block'
     }
-  };
-
-  return css({
-    ...variantStyle,
-    padding: '18px'
   });
 };

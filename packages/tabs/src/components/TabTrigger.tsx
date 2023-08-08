@@ -11,7 +11,7 @@ import { combineClassNames } from '@jdesignlab/utils';
 const Trigger = (props: TabsTriggerProps) => {
   const triggerRef = useRef(null);
   const { children, value, disabled, ...otherProps } = props;
-  const { selectedTab, setSelectedTab, variant, size } = useContext(TabsContext);
+  const { selectedTab, setSelectedTab, variant, size, baseColor, accentColor } = useContext(TabsContext);
 
   const onClickTab = () => {
     if (!disabled) {
@@ -20,7 +20,7 @@ const Trigger = (props: TabsTriggerProps) => {
   };
 
   const isActivated = selectedTab === value ? true : false;
-  const style = { ...tabTriggerStyle(isActivated, variant, size, disabled) };
+  const style = { ...tabTriggerStyle(isActivated, variant, size, baseColor, accentColor, disabled) };
 
   return (
     <div

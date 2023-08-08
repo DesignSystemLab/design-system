@@ -1,7 +1,7 @@
 import type { ColorToken } from '@jdesignlab/theme';
 import type { Dispatch, SetStateAction } from 'react';
 
-export type TabVariant = 'enclosed' | 'underline';
+export type TabVariant = 'enclosed' | 'underline' | 'unstyled';
 export type TabSize = 'sm' | 'md' | 'lg';
 
 export interface TabsProps {
@@ -12,6 +12,8 @@ export interface TabsProps {
   size?: TabSize;
   lazy?: boolean;
   full?: boolean;
+  baseColor?: ColorToken;
+  accentColor?: ColorToken;
 }
 
 export interface TabsListProps {
