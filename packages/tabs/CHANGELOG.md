@@ -1,5 +1,11 @@
 # @jdesignlab/tabs
 
+## 0.11.0
+
+### Minor Changes
+
+- update ui
+
 ## 0.10.0
 
 ### Minor Changes

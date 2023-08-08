@@ -1,5 +1,12 @@
 # @jdesignlab/react
 
+## 0.12.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/tabs@0.11.0
+
 ## 0.12.2
 
 ### Patch Changes
