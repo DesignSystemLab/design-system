@@ -1,5 +1,14 @@
 # @jdesignlab/react
 
+## 0.12.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/input@0.10.0
+  - @jdesignlab/tabs@0.10.0
+  - @jdesignlab/modal@0.9.3
+
 ## 0.12.1
 
 ### Patch Changes

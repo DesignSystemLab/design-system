@@ -1,5 +1,11 @@
 # @jdesignlab/input
 
+## 0.10.0
+
+### Minor Changes
+
+- add new properties and update ui
+
 ## 0.9.1
 
 ### Patch Changes
