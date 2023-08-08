@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { ColorToken, getColorByToken, hexToRgba, setTextColorByBackground } from '@jdesignlab/theme';
+import { Color, ColorToken, getColorByToken, hexToRgba, setTextColorByBackground } from '@jdesignlab/theme';
 import type { TabVariant, TabSize } from './types';
 
 export const tabListStyle = (baseColor: ColorToken, full: boolean, variant: TabVariant, size: TabSize) => {
@@ -8,7 +8,7 @@ export const tabListStyle = (baseColor: ColorToken, full: boolean, variant: TabV
     case 'enclosed':
       variantStyle = {};
       break;
-    case 'underline': // underline
+    case 'underline':
       const backgroundColor = getColorByToken(baseColor);
       variantStyle = {
         borderRadius: '4px 4px 0 0 ',
@@ -42,23 +42,24 @@ export const tabTriggerStyle = (
   disabled: boolean | undefined
 ) => {
   let variantStyle = {};
+  const defaultEnclosed = {
+    border: isActivated ? `solid ${getColorByToken(accentColor)} 1px` : 'none',
+    borderRadius: '5px 5px 0 0 ',
+    position: 'relative',
+    bottom: '-1px',
+    borderBottom: isActivated ? `solid 1px white` : `solid ${getColorByToken(accentColor)} 1px`,
+    background: isActivated ? 'white' : hexToRgba(getColorByToken(baseColor), 0.3),
+    color: disabled
+      ? getColorByToken('disabled')
+      : isActivated
+      ? getColorByToken(accentColor)
+      : getColorByToken('grey-darken2')
+  };
   switch (variant) {
     case 'enclosed':
-      variantStyle = {
-        border: isActivated ? `solid ${getColorByToken(accentColor)} 1px` : 'none',
-        borderRadius: '5px 5px 0 0 ',
-        position: 'relative',
-        bottom: '-1px',
-        borderBottom: isActivated ? `solid 1px white` : `solid ${getColorByToken(accentColor)} 1px`,
-        background: isActivated ? 'white' : hexToRgba(getColorByToken(baseColor), 0.3),
-        color: disabled
-          ? getColorByToken('disabled')
-          : isActivated
-          ? getColorByToken(accentColor)
-          : getColorByToken('grey-darken2')
-      };
+      variantStyle = defaultEnclosed;
       break;
-    case 'underline': // underline
+    case 'underline':
       variantStyle = {
         color: disabled
           ? getColorByToken('disabled')
@@ -76,6 +77,9 @@ export const tabTriggerStyle = (
           ? getColorByToken(accentColor)
           : getColorByToken(baseColor)
       };
+      break;
+    default:
+      variantStyle = defaultEnclosed;
   }
 
   let sizeStyle = {};
@@ -108,10 +112,11 @@ export const tabTriggerStyle = (
   });
 };
 
-export const tabContentStyle = (variant: TabVariant, lazy: boolean, accentColor: ColorToken) => {
+export const tabContentStyle = (variant: TabVariant, lazy: boolean, accentColor: ColorToken, baseColor: ColorToken) => {
   return css({
     border: variant === 'enclosed' ? `solid ${getColorByToken(accentColor)} 1px` : 'none',
     padding: variant === 'unstyled' ? '4px 18px 18px' : '18px',
+    background: variant === 'underline' ? hexToRgba(getColorByToken(baseColor), 0.1) : 'white',
     display: lazy ? 'block' : 'none',
     '&.tab_active': {
       display: 'block'
