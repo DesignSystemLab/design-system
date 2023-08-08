@@ -8,7 +8,7 @@ import { createClassVariant } from '@jdesignlab/theme';
 
 const List = (props: TabsListProps) => {
   const { children, ...otherProps } = props;
-  const { defaultValue, setSelectedTab, variant, size, full, baseColor, accentColor } = useContext(TabsContext);
+  const { defaultValue, setSelectedTab, variant, size, full, baseColor } = useContext(TabsContext);
   const style = { ...tabListStyle(baseColor, full, variant, size) };
 
   useEffect(() => {
