@@ -8,8 +8,8 @@ import { createClassVariant } from '@jdesignlab/theme';
 
 const Content = (props: TabsContentProps) => {
   const { children, value, ...otherProps } = props;
-  const { selectedTab, variant, lazy, accentColor } = useContext(TabsContext);
-  const style = { ...tabContentStyle(variant, lazy, accentColor) };
+  const { selectedTab, variant, lazy, accentColor, baseColor } = useContext(TabsContext);
+  const style = { ...tabContentStyle(variant, lazy, accentColor, baseColor) };
 
   return (
     <>
