@@ -21,26 +21,30 @@
 
 ### Tabs
 
-| Property     | Allow Types            | Description                                                    | Default     |
-| ------------ | ---------------------- | -------------------------------------------------------------- | ----------- |
-| variant      | `enclosed` `underline` | 컴포넌트의 스타일을 변형합니다.                                | `underline` |
-| defaultValue | `string`               | 탭의 `value`로 초기 렌더링 시 선택될 탭을 지정합니다.          | `undefined` |
-| onChange     | `() => void`           | 탭이 변경될 때 발생하는 이벤트를 지정합니다.                   | `undefined` |
-| size         | `sm` `md` `lg`         | 컴포넌트의 크기를 조정합니다.                                  | `md`        |
-| lazy         | `boolean`              | 탭의 내용을 지연 로딩하여 필요한 때만 렌더링하도록 지정합니다. | `false`     |
-| full         | `boolean`              | 컴포넌트가 부모 컨테이너의 전체너비를 차지하도록 지정합니다.   | `false`     |
+| Property     | Allow Types            | Description                                                    | Default        |
+| ------------ | ---------------------- | -------------------------------------------------------------- | -------------- |
+| variant      | `enclosed` `underline` | 컴포넌트의 스타일을 변형합니다.                                | `underline`    |
+| defaultValue | `string`               | 탭의 `value`로 초기 렌더링 시 선택될 탭을 지정합니다.          | `undefined`    |
+| onChange     | `() => void`           | 탭이 변경될 때 발생하는 이벤트를 지정합니다.                   | `undefined`    |
+| size         | `sm` `md` `lg`         | 컴포넌트의 크기를 조정합니다.                                  | `md`           |
+| lazy         | `boolean`              | 탭의 내용을 지연 로딩하여 필요한 때만 렌더링하도록 지정합니다. | `false`        |
+| full         | `boolean`              | 컴포넌트가 부모 컨테이너의 전체너비를 차지하도록 지정합니다.   | `false`        |
+| accentColor  | `ColorToken`           | 탭의 강조 색상을 지정합니다.                                   | `grey-darken4` |
+| baseColor    | `ColorToken`           | 탭의 기본 색상을 지정합니다.                                   | `grey-base`    |
 
 ### Tabs.List
 
-| Property | Allow Types | Description | Default |
-| -------- | ----------- | ----------- | ------- |
+| Property | Allow Types       | Description                                | Default |
+| -------- | ----------------- | ------------------------------------------ | ------- |
+| children | `React.ReactNode` | Tabs.Trigger를 감싸고 있는 부모요소입니다. |         |
 
 ### Tabs.Trigger
 
-| Property | Allow Types | Description                                                        | Default  |
-| -------- | ----------- | ------------------------------------------------------------------ | -------- |
-| value    | `string`    | 각 트리거의 값을 지정해 화면에 보여줄 `Tabs.Content`와 연결합니다. | `bottom` |
-| disabled | `boolean`   | 탭을 비활성화합니다.                                               | `false`  |
+| Property | Allow Types       | Description                                                        | Default  |
+| -------- | ----------------- | ------------------------------------------------------------------ | -------- |
+| children | `React.ReactNode` | Tab의 컨텐츠를 변경하기 위한 트리거 요소입니다.                    |          |
+| value    | `string`          | 각 트리거의 값을 지정해 화면에 보여줄 `Tabs.Content`와 연결합니다. | `bottom` |
+| disabled | `boolean`         | 탭을 비활성화합니다.                                               | `false`  |
 
 ### Tabs.Content
 
