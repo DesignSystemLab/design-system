@@ -6,9 +6,13 @@ import { ModalTriggerProps } from '../types';
 
 export const ModalTrigger = (props: ModalTriggerProps) => {
   const { children } = props;
-  const { onOpen } = useContext(ModalContext);
+  const { id, onOpen } = useContext(ModalContext);
 
-  return <Trigger onClick={onOpen}>{children}</Trigger>;
+  return (
+    <Trigger onClick={onOpen} id={`modal-${id}`}>
+      {children}
+    </Trigger>
+  );
 };
 
 ModalTrigger.displayName = 'Modal.Trigger';

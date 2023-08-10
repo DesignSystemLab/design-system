@@ -5,6 +5,7 @@ import { ReactNode } from 'react';
 interface TriggerProps {
   children: ReactNode;
   onClick(): void;
+  id?: string;
 }
 
 const triggerStyle = css({
@@ -13,9 +14,11 @@ const triggerStyle = css({
 });
 
 export const Trigger = (props: TriggerProps) => {
-  const { children, onClick, ...rest } = props;
+  const { children, onClick, id, ...rest } = props;
+  const ariaControl = id ? { 'aria-control': id } : {};
+
   return (
-    <div onClick={onClick} css={triggerStyle} {...rest}>
+    <div onClick={onClick} css={triggerStyle} {...ariaControl} {...rest}>
       {children}
     </div>
   );

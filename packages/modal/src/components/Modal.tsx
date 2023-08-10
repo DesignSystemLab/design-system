@@ -1,4 +1,5 @@
 import { filterComponent } from '@jdesignlab/react-utils';
+import { useId } from 'react';
 import { ModalContext } from '../context';
 import { useToggleLayer } from '../hooks/useToggleLayer';
 import { ModalProps } from '../types';
@@ -16,7 +17,9 @@ export const Modal = (props: ModalProps) => {
   } = props;
   const { isOpen, onOpen, onClose } = useToggleLayer(openProp, onOpenProp, onCloseProp);
 
+  const id = useId();
   const providerValue = {
+    id,
     isOpen,
     onOpen,
     onClose,

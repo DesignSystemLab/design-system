@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 interface ModalContext {
+  id: string;
   isOpen: boolean;
   onOpen(): void;
   onClose(): void;
@@ -8,6 +9,7 @@ interface ModalContext {
 }
 
 export const ModalContext = createContext<ModalContext>({
+  id: '',
   isOpen: false,
   onOpen: () => {},
   onClose: () => {},
