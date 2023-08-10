@@ -1,8 +1,6 @@
 import { Modal } from '../src';
 import React, { useState } from 'react';
 import { Button } from '@jdesignlab/button';
-import { TextInput } from '@jdesignlab/input';
-import { Flex } from '@jdesignlab/flex';
 
 export default {
   title: 'Actions/Modal',
@@ -15,132 +13,71 @@ const argTypes = {};
 const Template = args => <Modal {...args} />;
 
 export const Basic = () => (
-  <Modal>
+  <Modal hasCloseIcon>
     <Modal.Trigger>
-      <Button>열기</Button>
+      <Button>Basic</Button>
     </Modal.Trigger>
-    <Modal.Header>
-      <h3>여기 헤더입니다.</h3>
-    </Modal.Header>
-    <Modal.Body>
-      <Flex direction="column" gap={10}>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-      </Flex>
-    </Modal.Body>
-    <Modal.Footer>
-      <Button>여긴 푸터</Button>
-    </Modal.Footer>
+    <Modal.Portal></Modal.Portal>
   </Modal>
 );
 
-export const withSetState = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
+export const controlled = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Modal
-      open={modalOpen}
-      onOpen={() => {
-        setModalOpen(true);
-      }}
-      onClose={() => {
-        setModalOpen(false);
-      }}
-    >
-      <Modal.Trigger>
-        <Button>열기</Button>
-      </Modal.Trigger>
-      <Modal.Header>
-        <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
-      </Modal.Header>
-      <Modal.Body>
-        <Flex direction="column" gap={10}>
-          <Flex.Item>
-            <TextInput size="md" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-            </TextInput>
-          </Flex.Item>
-          <Flex.Item>
-            <TextInput size="md" placeholder="hiihihi">
-              <TextInput.Label>label</TextInput.Label>
-            </TextInput>
-          </Flex.Item>
-        </Flex>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button
-          onClick={() => {
-            setModalOpen(false);
-          }}
-        >
-          확인
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <>
+      <Button onClick={() => setOpen(true)}> state이용해서 외부에서 열기</Button>
+      <Modal hasCloseIcon open={open} onOpen={() => setOpen(true)} onClose={() => setOpen(false)}>
+        <Modal.Trigger>
+          <Button>Trigger로</Button>
+        </Modal.Trigger>
+        <Modal.Portal>
+          <Button onClick={() => setOpen(false)}>닫기</Button>
+        </Modal.Portal>
+      </Modal>
+    </>
   );
 };
 
-export const onOpen = () => (
-  <Modal
-    onOpen={() => {
-      alert('onOpen!');
-    }}
-    onClose={() => {
-      alert('onClose!');
-    }}
-  >
+export const controlSize = () => (
+  <Modal>
     <Modal.Trigger>
-      <Button>열기</Button>
+      <Button>800x200</Button>
     </Modal.Trigger>
-    <Modal.Header>
-      <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
-    </Modal.Header>
-    <Modal.Body>
-      <Flex direction="column" gap={10}>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-      </Flex>
-    </Modal.Body>
+    <Modal.Portal width={800} height={200}></Modal.Portal>
+  </Modal>
+);
+
+export const onOpen = () => (
+  <Modal onOpen={() => alert('open')} onClose={() => alert('close')}>
+    <Modal.Trigger>
+      <Button>onOpen</Button>
+    </Modal.Trigger>
+    <Modal.Portal></Modal.Portal>
   </Modal>
 );
 
 export const hasCloseIcon = () => (
-  <Modal hasCloseIcon>
+  <>
+    <Modal hasCloseIcon={true}>
+      <Modal.Trigger>
+        <Button>CloseIcon</Button>
+      </Modal.Trigger>
+      <Modal.Portal></Modal.Portal>
+    </Modal>
+    <Modal hasCloseIcon={false}>
+      <Modal.Trigger>
+        <Button>NoIcon</Button>
+      </Modal.Trigger>
+      <Modal.Portal></Modal.Portal>
+    </Modal>
+  </>
+);
+
+export const disableOverlayClose = () => (
+  <Modal disableOverlayClose>
     <Modal.Trigger>
-      <Button>열기</Button>
+      <Button>CloseIcon</Button>
     </Modal.Trigger>
-    <Modal.Header>
-      <h3>여기 헤더라구욧헤더라구욧헤더라구욧헤더라구욧</h3>
-    </Modal.Header>
-    <Modal.Body>
-      <Flex direction="column" gap={10}>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-        <Flex.Item>
-          <TextInput size="md" placeholder="hiihihi">
-            <TextInput.Label>label</TextInput.Label>
-          </TextInput>
-        </Flex.Item>
-      </Flex>
-    </Modal.Body>
+    <Modal.Portal></Modal.Portal>
   </Modal>
 );
