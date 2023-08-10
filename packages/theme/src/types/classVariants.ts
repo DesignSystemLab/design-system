@@ -11,7 +11,7 @@ export type JDesignSystemComponent =
   | 'popover'
   | 'textarea'
   | 'card'
-  | 'dopdown'
+  | 'dropdown'
   | 'input'
   | 'radio'
   | 'stack';
@@ -32,6 +32,7 @@ export type JDesignSystemElementRoles =
   | 'article'
   | 'button'
   | 'input'
+  | 'portal'
   | 'icon';
 
 export type ClassNameVariant =
