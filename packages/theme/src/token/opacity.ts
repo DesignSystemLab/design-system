@@ -1,0 +1,13 @@
+export const OPACITY_0 = '00';
+export const OPACITY_10 = '1a';
+export const OPACITY_20 = '33';
+export const OPACITY_25 = '40';
+export const OPACITY_30 = '4d';
+export const OPACITY_40 = '66';
+export const OPACITY_50 = '7f';
+export const OPACITY_60 = '99';
+export const OPACITY_70 = 'b3';
+export const OPACITY_75 = 'bf';
+export const OPACITY_80 = 'cc';
+export const OPACITY_90 = 'e5';
+export const OPACITY_100 = 'ff';

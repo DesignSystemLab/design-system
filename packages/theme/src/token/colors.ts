@@ -1,3 +1,4 @@
+import { OPACITY_25 } from './opacity';
 import { Color } from '../types/color';
 
 const primary = Object.freeze({
@@ -382,3 +383,7 @@ export const variantPresetColors: Color = Object.freeze({
   font,
   border
 });
+
+export const SEMATIC_COLOR_BORDER = grey.lighten1;
+export const SEMATIC_COLOR_OVERLAY = `${shades.black}${OPACITY_25}`;
+export const SEMATIC_COLOR_HOVER = grey.lighten2;

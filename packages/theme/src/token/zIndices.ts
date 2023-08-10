@@ -1,0 +1,13 @@
+export const Z_INDEX_HIDE = 1;
+export const Z_INDEX_AUTO = 'auto';
+export const Z_INDEX_BASE = 0;
+export const Z_INDEX_DOCKED = 10;
+export const Z_INDEX_DROPDOWN = 1000;
+export const Z_INDEX_STICKY = 1100;
+export const Z_INDEX_BANNER = 1200;
+export const Z_INDEX_OVERLAY = 1300;
+export const Z_INDEX_MODAL = 1400;
+export const Z_INDEX_POPOVER = 1500;
+export const Z_INDEX_SKIPLINK = 1600;
+export const Z_INDEX_TOAST = 1700;
+export const Z_INDEX_TOOLTIP = 1800;
