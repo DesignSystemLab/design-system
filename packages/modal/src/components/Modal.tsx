@@ -37,6 +37,6 @@ export const Modal = (props: ModalProps) => {
     </ModalContext.Provider>
   );
 };
-
+Modal.displayName = 'Modal';
 Modal.Trigger = ModalTrigger;
 Modal.Portal = ModalPortal;
