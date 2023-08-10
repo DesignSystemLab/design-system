@@ -1,19 +1,16 @@
-import { createContext, SetStateAction } from 'react';
-import { Dispatch } from 'react';
-
-interface ReturnContext {
-  open: boolean;
-  isOpen?: boolean;
-  hasCloseIcon?: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  onOpen?: () => void;
-  onClose?: () => void;
+import { createContext } from 'react';
+interface ModalContext {
+  isOpen: boolean;
+  onOpen(): void;
+  onClose(): void;
+  hasCloseIcon: boolean;
+  disableOverlayClose: boolean;
 }
-export const ModalContext = createContext<ReturnContext>({
-  open: false,
+
+export const ModalContext = createContext<ModalContext>({
   isOpen: false,
-  setOpen: () => {},
-  hasCloseIcon: true,
   onOpen: () => {},
-  onClose: () => {}
+  onClose: () => {},
+  hasCloseIcon: true,
+  disableOverlayClose: false
 });
