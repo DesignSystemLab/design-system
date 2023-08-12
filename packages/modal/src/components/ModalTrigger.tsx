@@ -1,25 +1,18 @@
 /** @jsxImportSource @emotion/react */
+import { Trigger } from '@jdesignlab/react-utils';
 import { useContext } from 'react';
 import { ModalContext } from '../context';
-import type { ModalTriggerProps } from '../types';
+import { ModalTriggerProps } from '../types';
 
-export const Trigger = (props: ModalTriggerProps) => {
-  const { setOpen, isOpen } = useContext(ModalContext);
+export const ModalTrigger = (props: ModalTriggerProps) => {
   const { children } = props;
-
-  const onToggleModal = () => {
-    setOpen(prev => !prev);
-  };
+  const { id, onOpen } = useContext(ModalContext);
 
   return (
-    <div
-      onClick={onToggleModal}
-      css={{ display: 'inline-block' }}
-      className={`modal_trigger ${isOpen ? 'trigger_open' : 'trigger_close'}`}
-    >
+    <Trigger onClick={onOpen} id={`modal-${id}`}>
       {children}
-    </div>
+    </Trigger>
   );
 };
 
-Trigger.displayName = 'Modal.Trigger';
+ModalTrigger.displayName = 'Modal.Trigger';

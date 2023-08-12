@@ -1,25 +1,18 @@
 export interface ModalProps {
-  children?: React.ReactElement | React.ReactElement[];
-  onOpen?: () => void;
-  onClose?: () => void;
-  open?: boolean;
+  children?: React.ReactNode;
   hasCloseIcon?: boolean;
-  width?: number;
-  lazy?: boolean;
+  open?: boolean;
+  onClose?(): void;
+  onOpen?(): void;
+  disableOverlayClose?: boolean;
 }
 
 export interface ModalTriggerProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export interface ModalHeaderProps {
-  children?: React.ReactNode;
-}
-
-export interface ModalBodyProps {
-  children?: React.ReactNode;
-}
-
-export interface ModalFooterProps {
-  children?: React.ReactNode;
+export interface ModalPortalProps {
+  children: React.ReactNode;
+  width?: number;
+  height?: number;
 }

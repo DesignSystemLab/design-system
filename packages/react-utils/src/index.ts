@@ -1,3 +1,8 @@
+/** components */
+export * from './components/Overlay';
+export * from './components/Portal';
+export * from './components/Trigger';
+
 /** mixins */
 export * from './mixins/transition/useRipple';
 export * from './mixins/keyboard/spaceKeyToggleHandler';
