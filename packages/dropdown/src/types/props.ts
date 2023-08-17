@@ -1,16 +1,10 @@
-import type { ColorToken } from '@jdesignlab/theme';
-
-export type DropdownAnchor = 'top' | 'right' | 'bottom' | 'left';
+import { DropdownAnchor } from './base';
 
 export interface DropdownProps {
   children?: React.ReactNode;
   width?: number;
   placement?: DropdownAnchor;
   gap?: number | string;
-}
-
-export interface DropdownTriggerProps {
-  children?: React.ReactNode;
 }
 
 export interface DropdownMenuProps {
@@ -22,10 +16,6 @@ export interface DropdownMenuItemProps {
   disabled?: boolean;
   onClick?: () => void;
   hasSub?: boolean;
-}
-
-export interface DropdownSubMenuProps {
-  children?: React.ReactNode;
 }
 
 export interface DropdownSubMenuItemProps {
