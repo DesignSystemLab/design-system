@@ -7,6 +7,14 @@ export interface DropdownProps {
   gap?: number | string;
 }
 
+export interface DropdownTriggerProps {
+  children?: React.ReactNode;
+}
+
+export interface DropdownSubMenuProps {
+  children?: React.ReactNode;
+}
+
 export interface DropdownMenuProps {
   children?: React.ReactNode;
 }
