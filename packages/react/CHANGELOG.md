@@ -1,5 +1,12 @@
 # @jdesignlab/react
 
+## 0.12.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @jdesignlab/dropdown@0.13.0
+
 ## 0.12.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @jdesignlab/dropdown
 
+## 0.13.0
+
+### Minor Changes
+
+- Fix click trigger issue with unopened dropdown menu
+
 ## 0.12.0
 
 ### Minor Changes
