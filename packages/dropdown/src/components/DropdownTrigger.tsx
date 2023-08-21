@@ -3,6 +3,7 @@ import { DropdownContext } from '../context';
 import type { DropdownTriggerProps } from '../types';
 import useOpenKeyDown from '../hooks/useOpenKeyDown';
 import { useToggleOpen } from '../hooks/useToggleOpen';
+import { DROPDOWN_ROLE_QUERY, DROPDOWN_MENU_WRAPPER_CLASS } from '../constants';
 
 export const Trigger = (props: DropdownTriggerProps) => {
   const { children, ...otherProps } = props;
@@ -19,7 +20,9 @@ export const Trigger = (props: DropdownTriggerProps) => {
 
   const onClickHandle = () => {
     if (triggerRef?.current) {
-      const dropdownMenu = triggerRef.current.closest('.menu_wrapper')?.querySelector('[role="menu"]') as HTMLElement;
+      const dropdownMenu = triggerRef.current
+        .closest(DROPDOWN_MENU_WRAPPER_CLASS)
+        ?.querySelector(DROPDOWN_ROLE_QUERY) as HTMLElement;
       useToggleOpen(dropdownMenu);
     }
   };
