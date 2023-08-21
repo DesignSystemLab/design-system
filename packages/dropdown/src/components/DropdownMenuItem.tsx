@@ -5,6 +5,7 @@ import { dropdownItemStyle } from '../style';
 import type { DropdownMenuItemProps } from '../types';
 import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
 import { useSelectItem } from '../hooks/useSelectItem';
+import { NOT_DISABLED_DROPDOWN_MENU_QUERY } from '../constants';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
@@ -26,7 +27,7 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
     useKeyboardHandler({
       event,
       parentScope: '.menu',
-      selectorOfList: '.menu_item:not([disabled])',
+      selectorOfList: NOT_DISABLED_DROPDOWN_MENU_QUERY,
       setState: setSubOpen,
       onClick
     });

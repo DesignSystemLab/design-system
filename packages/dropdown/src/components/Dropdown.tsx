@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
 import type { DropdownProps } from '../types';
-import { dropdownWrapperStyle, dropdownOverlayStyle } from '../style';
-import { useState, useRef, useMemo, useEffect, MouseEvent, MouseEventHandler } from 'react';
+import { dropdownWrapperStyle } from '../style';
+import { useState, useRef } from 'react';
 import { Divider } from './DropdownDivider';
 import { Menu } from './DropdownMenu';
 import { Trigger } from './DropdownTrigger';
@@ -12,6 +12,7 @@ import { SubMenuItem } from './DropdownSubMenuItem';
 import { DropdownContext } from '../context';
 import { useOutsideClick } from '@jdesignlab/react-utils';
 import { useToggleOpen } from '../hooks/useToggleOpen';
+import { DROPDOWN_ROLE_QUERY, DROPDOWN_MENU_OPEN_CLASS_NAME } from '../constants';
 
 export const Dropdown = (props: DropdownProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -32,9 +33,9 @@ export const Dropdown = (props: DropdownProps) => {
     ref: dropdownRef,
     handler: () => {
       const dropdownMenu = dropdownRef.current
-        ? (dropdownRef.current.querySelector("[role='menu']") as HTMLElement)
+        ? (dropdownRef.current.querySelector(DROPDOWN_ROLE_QUERY) as HTMLElement)
         : null;
-      if (dropdownMenu) {
+      if (dropdownMenu && dropdownMenu.classList.contains(DROPDOWN_MENU_OPEN_CLASS_NAME)) {
         useToggleOpen(dropdownMenu);
       }
     }
@@ -47,6 +48,7 @@ export const Dropdown = (props: DropdownProps) => {
     </DropdownContext.Provider>
   );
 };
+
 Dropdown.displayName = 'Dropdown';
 
 Dropdown.Trigger = Trigger;
