@@ -35,3 +35,5 @@ export const DrawerPortal = (props: any) => {
     </Portal>
   );
 };
+
+DrawerPortal.displayName = 'Drawer.Portal';
