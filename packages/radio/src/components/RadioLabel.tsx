@@ -14,4 +14,5 @@ const RadioLabel = (props: RadioLabelProps) => {
   );
 };
 
+RadioLabel.displayName = 'RadioLabel';
 export default RadioLabel;

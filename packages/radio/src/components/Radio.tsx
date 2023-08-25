@@ -75,3 +75,5 @@ export const Radio = Object.assign(
     Group: RadioGroup
   }
 );
+
+Radio.displayName = 'Radio';

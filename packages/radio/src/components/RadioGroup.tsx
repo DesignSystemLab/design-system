@@ -19,4 +19,5 @@ const RadioGroup = Object.assign(
   })
 );
 
+RadioGroup.displayName = 'RadioGroup';
 export default RadioGroup;
