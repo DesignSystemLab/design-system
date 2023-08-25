@@ -2,7 +2,6 @@ import { css } from '@emotion/react';
 import { getColorByToken } from '@jdesignlab/theme';
 import { DEFAULT_BORDER_COLOR } from '../constants';
 import { Direction } from '../types';
-import type { ColorToken } from '@jdesignlab/theme';
 
 const createDividerStyle = (direction: Direction) => {
   const dividerColor = getColorByToken(DEFAULT_BORDER_COLOR);
