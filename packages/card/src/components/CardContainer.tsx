@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { DEFAULT_BORDER_COLOR } from '../constants';
-import { CardContext } from './CardContext';
+import { CardContext } from '../context';
 import createCardStyle from '../styles/createCardStyle';
 import createFlexStyle from '../styles/createFlexStyle';
 import { CardProps, CardStyle } from '../types';
