@@ -14,3 +14,5 @@ export const CardDivider = () => {
     />
   );
 };
+
+CardDivider.displayName = 'CardDivider';

@@ -19,7 +19,7 @@ export const Card = (props: CardProps) => {
     </CardProvider>
   );
 };
-
+Card.displayName = 'Card';
 Card.Header = CardHeader;
 Card.Body = CardBody;
 Card.Footer = CardFooter;

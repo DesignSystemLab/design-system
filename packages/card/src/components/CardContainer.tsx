@@ -24,3 +24,5 @@ export const CardContainer = (props: Omit<CardProps, CardStyle>) => {
     children
   );
 };
+
+CardContainer.displayName = 'CardContainer';

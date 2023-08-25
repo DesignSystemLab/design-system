@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/react';
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { CardContext } from '../context';
-import createContentStyle from '../styles/createContentStytle';
+import createContentStyle from '../styles/createContentStyle';
 import type { CardHeaderProps } from '../types';
 import { DEFAULT_BORDER_COLOR } from '../constants';
 
@@ -21,3 +21,5 @@ export const CardHeader = (props: CardHeaderProps) => {
     children
   );
 };
+
+CardHeader.displayName = 'CardHeader';
