@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { hexToRgba, getColorByToken } from '@jdesignlab/theme';
 import type { ColorToken } from '@jdesignlab/theme';
-import type { Direction, Size, Variant } from '../types';
+import type { Size, Variant } from '../types';
 
 const createCardStyle = (size: Size, variant: Variant, backgroundColor: ColorToken, borderColor: ColorToken) => {
   const hexBorderColor = getColorByToken(borderColor);
