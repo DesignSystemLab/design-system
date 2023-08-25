@@ -12,7 +12,7 @@ export interface DrawerContextProps {
 }
 
 export interface DrawerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   open?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
@@ -23,6 +23,6 @@ export interface DrawerProps {
 }
 
 export interface DrawerTriggerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
 }
