@@ -1,25 +1,28 @@
-import type { Dispatch, SetStateAction } from 'react';
 export type Placement = 'top' | 'right' | 'bottom' | 'left';
 
-export interface ReturnContext {
+export interface DrawerContextProps {
+  id: string;
   isOpen: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  drawerProps: Required<Omit<DrawerProps, 'children'>>;
+  onOpen(): void;
+  onClose(): void;
+  hasCloseIcon: boolean;
+  disableOverlayClose: boolean;
+  placement: Placement;
+  full: boolean;
 }
 
-export interface DrawerCallback {
+export interface DrawerProps {
+  children: React.ReactNode;
+  open?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
-}
-
-export interface DrawerProps extends DrawerCallback {
-  children?: React.ReactNode;
-  open?: boolean;
+  hasCloseIcon?: boolean;
+  disableOverlayClose?: boolean;
   placement?: Placement;
   full?: boolean;
 }
 
-export type DrawerChildrenProps = {
-  children?: React.ReactNode;
-  id?: string;
-};
+export interface DrawerTriggerProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+}
