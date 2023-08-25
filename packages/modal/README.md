@@ -1,6 +1,6 @@
 # Modal
 
-사용자에게 모달(팝업) 형태로 컨텐츠를 표시하는 UI요소입니다.
+사용자에게 모달(dialog) 형태로 컨텐츠를 표시하는 UI요소입니다.
 
 ## Usage
 
@@ -9,9 +9,7 @@
 ```jsx
 <Modal>
   <Modal.Trigger />
-  <Modal.Header />
-  <Modal.Body />
-  <Modal.Footer />
+  <Modal.Portal />
 </Modal>
 ```
 
@@ -19,35 +17,21 @@
 
 ### Modal
 
-| Property     | Allow Types  | Description                                                                                             | Default     |
-| ------------ | ------------ | ------------------------------------------------------------------------------------------------------- | ----------- |
-| open         | `boolean`    | 모달의 열림/ 닫힘 상태를 나타내는 프로퍼티입니다. `true`일 경우 모달이 열리며, `false`일 경우 닫힙니다. | `false`     |
-| onOpen       | `() => void` | 모달이 열릴 때 실행되는 콜백함수를 지정합니다.                                                          | `undefined` |
-| onClose      | `() => void` | 모달이 닫힐 때 실행되는 콜백함수를 지정합니다.                                                          | `undefined` |
-| hasCloseIcon | `boolean`    | 모달 우측 상단에 닫기 아이콘을 표시할지 여부를 지정합니다. 기본값은 뒷 배경을 누르면 닫힙니다.          | `false`     |
-| width        | `number`     | 모달의 가로너비를 지정합니다.                                                                           | `500`       |
-| lazy         | `boolean`    | 모달의 내용을 지연 로딩하여 필요한 때만 렌더링하도록 지정합니다.                                        | `false`     |
-
+| Property            | Allow Types  | Description                                                | Default  |
+| ------------------- | ------------ | ---------------------------------------------------------- | -------- | ------ | --------------------------- | ------- |
+| open                | `boolean`    | Modal의 `open` 상태를 지정합니다.                         | `false`  |
+| onOpen              | `() => void` | Modal이 열릴 때 발생하는 이벤트 입니다.                   |          |
+| onClose             | `() => void` | Modal이 닫힐 때 발생하는 이벤트 입니다.                   |          |
+| hasCloseIcon        | `boolean`    | Modal의 우측 상단에 닫기 아이콘을 표시합니다.             | `true`   |
+| disableOverlayClose | `boolean`    | Overlay를 클릭해서 Modal을 닫는 액션을 사용하지 않습니다. | `false`  |
 ### Modal.Trigger
 
 | Property | Allow Types       | Description                     | Default |
 | -------- | ----------------- | ------------------------------- | ------- |
-| children | `React.ReactNode` | Modal.Trigger 자식 요소 입니다. |         |
+| children | `React.ReactNode` | Modal을 열 수 있게 해주는 요소입니다. |         |
 
-### Modal.Header
-
-| Property | Allow Types       | Description                    | Default |
-| -------- | ----------------- | ------------------------------ | ------- |
-| children | `React.ReactNode` | Modal.Header 자식 요소 입니다. |         |
-
-### Modal.Body
-
-| Property | Allow Types       | Description                  | Default |
-| -------- | ----------------- | ---------------------------- | ------- |
-| children | `React.ReactNode` | Modal.Body 자식 요소 입니다. |         |
-
-### Modal.Footer
+### Modal.Portal
 
 | Property | Allow Types       | Description                    | Default |
 | -------- | ----------------- | ------------------------------ | ------- |
-| children | `React.ReactNode` | Modal.Footer 자식 요소 입니다. |         |
+| children | `React.ReactNode` | Modal의 컨텐츠가 들어갑니다. |         |
