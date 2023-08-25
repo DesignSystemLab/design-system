@@ -2,7 +2,7 @@
 import { useId, useContext, forwardRef } from 'react';
 import { createClassVariant, getColorByTokenOrHex } from '@jdesignlab/theme';
 import { getComponentText } from '@jdesignlab/react-utils';
-import { RadioContext } from './RadioContext';
+import { RadioContext } from '../context';
 import RadioGroup from './RadioGroup';
 import RadioLabel from './RadioLabel';
 import useRadio from '../hooks/useRadio';

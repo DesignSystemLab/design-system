@@ -1,8 +1,6 @@
-import { createContext, useId, useState } from 'react';
+import { RadioContext } from '../context';
+import { useId, useState } from 'react';
 import { RADIO_NAME_PREFIX } from '../constants';
-import type { ReturnContext } from '../types';
-
-export const RadioContext = createContext<ReturnContext | null>(null);
 
 export const RadioProvider = ({ ...props }) => {
   const { children, defaultValue = null, rootProps = null } = props;

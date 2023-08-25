@@ -1,5 +1,5 @@
 import { createClassVariant } from '@jdesignlab/theme';
-import { RadioProvider } from './RadioContext';
+import { RadioProvider } from './RadioProvider';
 import useRadioGroup from '../hooks/useRadioGroup';
 import type { RadioGroupProps } from '../types';
 import { forwardRef } from 'react';
