@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
+import * as Style from '../styles';
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { PopoverContext } from '../context';
 import usePopoverControl from '../hooks/usePopoverControl';
-import createOverlayStyle from '../styles/createOverlayStyle';
 
 export const PopoverOverlay = () => {
   const context = useContext(PopoverContext);
@@ -13,7 +13,7 @@ export const PopoverOverlay = () => {
     <div
       role="presentation"
       className={createClassVariant('popover', 'overlay')}
-      css={createOverlayStyle}
+      css={Style.overlay}
       onClick={onClosePopover}
     />
   );

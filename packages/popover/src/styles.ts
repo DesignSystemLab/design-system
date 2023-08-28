@@ -1,9 +1,87 @@
 import { css } from '@emotion/react';
 import { hexToRgba } from '@jdesignlab/theme';
 import type { HEX } from '@jdesignlab/theme';
-import type { Placement } from '../types';
+import type { Placement } from './types';
 
-const createPopoverStyle = (placement: Placement, arrow: boolean, background: HEX, border: HEX) => {
+type Size = {
+  width: number;
+  height: number;
+};
+
+export const createBody = (border: HEX) => {
+  return css({
+    margin: 0,
+    padding: '8px 0',
+    fontSize: '16px',
+    textAlign: 'left',
+    borderBottom: `1px solid ${border}`,
+    wordWrap: 'break-word'
+  });
+};
+
+export const footer = css({
+  margin: 0,
+  padding: '8px 0',
+  fontSize: '16px',
+  textAlign: 'left',
+  minHeight: '16px',
+  wordWrap: 'break-word'
+});
+
+export const createHeader = (border: HEX) => {
+  return css({
+    margin: 0,
+    padding: '8px 0',
+    fontSize: '16px',
+    fontWeight: 700,
+    textAlign: 'left',
+    borderBottom: `1px solid ${border}`,
+    wordWrap: 'break-word'
+  });
+};
+
+export const overlay = css({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100vw',
+  height: '100vh'
+});
+
+export const createPosition = (placement: Placement, trigger: Size, popover: Size) => {
+  const triggerHeight = trigger.height;
+  const popoverHeight = popover.height;
+  const popoverWidth = popover.width;
+
+  switch (placement) {
+    case 'top':
+      return css({
+        right: '50%',
+        top: `${Math.round(-triggerHeight / 2 - popoverHeight - 8)}px`,
+        transform: `translateX(50%)`
+      });
+    case 'left':
+      return css({
+        left: `${-popoverWidth - 12}px`,
+        top: `calc(50% - ${triggerHeight / 2}px)`,
+        transform: `translateY(-50%)`
+      });
+    case 'bottom':
+      return css({
+        right: '50%',
+        top: `${Math.round(triggerHeight + 12)}px`,
+        transform: `translateX(50%)`
+      });
+    default:
+      return css({
+        right: `${-popoverWidth - 12}px`,
+        top: `calc(50% - ${triggerHeight / 2}px)`,
+        transform: `translateY(-50%)`
+      });
+  }
+};
+
+export const createPopover = (placement: Placement, arrow: boolean, background: HEX, border: HEX) => {
   const baseStyle = () => {
     return css({
       padding: '8px',
@@ -128,4 +206,7 @@ const createPopoverStyle = (placement: Placement, arrow: boolean, background: HE
   return [baseStyle(), directionStyle(), arrowStyle()];
 };
 
-export default createPopoverStyle;
+export const trigger = css({
+  display: 'inline-block',
+  position: 'relative'
+});
