@@ -10,3 +10,5 @@ export const PopoverHeader = (props: { children?: React.ReactNode }) => {
     </header>
   );
 };
+
+PopoverHeader.displayName = 'PopoverHeader';

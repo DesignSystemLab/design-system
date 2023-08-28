@@ -10,3 +10,5 @@ export const PopoverBody = (props: { children: React.ReactNode }) => {
     </section>
   );
 };
+
+PopoverBody.displayName = 'PopoverBody';

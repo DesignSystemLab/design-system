@@ -10,3 +10,5 @@ export const popoverFooter = (props: { children: React.ReactNode }) => {
     </footer>
   );
 };
+
+popoverFooter.displayName = 'PopoverFooter';

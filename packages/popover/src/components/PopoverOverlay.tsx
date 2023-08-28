@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
-import { PopoverContext } from './PopoverContext';
+import { PopoverContext } from '../context';
 import usePopoverControl from '../hooks/usePopoverControl';
 import createOverlayStyle from '../styles/createOverlayStyle';
 
@@ -18,3 +18,5 @@ export const PopoverOverlay = () => {
     />
   );
 };
+
+PopoverOverlay.displayName = 'PopoverOverlay';

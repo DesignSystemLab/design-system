@@ -2,8 +2,8 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
-import { PopoverContext } from './PopoverContext';
 import { PopoverOverlay } from './PopoverOverlay';
+import { PopoverContext } from '../context';
 import useOpenClosePopover from '../hooks/useOpenClosePopover';
 import usePopoverControl from '../hooks/usePopoverControl';
 import useInitialRender from '../hooks/useInitialRender';
@@ -50,3 +50,5 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
     </>
   ) : null;
 };
+
+PopoverContent.displayName = 'PopoverContent';

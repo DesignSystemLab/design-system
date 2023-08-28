@@ -3,7 +3,7 @@ import React, { useContext, Children, useEffect, useRef } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import triggerStyle from '../styles/createTriggerStyle';
 import usePopoverControl from '../hooks/usePopoverControl';
-import { PopoverContext } from './PopoverContext';
+import { PopoverContext } from '../context';
 
 export const PopoverTrigger = (props: { children: React.ReactNode }) => {
   const context = useContext(PopoverContext);

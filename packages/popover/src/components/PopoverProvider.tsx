@@ -1,22 +1,5 @@
-import { createContext, RefObject, useState } from 'react';
-import { DEFAULT_OPTIONS } from '../constants';
-import type { ReturnContext } from '../types';
-
-const defaultContextValues: ReturnContext = {
-  isOpen: false,
-  setOpen: () => {},
-  triggerRef: null,
-  setTriggerRef: () => {},
-  popoverProps: {
-    onClose: () => {},
-    onOpen: () => {},
-    arrow: DEFAULT_OPTIONS.arrow,
-    open: DEFAULT_OPTIONS.open,
-    placement: DEFAULT_OPTIONS.placement
-  }
-};
-
-export const PopoverContext = createContext<ReturnContext>(defaultContextValues);
+import { RefObject, useState } from 'react';
+import { PopoverContext, defaultContextValues } from '../context';
 
 export const PopoverProvider = ({ ...props }) => {
   const [triggerRef, setTriggerRef] = useState<RefObject<HTMLDivElement> | null>(null);
