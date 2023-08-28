@@ -1,8 +1,8 @@
+import { forwardRef } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { RadioProvider } from './RadioProvider';
 import useRadioGroup from '../hooks/useRadioGroup';
 import type { RadioGroupProps } from '../types';
-import { forwardRef } from 'react';
 
 const RadioGroup = Object.assign(
   forwardRef<HTMLInputElement, RadioGroupProps>((props: RadioGroupProps, ref) => {
