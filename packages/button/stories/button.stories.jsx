@@ -57,7 +57,7 @@ export const disabled = () => <Button disabled>disabled</Button>;
 
 export const color = () => (
   <>
-    <Heart color="grey" fill="grey" width={16} height={16} />0<Button color="red-lighten5">red-lighten5</Button>
+    <Button color="red-lighten5">red-lighten5</Button>
     <Button color="pink-lighten4">pink-lighten4</Button>
     <Button color="purple-lighten3">purple-lighten3</Button>
     <Button color="deepPurple-lighten2">deepPurple-lighten2</Button>

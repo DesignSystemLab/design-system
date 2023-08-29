@@ -1,32 +1,42 @@
 /** @jsxImportSource @emotion/react */
 import { callHandler } from '@jdesignlab/utils';
-import type { ButtonProps } from '../types';
-import React, { useContext } from 'react';
-import { buttonDefaultStyle, buttonVariantStyle, buttonSizeStyle } from '../styles';
+import { useContext } from 'react';
+import * as Style from '../styles';
 import { css } from '@emotion/react';
 import { useRipple } from '@jdesignlab/react-utils';
 import { ThemeContext } from '@jdesignlab/j-provider';
-import type { Ripple } from '@jdesignlab/react-utils';
+import { ButtonProps } from '../types';
 
 export const Button = (props: ButtonProps) => {
   const themePreset = useContext(ThemeContext);
-  const { children, variant = 'solid', onClick, disabled = false, full, as = 'button', ...otherProps } = props;
+  const {
+    children,
+    type = 'button',
+    variant = 'solid',
+    onClick = () => {},
+    disabled = false,
+    size = 'md',
+    full = false,
+    color,
+    as = 'button',
+    ...restProps
+  } = props;
   const { createRipple, rippleNodes } = useRipple();
   const Component = as;
 
-  const buttonStyle = css(buttonDefaultStyle, {
-    ...buttonSizeStyle(props.size ?? 'md', full ?? false),
-    ...buttonVariantStyle(themePreset, variant, disabled, props.color)
+  const buttonStyle = css(Style.basic, {
+    ...Style.createSize(size, full),
+    ...Style.createVariant(themePreset, variant, disabled, color)
   });
 
   return (
     <Component
       css={buttonStyle}
-      onClick={callHandler(createRipple, disabled && onClick ? () => {} : onClick)}
-      type={props.type ?? 'button'}
+      onClick={disabled || callHandler(createRipple, onClick)}
+      type={type}
       role="button"
-      disabled={!!disabled}
-      {...otherProps}
+      disabled={disabled}
+      {...restProps}
     >
       {props.icon}
       {children}
@@ -36,7 +46,3 @@ export const Button = (props: ButtonProps) => {
 };
 
 Button.displayName = 'Button';
-Button.defaultProps = {
-  variant: 'solid',
-  size: 'md'
-};
