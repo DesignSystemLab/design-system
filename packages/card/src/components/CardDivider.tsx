@@ -2,7 +2,7 @@
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import createDividerStyle from '../styles/createDividerStyle';
-import { CardContext } from './CardContext';
+import { CardContext } from '../context';
 
 export const CardDivider = () => {
   const { direction } = useContext(CardContext).styleProps;
@@ -14,3 +14,5 @@ export const CardDivider = () => {
     />
   );
 };
+
+CardDivider.displayName = 'CardDivider';

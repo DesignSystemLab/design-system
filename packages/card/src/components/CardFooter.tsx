@@ -3,8 +3,8 @@ import { jsx } from '@emotion/react';
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { DEFAULT_BORDER_COLOR } from '../constants';
-import { CardContext } from './CardContext';
-import createContentStyle from '../styles/createContentStytle';
+import { CardContext } from '../context';
+import createContentStyle from '../styles/createContentStyle';
 import type { CardFooterProps } from '../types';
 
 export const CardFooter = (props: CardFooterProps) => {
@@ -20,3 +20,5 @@ export const CardFooter = (props: CardFooterProps) => {
     children
   );
 };
+
+CardFooter.displayName = 'CardFooter';

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { CardProvider } from './CardContext';
+import { CardProvider } from './CardProvider';
 import { CardContainer } from './CardContainer';
 import { CardHeader } from './CardHeader';
 import { CardBody } from './CardBody';
@@ -19,7 +19,7 @@ export const Card = (props: CardProps) => {
     </CardProvider>
   );
 };
-
+Card.displayName = 'Card';
 Card.Header = CardHeader;
 Card.Body = CardBody;
 Card.Footer = CardFooter;

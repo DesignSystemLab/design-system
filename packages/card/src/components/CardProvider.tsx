@@ -1,13 +1,4 @@
-import { createContext } from 'react';
-import { DEFAULT_CARD_STYLE } from '../constants';
-import type { ReturnContext } from '../types';
-
-const defaultContextValues: ReturnContext = {
-  cardProps: {},
-  styleProps: DEFAULT_CARD_STYLE
-};
-
-export const CardContext = createContext<ReturnContext>(defaultContextValues);
+import { defaultContextValues, CardContext } from '../context';
 
 export const CardProvider = ({ ...props }) => {
   const { cardProps } = props;
