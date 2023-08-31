@@ -23,12 +23,12 @@ export const basic = css({
 
 export const createSize = (size: ButtonSize, full: boolean) => {
   const sizeIndex = buttonSizeSet.indexOf(size);
-  return {
+  return css({
     width: full ? '100%' : 'auto',
     height: `${(sizeIndex + 3) * 8}px`,
     fontSize: (sizeIndex + 6) * 2,
     padding: `0 ${(sizeIndex + 3) * 4}px`
-  };
+  });
 };
 
 export const createVariant = (
@@ -60,27 +60,27 @@ export const createVariant = (
 
   switch (variant) {
     case 'outline':
-      return {
+      return css({
         ...disabledStyle,
         ...switchBackground,
         ...hasShadow,
         border: `solid ${parsedColor} 1px`
-      };
+      });
     case 'ghost':
-      return {
+      return css({
         ...disabledStyle,
         ...switchBackground,
         border: 'none'
-      };
+      });
     case 'link':
-      return {
+      return css({
         ...disabledStyle,
         background: 'none',
         textDecoration: 'underline',
         border: 'none'
-      };
+      });
     case 'unstyled':
-      return {
+      return css({
         ...disabledStyle,
         color: disabled
           ? themePreset.color.fontColor + themePreset.effect.disabledOpacity
@@ -88,15 +88,15 @@ export const createVariant = (
         background: 'none',
         border: 'none',
         fontWeight: 'normal'
-      };
+      });
     default: // solid
-      return {
+      return css({
         ...disabledStyle,
         ...hasShadow,
         backgroundColor: parsedColor,
         color: setTextColorByBackground(parsedColor),
         border: 'none',
         '&:hover': { background: `${parsedColor}${themePreset.effect.hoverSolidOpacity}` }
-      };
+      });
   }
 };

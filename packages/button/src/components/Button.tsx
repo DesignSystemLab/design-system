@@ -24,10 +24,11 @@ export const Button = (props: ButtonProps) => {
   const { createRipple, rippleNodes } = useRipple();
   const Component = as;
 
-  const buttonStyle = css(Style.basic, {
-    ...Style.createSize(size, full),
-    ...Style.createVariant(themePreset, variant, disabled, color)
-  });
+  const buttonStyle = [
+    Style.basic,
+    Style.createVariant(themePreset, variant, disabled, color),
+    Style.createSize(size, full)
+  ];
 
   return (
     <Component
