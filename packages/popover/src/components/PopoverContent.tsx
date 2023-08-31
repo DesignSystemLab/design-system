@@ -1,16 +1,15 @@
 /** @jsxImportSource @emotion/react */
+import * as Style from '../styles';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { POPOVER_BACKGROUND, POPOVER_BORDER_COLOR } from '../constants';
-import { PopoverContext } from './PopoverContext';
 import { PopoverOverlay } from './PopoverOverlay';
+import { PopoverContext } from '../context';
 import useOpenClosePopover from '../hooks/useOpenClosePopover';
 import usePopoverControl from '../hooks/usePopoverControl';
 import useInitialRender from '../hooks/useInitialRender';
 import handleEscapeKey from '../utils/handleEscapeKey';
 import calculateSize from '../utils/calculateSize';
-import createPopoverStyle from '../styles/createPopoverStyle';
-import createPopoverPosition from '../styles/createPopoverPosition';
 import type { SerializedStyles } from '@emotion/react';
 
 export const PopoverContent = (props: { children: React.ReactNode }) => {
@@ -21,14 +20,14 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
   const isInitialRendered = useInitialRender();
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const triggerSize = calculateSize(context.triggerRef);
-  const popoverContentStyle = createPopoverStyle(placement, arrow, POPOVER_BACKGROUND, POPOVER_BORDER_COLOR);
+  const popoverContentStyle = Style.createPopover(placement, arrow, POPOVER_BACKGROUND, POPOVER_BORDER_COLOR);
   useOpenClosePopover(context, isInitialRendered);
 
   useEffect(() => {
     if (popoverRef.current) {
       popoverRef.current.focus();
       const popoverSize = calculateSize(popoverRef);
-      setPositionStyle(createPopoverPosition(placement, triggerSize, popoverSize));
+      setPositionStyle(Style.createPosition(placement, triggerSize, popoverSize));
     }
   }, [popoverRef, context.isOpen]);
 
@@ -50,3 +49,5 @@ export const PopoverContent = (props: { children: React.ReactNode }) => {
     </>
   ) : null;
 };
+
+PopoverContent.displayName = 'PopoverContent';
