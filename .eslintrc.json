@@ -1,0 +1,73 @@
+{
+  "root": true,
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "tests/", "stories/", "icons/"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import", "react-hooks", "react"],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaVersion": 2020, //ecmascript사용 버전
+    "sourceType": "module", //모듈 시스템 (import-export)
+    "ecmaFeatures": {
+      "jsx": true //jsx 사용
+    }
+  },
+  "env": {
+    //브라우저, 노드, es6 환경
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        /**
+         * 외부 라이브러리 순서 정리
+         * 1. react/react-dom 최상위
+         * 2. 내장 모듈 builtin
+         * 3. 외부 라이브러리 (@jdesignlab/module, /xstate /reactquery)
+         * 4. 절대 경로 모듈 (@shared/ @auth/)
+         * 5. 상대 경로 모듈 (../a.ts) sibling
+         * 6. 부모 경로 모듈 (../types/a.ts) parent
+         * 7. 타입 모듈 (import type)
+         */
+        "groups": ["builtin", "external", "internal", "sibling", "parent", "type"],
+        "pathGroups": [
+          { "pattern": "react", "group": "builtin", "position": "before" },
+          { "pattern": "react-dom", "group": "builtin", "position": "after" }
+        ]
+      }
+    ],
+    "react/no-unstable-nested-components": ["error", { "allowAsProps": true }], //props 전달에 의한 중첩 컴포넌트 허용
+    "react/require-default-props": "off", //default props 옵션 예외
+    "jsx-a11y/label-has-associated-control": [
+      //htmlfor 프로퍼티 예외
+      2,
+      {
+        "labelAttributes": ["htmlFor"]
+      }
+    ],
+    "react/jsx-no-useless-fragment": "off", //fragment 규칙 제거
+    "@typescript-eslint/naming-convention": "off",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }], //emotion을 위한 'css' prop은 제외
+    "object-curly-newline": "off", //import 개행 규칙 제거
+    "react/jsx-one-expression-per-line": "off",
+    "react/function-component-definition": [2, { "namedComponents": ["arrow-function"] }], //컴포넌트 기명함수-화살표함수
+    "max-len": ["error", { "code": 120 }], //최대 길이 120(prettier통일)
+    "react/no-children-prop": "off",
+    "react/react-in-jsx-scope": "off", //react import 생략
+    "import/prefer-default-export": "off", //
+    "react/jsx-props-no-spreading": "off", //구조분해 할당 반드시 사용
+    "@typescript-eslint/comma-dangle": "off", //마지막 comma 생략 허용
+    "react/jsx-curly-newline": ["error", { "multiline": "consistent" }], //줄바꿈 허용
+    "brace-style": "off"
+  }
+}
