@@ -1,15 +1,14 @@
 /** @jsxImportSource @emotion/react */
+import * as Style from '../styles';
 import { useId, useContext, forwardRef } from 'react';
 import { createClassVariant, getColorByTokenOrHex } from '@jdesignlab/theme';
 import { getComponentText } from '@jdesignlab/react-utils';
-import { RadioContext } from './RadioContext';
+import { RadioContext } from '../context';
 import RadioGroup from './RadioGroup';
 import RadioLabel from './RadioLabel';
 import useRadio from '../hooks/useRadio';
 import { DEFAULT_COLOR, DEFAULT_DISABLED_COLOR, RADIO_ID_PREFIX } from '../constants';
 import validateEventHandlers from '../utils/validateEventHandlers';
-import createRadioWrapperStyle from '../styles/createRadioWrapperStyle';
-import createRadioStyle from '../styles/createRadioStyle';
 import type { RadioProps } from '../types';
 
 type ExtendedRadioProps = RadioProps & { RadioGroup?: typeof RadioGroup };
@@ -44,7 +43,7 @@ export const Radio = Object.assign(
     return (
       <div
         className={radioClassName}
-        css={createRadioWrapperStyle}
+        css={Style.wrapper}
         aria-checked={radioContext ? radioContext.value === props.value : radioValue === props.value}
       >
         <RadioLabel id={radioId} size={size}>
@@ -60,7 +59,7 @@ export const Radio = Object.assign(
             }}
             readOnly={readonly}
             className={createClassVariant('radio', 'input', 'radio')}
-            css={createRadioStyle(getColorByTokenOrHex(color), DEFAULT_DISABLED_COLOR, disabled, size)}
+            css={Style.createRadio(getColorByTokenOrHex(color), DEFAULT_DISABLED_COLOR, disabled, size)}
             disabled={disabled}
             {...validRadioProps}
             onChange={handleChange}
@@ -75,3 +74,5 @@ export const Radio = Object.assign(
     Group: RadioGroup
   }
 );
+
+Radio.displayName = 'Radio';

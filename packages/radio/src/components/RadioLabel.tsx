@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
+import * as Style from '../styles';
 import { createClassVariant } from '@jdesignlab/theme';
 import { DEFAULT_FONT_COLOR } from '../constants';
-import createLabelStyle from '../styles/createLabelStyle';
 import type { RadioLabelProps } from '../types';
 
 const RadioLabel = (props: RadioLabelProps) => {
   const { id, children, size } = props;
-  const labelStyle = createLabelStyle(size, DEFAULT_FONT_COLOR);
+  const labelStyle = Style.createLabel(size, DEFAULT_FONT_COLOR);
   return (
     <label htmlFor={id} css={labelStyle} className={createClassVariant('radio', 'label')}>
       {children}
@@ -14,4 +14,5 @@ const RadioLabel = (props: RadioLabelProps) => {
   );
 };
 
+RadioLabel.displayName = 'RadioLabel';
 export default RadioLabel;
