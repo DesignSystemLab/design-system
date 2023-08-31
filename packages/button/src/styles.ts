@@ -6,7 +6,7 @@ import { ThemePreset } from '@jdesignlab/j-provider';
 
 const buttonSizeSet: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
-export const buttonDefaultStyle = css({
+export const basic = css({
   position: 'relative',
   display: 'inline-flex',
   justifyContent: 'center',
@@ -17,20 +17,21 @@ export const buttonDefaultStyle = css({
   letterSpacing: '1.5px',
   overflow: 'hidden',
   minWidth: 'fit-content',
-  whiteSpace: 'nowrap'
+  whiteSpace: 'nowrap',
+  lineHeight: '1.5'
 });
 
-export const buttonSizeStyle = (size: ButtonSize, full: boolean) => {
+export const createSize = (size: ButtonSize, full: boolean) => {
   const sizeIndex = buttonSizeSet.indexOf(size);
-  return {
+  return css({
     width: full ? '100%' : 'auto',
     height: `${(sizeIndex + 3) * 8}px`,
     fontSize: (sizeIndex + 6) * 2,
     padding: `0 ${(sizeIndex + 3) * 4}px`
-  };
+  });
 };
 
-export const buttonVariantStyle = (
+export const createVariant = (
   themePreset: ThemePreset,
   variant: ButtonVariant,
   disabled: boolean,
@@ -49,7 +50,6 @@ export const buttonVariantStyle = (
   }
 
   const hasShadow = {
-    // boxShadow: '0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%)'
     boxShadow: 'rgba(0, 0, 0, 0.02) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset'
   };
 
@@ -60,27 +60,27 @@ export const buttonVariantStyle = (
 
   switch (variant) {
     case 'outline':
-      return {
+      return css({
         ...disabledStyle,
         ...switchBackground,
         ...hasShadow,
         border: `solid ${parsedColor} 1px`
-      };
+      });
     case 'ghost':
-      return {
+      return css({
         ...disabledStyle,
         ...switchBackground,
         border: 'none'
-      };
+      });
     case 'link':
-      return {
+      return css({
         ...disabledStyle,
         background: 'none',
         textDecoration: 'underline',
         border: 'none'
-      };
+      });
     case 'unstyled':
-      return {
+      return css({
         ...disabledStyle,
         color: disabled
           ? themePreset.color.fontColor + themePreset.effect.disabledOpacity
@@ -88,15 +88,15 @@ export const buttonVariantStyle = (
         background: 'none',
         border: 'none',
         fontWeight: 'normal'
-      };
+      });
     default: // solid
-      return {
+      return css({
         ...disabledStyle,
         ...hasShadow,
         backgroundColor: parsedColor,
         color: setTextColorByBackground(parsedColor),
         border: 'none',
         '&:hover': { background: `${parsedColor}${themePreset.effect.hoverSolidOpacity}` }
-      };
+      });
   }
 };
