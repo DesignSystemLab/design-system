@@ -1,6 +1,23 @@
+import { useMemo } from 'react';
 import { defaultContextValues, CardContext } from '../context';
+import type { FlexToken, Direction, Size, Variant } from '../types';
+import type { ColorToken } from '@jdesignlab/theme';
 
-export const CardProvider = ({ ...props }) => {
+interface CardProps {
+  align?: FlexToken;
+  justify?: FlexToken;
+  color?: ColorToken;
+  direction?: Direction;
+  size?: Size;
+  variant?: Variant;
+}
+
+interface CardProviderProps {
+  cardProps: CardProps;
+  children: React.ReactNode;
+}
+
+export const CardProvider = ({ ...props }: CardProviderProps) => {
   const { cardProps } = props;
   const defaultStyleProps = defaultContextValues.styleProps;
 
@@ -14,14 +31,20 @@ export const CardProvider = ({ ...props }) => {
     ...restProps
   } = cardProps;
 
-  return (
-    <CardContext.Provider
-      value={{
-        styleProps: { align, color, direction, justify, size, variant },
-        cardProps: restProps
-      }}
-    >
-      {props.children}
-    </CardContext.Provider>
+  const providerValue = useMemo(
+    () => ({
+      styleProps: {
+        align,
+        color,
+        direction,
+        justify,
+        size,
+        variant
+      },
+      cardProps: restProps
+    }),
+    [align, color, direction, justify, restProps, size, variant]
   );
+
+  return <CardContext.Provider value={providerValue}>{props.children}</CardContext.Provider>;
 };

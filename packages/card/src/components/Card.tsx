@@ -9,16 +9,16 @@ import { REQUIRED_CARD_PROPS } from '../constants';
 import omitProps from '../utils/omitProps';
 import type { CardProps } from '../types';
 
-export const Card = (props: CardProps) => {
-  const { children, ...propsWithoutChildren } = props;
-  const domAttributes = omitProps(propsWithoutChildren, REQUIRED_CARD_PROPS);
+export const Card = ({ children, ...restProps }: CardProps) => {
+  const domAttributes = omitProps(restProps, REQUIRED_CARD_PROPS);
 
   return (
-    <CardProvider cardProps={propsWithoutChildren}>
-      <CardContainer {...domAttributes}>{props.children}</CardContainer>
+    <CardProvider cardProps={restProps}>
+      <CardContainer {...domAttributes}>{children}</CardContainer>
     </CardProvider>
   );
 };
+
 Card.displayName = 'Card';
 Card.Header = CardHeader;
 Card.Body = CardBody;

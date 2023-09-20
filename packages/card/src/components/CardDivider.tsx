@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
-import createDividerStyle from '../styles/createDividerStyle';
+import * as Style from '../styles';
 import { CardContext } from '../context';
 
 export const CardDivider = () => {
   const { direction } = useContext(CardContext).styleProps;
   return (
     <div
-      css={createDividerStyle(direction)}
+      css={Style.createDivider(direction)}
       role="presentation"
       className={createClassVariant('card', 'content', 'divider')}
     />
