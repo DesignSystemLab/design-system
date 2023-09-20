@@ -3,7 +3,7 @@ import { jsx } from '@emotion/react';
 import { useContext } from 'react';
 import { createClassVariant } from '@jdesignlab/theme';
 import { CardContext } from '../context';
-import createContentStyle from '../styles/createContentStyle';
+import * as Style from '../styles';
 import { DEFAULT_BORDER_COLOR } from '../constants';
 import type { CardBodyProps } from '../types';
 
@@ -13,7 +13,7 @@ export const CardBody = (props: CardBodyProps) => {
   return jsx(
     as,
     {
-      css: createContentStyle(direction, DEFAULT_BORDER_COLOR),
+      css: Style.createBorderDirection(direction, DEFAULT_BORDER_COLOR),
       className: `${createClassVariant('card', 'content')} ${className}`,
       ...restProps
     },
