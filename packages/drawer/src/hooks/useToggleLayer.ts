@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useToggleLayer = (
   openProp: boolean | undefined,
@@ -14,17 +14,27 @@ export const useToggleLayer = (
 
   const onToggle = () => {
     setIsOpen(prev => !prev);
-    if (isOpen) onCloseProp?.();
-    else onOpenProp?.();
+    if (isOpen) {
+      onCloseProp?.();
+    } else {
+      onOpenProp?.();
+    }
   };
 
   const onOpen = () => {
-    isControlled ? onOpenProp?.() : onToggle();
+    if (isControlled) {
+      onOpenProp?.();
+    } else {
+      onToggle();
+    }
   };
 
   const onClose = () => {
-    isControlled ? onCloseProp?.() : onToggle();
+    if (isControlled) {
+      onCloseProp?.();
+    } else {
+      onToggle();
+    }
   };
-
   return { isOpen, onOpen, onClose };
 };

@@ -1,1 +1,1 @@
-export * from '../src/components/Drawer';
+export * from './components/Drawer';
