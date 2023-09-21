@@ -4,49 +4,48 @@ import { Placement } from './types';
 
 export const portal = (width: number, height: number, placement: Placement, full: boolean) => {
   const padding = 12;
-  if (full) {
-    width = window.innerWidth - padding * 2;
-    height = window.innerHeight - padding * 2;
-  }
+  const adjustedWidth = full ? window.innerWidth - padding * 2 : width;
+  const adjustedHeight = full ? window.innerHeight - padding * 2 : height;
+
   const position = {
     right: {
       right: `-${padding}px`,
-      transform: `translateX(${width + padding * 3}px)`,
+      transform: `translateX(${adjustedWidth + padding * 3}px)`,
       transition: 'transform .2s ease-in-out',
       top: 0,
       height: '100vh',
-      width,
+      width: adjustedHeight,
       '&.open': {
-        transform: full ? `translateX(-${padding}px)` : `translateX(-${padding}px)`
+        transform: `translateX(-${padding}px)`
       }
     },
     left: {
-      left: `-${width + padding * 3}px`,
+      left: `-${adjustedWidth + padding * 3}px`,
       transition: 'transform .2s ease-in-out',
       top: 0,
       height: '100vh',
-      width,
+      width: adjustedWidth,
       '&.open': {
-        transform: `translateX(${width + padding * 3}px)`
+        transform: `translateX(${adjustedWidth + padding * 3}px)`
       }
     },
     top: {
-      top: `-${height + padding * 4}px`,
+      top: `-${adjustedHeight + padding * 4}px`,
       left: 0,
       width: `calc(100vw - ${padding * 2}px)`,
       boxShadow: 'none',
-      height,
+      height: adjustedHeight,
       '&.open': {
-        transform: `translateY(${height + padding * 4}px)`
+        transform: `translateY(${adjustedHeight + padding * 4}px)`
       }
     },
     bottom: {
-      bottom: `-${height + padding * 2}px`,
+      bottom: `-${adjustedHeight + padding * 2}px`,
       left: 0,
       width: `calc(100vw - ${padding * 2}px)`,
-      height,
+      height: adjustedHeight,
       '&.open': {
-        transform: `translateY(-${height + padding * 2}px)`
+        transform: `translateY(-${adjustedHeight + padding * 2}px)`
       }
     }
   };
