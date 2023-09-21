@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { createClassVariant } from '@jdesignlab/theme';
 import { ThemeContext } from '@jdesignlab/j-provider';
-import type { CheckboxProps } from '../types';
 import { useId, useRef, useContext, useEffect, forwardRef } from 'react';
+import { arrowKeyNavigationHandler, spaceKeyToggleHandler } from '@jdesignlab/react-utils';
 import { CheckboxGroup } from './CheckboxGroup';
 import { CheckboxGroupContext } from '../context';
 import { checkboxWrapperStyle, checkboxInputStyle, checkboxLabelStyle } from '../styles';
-import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
+import type { CheckboxProps } from '../types';
 
 type ExtendedInputProps = CheckboxProps & { Group?: typeof CheckboxGroup };
 export const Checkbox = Object.assign(
@@ -19,11 +19,15 @@ export const Checkbox = Object.assign(
 
     const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
       if (!checkboxRef.current) return;
-      useKeyboardHandler({
-        event,
-        parentScope: '[role="group"]',
-        selectorOfList: 'input[type="checkbox"]'
-      });
+      const el = event.target as HTMLInputElement;
+      const spaceKeyAction = () => {
+        el.checked = !el.checked;
+      };
+      const parentScope = '[role="group"]';
+      const selectorOfList = 'input[type="checkbox"]';
+
+      spaceKeyToggleHandler({ event, action: spaceKeyAction });
+      arrowKeyNavigationHandler({ event, parentScope, selectorOfList });
     };
 
     useEffect(() => {
@@ -33,7 +37,7 @@ export const Checkbox = Object.assign(
           checkboxRef.current.checked = initialCheck;
         }
       }
-    }, [defaultValues, checkboxRef]);
+    }, [defaultValues, value, checkboxRef]);
 
     return (
       <label
@@ -44,7 +48,6 @@ export const Checkbox = Object.assign(
       >
         <input
           type="checkbox"
-          role="checkbox"
           id={id}
           className={createClassVariant('checkbox', 'input')}
           css={checkboxInputStyle(themePreset, color)}

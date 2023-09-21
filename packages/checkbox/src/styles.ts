@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import { ThemePreset } from '@jdesignlab/j-provider';
-import type { ColorToken } from '@jdesignlab/theme';
 import { getColorByToken, setTextColorByBackground } from '@jdesignlab/theme';
+import type { ColorToken } from '@jdesignlab/theme';
 
-export const checkboxWrapperStyle = () => {
-  return css({
+export const checkboxWrapperStyle = () => css({
     position: 'relative',
     display: 'inline-block',
     marginRight: '6px',
@@ -15,7 +14,6 @@ export const checkboxWrapperStyle = () => {
       }
     }
   });
-};
 
 export const checkboxInputStyle = (themePreset: ThemePreset, color?: ColorToken) => {
   const parsedColor = color ? getColorByToken(color) : themePreset.color.primary;
@@ -72,8 +70,7 @@ export const checkboxInputStyle = (themePreset: ThemePreset, color?: ColorToken)
   });
 };
 
-export const checkboxLabelStyle = () => {
-  return css({
+export const checkboxLabelStyle = () => css({
     display: 'inline-flex',
     alignItems: 'center',
     width: '100%',
@@ -105,4 +102,3 @@ export const checkboxLabelStyle = () => {
       transform: 'translate(3px, 4px) rotate(-45deg)'
     }
   });
-};
