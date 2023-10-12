@@ -1,9 +1,9 @@
 import { useEffect, useContext, useRef } from 'react';
 import { DropdownContext } from '../context';
-import type { DropdownTriggerProps } from '../types';
 import useOpenKeyDown from '../hooks/useOpenKeyDown';
 import { useToggleOpen } from '../hooks/useToggleOpen';
 import { DROPDOWN_ROLE_QUERY, DROPDOWN_MENU_WRAPPER_CLASS } from '../constants';
+import type { DropdownTriggerProps } from '../types';
 
 export const Trigger = (props: DropdownTriggerProps) => {
   const { children, ...otherProps } = props;

@@ -8,7 +8,7 @@ const useCloseKeyDown = () => (event: React.KeyboardEvent<HTMLElement>) => {
     case 'Esc':
       event.preventDefault();
       useToggleOpen(el);
-      return;
+      
   }
 };
 

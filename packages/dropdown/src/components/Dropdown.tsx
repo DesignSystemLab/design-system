@@ -1,18 +1,18 @@
 /** @jsxImportSource @emotion/react */
 
-import type { DropdownProps } from '../types';
-import { dropdownWrapperStyle } from '../style';
 import { useState, useRef } from 'react';
+import { useOutsideClick } from '@jdesignlab/react-utils';
 import { Divider } from './DropdownDivider';
 import { Menu } from './DropdownMenu';
 import { Trigger } from './DropdownTrigger';
 import { MenuItem } from './DropdownMenuItem';
 import { SubMenu } from './DropdownSubMenu';
 import { SubMenuItem } from './DropdownSubMenuItem';
+import { dropdownWrapperStyle } from '../style';
 import { DropdownContext } from '../context';
-import { useOutsideClick } from '@jdesignlab/react-utils';
 import { useToggleOpen } from '../hooks/useToggleOpen';
 import { DROPDOWN_ROLE_QUERY, DROPDOWN_MENU_OPEN_CLASS_NAME } from '../constants';
+import type { DropdownProps } from '../types';
 
 export const Dropdown = (props: DropdownProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);

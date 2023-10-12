@@ -1,7 +1,7 @@
 import { css, keyframes } from '@emotion/react';
-import type { ColorToken } from '@jdesignlab/theme';
 import { getColorByToken, hexToRgba } from '@jdesignlab/theme';
 import React, { useCallback } from 'react';
+import type { ColorToken } from '@jdesignlab/theme';
 
 export const dropdownWrapperStyle = css({
   position: 'relative'
@@ -46,8 +46,7 @@ export const dropdownMenuStyle = css({
   // animation: `${shadowDrop} 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both`
 });
 
-export const dropdownItemStyle = (disabled: boolean) => {
-  return css({
+export const dropdownItemStyle = (disabled: boolean) => css({
     position: 'relative',
     padding: '5px',
     borderRadius: '4px',
@@ -59,7 +58,6 @@ export const dropdownItemStyle = (disabled: boolean) => {
       cursor: `${disabled ? 'not-allowed' : 'pointer'}`
     }
   });
-};
 
 export const dropdownDividerStyle = css({
   height: 0,
@@ -116,7 +114,7 @@ export const dropdownLocationStyle = (
       return css({ ...defaultStyle, ...moveLeft, ...centerY });
     case 'bottom':
       return css({ ...defaultStyle, ...moveBottom, ...centerX });
-    default: //top
+    default: // top
       return css({ ...defaultStyle, ...moveBottom, ...centerX });
   }
 };

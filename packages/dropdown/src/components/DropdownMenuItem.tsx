@@ -2,10 +2,10 @@
 import { useRef, useState } from 'react';
 import { DropdownSubContext } from '../context';
 import { dropdownItemStyle } from '../style';
-import type { DropdownMenuItemProps } from '../types';
 import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
 import { useSelectItem } from '../hooks/useSelectItem';
 import { NOT_DISABLED_DROPDOWN_MENU_QUERY } from '../constants';
+import type { DropdownMenuItemProps } from '../types';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
@@ -40,7 +40,7 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
         role="menuitem"
         tabIndex={disabled ? -1 : 0}
         className="menu_item"
-        aria-disabled={disabled ? true : false}
+        aria-disabled={!!disabled}
         css={{ ...dropdownItemStyle(disabled) }}
         onMouseOver={toggleSubOpen}
         onMouseLeave={toggleSubOpen}
