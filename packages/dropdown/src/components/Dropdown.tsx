@@ -18,7 +18,7 @@ export const Dropdown = (props: DropdownProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [triggerWidth, setTriggerWidth] = useState<number>(0);
   const [triggerHeight, setTriggerHeight] = useState<number>(0);
-  const { children, width = 200, placement = 'buttom', ...otherProps } = props;
+  const { children, width = 200, placement = 'bottom', ...restProps } = props;
   const gap = Number(props.gap) || 0;
   const providerValue = {
     placement,
@@ -42,7 +42,7 @@ export const Dropdown = (props: DropdownProps) => {
   });
   return (
     <DropdownContext.Provider value={providerValue}>
-      <div ref={dropdownRef} css={dropdownWrapperStyle} {...otherProps} className="menu_wrapper">
+      <div ref={dropdownRef} css={dropdownWrapperStyle} {...restProps} className="menu_wrapper">
         {children}
       </div>
     </DropdownContext.Provider>
