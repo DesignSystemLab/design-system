@@ -1,4 +1,5 @@
 import type { HEX } from '@jdesignlab/theme';
+
 export interface ThemePreset {
   color: {
     background: HEX;
