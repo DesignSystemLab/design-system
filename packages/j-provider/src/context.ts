@@ -1,6 +1,5 @@
-import { preset } from './preset';
 import { createContext } from 'react';
-import type { Preset } from './types';
+import { preset } from './preset';
 
 export const themePreset = preset[preset.theme];
 export const ThemeContext = createContext(themePreset);
