@@ -200,9 +200,8 @@ export const createRadio = (color: HEX, disabledColor: HEX, disabled: boolean, s
   return [radioStyle, disabledStyle(), radioSizeStyle()];
 };
 
-export const wrapper = () => {
-  return css({
+export const wrapper = () =>
+  css({
     display: 'inline-block',
     position: 'relative'
   });
-};

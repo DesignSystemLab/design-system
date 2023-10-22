@@ -6,7 +6,7 @@ import type { RadioGroupProps } from '../types';
 
 const RadioGroup = Object.assign(
   forwardRef<HTMLInputElement, RadioGroupProps>((props: RadioGroupProps, ref) => {
-    const { children, defaultValue = null, ...restProps } = props;
+    const { children, defaultValue, ...restProps } = props;
     const radioGroupRef = useRadioGroup(defaultValue, ref);
 
     return (

@@ -1,12 +1,12 @@
-import { ChangeEvent, useCallback, useRef, useState } from 'react';
-import { RadioAttributes } from '../types';
-import { callHandler } from '@jdesignlab/utils';
-import type { EventType } from '@jdesignlab/utils';
 import type { Dispatch, SetStateAction } from 'react';
+import { ChangeEvent, useCallback, useRef, useState } from 'react';
+import { callHandler } from '@jdesignlab/utils';
+import { RadioProps } from '../types';
+import type { EventType } from '@jdesignlab/utils';
 
 const useRadio = (
   isUnavailable: boolean,
-  radioProps: RadioAttributes,
+  radioProps: RadioProps,
   contextSetValue?: Dispatch<SetStateAction<string>> | null
 ) => {
   const [radioValue, setValue] = useState<string>('');
@@ -30,12 +30,12 @@ const useRadio = (
 
       return propsOnKeyDown ? callHandler(defaultHandleKeydown, propsOnKeyDown) : defaultHandleKeydown;
     },
-    [radioRef]
+    [contextSetValue, isUnavailable]
   );
 
   const combineChangeHandler = (propsOnChange?: (event: EventType) => void) => {
-    const deafultHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
+    const defaultHandleChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
       if (isUnavailable) {
         e.preventDefault();
         return;
@@ -48,7 +48,7 @@ const useRadio = (
       setValue(value);
     };
 
-    return propsOnChange ? callHandler(deafultHandleChange, propsOnChange) : deafultHandleChange;
+    return propsOnChange ? callHandler(defaultHandleChange, propsOnChange) : defaultHandleChange;
   };
 
   const handleChange = combineChangeHandler(radioProps.onChange as (event: EventType) => void);
