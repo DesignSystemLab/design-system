@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import * as Style from '../styles';
 import { createClassVariant } from '@jdesignlab/theme';
+import * as Style from '../styles';
 import { DEFAULT_FONT_COLOR } from '../constants';
 import type { RadioLabelProps } from '../types';
 

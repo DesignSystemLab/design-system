@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import * as Style from '../styles';
 import { useId, useContext, forwardRef } from 'react';
 import { createClassVariant, getColorByTokenOrHex } from '@jdesignlab/theme';
 import { getComponentText } from '@jdesignlab/react-utils';
-import { RadioContext } from '../context';
 import RadioGroup from './RadioGroup';
 import RadioLabel from './RadioLabel';
+import { RadioContext } from '../context';
+import * as Style from '../styles';
 import useRadio from '../hooks/useRadio';
 import { DEFAULT_COLOR, DEFAULT_DISABLED_COLOR, RADIO_ID_PREFIX } from '../constants';
 import validateEventHandlers from '../utils/validateEventHandlers';
@@ -26,6 +26,7 @@ export const Radio = Object.assign(
       name = '',
       ...restProps
     } = props;
+    const uuid = useId();
     const radioContext = useContext(RadioContext);
     const isUnavailable = !!readonly || !!disabled;
     const validRadioProps = validateEventHandlers(isUnavailable, restProps, radioContext?.rootProps);
@@ -34,7 +35,7 @@ export const Radio = Object.assign(
       validRadioProps,
       radioContext?.setValue
     );
-    const radioId = id ?? `${RADIO_ID_PREFIX}-${useId()}`;
+    const radioId = id ?? `${RADIO_ID_PREFIX}-${uuid}`;
     const radioClassName = className
       ? `${createClassVariant('radio', 'wrapper')} ${className}`
       : createClassVariant('radio', 'wrapper');
