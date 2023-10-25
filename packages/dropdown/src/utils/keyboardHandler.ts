@@ -1,8 +1,8 @@
-import type { Dispatch, SetStateAction } from 'react';
-import { spaceKeyToggleHandler, arrowKeyNavigationHandler } from '@jdesignlab/react-utils';
-import { useSelectItem } from './useSelectItem';
+import { arrowKeyNavigationHandler, spaceKeyToggleHandler } from '@jdesignlab/react-utils';
+import { Dispatch, SetStateAction } from 'react';
+import { selectItem } from './selectItem';
 
-export const useKeyboardHandler = (props: {
+export const keyboardHandler = (props: {
   event: React.KeyboardEvent<HTMLElement>;
   parentScope: string;
   selectorOfList: string;
@@ -12,8 +12,9 @@ export const useKeyboardHandler = (props: {
 }) => {
   const { event, parentScope, selectorOfList, setState, onClick } = props;
   if (event.key === 'Enter' && onClick) {
-    useSelectItem(event, onClick);
+    selectItem(event, onClick);
   }
+
   spaceKeyToggleHandler({ event, setState });
   arrowKeyNavigationHandler({ event, parentScope, selectorOfList });
 };

@@ -1,12 +1,11 @@
 import { useEffect, useContext, useRef } from 'react';
 import { DropdownContext } from '../context';
+import { toggleOpen } from '../utils/toggleOpen';
+import { openKeyDown } from '../utils/openKeyDown';
 import type { DropdownTriggerProps } from '../types';
-import useOpenKeyDown from '../hooks/useOpenKeyDown';
-import { useToggleOpen } from '../hooks/useToggleOpen';
-import { DROPDOWN_ROLE_QUERY, DROPDOWN_MENU_WRAPPER_CLASS } from '../constants';
 
-export const Trigger = (props: DropdownTriggerProps) => {
-  const { children, ...otherProps } = props;
+export const DropdownTrigger = (props: DropdownTriggerProps) => {
+  const { children, ...restProps } = props;
   const { setTriggerWidth, setTriggerHeight } = useContext(DropdownContext);
   const triggerRef = useRef<HTMLDivElement>(null);
 
@@ -16,29 +15,28 @@ export const Trigger = (props: DropdownTriggerProps) => {
       setTriggerWidth(parseInt(style.width, 10));
       setTriggerHeight(parseInt(style.height, 10));
     }
-  }, [triggerRef]);
+  }, [setTriggerHeight, setTriggerWidth, triggerRef]);
 
-  const onClickHandle = () => {
+  const onTriggerClick = () => {
     if (triggerRef?.current) {
-      const dropdownMenu = triggerRef.current
-        .closest(DROPDOWN_MENU_WRAPPER_CLASS)
-        ?.querySelector(DROPDOWN_ROLE_QUERY) as HTMLElement;
-      useToggleOpen(dropdownMenu);
+      toggleOpen(triggerRef.current);
     }
   };
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       ref={triggerRef}
-      onClick={onClickHandle}
+      onClick={onTriggerClick}
       onKeyDown={e => {
-        useOpenKeyDown(e);
+        openKeyDown(e);
       }}
-      {...otherProps}
+      {...restProps}
     >
       {children}
     </div>
   );
 };
 
-Trigger.displayName = 'Dropdown.Trigger';
+DropdownTrigger.displayName = 'Dropdown.Trigger';
