@@ -1,20 +1,19 @@
 /** @jsxImportSource @emotion/react */
-import { useContext, useRef, useState } from 'react';
-import { dropdownItemStyle } from '../style';
-import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
-import { useSelectItem } from '../hooks/useSelectItem';
+import { useRef } from 'react';
+import * as Style from '../style';
 import { DROPDOWN_MENU_OPEN_CLASS_NAME, NOT_DISABLED_DROPDOWN_SUB_ITEM_QUERY } from '../constants';
+import { keyboardHandler } from '../utils/keyboardHandler';
+import { selectItem } from '../utils/selectItem';
 import type { DropdownSubMenuItemProps } from '../types';
 
 export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
-  const { children, onClick, ...otherProps } = props;
-  const disabled = props.disabled === undefined ? false : props.disabled;
+  const { children, onClick, disabled, ...otherProps } = props;
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (!menuItemRef.current) return;
 
-    useKeyboardHandler({
+    keyboardHandler({
       event,
       parentScope: DROPDOWN_MENU_OPEN_CLASS_NAME,
       selectorOfList: NOT_DISABLED_DROPDOWN_SUB_ITEM_QUERY
@@ -27,9 +26,9 @@ export const SubMenuItem = (props: DropdownSubMenuItemProps) => {
       role="menuitem"
       tabIndex={disabled ? -1 : 0}
       className={`sub_item ${disabled ? 'disabled' : ''}`}
-      onClick={e => useSelectItem(e, onClick)}
+      onClick={e => selectItem(e, onClick)}
       aria-disabled={!!disabled}
-      css={{ ...dropdownItemStyle(disabled) }}
+      css={{ ...Style.createDropdownItem(!!disabled) }}
       onKeyDown={e => onKeyDown(e)}
       {...otherProps}
     >

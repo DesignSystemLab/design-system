@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
-import { dropdownDividerStyle } from '../style';
+import * as Style from '../style';
 
-export const Divider = () => <div css={dropdownDividerStyle} />;
+export const Divider = () => <div css={Style.dropdownDivider} />;
 
-Divider.displayName = 'Dropdown.Divider'
+Divider.displayName = 'DropdownDivider';

@@ -1,16 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { DropdownSubContext } from '../context';
-import { dropdownItemStyle } from '../style';
-import { useKeyboardHandler } from '../hooks/useKeyboardHandler';
-import { useSelectItem } from '../hooks/useSelectItem';
+import * as Style from '../style';
 import { NOT_DISABLED_DROPDOWN_MENU_QUERY } from '../constants';
+import { selectItem } from '../utils/selectItem';
+import { keyboardHandler } from '../utils/keyboardHandler';
 import type { DropdownMenuItemProps } from '../types';
 
 export const MenuItem = (props: DropdownMenuItemProps) => {
   const menuItemRef = useRef<HTMLLIElement>(null);
-  const { children, hasSub, onClick, ...otherProps } = props;
-  const disabled = props.disabled === undefined ? false : props.disabled;
+  const { children, hasSub, onClick, disabled, ...restProps } = props;
   const [subOpen, setSubOpen] = useState<boolean>(false);
 
   const toggleSubOpen = () => {
@@ -22,9 +21,9 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
   const onKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
     if (!menuItemRef.current) return;
     if (event.key !== 'Tab') {
-      subOpen && setSubOpen(false);
+      setSubOpen(false);
     }
-    useKeyboardHandler({
+    keyboardHandler({
       event,
       parentScope: '.menu',
       selectorOfList: NOT_DISABLED_DROPDOWN_MENU_QUERY,
@@ -33,20 +32,23 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
     });
   };
 
+  const providerValue = useMemo(() => ({ subOpen, setSubOpen }), [subOpen]);
+
   return (
-    <DropdownSubContext.Provider value={{ subOpen, setSubOpen }}>
+    <DropdownSubContext.Provider value={providerValue}>
       <li
         ref={menuItemRef}
         role="menuitem"
         tabIndex={disabled ? -1 : 0}
         className="menu_item"
         aria-disabled={!!disabled}
-        css={{ ...dropdownItemStyle(disabled) }}
+        css={{ ...Style.createDropdownItem(!!disabled) }}
         onMouseOver={toggleSubOpen}
         onMouseLeave={toggleSubOpen}
-        onClick={e => useSelectItem(e, onClick)}
         onKeyDown={e => onKeyDown(e)}
-        {...otherProps}
+        onClick={e => selectItem(e, onClick)}
+        onFocus={toggleSubOpen}
+        {...restProps}
       >
         {children}
       </li>
@@ -54,4 +56,4 @@ export const MenuItem = (props: DropdownMenuItemProps) => {
   );
 };
 
-MenuItem.displayName = 'Dropdown.MenuItem';
+MenuItem.displayName = 'DropdownMenuItem';
